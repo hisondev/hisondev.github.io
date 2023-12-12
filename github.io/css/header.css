@@ -1,0 +1,58 @@
+@charset "utf-8";
+#header {
+    z-index: 999;
+    width: 100%;
+    height: 55px;
+    background-color: #ffffff;
+    top: -10px;
+    position: fixed;
+}
+
+.logo {
+    margin-top: 10px;
+    text-align: left;
+    padding: 10px 10px 10px 30px;
+    display: inline-block;
+}
+
+#menu_bars {
+    display: block;
+    font-size: 20px;
+    float: right;
+    margin: 23px;
+}
+
+#nav {
+    z-index: 999;
+    /* display: inline; */
+    display: none;
+    position: fixed;
+    top: 40px;
+    right: 0px;
+    background-color: #ffffff;
+    font-size: 1.0em;
+    line-height: 2em;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+}
+
+#menu>li {
+    margin-top: 20px;
+}
+
+.c_1 {
+    color: #67D5B5;
+}
+
+.c_2 {
+    color: #EE7785;
+}
+
+.c_3 {
+    color: #84B1ED;
+}
+
+.c_4 {
+    color: #FFBC42;
+}

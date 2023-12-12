@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>티몬</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 자유로운 영혼의 연예인, ESFP, 사교적인유형, 티몬" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 티몬!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 티몬같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 티몬이 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/ACFH.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 티몬같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 티몬이 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/ACFH.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "티몬"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>"하쿠나 마타타! 정말 멋진말이지"</b><br>
+                    -'라이온 킹' 중 티몬</em>
+                <br><br>
+                <p>오 마이 갓! 당신이 영화속 주인공이라면 우리나라에 3% 밖에 없는 라이온킹의 티몬이군요!<br>
+                    자신 또는 친구가 바라본 당신은 현실적이지만 낙천적이고 타인에 대해 긍적적이며 수용적인 모습으로
+                    어떤 모임에서도 잘 적응하는 사람이군요! 친구들이 매우 좋아하는 성격의 소유자로 당신에 주변에는
+                    항상 멋진 사람들이 넘칩니다. 인간애가 많아 모임이나 만나자는 약속을 잘 거절하지도 못하죠!<br>
+                    <mark>성격유형 : “자유로운 영혼의 연예인”</mark>
+                    <br>티몬 타입의 사람은 이성적이지만 현실을 낙관하는 경향이 큽니다. 타인에 대해 관심이 많으며
+                    때로는 조금 수다스럽기도 하죠. 모임이나 파티를 즐기고 사랑을 받는것, 사랑을 주는 것 모두 좋아하죠.<br>
+                    또한 천부적으로 예술가적 기질이 높은 사람이 많습니다. 자신을 매력적으로 꾸미는데 익숙하며
+                    타고난 미적감각으로 주변을 아름답게 꾸미는 능력이 탁월하죠.<br>
+                    <b>타인에게 사랑받는 것, 타인을 사랑하는 것 모두 좋아하는 당신!</b>
+                    친구분은 이런 당신의 매력에 흠뻑 빠져있을 수 있습니다!<br>
+                    <mark>타고난 예술성과 미적인 감각. 누군가에게 주목받는 것, 누군가를 주목하는 것 모두 즐기는 슈퍼 인싸!</mark><br>
+                    하지만 타고난 미적감각과 주변사람들의 인기로 매력적인 본인에게 흠뻑 빠져 지나친 자기애에 빠져 있을
+                    수 있습니다. 또 타인에게 닥친 문제에는 따듯한 위로와 현실적인 조언에 능통하지만 본인의 문제에 대해서는
+                    항상 낙관하는 마음으로 현실을 도피하는 모습을 보일 수 도 있죠.
+                    <br>그러나 티몬과 같이 긍정적이고 인간애가 넘치며 타고난 예술적 감각으로 매력이 넘치는 당신은
+                    항상 주변에 좋은 인연과 친구들을 불러오죠! 지금처럼 밝고 멋진 모습으로 삶을 즐기세요!
+                </p>
+                <br><strong>
+                    "근심과 걱정 모두 떨처버려.<br>욕심 버리면 즐거워요~"
+                </strong><br>
+                <em>-'라이온 킹' 중 티몬</em>
+                <br>
+                <br>
+                <p>
+                    티몬과 잘 맞는 타입의 친구 :<br><b>간달프, 포카혼타스, 버즈 라이트이어</b><br>
+                    티몬과 안 맞는 타입의 친구 :<br><b>헤르미온느, 아이언맨, 안나</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

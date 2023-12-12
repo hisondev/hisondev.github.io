@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>알라딘</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 모험을 즐기는 사업가, ESTP, 수완좋은 활동가형, 알라딘" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 알라딘!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 알라딘같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 알라딘이 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/ACEH.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 알라딘같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 알라딘이 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/ACEH.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "알라딘"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>"세상은 직접 봐야 해요.<br>지도와 책으로 모든 세상을 알 순 없어요."</b><br>
+                    -'알라딘' 중 알라딘</em>
+                <br><br>
+                <p>오 마이 갓! 당신이 영화속 주인공이라면 우리나라에 6% 밖에 없는 알라딘이군요!<br>
+                    자신 또는 친구가 바라본 당신은 현실 감각을 바탕으로 문제를 잘 해결하며, 몸으로 직접 부딪히는 걸 좋아하는
+                    에너지가 넘치는 사람입니다!<br>
+                    <mark>성격유형 : “모험을 즐기는 사업가”</mark>
+                    <br>알라딘 타입의 사람은 난해하거나 추상적인 이론과는 거리가 멉니다. 말로만 하는 논의를 탁상공론이라
+                    생각할 수 있으며, 모든 문제를 과감하게 몸으로 부딪히길 좋아하죠. 때때로는 타인에게 굉장히 위험해 보이는
+                    행동을 하지만 당신은 강한 현실 감각으로 어려운 문제를 이성적으로 거뜬히 해결해 나갑니다.<br>
+                    또한 타인을 인지하는 감각이 매우 세심합니다. 작은 표정의 변화나 사소한 변화도 예리하게 집어내며
+                    활동적인 에너지로 상대방에게 이런 장점을 잘 발휘하죠.<br>
+                    <b>행동력이 강하고 현실적이고 이상적이며, 타인에 대한 세심한 감각까지 지닌 사람!</b>
+                    친구분은 이런 당신의 매력에 흠뻑 빠져있을 수 있습니다!<br>
+                    <mark>대한민국 훈남 훈녀가 가장 많은 타입. 타인에게 긍정적이며 타인에게 섬세함까지 갖춰 연애를 가장 잘하는 타입!</mark><br>
+                    하지만 당신은 말보다 행동이 먼저 나가는 습관으로 인해 큰 곤란에 빠질 위험이 높습니다. 즉흥적인 행동에
+                    많이 의존하는 것은 타인에게 매력을 불러 일으키기도 하지만 타인을 지치게도 하는 요소이죠.
+                    또 규칙적인 행동이나 깊은 사고를 필요로 하는 업무를 힘들어할 수 있습니다.
+                    <br>하지만 알라딘과 같이 도전적이고 열정적인 모습으로 큰일을 이루어낼 수 있습니다. 또 타인에게 긍정적이며
+                    세심한 모습은 이성에게 인기를 불러오기 충분하죠! 매력이 넘치는 당신은 친구분들에게는 없어서는 안될 존재일 겁니다.
+                </p>
+                <br><strong>
+                    "내 소원은 네가 자유로워지는 거야."
+                </strong><br>
+                <em>-'알라딘' 중 알라딘이 지니에게</em>
+                <br>
+                <br>
+                <p>
+                    알라딘과 잘 맞는 타입의 친구 :<br><b>포카혼타스, 간달프, 덤블도어</b><br>
+                    알라딘과 안 맞는 타입의 친구 :<br><b>빨간머리앤, 안나, 우디 프라이드</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

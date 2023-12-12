@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-176809380-1');
+  </script>
+  <title>친구에게 나를 맡겨보세요!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 연애, 꼰대" />
+  <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자!" />
+  <meta name="author" content="hani" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+  <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script src="/js/kkon/forwarding_form.js"></script>
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+  <header id="header">
+    <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+    <span id="menu_bars"><i class="fas fa-bars"></i></span>
+    <nav id="nav">
+      <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+        <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+        <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+        <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+        <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+        <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+        <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+        <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div class="img_banner">
+    </div>
+    <div class="comment">
+      <h2>친구가 생각하는 나의 꼰대력은!?</h2>
+      <h3>나의 꼰대력 측정을 친구에게 부탁해 보세요!</h3>
+      <h4>(친구에게는 친화력 테스트로 전송됩니다. 좀 더 정확한 결과를 기대해보세요!)</h4>
+      <br>
+      <input type="text" name="name" id="name_box" placeholder="내 이름 입력" style="border: 1px solid #cccccc;"
+        onkeyup="key_up()">
+      <br>
+      <p class="alert_box" style="color:#d63447;"></p><br>
+      <h3>친구에게 카카오톡</h3>
+      <button type="button" onclick="sendLink()">보내기!</button>
+
+    </div>
+  </section>
+  <br>
+  <footer class="footer">
+    <div class="comment">
+      <div class="about_us">
+        <p>오늘의 테스트</p>
+      </div>
+      <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+      <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+      <ul class="sns_menu">
+        <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+        <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+        <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+        <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/js/nav.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+
+</html>

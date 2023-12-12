@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>엘사</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 청렴 결백한 논리주의자, ISTJ, 세상의소금형, 엘사" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 엘사!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 엘사같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 엘사가 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/BCEG.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 엘사같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 엘사가 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/BCEG.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "엘사"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>네가 누군지 잊지마. </b><br>
+                    -'프로즌' 중 엘사</em>
+                <br><br>
+                <p>오 세상에! 당신이 영화속 주인공이라면 우리나라에 20%를 차지하는 겨울왕국의 엘사군요!<br>
+                    자신 또는 친구가 바라본 당신은 신중하고 조용하며 집중력이 강하고 매사에 철저하며
+                    사리분별이 뛰어난 사람입니다. 도덕적이고 윤리적인 것을 강조하며 남에게
+                    폐를 끼치는 것을 극도로 싫어하죠. 문제를 해결하는데 과거의 경험을 잘 적용하며, 반복되는
+                    일상적인 일에 대한 인내력이 강하죠!<br>또 내 사람이라 생각되는 타인에게 헌신적이며
+                    따듯한 마음을 소유하고 있습니다. 본인의 올바른 마음으로 타인 또한 올바르게 이끌어 가는
+                    훌륭한 리더이죠.<br>
+                    <mark>성격유형 : “청렴 결백한 논리주의자”</mark>
+                    <br>엘사 타입은 우리나라에서 가장 많은 타입으로 내향적이어서 말을 조금은 아끼는 편이지만 틀에
+                    짜여진 상황에서 임무를 매우 철저하게 완수하고 규칙을 잘 준수합니다. 우리나라가 이 처럼 훌륭한
+                    나라인 이유가 여기에 있을 수 도 있지 않을까요?
+                    회사나 공공기관에서 일반적으로 가장 선호되는 성격 유형 중에 하나!<br>
+                    <b>학교에서 역시 선생님들이 가장 좋아하는 성격! 자기관리 능력이 뛰어나고 튀는것을
+                        좋아하지 않죠. 용의 단정하며 정돈된 스타일로 친구분은 당신에게 배울점이
+                        많다고 생각할 겁니다!</b><br>
+                    <mark>성실하고 책임감이 강하고 규칙을 잘 지킨다. 계획적이고 보수적이다.</mark><br>
+                    하지만 당신은 친구에게 자기주관이 뚜렷하나 '융통성 없고 고지식하다.' 라는 소리를 종종
+                    들을 수 있습니다. 즉흥적으로 무언가를 하는 걸 싫어하고, 약속을 어기는 것도 매우 싫어합니다.
+                    만약 유머감각까지 없다면 정말 딱딱한 사람이 될수 도 있어요. 또 도덕적이고 윤리적임을 중요시
+                    하는 성격으로 인해 타인에게도 그것을 강요하거나 잘 지키지 못하는 사람을 냉소적인 눈빛으로
+                    바라볼 수 도 있겠죠.<br>그러나 자신의 사람이라 판단하는 사람에게는 한 없이 헌신적이고
+                    이타적이며 어디에서나 청렴하고 자신에게 더 까다로운 당신은 모두의 존경을 받고 자신의 사람을 위해
+                    고난과 역경을 이겨내는 겨울왕국 속 엘사처럼 친구분들에게는 둘 없는 매우 소중한 친구일 것입니다.
+                </p>
+                <br><strong>
+                    be the good girl. you always have to be.
+                </strong><br>
+                <em>-'프로즌' 중 엘사</em>
+                <br>
+                <br>
+                <p>
+                    엘사와 잘 맞는 타입의 친구 :<br><b>안나, 아이언맨, 품바</b><br>
+                    엘사와 안 맞는 타입의 친구 :<br><b>덤블도어, 캡틴 아메리카, 버즈 라이트이어</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

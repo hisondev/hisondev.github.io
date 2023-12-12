@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+    <title>나의 연애력 측정 결과입니다!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 연애력검사, mbti, 연애, 꼰대" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 나는 연애 중수입니다!!!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" id="titleMeta" content="나는 연애 중수입니다!!!" />
+    <meta property="og:description" id="descriptMeta" content="친구 또는 내가 측정한 나의 연애력, 나는 연애가 어렵습니다.." />
+    <meta property="og:image" id="imageMeta" content="https://today-test.com/images/dating/result2.jpg" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="/js/param.js"></script>
+    <script src="/js/dating/result.js"></script>
+    <script src="/js/common.js"></script>
+    <script>
+        var testName = getParameterByName("name");
+        if (testName == "") {
+            testName = "당신";
+        }
+        var avg = 0.1;
+        var intA;
+        var intB;
+        var intC;
+        var intD;
+        var intE;
+
+        intA = getParameterByName("a");
+        intB = getParameterByName("b");
+        intC = getParameterByName("c");
+        intD = getParameterByName("d");
+        intE = getParameterByName("e");
+        avg = getParameterByName("avg")
+    </script>
+    <link rel="stylesheet" href="/css/dating/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <div class="result_section">
+                <strong>
+                    <h3><span id="nameBox"></span>의 결과: <span id="resultT1"></span></h3>
+                </strong>
+                <p id="resultT2"></p>
+            </div>
+            <br>
+            <canvas id="myRadarChart" width="400" height="400"></canvas>
+            <script>
+                var ctx = document.getElementById('myRadarChart').getContext('2d');
+                var myRadarChart = new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['외모력', '지갑력', '눈치력', '인싸력', '유머력'],
+                        datasets: [{
+                            label: testName + '의 연애력',
+                            backgroundColor: 'rgba(238, 119, 133, 0.2)',
+                            borderColor: 'rgba(238, 119, 133, 0.2)',
+                            pointBackgroundColor: 'rgba(238, 119, 133, 0.8)',
+                            data: [intA, intB, intC, intD, intE],
+                            backgroundColor: [
+                                'rgba(238, 119, 133, 0.5)',
+                            ]
+                        }, {
+                            label: '',
+                            backgroundColor: 'rgba(255, 255, 255, 0)',
+                            borderColor: 'rgba(255, 255, 255, 0)',
+                            pointBackgroundColor: 'rgba(255, 255, 255, 0)',
+                            data: [100, 0, 0, 0, 100],
+                            borderColor: [
+                                'rgba(255, 255, 255, 0)',
+                                'rgba(255, 255, 255, 0)',
+                                'rgba(255, 255, 255, 0)',
+                                'rgba(255, 255, 255, 0)',
+                                'rgba(255, 255, 255, 0)',
+                            ]
+                        }]
+                    },
+                    options: {
+                        scales: {
+
+                            ticks: {
+                                suggestedMin: 0,
+                                suggestedMax: 100
+                            }
+
+                        }
+                    }
+                });
+            </script>
+            <div class="result_section">
+                <div>
+                    <h3>당신의 외모력 : <span id="resultA1"></span></h3>
+                    <p id="resultA2"></p>
+                </div>
+                <br>
+                <div>
+                    <h3>당신의 지갑력 : <span id="resultB1"></span></h3>
+                    <p id="resultB2"></p>
+                </div>
+                <br>
+                <div>
+                    <h3>당신의 눈치력 : <span id="resultC1"></span></h3>
+                    <p id="resultC2"></p>
+                </div>
+                <br>
+                <div>
+                    <h3>당신의 인싸력 : <span id="resultD1"></span></h3>
+                    <p id="resultD2"></p>
+                </div>
+                <br>
+                <div>
+                    <h3>당신의 유머력 : <span id="resultE1"></span></h3>
+                    <p id="resultE2"></p>
+                </div>
+                <br>
+                <p>본 성격유형 검사는 재미로만 해주세요.</p>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/dating/test_self.html">
+                    <p><b>내가하는<br><mark>내</mark> <span class="c_2">연애력테스트</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/dating/forwarding_form.html">
+                    <p><b>남이하는<br><mark>내</mark> <span class="c_2">연애력테스트</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

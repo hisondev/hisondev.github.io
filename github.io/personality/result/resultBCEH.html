@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>인디아나 존스</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 만능 재주꾼, ISTP, 백과사전형, 인디아나 존스" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 인디아나 존스!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 인디아나 존스같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 인디아나 존스가 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/BCEH.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 인디아나 존스같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 인디아나 존스가 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/BCEH.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "인디아나 존스"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>내가 길을 알아, 나만 따라와!</b><br>
+                    -'인디아나 존스' 중 인디아나 존스</em>
+                <br><br>
+                <p>오 놀랍군요! 당신이 영화속 주인공이라면 우리나라에 11%를 차지하는 인디아나존스에요!<br>
+                    자신 또는 친구가 바라본 당신은 만능 재주꾼, 조용하고 과묵하게 호기심으로 인생을 관찰하며 상황을
+                    대처하는 능력이 뚜어난 사람입니다.<br>그리고 즉흥적이며 도전을 즐깁니다. 자기분야에 있어
+                    뛰어난 재능과 노력을 보이며 어떤 어려운 모험도 도전적으로 성과를 이루어 내죠. 잘 성장한다면
+                    본인 분야의 지식은 타의 추종을 불허하는 타입입니다.<br>
+                    논리적이고 뛰어난 상황 적응력을 가지고 있는 사람들.<br>
+                    <mark>성격유형 : “만능 재주꾼”</mark>
+                    <br>왕성한 호기심으로 모든 것을 직접 만지고 보고싶어합니다. 냉철한 이성주의적 성향으로
+                    주변의 세상을 관철하죠.<br>
+                    논리적이고 분석적입니다. 객관적으로 인생을 관찰하며, 개인주의 적인 성향이 강하죠.
+                    과묵한 타입으로 어떤 일에 쉽사리 뛰어들 지 않지만 한가지에 꽂히면 꾸준하게 해내죠.<br>
+                    <b>침착하지만 즉흥적인 성향이 있으며, 호기심이 많아 행동이 예측되지 않는 당신! 친구분은 당신을 더 궁굼해할 수 있습니다!</b><br>
+                    <mark>객관적인 원리에 관심이 많고, 도구를 다루는데 강한 흥미를 가지고있습니다.</mark><br>
+                    하지만 당신은 관심이 없는 곳에는 다소 냉소적이기도 합니다.
+                    감정 표현에 서툴며, 타인의 감정을 파악하는 데도 어려움을 겪을 수 있죠.
+                    인간관계에서 타인을 향한 정서적 공감이 아닌 행동으로 탐색하고자 하는 성향이 있어
+                    간혹 오해를 일으킬 수 있습니다. 하지만 본인만의 창의적인 생각으로 문제를 잘 해결 할 수 있죠.<br>
+                    그러나 지적호기심이 뛰어나고 내면에 집중하며 냉철하고 이성적인 논리를 가진 당신은, 당신이 가진 재능과
+                    지식을 잘 갈고 닦는다면 영화 속 인디아나 존스와 같이 매우 어려운 도전 앞에서도 무릎을 꿇지 않고 나아가
+                    엄청난 성과를 이루어 낼 수 있을 것 입니다.
+                </p>
+                <br><strong>
+                    Gold는 황금이 아니라 지식이었어. 우그하 언어로는 황금(Gold)이 보물을 뜻하지만 그들의 보물은 황금이 아니었어.<br>
+                    그들에게는 지식이 보물이었어.
+                </strong><br>
+                <em>-'인디아나 존스' 중 인디아나 존스</em>
+                <br>
+                <br>
+                <p>
+                    인디아나 존스와 잘 맞는 타입의 친구 :<br><b>덤블도어, 백설공주, 포카혼타스</b><br>
+                    인디아나 존스와 안 맞는 타입의 친구 :<br><b>안나, 빨간머리앤, 품바</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+@charset "utf-8";
+@import url(/css/reset.css);
+@import url(/css/header.css);
+@import url(/css/footer.css);
+
+/*web 1024~*/
+@media all and (min-width:1025px) {
+    .result_bar {
+        width: 600px;
+        height: 250px;
+        margin: 10px auto;
+        overflow: hidden;
+    }
+}
+
+/*ipad 768 ~ 1024*/
+@media all and (max-width:1024px) and (min-width:668px) {
+    .result_bar {
+        width: 100%;
+        height: 250px;
+        margin: 10px auto;
+        overflow: hidden;
+    }
+}
+
+/*iphone 320 ~ 765*/
+@media all and (max-width:667px) and (min-width:320px) {
+    .result_bar {
+        width: 100%;
+        height: 250px;
+        margin: 10px auto 10px auto;
+        overflow: hidden;
+    }
+}
+
+.barBox {
+    display: block;
+    width: 100%;
+    height: 35px;
+    margin: 20px auto;
+    line-height: 35px;
+}
+
+.bar_background {
+    display: inline-block;
+    width: 70%;
+    height: 35px;
+    background: #dddddd;
+    border-radius: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.bar {
+    display: inline-block;
+    height: 35px;
+    opacity: 0.8;
+    border-radius: 40px;
+    overflow: hidden;
+    color: #000000;
+}
+
+#bar_AB {
+    background-color: #67D5B5;
+    width: 50%;
+    position: relative;
+    left: -10%;
+}
+
+#bar_CD {
+    background-color: #EE7785;
+    width: 50%;
+    position: relative;
+    left: 5%;
+}
+
+#bar_EF {
+    background-color: #84B1ED;
+    width: 50%;
+    position: relative;
+    left: 0%;
+}
+
+#bar_GH {
+    background-color: #FFBC42;
+    width: 50%;
+    position: relative;
+    left: 0%;
+}
+
+.r_c {
+    float: left;
+    position: relative;
+    left: 30px;
+}
+
+.l_c {
+    float: right;
+    position: relative;
+    left: -30px;
+}
+
+.r_p {
+    float: left;
+    position: relative;
+    left: 35px;
+    font-size: 11px;
+}
+.l_p {
+    float: right;
+    position: relative;
+    left: -35px;
+    font-size: 11px;
+}
+
+.result_section {
+    padding: 35px;
+    line-height: 30px;
+}
+
+#bombom {
+    width: 100%;
+    height: 100%;
+    line-height: 1.8em;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #ffffff;
+}

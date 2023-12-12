@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>품바</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 호기심 많은 예술가, ISFP, 성인군자형, 품바" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 품바!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 품바같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 품바가 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/BCFH.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 품바같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 품바가 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/BCFH.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "품바"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>하쿠나 마타타! '아무 걱정 하지마'라는 뜻이야 </b><br>
+                    -'라이온킹' 중 품바</em>
+                <br><br>
+                <p>오 마이 갓! 당신이 영화속 주인공이라면 우리나라에 6% 밖에 없는 라이온킹의 품바군요!<br>
+                    친구 또는 자신이 바라본 당신은 한없이 다정하고 친절하며, 항상 온화하고 주변과
+                    조화를 이루며 살아가는 사람입니다. 따듯한 감성을 가지고 있는 겸손한 사람들 이죠.<br>
+                    삶의 현재를 즐기는 사람. 미래를 내다 보기보단 현재를 중요시하죠!<br>
+                    <mark>성격유형 : “호기심 많은 예술가”</mark>
+                    <br>품바 타입의 사람은 남을 잘 믿고, 의심하지 않으며, 어떤 조직에서든지,
+                    어느 사람이든지 함께 맞추며 살 수 있는 긍정적인 사람들 이에요.
+                    그리고 관대하며 타인에 대한 일방적인 판단을 하지 않죠!<br>
+                    또 당신은 자기분야에 대한 영감이 있으며 타고난 예술적인 기질이 있습니다. 내면에 더욱 집중하여
+                    타인에게 잘 표현하지 않고 또 표현할 필요를 느끼지 못하는 당신으로 인해 주변 사람들은 잘
+                    모르겠지만 당신에게는 탁월한 예술가적 내면이 숨겨져 있죠!
+                    <b>자신의 주장을 타인에게 강요하지 않고, 남에게 싫은 소리를 못하는 타입으로
+                        친구분은 당신을 매우 좋아하는 군요!</b><br>
+                    <mark>현재에 만족하며 욕심을 부리지 않고 타인과 잘 적응하며 본인의 생각이 확고한 사람.</mark><br>
+                    하지만 당신은 결단력이 부족하고 계획성이 없습니다.
+                    틀에 묶이는 것을 싫어하며, 추진력이 없어 누군가가 이끌어주기를 바라죠.
+                    생각은 많지만 행동은 부족하며, 생각만큼 적극적으로 표현하지 못하죠.
+                    평화로움을 선으로 여기며, 경쟁하는 분위기에서는 능력을 잘 발휘하지 못합니다.<br>
+                    그러나 타인에게 편견을 갖지않고 진심으로 대해주며, 이타적이고 따듯한 모습. 그리고
+                    타고난 영감으로 본인의 매력을 가진 당신은 어려움에 빠진 심바를 따듯하게 감싸며 이끌어주는
+                    품바와같이 친구분들에게는 더 없이 소중한 존재일 겁니다.
+                </p>
+                <br><strong>
+                    과거는 흘러갔고, 이제는 어쩔 수 없는거야. 그렇지? 세상이 널 힘들게 할때는 신경끄고 사는게 상책이야.
+                </strong><br>
+                <em>-'라이온킹' 중 품바</em>
+                <br>
+                <br>
+                <p>
+                    품바와 잘 맞는 타입의 친구 :<br><b>버즈 라이트이어, 우디 프라이드, 간달프</b><br>
+                    품바와 안 맞는 타입의 친구 :<br><b>아이언맨, 헤르미온느, 캡틴 아메리카</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

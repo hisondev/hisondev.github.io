@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>포카혼타스</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 선의의 옹호자, INFJ, 예언자형, 포카혼타스" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 포카혼타스!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 포카혼타스같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 포카혼타스가 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/BDFG.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 포카혼타스같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 포카혼타스가 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/BDFG.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "포카혼타스"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>"낯선 발자국을 따라 걷다보면<br>당신이 결코 알지 못했던 것들을 배우게 될 거에요."</b><br>
+                    -'포카혼타스' 중 포카혼타스</em>
+                <br><br>
+                <p>와우! 당신이 영화속 주인공이라면 우리나라에 4% 밖에 없는 포카혼타스군요!<br>
+                    친구 또는 자신 바라본 당신은 미래에 더 집중하고 풍부한 내적 생활을 소유하는 영감이 뛰어난 사람입니다!<br>
+                    <mark>성격유형 : “선의의 옹호자”</mark>
+                    <br>포카혼타스 타입의 사람은 인내심이 많고 통찰력과 직관력이 뛰어납니다. 독창성이 강하며
+                    확고한 신념으로 자신의 영감을 구현시켜 나가며 말없이 타인에게 영향을 끼치죠. 내면적 통찰을
+                    중요시해서 타인을 돕고 헌신하는 것에도 큰 만족을 느낍니다.<br>
+                    강한 직관과 통찰로 사물의 본질을 파악하고 미래에 집중하여 맡은 일을 잘해결해 나갑니다. 또 한 곳에
+                    꽂히면 매우 큰 열정을 가지고 몰두하는 성향이 강하죠.<br>
+                    <b>타인에게 헌신적이고 강한 통찰력으로 앞날을 내다볼 줄 아는 당신의 모습을
+                        친구분은 신비롭게, 또는 본인도 모르게 큰 영향을 받고 있을 수 있습니다!</b><br>
+                    <mark> 일을 할 때는 그일이 가진 의미를 매우 중요하게 생각. 타인과 관계를 맺을 때 진실되고 깊은 관계를 맺기 원함.</mark><br>
+                    하지만 당신은 풍부한 내면적 생활로 인해 보이지 않는 정신 세계에 깊이 몰두하여 주변을 경시할 수 있습니다.
+                    의미부여가 되지 않는 일에 대해 큰 반감을 보이며 청소년기에 방황에 길로 빠져들기 쉽습니다.
+                    일반적으로 당신의 성격 유형은 정치 성향면에서 진보적인 성향이 가장 강하게 나타납니다.
+                    때때로 생각이 많아 잠들기 힘들며, 현실과 타협하기 어려울 때가 있습니다.
+                    <br>그러나 포카혼타스와 같이 강한 영감과 통찰력으로 미래를 내다보고 사물의 본질을 파악하며,
+                    타인에게 말없이 진실되고 헌신적인 모습으로 친구분에게 조용히 큰 영향력을 끼치고 있을 수도 있죠!
+                </p>
+                <br><strong>
+                    100년 동안 당신을 모르고 사는 것 보다,<br>
+                    당신을 알고 지금 죽는게 더 나아요.
+                </strong><br>
+                <em>-'포카혼타스' 중 포카혼타스</em>
+                <br>
+                <br>
+                <p>
+                    포카혼타스와 잘 맞는 타입의 친구 :<br><b>알라딘, 티몬, 인디아나 존스</b><br>
+                    포카혼타스와 안 맞는 타입의 친구 :<br><b>우디 프라이드, 엘사, 빨간머리앤</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

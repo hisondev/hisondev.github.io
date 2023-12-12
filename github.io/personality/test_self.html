@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-176809380-1');
+  </script>
+
+
+  <title>내가보는 난 어떤 영화 속 인물일까?</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 연애, 꼰대" />
+  <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자!" />
+  <meta name="author" content="hani" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+  <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script type="text/javascript" src="/js/personality/test_self.js"></script>
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/personality/test.css">
+</head>
+
+<body>
+  <header id="header">
+    <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+    <span id="menu_bars"><i class="fas fa-bars"></i></span>
+    <nav id="nav">
+      <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+        <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+        <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+        <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+        <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+        <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+        <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+        <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div id="testImg" class="img_banner">
+    </div>
+    <div class="comment">
+      <strong>
+        <p><span id="nameBox"></span>는</p>
+      </strong>
+      <p id="question"></p>
+      <div id="pageBox"><b><span id="page"></span></b>/20</div>
+    </div>
+    <div class="checkBox">
+      <span class="right">매우그렇다</span><span class="notRight">매우아니다</span><br><br>
+      <ul>
+        <a id="right_3">
+          <li style="font-size: 45px;"><i class="far fa-square"></i></li>
+        </a>
+        <a id="right_2">
+          <li style="font-size: 40px;"><i class="far fa-square"></i></li>
+        </a>
+        <a id="right_1">
+          <li style="font-size: 35px;"><i class="far fa-square"></i></li>
+        </a>
+        <a id="middle">
+          <li style="font-size: 30px;"><i class="far fa-square"></i></li>
+        </a>
+        <a id="left_1">
+          <li style="font-size: 35px;"><i class="far fa-square"></i></li>
+        </a>
+        <a id="left_2">
+          <li style="font-size: 40px;"><i class="far fa-square"></i></li>
+        </a>
+        <a id="left_3">
+          <li style="font-size: 45px;"><i class="far fa-square"></i></li>
+        </a>
+      </ul>
+      <div id="resultBox" class="skip">
+        <p>고생하셨습니다.</p>
+        <a href="">결과 보기</a>
+      </div>
+      <div id="return"><a><span class="returnBox"><i class="fas fa-undo-alt"></i></span> 되돌리기</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="comment">
+      <div class="about_us">
+        <p>오늘의 테스트</p>
+      </div>
+      <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+      <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+      <ul class="sns_menu">
+        <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+        <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+        <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+        <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/js/nav.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>간달프</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 용의주도한 전략가, INTJ, 과학자형, 간달프" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 간달프!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 간달프같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 간달프가 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/BDEG.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 간달프같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 간달프가 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/BDEG.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "간달프"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>죽음은 단지 우리가 걸어가야하는 또 다른 여정일 뿐.</b><br>
+                    -'반지의제왕 시리즈' 중 간달프</em>
+                <br><br>
+                <p>오 세상에! 당신이 영화속 주인공이라면 우리나라에 7%인 반지의제왕의 간달프군요!<br>
+                    친구 또는 자신이 바라본 당신은 합리주의 및 능력주의를 중요시하며, 계획이 독창적이고 판단이 냉철하여 통찰력과
+                    분석력이 우월하며, 논리적인 엄밀함과 객관성을 지향하기 때문에 옳고 그름을 정확히 하려고 하는 사람입니다.<br>
+                    가십거리를 삼가하고 본인의 관심분야에 대한 철저한 전문성을 추구하는 사람들이죠!<br>
+                    <mark>성격유형 : “용의주도한 전략가”</mark>
+                    <br>간달프 타입의 사람은 독립적인 성향을 가지고 있으며, 상호 발전적인 친구 관계를 추구합니다.
+                    사교적인 파티나 집단모임에 대해서는 흥미가 별로 없을 때가 많죠.<br>
+                    원칙주의적인 성향이 매우 강하며, 전문성을 중요시하는 당신은 사람들 사이의 선의의 거짓말이나, 가벼운 농담들이
+                    낯설게 느껴질 때가 많을 수 있습니다. 사람과의 관계에서는 어려움을 느낄 수 있는 성격입니다!<br>
+                    <b>하지만 진중하고 거짓이 없으며 전문적인 지식을 추구하는 당신을
+                        친구분은 존경하고 있을 수 있습니다!</b><br>
+                    <mark>양심이 바르고 직관력이 뛰어나 타인에게 모범이되는 전략적 지도자.</mark><br>
+                    하지만 당신은 원칙적인 모습으로 겉으로는 매우 강해 보일 수 있지만 속은 정이많고 여려 속 앓이를
+                    많이 할 수 있습니다. 자신의 분야에서 누구보다 전문적이고 자신감 넘치지만, 대인관계의
+                    부족으로 인정을 못받을 수 도 있습니다.
+                    <br>그러나 높은 집중력과 분석적인 사고, 통찰력, 양심적인 마음으로 타인에게 모범이 되며,
+                    성실하고 꾸준함으로 남들을 잘 리드하는 능력으로 조직에서 간달프와 같은 역할이 될 수도 있죠.
+                </p>
+                <br><strong>
+                    우리가 삶을 살면서 그러한 힘든 시간들이 오게 되어있지만, 그것은 우리가 결정하는 것은 아니다.
+                    <br>우리가 결정해야 하는 것은 우리에게 주어진 시간 동안에 우리가 무엇을 해야 할지다.
+                </strong><br>
+                <em>-'반지의 제왕' 중 간달프</em>
+                <br>
+                <br>
+                <p>
+                    간달프와 잘 맞는 타입의 친구 :<br><b>티몬, 알라딘, 품바</b><br>
+                    간달프와 안 맞는 타입의 친구 :<br><b>우디, 캡틴아메리카, 백설공주</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

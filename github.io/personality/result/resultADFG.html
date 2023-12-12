@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>덤블도어</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 정의로운 사회운동가, ENFJ, 언변능숙형, 덤블도어" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 덤블도어!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 덤블도어같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 덤블도어가 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/ADFG.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 덤블도어같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 덤블도어가 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/ADFG.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "덤블도어"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>"가장 어두운 시간에도 행복은 존재하는 법이란다.<br>불을 켜는 것을 잊지 않는다면 말이지."</b><br>
+                    -'해리포터' 중 덤블도어</em>
+                <br><br>
+                <p>오 마이 갓! 당신이 영화속 주인공이라면 우리나라에 2% 밖에 없는 해리포터의 덤블도어군요!<br>
+                    자신 또는 친구가 바라본 당신은 강직하고 인내심이 강하며 진심으로 타인을 믿고 이끄는 지도자와 같은 사람입니다!<br>
+                    <mark>성격유형 : “정의로운 사회운동가”</mark>
+                    <br>덤블도어 타입의 사람은 진정성 있게 타인을 대하며 옳다고 생각하는 일을 위해 헌신합니다. 다른 이들과
+                    별 어려움 없이 잘 어울리며, 직접 의사소통하는 것을 즐기죠. 특히 타인의 능력을 이끌어 내는데 능력이 있습니다.
+                    다수의 생각이나 의견에 진지한 관심을 가지며, 공동선을 위해 노력합니다.<br>
+                    이 유형은 다수가 정한 도덕이나 법규를 정의로 여기며, 그 정의를 구현하기 위해 힘쓰는 일을 하는 사람이 많습니다.
+                    더 나은 세상을 위해 노력하는 사람들이죠!<br>
+                    <b>진심으로 남을 생각하며, 헌신적이고 이타적이며 타인의 능력을 끌어내는 카리스마가 있는 사람.</b>
+                    친구분이 이런 당신을 만난 것은 큰 행운입니다!<br>
+                    <mark>사회정의 구현을 위해 어려움에 맞서 싸우는 이들. 진정성있는 리더쉽으로 집단을 이끌어가는 사람.</mark><br>
+                    하지만 당신은 정이 많고 타인에 대한 감정이 높아 상처를 받기 쉬울 수 있습니다. 강한 인내심으로 남에게 화를
+                    내지 않지만 이것은 본인을 힘들게 하는 요소중 하나이기도 하죠. 또 이 유형은 다른 사람에 대해 맹목적으로
+                    본인의 생각을 이상화하는 경향이 있기에 이는 조심해야할 요소 중 하나입니다. 정의롭지 못한 것을 보면 잘 참지 못해
+                    화를 불러올 수도 있죠.
+                    <br>그러나 따듯한 마음을 가지고 인간애가 크며 동정심이 많고 타인과 공감하는 능력이 높은 당신은 어느 모임에서나
+                    타인을 편안하게 만들어 줄것입니다. 또 그러한 능력으로 덤블도어가 해리를 이끌 듯 친구분들의 재능을 이끌어주는
+                    큰 역할을 할 수도 있죠!
+                </p>
+                <br><strong>
+                    "자신의 진정한 모습을 보여주는 것은 그 사람의 능력이 아니란다.<br>우리의 선택이 자신의 모습을 보여준단다."
+                </strong><br>
+                <em>-'해리포터' 중 덤블도어</em>
+                <br>
+                <br>
+                <p>
+                    덤블도어와 잘 맞는 타입의 친구 :<br><b>인디아나 존스, 헤르미온느, 알라딘</b><br>
+                    덤블도어와 안 맞는 타입의 친구 :<br><b>엘사, 우디 프라이드, 캡틴 아메리카</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

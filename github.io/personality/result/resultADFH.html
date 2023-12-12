@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>안나</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 재기발랄한 활동가, ENFP, 스파크형, 안나" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 안나!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 안나같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 안나가 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/ADFH.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 안나같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 안나가 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/ADFH.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "안나"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>"나는 더 미친 소리를 해도 될까요?<br>네. 결혼해요."</b><br>
+                    -'겨울왕국' 중 초면에 프로포즈하는 한스왕자에게 안나가</em>
+                <br><br>
+                <p>오 마이 갓! 당신이 영화속 주인공이라면 우리나라에 1% 밖에 없는 겨울왕국의 안나군요!<br>
+                    자신 또는 친구가 바라본 당신은 자유로운 사고의 소유자입니다. 종종 분위기 메이커이며 매력적이고 독립적인 성격의
+                    사람으로 생각하고 있네요. 당신은 타인의 외면보다는 내면에 집중하며, 편향된 시선으로 타인을 바라보지 않죠.
+                    계산적으로 친구를 대하지 않으며 친구의 외적모습에는 별로 관심이 없고 상대방에게 진실되게 행동합니다.<br>
+                    <mark>성격유형 : “재기발랄한 활동가”</mark>
+                    <br>안나 타입의 사람은 어떤 유형보다도 자유롭고 즉흥적이며 독립적인 사람입니다. 문제 해결에 재빠르고
+                    임기응변이 탁월한 사람이 많습니다. 또 어려운 문제를 창의적인 사고로 거뜬히 해결하기도 하죠.
+                    관심이 있는 일은 무엇이든지 잘 해나가는 능력과 열성이 있죠. 상상력이 풍부하고 몽상적이며, 어떤 부분에 대해서는
+                    강한 영감을 소유하고 있습니다.<br>
+                    온정적이고 타인에게 따듯한 마음을 가지고 있습니다. 자유로운 사고로 타인을 즐겁게 하는 능력이 탁월하며
+                    독창적이고 직관적이며 독립적인 모습은 꽤나 매력적이죠.<br>
+                    <b>이 들의 행동은 함께있으면 타인을 항상 즐겁게 하며 더 나아가는 영감을 줄 수 있습니다.</b>
+                    친구분은 이런 당신의 매력에 흠뻑 빠져있을 수 있습니다!<br>
+                    <mark>창의적이고 자유로운 삶을 갈망합니다. 누군가에겐 살짝 미쳐?보일 수도 있는 자유로운 영혼.</mark><br>
+                    하지만 당신은 금사빠! 너무 즉흥적이고 직관적일 때가 있습니다. 남들이 보기에 위태로운 행동도 많이 합니다.
+                    감수성이 풍부하고 정이 많은 당신은 상대방에게 화를 잘 내지않고 유연하게 대처할 때가 많지만, 때로는
+                    그로인해 스트레스를 받기도 하며, 타인에게 상처를 크게 받을 수도 있죠. 눈치가 빨라 평소에 도움이 되지만
+                    역으로 보기싫은 모습들을 볼 때도 많습니다.
+                    <br>그러나 자유롭고 독립적인 당신의 삶은 그 어떤 것보다 당신을 행복하게 해줄 것입니다. 또 타인에게 따듯하며
+                    옆에 있는 친구까지 행복하게 만들 능력이 있는 당신은 겨울왕국의 안나가 엘사에게 그러한 것 처럼
+                    길을 잃은 소중한 친구를 다시 올바르게 이끌어 주는 역할이 될수 있을거에요!
+                </p>
+                <br><strong>
+                    "난 널 믿어 엘사. 그 누구보다, 그 무엇보다"
+                </strong><br>
+                <em>-'겨울왕국' 중 안나가 엘사에게</em>
+                <br>
+                <br>
+                <p>
+                    안나와 잘 맞는 타입의 친구 :<br><b>엘사, 캡틴 아메리카, 백설공주</b><br>
+                    안나와 안 맞는 타입의 친구 :<br><b>인디아나 존스, 알라딘, 티몬</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

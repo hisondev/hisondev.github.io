@@ -1,0 +1,108 @@
+@charset "utf-8";
+@import url(/css/reset.css);
+@import url(/css/header.css);
+@import url(/css/footer.css);
+
+/*web 1024~*/
+@media all and (min-width:1025px) {
+    .checkBox {
+        width: 800px;
+        text-align: center;
+        line-height: 30px;
+        margin: 0 auto 30px auto;
+    }
+}
+
+/*ipad 768 ~ 1024*/
+@media all and (max-width:1024px) and (min-width:768px) {
+    .checkBox {
+        width: 600px;
+        text-align: center;
+        font-size: 1.2em;
+        margin: 0 auto 30px auto
+    }
+}
+
+/*iphone 320 ~ 667*/
+@media all and (max-width:767px) and (min-width:320px) {
+    .checkBox {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto 30px auto;
+        height: 150px;
+    }
+}
+
+@media all and (max-width:374px) and (min-width:320px) {
+    .checkBox {
+        margin: 50px auto 30px auto;
+    }
+}
+
+.pad {
+    padding: 0 30px;
+}
+
+.comment {
+    height: 120px;
+}
+
+#question {
+    font-weight: bold;
+    color: #84B1ED;
+}
+#pageBox {
+    color: #84B1ED;
+}
+#page {
+    color: #84B1ED;
+}
+
+.ans_1 {
+    word-break: keep-all;
+    width: 80%;
+    margin: 0 auto;
+    color: #eee;
+    padding: 10px;
+    border: 2px solid #84B1ED;
+    border-radius: 20px;
+    background-color: #84B1ED;
+}
+
+.ans_2 {
+    word-break: keep-all;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #84B1ED;
+    border-radius: 20px;
+    color: #84B1ED;
+}
+
+#return {
+    width: 100px;
+    height: 40px;
+    margin: 30px auto;
+}
+
+#return>a {
+    color: #84B1ED;
+}
+
+.returnBox {
+    display: inline-block;
+    font-size: 30px;
+    color: #84B1ED;
+}
+
+#resultBox {
+    text-align: center;
+}
+
+#resultBox>a {
+    line-height: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    ;
+}

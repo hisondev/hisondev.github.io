@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>헤르미온느</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 논리적인 사색가, INTP, 아이디어뱅크형, 헤르미온느" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 헤르미온느!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 헤르미온느같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 헤르미온느가 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/BDEH.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 헤르미온느같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 헤르미온느가 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/BDEH.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "헤르미온느"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>오늘이 아니면 언제? 내가 아니면 누가!?</b><br>
+                    -'해리포터 시리즈' 중 헤르미온느</em>
+                <br><br>
+                <p>오 마이 갓! 당신이 영화속 주인공이라면 우리나라에 4% 밖에 없는 해리포터의 헤르미온느군요!<br>
+                    친구 또는 자신이 바라본 당신은 조용하고 과묵하지만 관심이 있는 분야에 대해서는 말을 잘하며, 이해가 빠르고
+                    높은 직관력으로 통찰하는 재능과 지적호기심이 많은 사람입니다.<br>
+                    매우 분석적이고 논리적이며 객관적인 비평을 잘하는 사람이죠!<br>
+                    <mark>성격유형 : “논리적인 사색가”</mark>
+                    <br>헤르미온느 타입의 사람은 보통 본인과 생각이 잘 맞고 통하는 소수의 가까운 사람들을 주위에
+                    두고 있습니다. 사교적인 파티나 집단모임에 대해서는 흥미가 별로 없을 때가 많죠.
+                    그리고 때로 어떤 아이디어에 몰입하여 주위에서 돌아가고 있는 일을 모를 때가 있습니다.<br>
+                    창의성과 논리성을 동시에 지닌 당신은 타인은 생각하기 어려운 방법으로 쉽게 문제를 풀어갈 때가 많죠.
+                    이는 어디서나 존경의 대상 일 것입니다.<br>
+                    <b>깊은 집중력으로 본인의 내면을 잘 살피고 항상 창의적인 아이디어를 자아내는 당신의 모습을
+                        친구분들은 매우 멋있게 생각하고 있을 것 같네요!</b><br>
+                    <mark>다른 타입 중 IQ가 높은 사람이 많은 타입. 천재가 많다!!</mark><br>
+                    하지만 당신은 타인에게 큰 관심이 없으며, 본인의 관심분야가 아니면 더욱이 다가가질 않습니다.
+                    한가지 분야에 집중하고 몰두하여 그 분야에서는 탁월한 성과를 보이지만,
+                    그 외에서는 부족한 점이 나타날수 있습니다. 어쩔 때는 남들에게 지나치게 지적이고 추상적이며,
+                    설명이 너무 이론적인 사람으로 비추어 질 수도 있습니다.<br>그러나 당신은 정말 친하고 아끼는
+                    사람에게는 한 없이 다정하고 헌신적입니다. 그렇기에 항상 창의적이며 동시에 논리적인 힘으로 어려운 문제를 해결해
+                    나가는 영화 속 헤르미온느처럼 친구분들에겐 해리와 존에게 없어서는 안될 친구이죠.
+                </p>
+                <br><strong>
+                    나? 공부를 잘하고 책도 많이 읽는다고?<br>세상엔 그것보다 소중한게 많아. 용기와 우정이지.
+                </strong><br>
+                <em>-'해리포터 마법사의 돌' 중 헤르미온느</em>
+                <br>
+                <br>
+                <p>
+                    헤르미온느와 잘 맞는 타입의 친구 :<br><b>백설공주, 덤블도어, 포카혼타스</b><br>
+                    헤르미온느와 안 맞는 타입의 친구 :<br><b>티몬, 품바, 알라딘</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>

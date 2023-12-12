@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176809380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176809380-1');
+    </script>
+
+    <title>아이언맨</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="성격유형검사, 영화속인물, mbti, 뜨거운 논쟁을 즐기는 변론가, ENTP, 발명가형, 아이언맨" />
+    <meta name="description" content="나도하고 남도하는 나에 대한 분석. 나 자신을 알자! 내가 만약 영화 속 인물이라면? 나는 아이언맨!" />
+    <meta name="author" content="hani" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신은 아이언맨같은 사람입니다!" />
+    <meta property="og:description" content="내가 만약 영화 속 인물이라면? 나는 아이언맨이 나왔습니다!" />
+    <meta property="og:image" content="https://today-test.com/images/personality/result/ADEH.jpg" />
+
+    <script src="https://kit.fontawesome.com/a1f5a5564b.js" crossorigin="anonymous"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        var kakaoTitle = "나는 아이언맨같은 사람입니다!";
+        var kakaoDescription = "내가 만약 영화 속 인물이라면? 나는 아이언맨이 나왔습니다!";
+        var kakaoImageUrl = "https://today-test.com/images/personality/result/ADEH.jpg";
+    </script>
+    <script src="/js/param.js"></script>
+    <script src="/js/personality/result.js"></script>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/personality/result.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h2 class="logo"><a href="/hosting_index.html">TodayTest</a></h2>
+        <span id="menu_bars"><i class="fas fa-bars"></i></span>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">내가보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">남이보는 난 어떤<br><span class="c_1"><b>영화 속 인물일까?</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_2"><b>연애력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_3"><b>꼰대력테스트</b></span></a></li>
+                <li><a href="#">내가하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+                <li><a href="#">남이하는 내 <br><span class="c_4"><b>직업유형분석</b></span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="img_banner">
+        </div>
+        <div class="comment">
+            <strong>
+                <h3><span id="nameBox"></span>의 결과: "아이언맨"</h3>
+            </strong>
+            <div class="result_bar">
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_AB">
+                            <span class="r_p"><span id="A"></span>%</span>
+                            <span class="l_p"><span id="B"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_AB">외면</span>
+                    <span class="l_c" id="l_c_AB">내면</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_CD">
+                            <span class="r_p"><span id="C"></span>%</span>
+                            <span class="l_p"><span id="D"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_CD">현실</span>
+                    <span class="l_c" id="l_c_CD">잠재</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_EF">
+                            <span class="r_p"><span id="E"></span>%</span>
+                            <span class="l_p"><span id="F"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_EF">이성</span>
+                    <span class="l_c" id="l_c_EF">감정</span>
+                </div>
+                <div class="barBox">
+                    <span class="bar_background">
+                        <span class="bar" id="bar_GH">
+                            <span class="r_p"><span id="G"></span>%</span>
+                            <span class="l_p"><span id="H"></span>%</span>
+                        </span>
+                    </span>
+                    <span class="r_c" id="r_c_GH">계획</span>
+                    <span class="l_c" id="l_c_GH">즉흥</span>
+                </div>
+            </div>
+            <div class="result_section">
+                <em><b>"겁쟁이들은 시작조차 하지 않지.<br>
+                        약자들은 끝까지 해내지 못해.<br>
+                        그리고 승리하는 자들은 절대로 포기하지 않아."</b><br>
+                    -'아이언맨' 중 토니 스타크(아이언맨)</em>
+                <br><br>
+                <p>오 마이 갓! 당신이 영화속 주인공이라면 우리나라에 2% 밖에 없는 어벤져스의 아이언맨이군요!<br>
+                    자신 또는 친구가 바라본 당신은 창의적인 생각과 독창적인 사고방식으로 주변에 논쟁을 불러오는
+                    영화속 아이언맨과 같은 사람입니다!<br>
+                    <mark>성격유형 : “뜨거운 논쟁을 즐기는 변론가”</mark>
+                    <br>아이언맨 타입의 사람은 도전정신이 투철합니다. 새로운 도전이 없는 일에는 흥미를 보이지 않으나
+                    본인의 관심에 부합하는 일이라면 업무 수행능력이 대단히 높아지죠. 대체로 안목이 넓고 다방면에 재능이 많으며,
+                    풍풍한 상상력과 새로운 일을 시도하는 솔선력이 강하며 논리적입니다.<br>
+                    또 타인에 대한 에너지가 넘치며, 군중에 나서는 것을 크게 두려워하지 않습니다. 때문에 타인과의 논쟁을
+                    즐기며 모든사람이 맞다하는 것도 반론을 제기하는데 어려움이 없습니다.<br>
+                    <b>독창적이고 창의적인 사고 방식으로 항상 도전을 즐기고 에너지가 넘치며 재능이 많은 당신을</b>
+                    친구분은 배울게 많다 생각하고 있을 수 있습니다!<br>
+                    <mark>집단에서 현존하는 제도를 재고하게 하거나 체제 자체를 흔들어 새로운 방안을 모색하게 하는 사회에 꼭 필요한 사람.</mark><br>
+                    하지만 당신의 독창적이고 도전적인 비판은 사회에 꼭 필요한 요소이나 당신을 위험에 빠뜨릴 양날의 검일 수 있습니다.
+                    당신의 굽힐 줄 모르는 솔직함이 누군가에게 상처가 될 수 있기 때문이죠! 그리고 당신의 업무수행 능력은 탁월하나
+                    가끔 섬세하지 못한 일처리를 할 수 있습니다. 또 재능이 많고 인기가 많은 당신의 모습에 자기애가 강해져
+                    자기 합리화를 심하게 할 수 있습니다. 이는 조심할 요소이죠!
+                    <br>그러나 기존의 체제를 흔드는 높은 도전정신과 독창적인 사고방식을 갖은 당신은 자신의 재능만 더욱 잘 닦은다면
+                    아이언맨과 같이 세상에 큰 영향을 발휘하는 사람이 될 가능성이 충분할 것 같습니다. 당신같은 친구를 둔 사람은 행운이죠.
+                </p>
+                <br><strong>
+                    "영웅들은 그들이 가진 능력으로 인해 만들어지는 것이 아니라,<br>
+                    그들이 선택한 길로 인해 만들어지는거야."
+                </strong><br>
+                <em>-'아이언맨' 중 토니 스타크(아이언맨)</em>
+                <br>
+                <br>
+                <p>
+                    아이언맨과 잘 맞는 타입의 친구 :<br><b>캡틴 아메리카, 엘사, 자신과 같은 타입</b><br>
+                    아이언맨과 안 맞는 타입의 친구 :<br><b>버즈 라이트이어, 티몬, 품바</b>
+                    <br><br>
+                    본 성격유형 검사는 재미로만 해주세요.
+                </p><br>
+            </div>
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <p onclick="sendLink()"><b>결과 카카오톡 공유하기</b></p>
+            <button type="button" style="margin: 0 auto;" class="snslogo kakao" onclick="sendLink()">보내기</button>
+            <p><b>결과 페이스북 공유하기</b></p>
+            <div id="facebook_result_share" class="fb-share-button" data-href="" data-layout="button" data-size="large"
+                style="opacity: 0.8;">
+            </div>
+            <br><br>
+            <div class="test_box">
+                <a href="/personality/test_self.html">
+                    <p><b>내가보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+                <a href="/personality/forwarding_form.html">
+                    <p><b>남이보는 <mark>난</mark> 어떤<br><span class="c_1">영화 속 인물일까?</span></b></p>
+                    <button type="button">바로가기</button>
+                </a>
+            </div>
+            <br>
+            <p>서로의 봄을 잇는 백과사전</p>
+            <button id="bombom" onclick="goInsta()">봄-봄백과 인스타그램 이동<br><i class="fab fa-instagram">
+                    bombom_pedia</i></button>
+        </div>
+    </section>
+    <br>
+    <footer class="footer">
+        <div class="comment">
+            <div class="about_us">
+                <p>오늘의 테스트</p>
+            </div>
+            <div class="copyright">&copy; Untitled hani. all rights reserved.</div>
+            <p class="address"><em>광고 문의 hison0319@gmail.com</em></p>
+            <ul class="sns_menu">
+                <li><button type="button" class="snslogo kakao" onclick="kakao()">kakao</button></li>
+                <li><button type="button" class="snslogo twitter" onclick="twitter()">twitter</button></li>
+                <li><button type="button" class="snslogo facebook" onclick="facebook()">facebook</button></li>
+                <li><button type="button" class="snslogo naver" onclick="naver()">naver</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+</body>
+
+</html>
