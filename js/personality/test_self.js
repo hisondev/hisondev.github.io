@@ -97,23 +97,19 @@ window.onload = function () {
         var returnBtn = document.getElementById("return");
 
         function touchStart(icon) {
-            icon.classList.remove('fa-square');
-            icon.classList.add('fa-check-square');
+            icon.setAttribute("style","opacity:0.5;");
         }
 
         function touchEnd(icon) {
-            icon.classList.remove('fa-check-square');
-            icon.classList.add('fa-square');
+            icon.setAttribute("style","opacity:1;");
         }
 
         function mouseOver(icon) {
-            icon.classList.remove('fa-square');
-            icon.classList.add('fa-check-square');
+            icon.setAttribute("style","opacity:0.8;");
         }
 
         function mouseOut(icon) {
-            icon.classList.remove('fa-check-square');
-            icon.classList.add('fa-square');
+            icon.setAttribute("style","opacity:1;");
         }
     }
 
@@ -121,46 +117,46 @@ window.onload = function () {
     {
         if (document.body.clientWidth < 800) {
             checkBoxRight_3.ontouchstart = function () {
-                touchStart(this.querySelector("li>i"));
+                touchStart(this.querySelector("li>span"));
             }
             checkBoxRight_3.ontouchend = function () {
-                touchEnd(this.querySelector("li>i"));
+                touchEnd(this.querySelector("li>span"));
             }
             checkBoxRight_2.ontouchstart = function () {
-                touchStart(this.querySelector("li>i"));
+                touchStart(this.querySelector("li>span"));
             }
             checkBoxRight_2.ontouchend = function () {
-                touchEnd(this.querySelector("li>i"));
+                touchEnd(this.querySelector("li>span"));
             }
             checkBoxRight_1.ontouchstart = function () {
-                touchStart(this.querySelector("li>i"));
+                touchStart(this.querySelector("li>span"));
             }
             checkBoxRight_1.ontouchend = function () {
-                touchEnd(this.querySelector("li>i"));
+                touchEnd(this.querySelector("li>span"));
             }
             checkBoxMiddle.ontouchstart = function () {
-                touchStart(this.querySelector("li>i"));
+                touchStart(this.querySelector("li>span"));
             }
             checkBoxMiddle.ontouchend = function () {
-                touchEnd(this.querySelector("li>i"));
+                touchEnd(this.querySelector("li>span"));
             }
             checkBoxleft_1.ontouchstart = function () {
-                touchStart(this.querySelector("li>i"));
+                touchStart(this.querySelector("li>span"));
             }
             checkBoxleft_1.ontouchend = function () {
-                touchEnd(this.querySelector("li>i"));
+                touchEnd(this.querySelector("li>span"));
             }
             checkBoxleft_2.ontouchstart = function () {
-                touchStart(this.querySelector("li>i"));
+                touchStart(this.querySelector("li>span"));
             }
             checkBoxleft_2.ontouchend = function () {
-                touchEnd(this.querySelector("li>i"));
+                touchEnd(this.querySelector("li>span"));
             }
             checkBoxleft_3.ontouchstart = function () {
-                touchStart(this.querySelector("li>i"));
+                touchStart(this.querySelector("li>span"));
             }
             checkBoxleft_3.ontouchend = function () {
-                touchEnd(this.querySelector("li>i"));
+                touchEnd(this.querySelector("li>span"));
             }
             returnBtn.ontouchstart = function () {
                 this.querySelector("span").style.transform = "rotate(-30deg)";
@@ -170,46 +166,46 @@ window.onload = function () {
             }
         } else {
             checkBoxRight_3.onmouseover = function () {
-                mouseOver(this.querySelector("li>i"));
+                mouseOver(this.querySelector("li>span"));
             }
             checkBoxRight_3.onmouseout = function () {
-                mouseOut(this.querySelector("li>i"));
+                mouseOut(this.querySelector("li>span"));
             }
             checkBoxRight_2.onmouseover = function () {
-                mouseOver(this.querySelector("li>i"));
+                mouseOver(this.querySelector("li>span"));
             }
             checkBoxRight_2.onmouseout = function () {
-                mouseOut(this.querySelector("li>i"));
+                mouseOut(this.querySelector("li>span"));
             }
             checkBoxRight_1.onmouseover = function () {
-                mouseOver(this.querySelector("li>i"));
+                mouseOver(this.querySelector("li>span"));
             }
             checkBoxRight_1.onmouseout = function () {
-                mouseOut(this.querySelector("li>i"));
+                mouseOut(this.querySelector("li>span"));
             }
             checkBoxMiddle.onmouseover = function () {
-                mouseOver(this.querySelector("li>i"));
+                mouseOver(this.querySelector("li>span"));
             }
             checkBoxMiddle.onmouseout = function () {
-                mouseOut(this.querySelector("li>i"));
+                mouseOut(this.querySelector("li>span"));
             }
             checkBoxleft_1.onmouseover = function () {
-                mouseOver(this.querySelector("li>i"));
+                mouseOver(this.querySelector("li>span"));
             }
             checkBoxleft_1.onmouseout = function () {
-                mouseOut(this.querySelector("li>i"));
+                mouseOut(this.querySelector("li>span"));
             }
             checkBoxleft_2.onmouseover = function () {
-                mouseOver(this.querySelector("li>i"));
+                mouseOver(this.querySelector("li>span"));
             }
             checkBoxleft_2.onmouseout = function () {
-                mouseOut(this.querySelector("li>i"));
+                mouseOut(this.querySelector("li>span"));
             }
             checkBoxleft_3.onmouseover = function () {
-                mouseOver(this.querySelector("li>i"));
+                mouseOver(this.querySelector("li>span"));
             }
             checkBoxleft_3.onmouseout = function () {
-                mouseOut(this.querySelector("li>i"));
+                mouseOut(this.querySelector("li>span"));
             }
             returnBtn.onmouseover = function () {
                 this.querySelector("span").style.transform = "rotate(-30deg)";
