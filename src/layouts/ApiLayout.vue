@@ -9,6 +9,7 @@
         :border="true"
         :close-button-visible="false"
         :show-overlay="false"
+        :scroll-lock="false"
         :z-index="1102"
         :enter-animation-class="'none'"
         :leave-animation-class="'none'"
@@ -53,16 +54,17 @@
 
   
     <h-layout
-        style="height: 100%; padding-left: 10px;"
-        class="hison-col-2"
+        style="height: 100%;"
+        class="hison-col-1-pc hison-col-2-mb"
     ><span></span></h-layout>
     <h-drawer
+        class="hison-col-1-pc hison-col-2-mb"
         :visible="true"
         :position="'left'"
         :border="true"
         :close-button-visible="false"
         :show-overlay="false"
-        class="hison-col-2"
+        :scroll-lock="false"
         :enter-animation-class="'none'"
         :leave-animation-class="'none'"
     >
@@ -93,7 +95,7 @@
         </h-layout>
     </h-drawer>
     <h-layout
-        class="hison-col-10"
+        class="hison-col-11-pc hison-col-10-mb"
     ><router-view /></h-layout>
 </template>
 
