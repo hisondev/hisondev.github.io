@@ -15,40 +15,52 @@
     :leave-animation-class="'none'"
   >
     <h-layout
-    style="height: 90px; padding: 10px; align-content: flex-end; align-items: flex-end;"
+      style="height: 90px; padding: 10px; align-content: flex-end; align-items: flex-end;"
     >
-    <h-caption :level="5" class="hison-col-12-mb hison-col-2-tb" v-on:click="onLogoClick" style="cursor: pointer;">HISONDEV</h-caption>
-    <h-label
-      class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-      :background-type="'empty'"
-      :border="false"
-      :text-align="'center'"
-      :text="'Intro'"
-      :href="'/intro'"
-      :font-bold="true"
-    ></h-label>
-    <h-gap
-      :line="'vertical'"
-      class="hison-col-1 hison-pos-vertical-bottom"
-    ></h-gap>
-    <h-label
-      class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-      :background-type="'empty'"
-      :border="false"
-      :text-align="'center'"
-      :href="'/getting-started'"
-    >Getting Start</h-label>
-    <h-gap
-      :line="'vertical'"
-      class="hison-col-1 hison-pos-vertical-bottom"
-    ></h-gap>
-    <h-label
-      class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-      :background-type="'empty'"
-      :border="false"
-      :text-align="'center'"
-      :href="'/api'"
-    >API</h-label>
+      <h-caption
+        :level="5"
+        class="hison-col-12-mb hison-col-2-tb"
+        :text-align="'center'"
+        v-on:click="onLogoClick"
+        style="cursor: pointer;"
+      >HISONDEV</h-caption>
+      <h-label
+        class="hison-col-2 hison-pos-vertical-bottom"
+        :background-type="'empty'"
+        :border="false"
+        :text-align="'center'"
+        :text="'Intro'"
+        :href="'/intro'"
+        :font-bold="true"
+      ></h-label>
+      <h-gap
+        :line="'vertical'"
+        class="hison-col-1 hison-pos-vertical-bottom"
+      ></h-gap>
+      <h-label
+        class="hison-col-2 hison-pos-vertical-bottom"
+        :background-type="'empty'"
+        :border="false"
+        :text-align="'center'"
+        :href="'/getting-started'"
+      >Getting Start</h-label>
+      <h-gap
+        :line="'vertical'"
+        class="hison-col-1 hison-pos-vertical-bottom"
+      ></h-gap>
+      <h-label
+        class="hison-col-2 hison-pos-vertical-bottom"
+        :background-type="'empty'"
+        :border="false"
+        :text-align="'center'"
+        :href="'/api'"
+      >API</h-label>
+      <h-dropdown
+        class="hison-col-1 hison-pos-vertical-bottom hison-pos-right"
+        :background-type="'empty'"
+        :border="false"
+        style="z-index: 9999;"
+      />
     </h-layout>
   </h-drawer>
 
@@ -68,7 +80,7 @@
     :leave-animation-class="'none'"
   >
     <h-layout
-      style="padding-top: 100px; padding-left: 10px;"
+      style="padding-top: 100px;"
     >
       <h-label
         class="hison-col-12"
@@ -104,8 +116,10 @@
 <script setup lang="ts">
 import type { HLabelMethods } from 'hisonvue';
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 const router = useRouter();
+const store = useStore()
 
 const onLogoClick = () => {
     router.replace('/')

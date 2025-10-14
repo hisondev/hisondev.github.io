@@ -15,40 +15,40 @@
         :leave-animation-class="'none'"
     >
         <h-layout
-        style="height: 90px; padding: 10px; align-content: flex-end; align-items: flex-end;"
+            style="height: 90px; padding: 10px; align-content: flex-end; align-items: flex-end;"
         >
-        <h-caption :level="5" class="hison-col-12-mb hison-col-2-tb" v-on:click="onLogoClick" style="cursor: pointer;">HISONDEV</h-caption>
-        <h-label
-            class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-            :background-type="'empty'"
-            :border="false"
-            :text-align="'center'"
-            :text="'Intro'"
-            :href="'/intro'"
-        ></h-label>
-        <h-gap
-            :line="'vertical'"
-            class="hison-col-1 hison-pos-vertical-bottom"
-        ></h-gap>
-        <h-label
-            class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-            :background-type="'empty'"
-            :border="false"
-            :text-align="'center'"
-            :href="'/getting-started'"
-            :font-bold="true"
-        >Getting Start</h-label>
-        <h-gap
-            :line="'vertical'"
-            class="hison-col-1 hison-pos-vertical-bottom"
-        ></h-gap>
-        <h-label
-            class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-            :background-type="'empty'"
-            :border="false"
-            :text-align="'center'"
-            :href="'/api'"
-        >API</h-label>
+            <h-caption :level="5" class="hison-col-12-mb hison-col-2-tb" v-on:click="onLogoClick" style="cursor: pointer;">HISONDEV</h-caption>
+            <h-label
+                class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
+                :background-type="'empty'"
+                :border="false"
+                :text-align="'center'"
+                :text="'Intro'"
+                :href="'/intro'"
+            ></h-label>
+            <h-gap
+                :line="'vertical'"
+                class="hison-col-1 hison-pos-vertical-bottom"
+            ></h-gap>
+            <h-label
+                class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
+                :background-type="'empty'"
+                :border="false"
+                :text-align="'center'"
+                :href="'/getting-started'"
+                :font-bold="true"
+            >Getting Start</h-label>
+            <h-gap
+                :line="'vertical'"
+                class="hison-col-1 hison-pos-vertical-bottom"
+            ></h-gap>
+            <h-label
+                class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
+                :background-type="'empty'"
+                :border="false"
+                :text-align="'center'"
+                :href="'/api'"
+            >API</h-label>
         </h-layout>
     </h-drawer>
 
@@ -69,7 +69,7 @@
         :leave-animation-class="'none'"
     >
         <h-layout
-            style="padding-top: 100px; padding-left: 10px;"
+            style="padding-top: 100px;"
         >
             <h-label
                 class="hison-col-12"
