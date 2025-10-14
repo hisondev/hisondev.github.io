@@ -7,6 +7,7 @@ import router from './router';
 
 const app = createApp(App)
 const hisonConfig: HisonConfig = getDefaultHisonConfig()
+console.log('hisonConfig',hisonConfig)
 app.use(hisonvue, hisonConfig)
 app.use(router)
 app.mount('#app')

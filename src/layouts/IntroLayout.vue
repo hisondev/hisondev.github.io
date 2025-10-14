@@ -68,7 +68,7 @@
     :leave-animation-class="'none'"
   >
     <h-layout
-    style="padding-top: 100px; padding-left: 10px;"
+      style="padding-top: 100px; padding-left: 10px;"
     >
       <h-label
         class="hison-col-12"
@@ -76,21 +76,24 @@
         :border="false"
         :text-align="'left'"
         :href="'/intro/overview'"
+        @mounted="overviewLabelOnMounted"
       >overview</h-label>
       <h-label
         class="hison-col-12"
         :background-type="'empty'"
         :border="false"
         :text-align="'left'"
-        :href="'/intro/client'"
-      >client</h-label>
+        :href="'/intro/service'"
+        @mounted="serviceLabelOnMounted"
+      >service</h-label>
       <h-label
         class="hison-col-12"
         :background-type="'empty'"
         :border="false"
         :text-align="'left'"
-        :href="'/intro/service'"
-      >service</h-label>
+        :href="'/intro/client'"
+        @mounted="clientLabelOnMounted"
+      >client</h-label>
     </h-layout>
   </h-drawer>
   <h-layout
@@ -99,12 +102,33 @@
 </template>
 
 <script setup lang="ts">
+import type { HLabelMethods } from 'hisonvue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
 const onLogoClick = () => {
     router.replace('/')
+}
+
+const overviewLabelOnMounted = (label: HLabelMethods) => {
+    console.log(router.currentRoute.value.path)
+    if(router.currentRoute.value.path.indexOf('overview') >= 0) {
+      label.setFontBold(true)
+      label.setFontUnderline(true)
+    }
+}
+const serviceLabelOnMounted = (label: HLabelMethods) => {
+    if(router.currentRoute.value.path.indexOf('service') >= 0) {
+      label.setFontBold(true)
+      label.setFontUnderline(true)
+    }
+}
+const clientLabelOnMounted = (label: HLabelMethods) => {
+    if(router.currentRoute.value.path.indexOf('client') >= 0) {
+      label.setFontBold(true)
+      label.setFontUnderline(true)
+    }
 }
 </script>
 

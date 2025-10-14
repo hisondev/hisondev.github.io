@@ -69,21 +69,15 @@
         :leave-animation-class="'none'"
     >
         <h-layout
-        style="padding-top: 100px;"
+            style="padding-top: 100px;"
         >
             <h-label
                 class="hison-col-12"
                 :background-type="'empty'"
                 :border="false"
                 :text-align="'left'"
-                :href="'/api/hisonvue'"
-            >hisonvue</h-label>
-            <h-label
-                class="hison-col-12"
-                :background-type="'empty'"
-                :border="false"
-                :text-align="'left'"
                 :href="'/api/hisonjv'"
+                @mounted="hisonjvLabelOnMounted"
             >hisonjv</h-label>
             <h-label
                 class="hison-col-12"
@@ -91,7 +85,16 @@
                 :border="false"
                 :text-align="'left'"
                 :href="'/api/hisonjs'"
+                @mounted="hisonjsLabelOnMounted"
             >hisonjs</h-label>
+            <h-label
+                class="hison-col-12"
+                :background-type="'empty'"
+                :border="false"
+                :text-align="'left'"
+                :href="'/api/hisonvue'"
+                @mounted="hisonvueLabelOnMounted"
+            >hisonvue</h-label>
         </h-layout>
     </h-drawer>
     <h-layout
@@ -100,13 +103,36 @@
 </template>
 
 <script setup lang="ts">
+import type { HLabelMethods } from 'hisonvue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+console.log(router)
 
 const onLogoClick = () => {
     router.replace('/')
 }
+
+const hisonjvLabelOnMounted = (label: HLabelMethods) => {
+    console.log(router.currentRoute.value.path)
+    if(router.currentRoute.value.path.indexOf('hisonjv') >= 0) {
+      label.setFontBold(true)
+      label.setFontUnderline(true)
+    }
+}
+const hisonjsLabelOnMounted = (label: HLabelMethods) => {
+    if(router.currentRoute.value.path.indexOf('hisonjs') >= 0) {
+      label.setFontBold(true)
+      label.setFontUnderline(true)
+    }
+}
+const hisonvueLabelOnMounted = (label: HLabelMethods) => {
+    if(router.currentRoute.value.path.indexOf('hisonvue') >= 0) {
+      label.setFontBold(true)
+      label.setFontUnderline(true)
+    }
+}
+
 </script>
 
 <style scoped>

@@ -18,7 +18,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'hisonjv',  component: () => import('../pages/getting-started/HisonjvGettingStartedPage.vue') },
       { path: 'hisonjs',  component: () => import('../pages/getting-started/HisonjsGettingStartedPage.vue') },
       { path: 'hisonvue', component: () => import('../pages/getting-started/HisonvueGettingStartedPage.vue') },
-      { path: '', redirect: '/getting-started/hisonvue' },
+      { path: '', redirect: '/getting-started/hisonjv' },
     ],
   },
   {
@@ -28,7 +28,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'hisonjv',  component: () => import('../pages/api/HisonjvApiPage.vue') },
       { path: 'hisonjs',  component: () => import('../pages/api/HisonjsApiPage.vue') },
       { path: 'hisonvue', component: () => import('../pages/api/HisonvueApiPage.vue') },
-      { path: '', redirect: '/api/hisonvue' },
+      { path: '', redirect: '/api/hisonjv' },
     ],
   },
   { path: '/', redirect: '/intro/overview' },
