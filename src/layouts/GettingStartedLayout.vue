@@ -136,6 +136,7 @@ const langDropdownModel = ref<HDropdownModel>({
     ],
 })
 const langDropdownOnChange = (oldValue: Lang, newValue: Lang, dropdown: HDropdownMethods) => {
+    void oldValue; void dropdown;
     store.commit('setLang', newValue)
     console.log('lang', store.state.lang)
 }
