@@ -1,10 +1,10 @@
 <template>
     <h-layout
-        style="height: 90px;"
+        style="height: 110px;"
     ><span></span></h-layout>
     <h-drawer
         :visible="true"
-        :height="90"
+        :height="110"
         :position="'top'"
         :border="true"
         :close-button-visible="false"
@@ -15,7 +15,7 @@
         :leave-animation-class="'none'"
     >
         <h-layout
-        style="height: 90px; padding: 10px; align-content: flex-end; align-items: flex-end;"
+        style="height: 110px; padding: 10px; align-content: flex-end; align-items: flex-end;"
         >
         <h-caption
             :level="5"
@@ -82,7 +82,7 @@
         :leave-animation-class="'none'"
     >
         <h-layout
-            style="padding-top: 100px;"
+            style="padding-top: 120px;"
         >
             <h-label
                 class="hison-col-12"

@@ -1,5 +1,5 @@
 const en = {
-  caption: 'HISONDEV Service',
+  caption: 'HISONDEV Server',
 } as const;
 
 export default en;

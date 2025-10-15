@@ -6,11 +6,13 @@ import { useStore } from 'vuex';
 import { apiHisonjsContents } from '@/content/api/hisonjs';
 import type { Lang } from '@/store';
 import { openAlert } from '@/common/alert';
+import { getUUID } from '@/common/utils';
 
 const spinner = hison.component.getSpinner('spinner');
 
 const store = useStore()
 const contents = computed(() => apiHisonjsContents[store.state.lang as Lang])
+const getKey = () => store.state.lang + getUUID()
 
 // 로드 상태 관리
 const pendingLoads = ref(0);
@@ -79,7 +81,7 @@ const mountGrid02 = async (grid: HGridMethods) => {
 
 <template>
     <HLayout>
-        <HCaption :level="4" class="hison-col-12" :key="store.state.lang">{{ contents.caption }}</HCaption>
+        <HCaption :level="4" class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
         <HGap />
         <HGrid
             id="grid01"

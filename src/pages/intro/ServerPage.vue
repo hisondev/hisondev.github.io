@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { getUUID } from '@/common/utils';
-import { apiHisonvueContents } from '@/content/api/hisonvue';
+import { introServerContents } from '@/content/intro/server';
 import type { Lang } from '@/store';
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 
 const store = useStore()
-const contents = computed(() => apiHisonvueContents[store.state.lang as Lang])
+const contents = computed(() => introServerContents[store.state.lang as Lang])
 const getKey = () => store.state.lang + getUUID()
 </script>
 

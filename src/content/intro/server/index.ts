@@ -2,6 +2,6 @@ import ko from './ko';
 import en from './en';
 import type { Lang } from '@/store';
 
-export const introServiceContents: Record<Lang, typeof ko | typeof en> = {
+export const introServerContents: Record<Lang, typeof ko | typeof en> = {
   ko, en,
 };

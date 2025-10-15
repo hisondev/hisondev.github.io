@@ -1,5 +1,5 @@
 const ko = {
-  caption: 'HISONDEV Service',
+  caption: 'HISONDEV Server',
 } as const;
 
 export default ko;
