@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import { gettingStartedHisonjsContents } from '@/content/getting-started/hisonjs';
+import type { Lang } from '@/store';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore()
+const contents = computed(() => gettingStartedHisonjsContents[store.state.lang as Lang])
 </script>
 
 <template>
     <HLayout>
-        <HCaption>getting started hisonjs page</HCaption>
+        <HCaption :level="4" class="hison-col-12" :key="store.state.lang">{{ contents.caption }}</HCaption>
+        <HGap/>
     </HLayout>
 </template>
 

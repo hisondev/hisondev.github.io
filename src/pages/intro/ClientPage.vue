@@ -1,34 +1,17 @@
 <script setup lang="ts">
-import { hison } from 'hisonvue';
+import { introClientContents } from '@/content/intro/client';
+import type { Lang } from '@/store';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
-const openModal = () => {
-    const md = hison.component.getModal('md')!
-    md.open();
-}
+const store = useStore()
+const contents = computed(() => introClientContents[store.state.lang as Lang])
 </script>
 
 <template>
-    <HModal
-    id="md"
-    background-type="filled"
-    class="hison-size-xl hison-color-danger"
-    >
-        <HLayout>
-            <HParagraph>
-                this is test modal
-            </HParagraph>
-        </HLayout>
-    </HModal>
     <HLayout>
-    <HCaption>intro client page</HCaption>
-    </HLayout>
-    <HLayout
-        :height="'300px'"
-    >
-        <HButton
-            @click="openModal"
-            class="hison-size-xl hison-color-danger"
-        >open modal</HButton>
+        <HCaption :level="4" class="hison-col-12" :key="store.state.lang">{{ contents.caption }}</HCaption>
+        <HGap/>
     </HLayout>
 </template>
 

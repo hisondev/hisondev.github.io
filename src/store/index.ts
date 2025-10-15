@@ -8,6 +8,7 @@ export interface RootState {
 
 function readInitialLang(): Lang {
   const v = localStorage.getItem('lang')
+  console.log('v', v)
   return (v === 'en' || v === 'ko') ? v : 'ko'
 }
 

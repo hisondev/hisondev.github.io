@@ -4,7 +4,13 @@
 <template>
     <HSpinner
       id="spinner"
-    ></HSpinner>
+    />
+    <HModal
+      id="alertModal"
+      :closeButtonVisible="false"
+      :footerVisible="false"
+      :headerVisible="false"
+    ><HLabel id="alertComment"></HLabel></HModal>
   <router-view />
 </template>
 

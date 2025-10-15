@@ -1,9 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { fetchGvizAsObjects } from '@/lib/sheets';
 import { hison, type HGridColumn, type HGridMethods } from 'hisonvue';
+import { useStore } from 'vuex';
+import { apiHisonjsContents } from '@/content/api/hisonjs';
+import type { Lang } from '@/store';
+import { openAlert } from '@/common/alert';
 
 const spinner = hison.component.getSpinner('spinner');
+
+const store = useStore()
+const contents = computed(() => apiHisonjsContents[store.state.lang as Lang])
 
 // 로드 상태 관리
 const pendingLoads = ref(0);
@@ -39,7 +46,7 @@ const mountGrid01 = async (grid: HGridMethods) => {
         });
         grid.load(rows01.value);
     } catch (e) {
-        console.error(e);
+        openAlert('Failed to load api grid due to unknown error.\n' + e)
     } finally {
         endLoad();
     }
@@ -63,7 +70,7 @@ const mountGrid02 = async (grid: HGridMethods) => {
         });
         grid.load(rows02.value);
     } catch (e) {
-        console.error(e);
+        openAlert('Failed to load api grid due to unknown error.\n' + e)
     } finally {
         endLoad();
     }
@@ -72,7 +79,7 @@ const mountGrid02 = async (grid: HGridMethods) => {
 
 <template>
     <HLayout>
-        <HCaption>api hisonjs page</HCaption>
+        <HCaption :level="4" class="hison-col-12" :key="store.state.lang">{{ contents.caption }}</HCaption>
         <HGap />
         <HGrid
             id="grid01"
@@ -93,6 +100,7 @@ const mountGrid02 = async (grid: HGridMethods) => {
             :status-visible="false"
             @mounted="mountGrid02"
         />
+        <HGap />
     </HLayout>
 </template>
 

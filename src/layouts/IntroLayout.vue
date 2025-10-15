@@ -55,11 +55,12 @@
         :text-align="'center'"
         :href="'/api'"
       >API</h-label>
-      <h-dropdown
-        class="hison-col-1 hison-pos-vertical-bottom hison-pos-right"
-        :background-type="'empty'"
-        :border="false"
-        style="z-index: 9999;"
+      <HDropdown
+        v-model="langDropdownModel"
+        class="hison-col-2 hison-pos-vertical-bottom hison-pos-right"
+        @change="langDropdownOnChange"
+        :textAlign="'left'"
+        :trigger="'click'"
       />
     </h-layout>
   </h-drawer>
@@ -88,7 +89,8 @@
         :border="false"
         :text-align="'left'"
         :href="'/intro/overview'"
-        @mounted="overviewLabelOnMounted"
+        :font-bold="route.path.includes('overview')"
+        :font-underline="route.path.includes('overview')"
       >overview</h-label>
       <h-label
         class="hison-col-12"
@@ -96,7 +98,8 @@
         :border="false"
         :text-align="'left'"
         :href="'/intro/service'"
-        @mounted="serviceLabelOnMounted"
+        :font-bold="route.path.includes('service')"
+        :font-underline="route.path.includes('service')"
       >service</h-label>
       <h-label
         class="hison-col-12"
@@ -104,7 +107,8 @@
         :border="false"
         :text-align="'left'"
         :href="'/intro/client'"
-        @mounted="clientLabelOnMounted"
+        :font-bold="route.path.includes('client')"
+        :font-underline="route.path.includes('client')"
       >client</h-label>
     </h-layout>
   </h-drawer>
@@ -114,37 +118,31 @@
 </template>
 
 <script setup lang="ts">
-import type { HLabelMethods } from 'hisonvue';
-import { useRouter } from 'vue-router';
+import type { Lang } from '@/store';
+import type { HDropdownMethods, HDropdownModel } from 'hisonvue';
+import { ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 
-const router = useRouter();
+const router = useRouter()
+const route = useRoute()
 const store = useStore()
 
-const onLogoClick = () => {
-    router.replace('/')
+const langDropdownModel = ref<HDropdownModel>({
+    value: store.state.lang,
+    options: [
+      { label: 'en', value: 'en'},
+      { label: 'ko', value: 'ko'},
+    ],
+})
+const langDropdownOnChange = (oldValue: Lang, newValue: Lang, dropdown: HDropdownMethods) => {
+  store.commit('setLang', newValue)
+  console.log('lang', store.state.lang)
 }
 
-const overviewLabelOnMounted = (label: HLabelMethods) => {
-    console.log(router.currentRoute.value.path)
-    if(router.currentRoute.value.path.indexOf('overview') >= 0) {
-      label.setFontBold(true)
-      label.setFontUnderline(true)
-    }
-}
-const serviceLabelOnMounted = (label: HLabelMethods) => {
-    if(router.currentRoute.value.path.indexOf('service') >= 0) {
-      label.setFontBold(true)
-      label.setFontUnderline(true)
-    }
-}
-const clientLabelOnMounted = (label: HLabelMethods) => {
-    if(router.currentRoute.value.path.indexOf('client') >= 0) {
-      label.setFontBold(true)
-      label.setFontUnderline(true)
-    }
+const onLogoClick = () => {
+  router.replace('/')
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

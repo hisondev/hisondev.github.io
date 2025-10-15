@@ -15,40 +15,53 @@
         :leave-animation-class="'none'"
     >
         <h-layout
-            style="height: 90px; padding: 10px; align-content: flex-end; align-items: flex-end;"
+        style="height: 90px; padding: 10px; align-content: flex-end; align-items: flex-end;"
         >
-            <h-caption :level="5" class="hison-col-12-mb hison-col-2-tb" v-on:click="onLogoClick" style="cursor: pointer;">HISONDEV</h-caption>
-            <h-label
-                class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-                :background-type="'empty'"
-                :border="false"
-                :text-align="'center'"
-                :text="'Intro'"
-                :href="'/intro'"
-            ></h-label>
-            <h-gap
-                :line="'vertical'"
-                class="hison-col-1 hison-pos-vertical-bottom"
-            ></h-gap>
-            <h-label
-                class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-                :background-type="'empty'"
-                :border="false"
-                :text-align="'center'"
-                :href="'/getting-started'"
-            >Getting Start</h-label>
-            <h-gap
-                :line="'vertical'"
-                class="hison-col-1 hison-pos-vertical-bottom"
-            ></h-gap>
-            <h-label
-                class="hison-col-3-mb hison-col-2-tb hison-col-2-pc hison-pos-vertical-bottom"
-                :background-type="'empty'"
-                :border="false"
-                :text-align="'center'"
-                :href="'/api'"
-                :font-bold="true"
-            >API</h-label>
+        <h-caption
+            :level="5"
+            class="hison-col-12-mb hison-col-2-tb"
+            :text-align="'center'"
+            v-on:click="onLogoClick"
+            style="cursor: pointer;"
+        >HISONDEV</h-caption>
+        <h-label
+            class="hison-col-2 hison-pos-vertical-bottom"
+            :background-type="'empty'"
+            :border="false"
+            :text-align="'center'"
+            :text="'Intro'"
+            :href="'/intro'"
+        ></h-label>
+        <h-gap
+            :line="'vertical'"
+            class="hison-col-1 hison-pos-vertical-bottom"
+        ></h-gap>
+        <h-label
+            class="hison-col-2 hison-pos-vertical-bottom"
+            :background-type="'empty'"
+            :border="false"
+            :text-align="'center'"
+            :href="'/getting-started'"
+        >Getting Start</h-label>
+        <h-gap
+            :line="'vertical'"
+            class="hison-col-1 hison-pos-vertical-bottom"
+        ></h-gap>
+        <h-label
+            class="hison-col-2 hison-pos-vertical-bottom"
+            :background-type="'empty'"
+            :border="false"
+            :text-align="'center'"
+            :href="'/api'"
+            :font-bold="true"
+        >API</h-label>
+        <HDropdown
+            v-model="langDropdownModel"
+            class="hison-col-2 hison-pos-vertical-bottom hison-pos-right"
+            @change="langDropdownOnChange"
+            :textAlign="'left'"
+            :trigger="'click'"
+        />
         </h-layout>
     </h-drawer>
 
@@ -77,7 +90,8 @@
                 :border="false"
                 :text-align="'left'"
                 :href="'/api/hisonjv'"
-                @mounted="hisonjvLabelOnMounted"
+                :font-bold="route.path.includes('hisonjv')"
+                :font-underline="route.path.includes('hisonjv')"
             >hisonjv</h-label>
             <h-label
                 class="hison-col-12"
@@ -85,7 +99,8 @@
                 :border="false"
                 :text-align="'left'"
                 :href="'/api/hisonjs'"
-                @mounted="hisonjsLabelOnMounted"
+                :font-bold="route.path.includes('hisonjs')"
+                :font-underline="route.path.includes('hisonjs')"
             >hisonjs</h-label>
             <h-label
                 class="hison-col-12"
@@ -93,7 +108,8 @@
                 :border="false"
                 :text-align="'left'"
                 :href="'/api/hisonvue'"
-                @mounted="hisonvueLabelOnMounted"
+                :font-bold="route.path.includes('hisonvue')"
+                :font-underline="route.path.includes('hisonvue')"
             >hisonvue</h-label>
         </h-layout>
     </h-drawer>
@@ -103,34 +119,30 @@
 </template>
 
 <script setup lang="ts">
-import type { HLabelMethods } from 'hisonvue';
-import { useRouter } from 'vue-router';
+import type { Lang } from '@/store';
+import type { HDropdownMethods, HDropdownModel } from 'hisonvue';
+import { ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 const router = useRouter();
-console.log(router)
+const route = useRoute()
+const store = useStore()
+
+const langDropdownModel = ref<HDropdownModel>({
+    value: store.state.lang,
+    options: [
+      { label: 'en', value: 'en'},
+      { label: 'ko', value: 'ko'},
+    ],
+})
+const langDropdownOnChange = (oldValue: Lang, newValue: Lang, dropdown: HDropdownMethods) => {
+    store.commit('setLang', newValue)
+    console.log('lang', store.state.lang)
+}
 
 const onLogoClick = () => {
     router.replace('/')
-}
-
-const hisonjvLabelOnMounted = (label: HLabelMethods) => {
-    console.log(router.currentRoute.value.path)
-    if(router.currentRoute.value.path.indexOf('hisonjv') >= 0) {
-      label.setFontBold(true)
-      label.setFontUnderline(true)
-    }
-}
-const hisonjsLabelOnMounted = (label: HLabelMethods) => {
-    if(router.currentRoute.value.path.indexOf('hisonjs') >= 0) {
-      label.setFontBold(true)
-      label.setFontUnderline(true)
-    }
-}
-const hisonvueLabelOnMounted = (label: HLabelMethods) => {
-    if(router.currentRoute.value.path.indexOf('hisonvue') >= 0) {
-      label.setFontBold(true)
-      label.setFontUnderline(true)
-    }
 }
 
 </script>
