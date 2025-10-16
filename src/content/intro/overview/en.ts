@@ -11,7 +11,7 @@ It consists of the following modules:
   subhead1:
 `Server-side Support of Hison Dev`,
   t2000:
-`The purpose and features of hisonjv, designed for Java/Spring-based service layers, are as follows:
+`The purpose and features of hisonjv, designed for Java/Spring-based server layers, are as follows:
 1. Through two classes — DataWrapper (key–value based) and DataModel (table-style with columns/rows) — it enables clear and structured data exchange.
 2. Simplifies data communication within Spring applications.
 3. Provides a set of Java utility functions for strings, date/time, and numeric formatting.
@@ -40,56 +40,58 @@ A collection of Java utility functions for string, date/time, and numeric format
 `https://mvnrepository.com/artifact/io.github.hisondev/utils`,
 
   subhead2:
-`Client-side Support of Hison Dev (1) — hisonjs`,
+`Client-side Support of Hison Dev`,
   t3000:
+`hisonjs`,
+  t3010:
 `hisonjs is a powerful client-side library designed to work seamlessly with hisondev’s Java Spring–based backend solutions.
 It provides practical utilities, enhanced security, structured data modeling, and API communication modules.  
 It can be easily installed via npm i hisonjs.
 Dynamic Configuration: with simple hison.setXXX() methods, you can flexibly control global behaviors at runtime.`,
-  t3010:
-`hisonjs offers the following features:`,
-  t3011:
-`npm hisonjs`,
-  h3011:
-`https://www.npmjs.com/package/hisonjs`,
   t3020:
-`hison.shield : Security Module — Protects the app by blocking unauthorized developer tool usage, restricting URL/IP access, and enforcing immutability through hison.shield.execute().`,
+`hisonjs offers the following features:`,
+  t3021:
+`npm hisonjs`,
+  h3021:
+`https://www.npmjs.com/package/hisonjs`,
   t3030:
-`hison.data : Data Modeling — Enables frontend data structuring and validation using the same DataModel and DataWrapper concepts as hisonjv’s data-model on the backend.`,
+`hison.shield : Security Module — Protects the app by blocking unauthorized developer tool usage, restricting URL/IP access, and enforcing immutability through hison.shield.execute().`,
   t3040:
-`hison.link : API Communication — Communicates smoothly with api-link–based Spring backends, providing ApiPost, ApiGet, and built-in caching modules.`,
+`hison.data : Data Modeling — Enables frontend data structuring and validation using the same DataModel and DataWrapper concepts as hisonjv’s data-model on the backend.`,
   t3050:
+`hison.link : API Communication — Communicates smoothly with api-link–based Spring backends, providing ApiPost, ApiGet, and built-in caching modules.`,
+  t3060:
 `Custom Hooks — Allows pre/post hook functions to manage API request/response lifecycles.
 Also supports Real-Time WebSocket updates automatically through its caching module.`,
 
-  subhead3:
-`Client-side Support of Hison Dev (2) — hisonvue`,
   t4000:
-`HisonVue is a Vue 3 UI component library built on top of hisonjs, and it includes hisonjs within it.
+`hisonvue`,
+  t4010:
+`hisonvue is a Vue 3 UI component library built on top of hisonjs, and it includes hisonjs within it.
 When used together with the server-side hisonjv, it connects frontend visual components and backend data utilities into a unified ecosystem.
 In other words, HisonVue provides a comprehensive set of Vue 3 UI components with runtime APIs, global theming, and SSR (Server-Side Rendering) compatibility.
 Since it extends hisonjs, it not only offers visual components but also includes data modeling, API-link communication, utility, and security (Shield) functionalities.`,
-  t4010:
-`The key features of hisonvue are as follows:`,
-  t4011:
-`npm hisonvue`,
-  h4011:
-`https://www.npmjs.com/package/hisonvue`,
   t4020:
-`Supports 25+ diverse components`,
+`The key features of hisonvue are as follows:`,
+  t4021:
+`npm hisonvue`,
+  h4021:
+`https://www.npmjs.com/package/hisonvue`,
   t4030:
-`Written in TypeScript — full IntelliSense support`,
+`Supports 25+ diverse components`,
   t4040:
-`Fully compatible with Vue CLI / Vite / Nuxt 3 (SSR)`,
+`Written in TypeScript — full IntelliSense support`,
   t4050:
-`Tree-shakable and modular imports`,
+`Fully compatible with Vue CLI / Vite / Nuxt 3 (SSR)`,
   t4060:
-`CSS variables and responsive class system (hison-col-*, hison-size-*, hison-color-*)`,
+`Tree-shakable and modular imports`,
   t4070:
-`Runtime control of each component (via hison.component.getXxx(id))`,
+`CSS variables and responsive class system (hison-col-*, hison-size-*, hison-color-*)`,
   t4080:
-`Extended version of hisonjs — includes utils, data, link, and shield modules`,
+`Runtime control of each component (via hison.component.getXxx(id))`,
   t4090:
+`Extended version of hisonjs — includes utils, data, link, and shield modules`,
+  t4100:
 `Supports user customization via hisonConfig and dynamic customization through hison runtime control.`,
 } as const;
 

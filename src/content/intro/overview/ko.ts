@@ -11,7 +11,7 @@ type/javascript 기반의 클라이언트단에서 사용할 수 있는 hisonjs
   subhead1:
 `hison dev의 Server단 지원`,
   t2000:
-`Java/Spring 기반의 서비스단에서 사용할 수 있는 hisonjv의 목적과 특징은
+`Java/Spring 기반의 서버단에서 사용할 수 있는 hisonjv의 목적과 특징은
 1. DataWrapper(Key-Value 기반)와 DataModel(컬럼/로우 테이블 형태) 두 클래스를 통해 다양한 데이터 구조를 명확히 주고받을 수 있습니다.
 2. Spring 애플리케이션의 데이터 통신을 단순화합니다.
 3. 문자열, 날짜/시간, 숫자 포맷 등 Java 유틸성 기능 모음을 지원합니다.
@@ -40,54 +40,56 @@ DataWrapper / DataModel 클래스를 중심으로, 프런트엔드–백엔드 �
 `https://mvnrepository.com/artifact/io.github.hisondev/utils`,
 
   subhead2:
-`hison dev의 Client단 지원 (1) - hisonjs`,
+`hison dev의 Client단 지원`,
   t3000:
+`hisonjs`,
+  t3010:
 `hisonjs는 Java Spring 기반의 hisondev 백엔드 솔루션과 함께 사용하도록 설계된 강력한 클라이언트 사이드 라이브러리입니다.
 실용적인 유틸리티, 보안 강화, 구조화된 데이터 모델링, 그리고 API 통신 모듈을 제공합니다. 매우 간편하게 npm i hisonjs로 설치가능합니다.
 그리고 동적 설정(Dynamic Configuration): 간단한 hison.setXXX() 메서드들로 전역 동작을 유연하게 제어할 수 있습니다.`,
-  t3010:
-`hisonjs는 하단의 기능을 제공합니다.`,
-  t3011:
-`npm hisonjs`,
-  h3011:
-`https://www.npmjs.com/package/hisonjs`,
   t3020:
-`hison.shield : 보안 모듈(Security Module): hison.shield.excute()로 무단 개발자 도구 사용 차단, URL/IP 접근 제한, 객체 불변(immutability) 확보 등 앱을 보호합니다.`,
+`hisonjs는 하단의 기능을 제공합니다.`,
+  t3021:
+`npm hisonjs`,
+  h3021:
+`https://www.npmjs.com/package/hisonjs`,
   t3030:
-`hison.data : 데이터 모델링(Data Modeling): 프런트엔드에서도 DataModel·DataWrapper를 사용하여, 백엔드(hisonjv의 data-model)와 동일한 개념으로 데이터 구조화/검증을 수행합니다.`,
+`hison.shield : 보안 모듈(Security Module): hison.shield.excute()로 무단 개발자 도구 사용 차단, URL/IP 접근 제한, 객체 불변(immutability) 확보 등 앱을 보호합니다.`,
   t3040:
-`hison.link : API 통신(API Communication): api-link 기반의 Spring 백엔드와 원활히 통신합니다. ApiPost, ApiGet, 그리고 내장 캐싱(CachingModule)을 제공합니다.`,
+`hison.data : 데이터 모델링(Data Modeling): 프런트엔드에서도 DataModel·DataWrapper를 사용하여, 백엔드(hisonjv의 data-model)와 동일한 개념으로 데이터 구조화/검증을 수행합니다.`,
   t3050:
+`hison.link : API 통신(API Communication): api-link 기반의 Spring 백엔드와 원활히 통신합니다. ApiPost, ApiGet, 그리고 내장 캐싱(CachingModule)을 제공합니다.`,
+  t3060:
 `기타 커스텀 훅(Custom Hooks): API 요청/응답의 생명주기를 사전/사후 훅 함수로 제어할 수 있습니다. 또 실시간 WebSocket 지원(Real-Time WebSocket Support): 캐싱 모듈을 통해 실시간 업데이트를 자동 처리합니다.`,
 
-  subhead3:
-`hison dev의 Client단 지원 (2) - hisonvue`,
   t4000:
+`hisonvue`,
+  t4010:
 `HisonVue는 hisonjs 위에 구축된 Vue 3용 UI 컴포넌트 라이브러리입니다. 그리고 hisonjs를 포함합니다.
 hisonvue와 server단의 hisonjv를 함께 사용하면 프런트엔드의 시각적 컴포넌트와 백엔드 통신용 데이터 유틸리티를 하나의 통합 생태계로 결합할 수 있습니다.
 즉 HisonVue는 런타임 API, 글로벌 테마, SSR(서버사이드 렌더링) 호환성을 갖춘 포괄적인 Vue 3 UI 컴포넌트 세트를 제공합니다.
 이 라이브러리는 hisonjs를 확장하므로 단순한 UI 컴포넌트뿐 아니라 데이터 모델링, API-link 통신, 유틸리티, 보안(Shield) 기능도 함께 제공합니다`,
-  t4010:
-`hisonvue의 특징은 아래와 같습니다.`,
-  t4011:
-`npm hisonvue`,
-  h4011:
-`https://www.npmjs.com/package/hisonvue`,
   t4020:
-`25가지의 다양한 컴포넌트 지원`,
+`hisonvue의 특징은 아래와 같습니다.`,
+  t4021:
+`npm hisonvue`,
+  h4021:
+`https://www.npmjs.com/package/hisonvue`,
   t4030:
-`TypeScript로 작성 → 완전한 IntelliSense 지원`,
+`25가지의 다양한 컴포넌트 지원`,
   t4040:
-`Vue CLI / Vite / Nuxt 3(SSR) 완벽 호환`,
+`TypeScript로 작성 → 완전한 IntelliSense 지원`,
   t4050:
-`Tree-shaking 및 모듈별 임포트 가능`,
+`Vue CLI / Vite / Nuxt 3(SSR) 완벽 호환`,
   t4060:
-`CSS 변수 및 반응형 클래스 시스템(hison-col-*, hison-size-*, hison-color-*)`,
+`Tree-shaking 및 모듈별 임포트 가능`,
   t4070:
-`각 컴포넌트를 런타임에서 직접 제어 (hison.component.getXxx(id))`,
+`CSS 변수 및 반응형 클래스 시스템(hison-col-*, hison-size-*, hison-color-*)`,
   t4080:
-`hisonjs 확장 버전 → utils, data, link, shield 기능까지 내장`,
+`각 컴포넌트를 런타임에서 직접 제어 (hison.component.getXxx(id))`,
   t4090:
+`hisonjs 확장 버전 → utils, data, link, shield 기능까지 내장`,
+  t4100:
 `hisonConfig를 통한 소비자 커스텀 지원, hison을 통한 동적 커스텀 지원`,
 } as const;
 

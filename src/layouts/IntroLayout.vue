@@ -110,6 +110,15 @@
         :font-bold="route.path.includes('client')"
         :font-underline="route.path.includes('client')"
       >client</h-label>
+      <h-label
+        class="hison-col-12"
+        :background-type="'empty'"
+        :border="false"
+        :text-align="'left'"
+        :href="'/intro/about-author'"
+        :font-bold="route.path.includes('about-author')"
+        :font-underline="route.path.includes('about-author')"
+      >about author</h-label>
     </h-layout>
   </h-drawer>
   <h-layout
