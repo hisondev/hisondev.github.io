@@ -48,7 +48,7 @@ const mountGrid01 = async (grid: HGridMethods) => {
         });
         grid.load(rows01.value);
     } catch (e) {
-        openAlert('Failed to load api grid due to unknown error.\n' + e)
+        openAlert('Failed to load api grid due to :\n' + e)
     } finally {
         endLoad();
     }
@@ -72,7 +72,7 @@ const mountGrid02 = async (grid: HGridMethods) => {
         });
         grid.load(rows02.value);
     } catch (e) {
-        openAlert('Failed to load api grid due to unknown error.\n' + e)
+        openAlert('Failed to load api grid due to :\n' + e)
     } finally {
         endLoad();
     }
@@ -81,8 +81,9 @@ const mountGrid02 = async (grid: HGridMethods) => {
 
 <template>
     <HLayout>
-        <HCaption :level="4" class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
-        <HGap />
+        <HGap/>
+        <HCaption class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
+        <HGap :line="'horizontal'"/>
         <HGrid
             id="grid01"
             :columns="columns01"
@@ -92,7 +93,7 @@ const mountGrid02 = async (grid: HGridMethods) => {
             :status-visible="false"
             @mounted="mountGrid01"
         />
-        <HGap />
+        <HGap/>
         <HGrid
             id="grid02"
             :columns="columns02"
@@ -102,7 +103,9 @@ const mountGrid02 = async (grid: HGridMethods) => {
             :status-visible="false"
             @mounted="mountGrid02"
         />
-        <HGap />
+        <HGap/>
+        <HGap/>
+        <HGap/>
     </HLayout>
 </template>
 

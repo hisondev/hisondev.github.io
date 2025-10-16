@@ -1,5 +1,5 @@
 const ko = {
-  caption: 'HISONDEV Client',
+  caption: 'HISONDEV Client 지원',
   t1000:
 `HISONDEV의 클라이언트단 지원 프로젝트는 기능 측면 지원의 npm hisonjs와 컴포넌트 지원의 npm hisonvue(hisonjs를 의존함)가 있습니다.`,
   t1010:

@@ -1,5 +1,5 @@
 const en = {
-  caption: 'HISONDEV Client',
+  caption: 'HISONDEV Client Support',
   t1000:
 `HISONDEV’s client-side support consists of two projects: the feature-focused npm package hisonjs and the component-focused npm package hisonvue (which depends on hisonjs).`,
   t1010:
