@@ -47,6 +47,7 @@ const getKey = () => store.state.lang + getUUID()
         <HTable
             :key="getKey()"
             class="hison-col-6-pc hison-col-12-mb"
+            style="margin-bottom: 10px;"
         >  
             <tr>
                 <td>{{ contents.t1140 }}</td>
@@ -69,11 +70,11 @@ const getKey = () => store.state.lang + getUUID()
                 <td>{{ contents.t1230 }}</td>
             </tr>
         </HTable>
-        <HGap/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1240 }}</HParagraph>
         <HTable
             :key="getKey()"
             class="hison-col-6-pc hison-col-12-mb"
+            style="margin-bottom: 10px;"
         >  
             <tr>
                 <td>{{ contents.t1250 }}</td>
@@ -104,7 +105,6 @@ const getKey = () => store.state.lang + getUUID()
                 <td>{{ contents.t1380 }}</td>
             </tr>
         </HTable>
-        <HGap/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1390 }}</HParagraph>
         <CodeParagraph :key="getKey()" :code="contents.c1390"/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1400 }}</HParagraph>

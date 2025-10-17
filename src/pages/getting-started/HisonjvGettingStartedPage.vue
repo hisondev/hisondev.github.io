@@ -143,6 +143,7 @@ const apiLinkBaggieOnClick = () => { window.open( contents.value.h4000, '_blank'
         <HTable
             :key="getKey()"
             class="hison-col-6-pc hison-col-12-mb"
+            style="margin-bottom: 10px;"
         >  
             <tr>
                 <td>{{ contents.t4180 }}</td>
@@ -173,6 +174,7 @@ const apiLinkBaggieOnClick = () => { window.open( contents.value.h4000, '_blank'
         <HTable
             :key="getKey()"
             class="hison-col-6-pc hison-col-12-mb"
+            style="margin-bottom: 10px;"
         >  
             <tr>
                 <td>{{ contents.t4310 }}</td>

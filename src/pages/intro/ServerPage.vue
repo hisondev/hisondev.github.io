@@ -21,11 +21,41 @@ const utilsBaggieOnClick = () => { window.open( contents.value.h4000, '_blank', 
         <HGap :line="'horizontal'"/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1000 }}</HParagraph>
         <HList class="hison-col-12" listItemStyle="margin: 0;">
+            <HLabel :key="getKey()">{{ contents.t1030 }}</HLabel>
             <HLabel :key="getKey()">{{ contents.t1010 }}</HLabel>
             <HLabel :key="getKey()">{{ contents.t1020 }}</HLabel>
-            <HLabel :key="getKey()">{{ contents.t1030 }}</HLabel>
         </HList>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1040 }}</HParagraph>
+        <HGap :line="'horizontal'"/>
+        <HBaggie
+            :text="contents.co1000"
+            :backgroundType="'empty'"
+            :shape="'rounded'"
+            :buttonEnabled="true"
+            style="cursor: pointer; transform: translate(50%, -25%)"
+            @click="utilsBaggieOnClick"
+        >
+            <HCaption :level="4" :key="getKey()">{{ contents.subhead3 }}</HCaption>
+        </HBaggie>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4000 }}</HParagraph>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4010 }}</HParagraph>
+        <HList class="hison-col-12" listItemStyle="margin: 0;">
+            <HLayout>
+                <HLabel :key="getKey()">{{ contents.t4020 }}</HLabel>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4030 }}</HParagraph>
+            </HLayout>
+            <HLayout>
+                <HLabel :key="getKey()">{{ contents.t4040 }}</HLabel>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4050 }}</HParagraph>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4060 }}</HParagraph>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4070 }}</HParagraph>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4080 }}</HParagraph>
+            </HLayout>
+        </HList>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4090 }}</HParagraph>
+        <HList class="hison-col-12" listItemStyle="margin: 0;">
+            <HLabel :key="getKey()">{{ contents.t4100 }}</HLabel>
+        </HList>
         <HGap :line="'horizontal'"/>
         <HBaggie
             :text="contents.co1000"
@@ -101,38 +131,6 @@ const utilsBaggieOnClick = () => { window.open( contents.value.h4000, '_blank', 
         <HList class="hison-col-12" listItemStyle="margin: 0;">
             <HLabel :key="getKey()">{{ contents.t3180 }}</HLabel>
             <HLabel :key="getKey()">{{ contents.t3190 }}</HLabel>
-        </HList>
-
-
-        <HGap :line="'horizontal'"/>
-        <HBaggie
-            :text="contents.co1000"
-            :backgroundType="'empty'"
-            :shape="'rounded'"
-            :buttonEnabled="true"
-            style="cursor: pointer; transform: translate(50%, -25%)"
-            @click="utilsBaggieOnClick"
-        >
-            <HCaption :level="4" :key="getKey()">{{ contents.subhead3 }}</HCaption>
-        </HBaggie>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4000 }}</HParagraph>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4010 }}</HParagraph>
-        <HList class="hison-col-12" listItemStyle="margin: 0;">
-            <HLayout>
-                <HLabel :key="getKey()">{{ contents.t4020 }}</HLabel>
-                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4030 }}</HParagraph>
-            </HLayout>
-            <HLayout>
-                <HLabel :key="getKey()">{{ contents.t4040 }}</HLabel>
-                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4050 }}</HParagraph>
-                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4060 }}</HParagraph>
-                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4070 }}</HParagraph>
-                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4080 }}</HParagraph>
-            </HLayout>
-        </HList>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4090 }}</HParagraph>
-        <HList class="hison-col-12" listItemStyle="margin: 0;">
-            <HLabel :key="getKey()">{{ contents.t4100 }}</HLabel>
         </HList>
         <HGap :line="'horizontal'"/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t5000 }}</HParagraph>

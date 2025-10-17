@@ -1,5 +1,5 @@
 const en = {
-  caption: 'Getting Started with HISONJS',
+  caption: 'HISONJS Getting Started',
   t1000:
 `hisonjs is a powerful client-side library designed to be used together with HISONDEV's Java Spring-based backend solutions.
 It provides robust utilities, enhanced security features, structured data modeling, and API communication modules.`,

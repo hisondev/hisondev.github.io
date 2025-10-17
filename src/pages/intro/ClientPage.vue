@@ -75,6 +75,7 @@ const hisonvueBaggieOnClick = () => { window.open( contents.value.h3000, '_blank
         <HTable
             :key="getKey()"
             class="hison-col-6-pc hison-col-12-mb"
+            style="margin-bottom: 10px;"
         >  
             <tr>
                 <td>{{ contents.t3100 }}</td>
@@ -97,11 +98,11 @@ const hisonvueBaggieOnClick = () => { window.open( contents.value.h3000, '_blank
                 <td>{{ contents.t3190 }}</td>
             </tr>
         </HTable>
-        <HGap/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3200 }}</HParagraph>
         <HTable
             :key="getKey()"
             class="hison-col-6-pc hison-col-12-mb"
+            style="margin-bottom: 10px;"
         >  
             <tr>
                 <td>{{ contents.t3210 }}</td>
@@ -132,7 +133,6 @@ const hisonvueBaggieOnClick = () => { window.open( contents.value.h3000, '_blank
                 <td>{{ contents.t3340 }}</td>
             </tr>
         </HTable>
-        <HGap/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3350 }}</HParagraph>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3360 }}</HParagraph>
         <HList class="hison-col-12" listItemStyle="margin: 0;">
