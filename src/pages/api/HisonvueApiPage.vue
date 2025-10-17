@@ -8,6 +8,14 @@ import { hison, type HInputMethods } from 'hisonvue';
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 import BaggieSample from '@/components/sample/BaggieSample.vue';
+import BannerSample from '@/components/sample/BannerSample.vue';
+import ButtonSample from '@/components/sample/ButtonSample.vue';
+import CalendarSample from '@/components/sample/CalendarSample.vue';
+import CaptionSample from '@/components/sample/CaptionSample.vue';
+import ChartSample from '@/components/sample/ChartSample.vue';
+import DrawerSample from '@/components/sample/DrawerSample.vue';
+import DropdownSample from '@/components/sample/DropdownSample.vue';
+import FilesetSample from '@/components/sample/FilesetSample.vue';
 
 const store = useStore()
 const contents = computed(() => apiHisonvueContents[store.state.lang as Lang])
@@ -84,6 +92,70 @@ const inputOnChange = (oldValue: Lang, newValue: Lang, input: HInputMethods) => 
             >
                 <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6100 }}</HCaption>
                 <BaggieSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t6200"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6200 }}</HCaption>
+                <BannerSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t6300"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6300 }}</HCaption>
+                <ButtonSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t6400"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6400 }}</HCaption>
+                <CalendarSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t6500"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6500 }}</HCaption>
+                <CaptionSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t6600"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6600 }}</HCaption>
+                <ChartSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t6700"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6700 }}</HCaption>
+                <DrawerSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t6800"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6800 }}</HCaption>
+                <DropdownSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t6900"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6900 }}</HCaption>
+                <FilesetSample :key="getKey()" :lang="store.state.lang"/>
             </HLayout>
         </HLayout>
         <HGap :line="'horizontal'"/>

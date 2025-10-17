@@ -362,5 +362,4 @@ const contents = props.lang === 'en' ? en : ko
   </HLayout>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
