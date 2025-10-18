@@ -16,6 +16,11 @@ import ChartSample from '@/components/sample/ChartSample.vue';
 import DrawerSample from '@/components/sample/DrawerSample.vue';
 import DropdownSample from '@/components/sample/DropdownSample.vue';
 import FilesetSample from '@/components/sample/FilesetSample.vue';
+import GapSample from '@/components/sample/GapSample.vue';
+import ImageboxSample from '@/components/sample/ImageboxSample.vue';
+import InputSample from '@/components/sample/InputSample.vue';
+import InputGroupSample from '@/components/sample/InputGroupSample.vue';
+import LabelSample from '@/components/sample/LabelSample.vue';
 
 const store = useStore()
 const contents = computed(() => apiHisonvueContents[store.state.lang as Lang])
@@ -156,6 +161,46 @@ const inputOnChange = (oldValue: Lang, newValue: Lang, input: HInputMethods) => 
             >
                 <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6900 }}</HCaption>
                 <FilesetSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t7000"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7000 }}</HCaption>
+                <GapSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t7200"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7200 }}</HCaption>
+                <ImageboxSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t7300"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7300 }}</HCaption>
+                <InputSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t7400"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7400 }}</HCaption>
+                <InputGroupSample :key="getKey()" :lang="store.state.lang"/>
+            </HLayout>
+            <HLayout
+                :id="contents.t7500"
+                style="padding: 30px;"
+                :visible="false"
+            >
+                <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7500 }}</HCaption>
+                <LabelSample :key="getKey()" :lang="store.state.lang"/>
             </HLayout>
         </HLayout>
         <HGap :line="'horizontal'"/>
