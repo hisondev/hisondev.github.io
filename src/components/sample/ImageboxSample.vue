@@ -356,16 +356,16 @@ const contents = props.lang === 'en' ? en : ko
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="imageboxSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'180px'"
+      class="hison-col-12 hison-size-m"
+      :height="'120px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -377,8 +377,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="imageboxPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'520px'"
+      class="hison-col-12 hison-size-m"
+      :height="'420px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -390,8 +390,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="imageboxEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'520px'"
+      class="hison-col-12 hison-size-m"
+      :height="'360px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -403,8 +403,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="imageboxMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'720px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

@@ -406,9 +406,9 @@ const mountPropGrid = async (grid: HGridMethods) => {
 }
 
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '16%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '44%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '40%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '15%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '50%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
@@ -434,7 +434,7 @@ const contents = props.lang === 'en' ? en : ko
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
     <HCalendar
       id="cal-demo"
-      class="hison-col-12 hison-size-s"
+      class="hison-col-12 hison-size-m"
       :visible="true"
       :disable="false"
       :selectedDate="new Date()"
@@ -447,16 +447,16 @@ const contents = props.lang === 'en' ? en : ko
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1060 }}</HParagraph>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="calendarSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'120px'"
+      class="hison-col-12 hison-size-m"
+      :height="'80px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -468,8 +468,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="calendarPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'720px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -481,8 +481,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="calendarEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'660px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -494,8 +494,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="calendarMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'820px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

@@ -28,9 +28,14 @@ HDropdown은 HInput과 톤/스타일을 공유하는 경량 드롭다운입니�
   c1040:
 `<HDropdown
   id="country"
-  :modelValue="{ value: 'KR', options: [
-    { label: 'Korea', value: 'KR' },
-    { label: 'Japan', value: 'JP' }
+  :modelValue="{ value: 'l1', options: [
+    { label: 'label1', value: 'l1' },
+    { label: 'label2', value: 'l2' },
+    { label: 'label3', value: 'l3' },
+    { label: 'label4', value: 'l4' },
+    { label: 'label5', value: 'l5' },
+    { label: 'label6', value: 'l6' },
+    { label: 'label7', value: 'l7' }
   ]}"
   placeholder="Select country"
   trigger="click"
@@ -81,9 +86,14 @@ and the same Accordion-style animation (CSS Grid 0fr↔1fr + caret rotation).`,
   c1040:
 `<HDropdown
   id="country"
-  :modelValue="{ value: 'KR', options: [
-    { label: 'Korea', value: 'KR' },
-    { label: 'Japan', value: 'JP' }
+  :modelValue="{ value: 'l1', options: [
+    { label: 'label1', value: 'l1' },
+    { label: 'label2', value: 'l2' },
+    { label: 'label3', value: 'l3' },
+    { label: 'label4', value: 'l4' },
+    { label: 'label5', value: 'l5' },
+    { label: 'label6', value: 'l6' },
+    { label: 'label7', value: 'l7' }
   ]}"
   placeholder="Select country"
   trigger="click"
@@ -274,19 +284,19 @@ const mountSlotGrid = async (grid: HGridMethods) => {
 }
 
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '14%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '36%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '30%' },
   { id: 'default', header: 'default', dataType: 'text', width: '10%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '45%' },
 ]
 const mountPropGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? propGridDataEn : propGridDataKo)
 }
 
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '18%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '42%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '40%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '15%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '50%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
@@ -312,11 +322,15 @@ const contents = props.lang === 'en' ? en : ko
     <!-- Live Demo -->
     <HDropdown
       id="dropdown-demo"
-      class="hison-col-12 hison-size-s"
-      :modelValue="{ value: 'KR', options: [
-        { label: 'Korea', value: 'KR' },
-        { label: 'Japan', value: 'JP' },
-        { label: 'USA', value: 'US' }
+      class="hison-col-12 hison-size-m"
+      :modelValue="{ value: 'l1', options: [
+        { label: 'label1', value: 'l1' },
+        { label: 'label2', value: 'l2' },
+        { label: 'label3', value: 'l3' },
+        { label: 'label4', value: 'l4' },
+        { label: 'label5', value: 'l5' },
+        { label: 'label6', value: 'l6' },
+        { label: 'label7', value: 'l7' }
       ]}"
       placeholder="Select"
       trigger="click"
@@ -334,16 +348,16 @@ const contents = props.lang === 'en' ? en : ko
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="dropdownSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'130px'"
+      class="hison-col-12 hison-size-m"
+      :height="'100px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -355,8 +369,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="dropdownPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'560px'"
+      class="hison-col-12 hison-size-m"
+      :height="'400px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -368,7 +382,7 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="dropdownEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
+      class="hison-col-12 hison-size-m"
       :height="'240px'"
       :rownum-visible="false"
       :status-visible="false"
@@ -381,8 +395,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="dropdownMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'720px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

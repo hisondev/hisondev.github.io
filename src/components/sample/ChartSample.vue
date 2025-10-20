@@ -164,19 +164,19 @@ const mountSlotGrid = async (grid: HGridMethods) => {
 }
 
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '14%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '36%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '25%' },
   { id: 'default', header: 'default', dataType: 'text', width: '10%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '50%' },
 ]
 const mountPropGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? propGridDataEn : propGridDataKo)
 }
 
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '20%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '40%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '40%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '15%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '50%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
@@ -201,40 +201,90 @@ const contents = props.lang === 'en' ? en : ko
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
 
-    <!-- Live demo: inline data/options -->
     <HChart
-      id="chart-demo"
-      class="hison-col-12 hison-size-s"
-      type="bar"
+      id="chart1"
+      type="line"
+      class="hison-col-6-pc hison-col-12-mb"
       :modelValue="{
-        labels: ['A','B','C','D'],
+        labels: ['January', 'February', 'March', 'April', 'May'],
         datasets: [
-          { label: 'Sales', data: [12, 19, 7, 14] }
+          {
+            label: 'Sales',
+            data: [100, 150, 80, 120, 90],
+            borderColor: 'primary',
+            borderWidth: 1,
+            backgroundColor: 'rgba(0, 123, 255, 0.2)',
+            fill: true,
+            tension: 0.4
+          }
         ]
       }"
       :options="{
-        plugins: { legend: { display: true } },
         responsive: true,
-        maintainAspectRatio: false
+        plugins: {
+          title: {
+              display: false,
+              text: '',
+              font: {
+                  size: 50,
+                  style: 'normal',
+                  weight: 'bold',
+                  lineHeight: 1.2,
+              },
+          },
+          legend: {
+            position: 'top',
+            labels: {
+              font: {
+                size: 12,
+              }
+            }
+          },
+          tooltip: {
+            enabled: true,
+            titleFont: {
+              size: 12
+            },
+            bodyFont: {
+              size: 10
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              font: {
+                size: 10
+              }
+            }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              font: {
+                size: 10
+              }
+            }
+          }
+        }
       }"
+      style="height:300px; display: inline-flex; align-items: center; justify-content: center;"
+      :loadDelay="10"
       :visible="true"
-      :loadDelay="500"
-      style="height: 220px; margin-bottom: 10px;"
     />
-
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="chartSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'110px'"
+      class="hison-col-12 hison-size-m"
+      :height="'80px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -246,8 +296,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="chartPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'380px'"
+      class="hison-col-12 hison-size-m"
+      :height="'220px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -259,8 +309,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="chartEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'140px'"
+      class="hison-col-12 hison-size-m"
+      :height="'120px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -272,8 +322,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="chartMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'520px'"
+      class="hison-col-12 hison-size-m"
+      :height="'300px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

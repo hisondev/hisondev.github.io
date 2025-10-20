@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { defineProps} from 'vue'
 import type { HGridColumn, HGridMethods } from 'hisonvue'
 import CodeParagraph from '../CodeParagraph.vue'
 
 const props = defineProps<{ lang: string }>()
-
-/* -------------------------------- demo states -------------------------------- */
-const demoText = ref('Hello Label')
-const isLink = ref(false)
-const hrefVal = ref('https://example.com')
-const clickLog = ref<string[]>([])
-
-/* ----------------------------------- i18n ------------------------------------ */
 const ko = {
   t1000:
 `아래는 HLabel(커스텀 라벨) 컴포넌트 샘플입니다.
@@ -19,32 +11,28 @@ const ko = {
 HLabel은 텍스트/슬롯/하이퍼링크(<a>) 렌더링을 모두 지원하며,
 런타임 메서드로 텍스트, 링크, 폰트/배경/보더, 정렬 등을 제어할 수 있습니다.
 기본 슬롯이 '텍스트 노드만'일 때는 내부 텍스트로 흡수되어 getText/setText로 제어됩니다.`,
-  t1010: '라이브 데모',
-  demoExplain:
-`· [텍스트 바꾸기]는 setText()를 호출합니다. (요소 슬롯일 경우에는 적용되지 않습니다)
-· [링크 토글]은 href를 설정/초기화합니다. target rel 등은 anchorAttrs로 제어합니다.
-· [굵게/밑줄/보더/배경] 버튼으로 스타일을 토글할 수 있습니다.`,
+  t1010: `템플릿 사용 예시`,
+  c1010:
+`<HLabel
+  class="hison-col-12 hison-color-primary"
+  :text="'hison-color-primary'"
+  title="hison-color-primary"
+/>`,
   t1020: '런타임 사용 예',
   c1020:
 `const lb = hison.component.getLabel('lb-demo')
+//[텍스트 바꾸기]는 setText()를 호출합니다. (요소 슬롯일 경우에는 적용되지 않습니다)
 lb.setText('Updated')
+//[링크 토글]은 href를 설정/초기화합니다. target rel 등은 anchorAttrs로 제어합니다.
 lb.setHref('https://naver.com')
 lb.mergeAnchorAttrs({ target: '_blank' })
+//[굵게/밑줄/보더/배경] 버튼으로 스타일을 토글할 수 있습니다.
 lb.setFontBold(true)
 lb.setBackgroundType('transparent')`,
   t1100: 'slot',
   t1200: 'props',
   t1300: 'events',
   t1400: 'methods',
-  btnText: '텍스트 바꾸기',
-  btnToggleLink: '링크 토글',
-  btnBold: '굵게',
-  btnUnderline: '밑줄',
-  btnBorder: '보더',
-  btnBg: '배경: transparent',
-  btnAlignCenter: '정렬: 가운데',
-  btnAlignLeft: '정렬: 왼쪽',
-  log: '클릭 로그',
 }
 const en = {
   t1000:
@@ -53,32 +41,28 @@ const en = {
 HLabel supports rendering as text, slot HTML, or an anchor (<a>) when 'href' is set.
 You can control text, link, font/background/border, and alignment at runtime.
 When the default slot is text-only, it is absorbed as internal text and is controllable via getText/setText.`,
-  t1010: 'Live Demo',
-  demoExplain:
-`· [Change Text] calls setText() (no effect if the slot renders elements).
-· [Toggle Link] sets/clears href. Use anchorAttrs to control target/rel, etc.
-· Toggle bold/underline/border/background with the style buttons.`,
+  t1010: `Template Example`,
+  c1010:
+`<HLabel
+  class="hison-col-12 hison-color-primary"
+  :text="'hison-color-primary'"
+  title="hison-color-primary"
+/>`,
   t1020: 'Runtime usage example',
   c1020:
 `const lb = hison.component.getLabel('lb-demo')
+//[Change Text] calls setText() (no effect if the slot renders elements).
 lb.setText('Updated')
+//[Toggle Link] sets/clears href. Use anchorAttrs to control target/rel, etc.
 lb.setHref('https://naver.com')
 lb.mergeAnchorAttrs({ target: '_blank' })
+//Toggle bold/underline/border/background with the style buttons.
 lb.setFontBold(true)
 lb.setBackgroundType('transparent')`,
   t1100: 'slot',
   t1200: 'props',
   t1300: 'events',
   t1400: 'methods',
-  btnText: 'Change Text',
-  btnToggleLink: 'Toggle Link',
-  btnBold: 'Bold',
-  btnUnderline: 'Underline',
-  btnBorder: 'Border',
-  btnBg: 'BG: transparent',
-  btnAlignCenter: 'Align: center',
-  btnAlignLeft: 'Align: left',
-  log: 'Click Log',
 }
 const T = props.lang === 'en' ? en : ko
 
@@ -207,100 +191,58 @@ const mountEventGrid = async (grid: HGridMethods) => {
 const mountMethodGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? methodGridDataEn : methodGridDataKo)
 }
-
-/* -------------------------------- demo actions -------------------------------- */
-function api() {
-  return (window as any)?.hison?.component?.getLabel?.('lb-demo')
-}
-function onChangeText() {
-  const lb = api()
-  const next = demoText.value.includes('Hello') ? (props.lang==='en'?'Updated Text':'텍스트 변경됨') : 'Hello Label'
-  demoText.value = next
-  lb?.setText(next)
-}
-function onToggleLink() {
-  const lb = api()
-  isLink.value = !isLink.value
-  lb?.setHref(isLink.value ? hrefVal.value : '')
-  if (isLink.value) lb?.mergeAnchorAttrs?.({ target: '_blank' })
-}
-function onBold() {
-  api()?.setFontBold?.(true)
-}
-function onUnderline() {
-  api()?.setFontUnderline?.(true)
-}
-function onBorder() {
-  const lb = api()
-  if (!lb) return
-  const cur = lb.isBorder?.()
-  lb.setBorder?.(!cur)
-}
-function onBgTransparent() {
-  api()?.setBackgroundType?.('transparent')
-}
-function onAlignCenter() {
-  api()?.setTextAlign?.('center')
-}
-function onAlignLeft() {
-  api()?.setTextAlign?.('left')
-}
-function onClickLabel(e: MouseEvent) {
-    void e;
-    clickLog.value.unshift(`[${new Date().toLocaleTimeString()}] click: ${hrefVal.value}`)
-}
 </script>
 
 <template>
   <HLayout :border="true" style="padding:20px;">
     <HParagraph class="hison-col-12">{{ T.t1000 }}</HParagraph>
-
-    <HCaption :level="5" class="hison-col-12">{{ T.t1010 }}</HCaption>
-
-    <!-- Live demo -->
-    <HLayout class="hison-col-12" style="align-items:center; gap:12px;">
-      <!-- 데모 라벨 -->
+    <HGap/>
+    <HLayout class="hison-col-12">
       <HLabel
-        id="lb-demo"
-        class="hison-size-m hison-color-primary"
-        :text="demoText"
-        :href="isLink ? hrefVal : null"
-        :anchor-attrs="{ target: isLink ? '_blank' : undefined }"
-        title="demo label"
-        @click="onClickLabel"
+        class="hison-col-12 hison-color-primary"
+        :text="'hison-color-primary'"
+        title="hison-color-primary"
       />
-
-      <!-- 컨트롤 버튼들 -->
-      <HButton :text="T.btnText" @click="onChangeText" />
-      <HButton :text="T.btnToggleLink" @click="onToggleLink" />
-      <HButton :text="T.btnBold" @click="onBold" />
-      <HButton :text="T.btnUnderline" @click="onUnderline" />
-      <HButton :text="T.btnBorder" @click="onBorder" />
-      <HButton :text="T.btnBg" @click="onBgTransparent" />
-      <HButton :text="T.btnAlignCenter" @click="onAlignCenter" />
-      <HButton :text="T.btnAlignLeft" @click="onAlignLeft" />
-    </HLayout>
-
-    <HParagraph class="hison-col-12 hison-color-muted" style="margin-top:8px;">
-      {{ T.demoExplain }}
-    </HParagraph>
-
-    <HCaption :level="6" class="hison-col-12" style="margin-top:10px;">{{ T.log }}</HCaption>
-    <HLayout class="hison-col-12" style="gap:4px; flex-direction:column;">
-      <HLabel v-for="(l, i) in clickLog" :key="i" class="hison-size-s hison-color-muted" :text="l" />
+      <HLabel
+        class="hison-col-12 hison-color-muted"
+        :text="'hison-color-muted'"
+        title="hison-color-muted"
+      />
+      <HLabel
+        class="hison-col-12 hison-color-info"
+        :text="'hison-color-info'"
+        title="hison-color-info"
+      />
+      <HLabel
+        class="hison-col-12 hison-color-success"
+        :text="'hison-color-success'"
+        title="hison-color-success"
+      />
+      <HLabel
+        class="hison-col-12 hison-color-danger"
+        :text="'hison-color-danger'"
+        title="hison-color-danger"
+      />
+      <HLabel
+        class="hison-col-12 hison-color-warning"
+        :text="'hison-color-warning'"
+        title="hison-color-warning"
+      />
     </HLayout>
 
     <HGap/>
+    <HCaption :level="6" class="hison-col-12">{{ T.t1010 }}</HCaption>
+    <CodeParagraph :code="T.c1010" :dynamicWidth="false"/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1020 }}</HCaption>
-    <CodeParagraph :code="T.c1020" />
+    <CodeParagraph :code="T.c1020" :dynamicWidth="false"/>
 
     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1100 }}</HCaption>
     <HGrid
       id="lbSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'100px'"
+      class="hison-col-12 hison-size-m"
+      :height="'80px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -313,8 +255,8 @@ function onClickLabel(e: MouseEvent) {
     <HGrid
       id="lbPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'420px'"
+      class="hison-col-12 hison-size-m"
+      :height="'280px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -327,8 +269,8 @@ function onClickLabel(e: MouseEvent) {
     <HGrid
       id="lbEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'220px'"
+      class="hison-col-12 hison-size-m"
+      :height="'160px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -341,8 +283,8 @@ function onClickLabel(e: MouseEvent) {
     <HGrid
       id="lbMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'680px'"
+      class="hison-col-12 hison-size-m"
+      :height="'400px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

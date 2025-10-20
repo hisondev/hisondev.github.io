@@ -328,8 +328,8 @@ const mountPropGrid = async (grid: HGridMethods) => {
 
 const eventColumn: HGridColumn[] = [
   { id: 'event', header: 'event', dataType: 'text', width: '20%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '45%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '35%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '45%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
@@ -355,7 +355,7 @@ const contents = props.lang === 'en' ? en : ko
     <!-- Live Demo -->
     <HFileset
       id="fileset-demo"
-      class="hison-col-12 hison-size-s"
+      class="hison-col-12 hison-size-m"
       :multiCols="true"
       :placeholder="props.lang === 'en' ? 'Drop files here.' : '여기에 파일을 드롭하세요.'"
       :addButtonText="props.lang === 'en' ? 'UPLOAD' : '업로드'"
@@ -382,16 +382,16 @@ const contents = props.lang === 'en' ? en : ko
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="filesetSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'150px'"
+      class="hison-col-12 hison-size-m"
+      :height="'120px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -403,8 +403,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="filesetPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'620px'"
+      class="hison-col-12 hison-size-m"
+      :height="'540px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -416,8 +416,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="filesetEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'300px'"
+      class="hison-col-12 hison-size-m"
+      :height="'260px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -429,8 +429,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="filesetMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'820px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

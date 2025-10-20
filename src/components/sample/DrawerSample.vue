@@ -12,7 +12,7 @@ const ko = {
 HDrawer는 화면의 네 가장자리(top/bottom/left/right)에 고정되어 슬라이딩으로 열리고 닫히는 패널입니다.
 오버레이, 스와이프-클로즈, 엣지별 애니메이션, 크기/포지션 런타임 제어를 지원하며
 고유 id로 등록되어 hison.component.getDrawer(id)로 제어할 수 있습니다.`,
-  t1010: `이것은 HDrawer 라이브 데모입니다. (왼쪽에서 열림)`,
+  t1010: `이것은 HDrawer 라이브 데모입니다. (하단에서 열림)`,
   t1030:
 `주요 특징
 
@@ -31,9 +31,8 @@ HDrawer는 화면의 네 가장자리(top/bottom/left/right)에 고정되어 슬
   :visible="false"
   :border="true"
   :zIndex="1100"
-  position="left"
-  :width="300"
-  :height="null"
+  position="bottom"
+  :height="150"
   :closeButtonVisible="true"
   closeButtonText="X"
   closeButtonTitle="Close"
@@ -42,8 +41,8 @@ HDrawer는 화면의 네 가장자리(top/bottom/left/right)에 고정되어 슬
   :showOverlay="true"
   :overlayStyle="{ background: 'rgba(0,0,0,0.35)' }"
   :scrollLock="true"
-  enterAnimationClass="hison-drawer-enter-left"
-  leaveAnimationClass="hison-drawer-leave-left"
+  enterAnimationClass="hison-drawer-enter-bottom"
+  leaveAnimationClass="hison-drawer-leave-bottom"
   @open="onOpen"
   @close="onClose"
   @responsive-change="onDevice"
@@ -79,7 +78,7 @@ const en = {
 HDrawer is a fixed-position sliding panel anchored to any screen edge (top/bottom/left/right).
 It supports overlay, swipe-to-close, edge-specific animations, and full runtime control
 via hison.component.getDrawer(id).`,
-  t1010: `This is the HDrawer live demo. (opens from left)`,
+  t1010: `This is the HDrawer live demo. (opens from bottom)`,
   t1030:
 `Main Features
 
@@ -98,9 +97,8 @@ via hison.component.getDrawer(id).`,
   :visible="false"
   :border="true"
   :zIndex="1100"
-  position="left"
-  :width="300"
-  :height="null"
+  position="bottom"
+  :height="150"
   :closeButtonVisible="true"
   closeButtonText="X"
   closeButtonTitle="Close"
@@ -109,8 +107,8 @@ via hison.component.getDrawer(id).`,
   :showOverlay="true"
   :overlayStyle="{ background: 'rgba(0,0,0,0.35)' }"
   :scrollLock="true"
-  enterAnimationClass="hison-drawer-enter-left"
-  leaveAnimationClass="hison-drawer-leave-left"
+  enterAnimationClass="hison-drawer-enter-bottom"
+  leaveAnimationClass="hison-drawer-leave-bottom"
   @open="onOpen"
   @close="onClose"
   @responsive-change="onDevice"
@@ -302,10 +300,10 @@ const mountSlotGrid = async (grid: HGridMethods) => {
 }
 
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '14%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '38%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '30%' },
   { id: 'default', header: 'default', dataType: 'text', width: '10%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '38%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '45%' },
 ]
 const mountPropGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? propGridDataEn : propGridDataKo)
@@ -356,9 +354,8 @@ const contents = props.lang === 'en' ? en : ko
       :visible="false"
       :border="true"
       :zIndex="1100"
-      position="left"
-      :width="320"
-      :height="null"
+      :position="'bottom'"
+      :height="150"
       :closeButtonVisible="true"
       closeButtonText="X"
       closeButtonTitle="Close"
@@ -367,8 +364,8 @@ const contents = props.lang === 'en' ? en : ko
       :showOverlay="true"
       :overlayStyle="{ background: 'rgba(0,0,0,0.35)' }"
       :scrollLock="true"
-      enterAnimationClass="hison-drawer-enter-left"
-      leaveAnimationClass="hison-drawer-leave-left"
+      enterAnimationClass="hison-drawer-enter-bottom"
+      leaveAnimationClass="hison-drawer-leave-bottom"
       style="padding: 10px;"
     >
       <template #default>
@@ -379,16 +376,16 @@ const contents = props.lang === 'en' ? en : ko
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="drawerSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'160px'"
+      class="hison-col-12 hison-size-m"
+      :height="'140px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -400,8 +397,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="drawerPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'560px'"
+      class="hison-col-12 hison-size-m"
+      :height="'600px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -413,8 +410,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="drawerEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'180px'"
+      class="hison-col-12 hison-size-m"
+      :height="'140px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -426,8 +423,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="drawerMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'660px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

@@ -10,7 +10,7 @@ const ko = {
 `하단은 HBanner(배너/캐러셀) 컴포넌트입니다.
 
 HBanner는 Bootstrap Carousel에서 영감을 받은 가벼운 가로 슬라이더입니다.
-기본 슬롯의 **직계 자식**을 각 슬라이드로 렌더링하며, 이전/다음 내비게이션, 페이지 인디케이터(●), 자동재생/루프, 런타임 제어(HBannerMethods)를 지원합니다. 슬라이드는 뷰포트 중앙 정렬로 깔끔하게 표시됩니다.`,
+기본 슬롯의 **직계 자식**을 각 슬라이드로 렌더링하며, 이전/다음 내비게이션, 페이지 인디케이터(·), 자동재생/루프, 런타임 제어(HBannerMethods)를 지원합니다. 슬라이드는 뷰포트 중앙 정렬로 깔끔하게 표시됩니다.`,
   t1010: `이것은 HBanner 라이브 데모입니다.`,
   t1030:
 `주요 특징
@@ -18,7 +18,7 @@ HBanner는 Bootstrap Carousel에서 영감을 받은 가벼운 가로 슬라이�
 · 슬롯 기반 슬라이드(기본 슬롯의 직계 자식 1개 = 1 슬라이드)
 · 전환 시간(transitionMs) 설정 가능한 단순 수평 전환
 · 이전/다음 버튼(기본 제공, 슬롯으로 완전 교체 가능)
-· 페이지 인디케이터(●) 및 오버레이 위치 배치
+· 페이지 인디케이터(·) 및 오버레이 위치 배치
 · 자동재생(방향 제어, 호버 시 일시정지)
 · 가장자리에서 루프 옵션
 · 고유 id로 런타임 등록: hison.component.getBanner(id)
@@ -77,7 +77,7 @@ const en = {
 `Below is the HBanner (banner/carousel) component.
 
 HBanner is a lightweight horizontal slider inspired by Bootstrap’s Carousel.
-Each **direct child** of the default slot becomes a slide. It supports prev/next navigation, page indicators (●), autoplay/looping, and full runtime control (HBannerMethods). Slides are centered for clean presentation.`,
+Each **direct child** of the default slot becomes a slide. It supports prev/next navigation, page indicators (·), autoplay/looping, and full runtime control (HBannerMethods). Slides are centered for clean presentation.`,
   t1010: `This is the HBanner live demo.`,
   t1030:
 `Main Features
@@ -85,7 +85,7 @@ Each **direct child** of the default slot becomes a slide. It supports prev/next
 · Slot-based slides (1 direct child in default slot = 1 slide)
 · Simple horizontal transition with configurable duration (transitionMs)
 · Prev/Next buttons (built-in or fully replaceable via slots)
-· Page indicators (●), with optional overlay positioning
+· Page indicators (·), with optional overlay positioning
 · Autoplay with direction control and hover pause
 · Loop option at edges
 · Runtime registration by unique id: hison.component.getBanner(id)
@@ -159,7 +159,7 @@ const propGridDataKo = [
 
   { prop: "navButtonStyle", type: "'chevron'|'triangle'", default: "'chevron'", explain: "이전/다음 버튼 글리프 스타일." },
   { prop: "showNavButtons", type: "boolean", default: "true", explain: "이전/다음 버튼 표시 여부." },
-  { prop: "showIndicators", type: "boolean", default: "true", explain: "페이지 인디케이터(●) 표시 여부." },
+  { prop: "showIndicators", type: "boolean", default: "true", explain: "페이지 인디케이터(·) 표시 여부." },
   { prop: "indicatorsPosition", type: "'bottom'|'overlay'", default: "'bottom'", explain: "인디케이터 위치." },
   { prop: "indicatorClickable", type: "boolean", default: "true", explain: "인디케이터 클릭 이동 허용." },
 
@@ -199,7 +199,7 @@ const methodGridDataKo = [
   { method: "setNavButtonStyle(s)", param: "'chevron'|'triangle'", return: "void", explain: "내비 버튼 글리프 스타일 설정." },
   { method: "isShowNavButtons()", param: "-", return: "boolean", explain: "이전/다음 버튼 표시 여부." },
   { method: "setShowNavButtons(v)", param: "boolean", return: "void", explain: "이전/다음 버튼 표시/숨김." },
-  { method: "isShowIndicators()", param: "-", return: "boolean", explain: "인디케이터(●) 표시 여부." },
+  { method: "isShowIndicators()", param: "-", return: "boolean", explain: "인디케이터(·) 표시 여부." },
   { method: "setShowIndicators(v)", param: "boolean", return: "void", explain: "인디케이터 표시/숨김." },
   { method: "getIndicatorsPosition()", param: "-", return: "'bottom'|'overlay'", explain: "인디케이터 위치 조회." },
   { method: "setIndicatorsPosition(p)", param: "'bottom'|'overlay'", return: "void", explain: "인디케이터 위치 설정." },
@@ -281,7 +281,7 @@ const methodGridDataEn = [
   { method: "setNavButtonStyle(s)", param: "'chevron'|'triangle'", return: "void", explain: "Sets nav button glyph style." },
   { method: "isShowNavButtons()", param: "-", return: "boolean", explain: "Whether prev/next buttons are shown." },
   { method: "setShowNavButtons(v)", param: "boolean", return: "void", explain: "Shows/hides prev/next buttons." },
-  { method: "isShowIndicators()", param: "-", return: "boolean", explain: "Whether indicators (●) are shown." },
+  { method: "isShowIndicators()", param: "-", return: "boolean", explain: "Whether indicators (·) are shown." },
   { method: "setShowIndicators(v)", param: "boolean", return: "void", explain: "Shows/hides indicators." },
   { method: "getIndicatorsPosition()", param: "-", return: "'bottom'|'overlay'", explain: "Gets indicators position." },
   { method: "setIndicatorsPosition(p)", param: "'bottom'|'overlay'", return: "void", explain: "Sets indicators position." },
@@ -312,19 +312,19 @@ const mountSlotGrid = async (grid: HGridMethods) => {
 }
 
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '12%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '33%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '10%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '30%' },
   { id: 'default', header: 'default', dataType: 'text', width: '10%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '45%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '50%' },
 ]
 const mountPropGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? propGridDataEn : propGridDataKo)
 }
 
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '14%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '41%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '45%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '15%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '50%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
@@ -350,31 +350,94 @@ const contents = props.lang === 'en' ? en : ko
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
     <HBanner
       id="bn-demo"
-      class="hison-col-12 hison-size-s"
+      class="hison-col-12 hison-size-m"
       :initialIndex="0"
-      :transitionMs="350"
+      :transitionMs="1000"
       :showNavButtons="true"
       :showIndicators="true"
-      :autoIntervalMs="0"
+      :autoIntervalMs="3000"
       indicatorsPosition="bottom"
       style="margin-bottom: 10px;"
     >
-      <HLayout class="hison-col-6">Demo Slide A</HLayout>
-      <HLayout class="hison-col-6">Demo Slide B</HLayout>
-      <HLayout class="hison-col-6">Demo Slide C</HLayout>
+      <HLayout
+        style="height: 300px;"
+        backColor="primary"
+      >
+        <HLabel
+          class="hison-pos-center hison-color-primary"
+          :background-type="'filled'"
+          :text-align="'center'"
+          :text="'Demo Slide A'"
+        />
+      </HLayout>
+      <HLayout
+        style="height: 300px;"
+        backColor="muted"
+      >
+        <HLabel
+          class="hison-pos-center hison-color-muted"
+          :background-type="'filled'"
+          :text-align="'center'"
+          :text="'Demo Slide B'"
+        />
+      </HLayout>
+      <HLayout
+        style="height: 300px;"
+        backColor="info"
+      >
+        <HLabel
+          class="hison-pos-center hison-color-info"
+          :background-type="'filled'"
+          :text-align="'center'"
+          :text="'Demo Slide C'"
+        />
+      </HLayout>
+      <HLayout
+        style="height: 300px;"
+        backColor="success"
+      >
+        <HLabel
+          class="hison-pos-center hison-color-success"
+          :background-type="'filled'"
+          :text-align="'center'"
+          :text="'Demo Slide D'"
+        />
+      </HLayout>
+      <HLayout
+        style="height: 300px;"
+        backColor="danger"
+      >
+        <HLabel
+          class="hison-pos-center hison-color-danger"
+          :background-type="'filled'"
+          :text-align="'center'"
+          :text="'Demo Slide E'"
+        />
+      </HLayout>
+      <HLayout
+        style="height: 300px;"
+        backColor="warning"
+      >
+        <HLabel
+          class="hison-pos-center hison-color-warning"
+          :background-type="'filled'"
+          :text-align="'center'"
+          :text="'Demo Slide F'"
+        />
+      </HLayout>
     </HBanner>
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="bannerSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'160px'"
+      class="hison-col-12 hison-size-m"
+      :height="'110px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -386,8 +449,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="bannerPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'520px'"
+      class="hison-col-12 hison-size-m"
+      :height="'500px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -399,8 +462,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="bannerEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'260px'"
+      class="hison-col-12 hison-size-m"
+      :height="'200px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -412,8 +475,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="bannerMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'620px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

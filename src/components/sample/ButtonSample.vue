@@ -258,9 +258,9 @@ const mountPropGrid = async (grid: HGridMethods) => {
 }
 
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '14%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '41%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '45%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '15%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '50%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
@@ -286,29 +286,23 @@ const contents = props.lang === 'en' ? en : ko
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
     <HButton
       id="btn-demo"
-      class="hison-col-12 hison-size-s hison-color-primary"
       text="Click Me"
-      title="Tooltip"
-      background-type="empty"
-      :click-interval="500"
-      :disable="false"
-      :visible="true"
-      style="margin-bottom: 10px;"
+      title="This is demo button"
     >
       <template #icon>🔔</template>
     </HButton>
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="buttonSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'140px'"
+      class="hison-col-12 hison-size-m"
+      :height="'100px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -320,8 +314,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="buttonPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'460px'"
+      class="hison-col-12 hison-size-m"
+      :height="'300px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -333,8 +327,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="buttonEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'240px'"
+      class="hison-col-12 hison-size-m"
+      :height="'200px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -346,8 +340,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="buttonMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'560px'"
+      class="hison-col-12 hison-size-m"
+      :height="'600px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

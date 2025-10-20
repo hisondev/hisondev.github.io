@@ -245,9 +245,9 @@ const mountPropGrid = async (grid: HGridMethods) => {
 }
 
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '16%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '44%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '40%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '15%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '50%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
@@ -272,29 +272,47 @@ const contents = props.lang === 'en' ? en : ko
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
     <HCaption
-      id="cp-demo"
-      class="hison-col-12 hison-size-m hison-color-primary"
+      class="hison-color-primary hison-pos-vertical-bottom"
+      :level="1"
+      text="level 1"
+    />
+    <HCaption
+      class="hison-color-muted hison-pos-vertical-bottom"
+      :level="2"
+      text="level 2"
+    />
+    <HCaption
+      class="hison-color-info hison-pos-vertical-bottom"
       :level="3"
-      :border="false"
-      :fontBold="true"
-      :fontItalic="false"
-      :fontThruline="false"
-      :fontUnderline="false"
-      text="Demo Caption"
-      style="margin-bottom: 10px;"
+      text="level 3"
+    />
+    <HCaption
+      class="hison-color-success hison-pos-vertical-bottom"
+      :level="4"
+      text="level 4"
+    />
+    <HCaption
+      class="hison-color-danger hison-pos-vertical-bottom"
+      :level="5"
+      text="level 5"
+    />
+    <HCaption
+      class="hison-color-warning hison-pos-vertical-bottom"
+      :level="6"
+      text="level 6"
     />
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="captionSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'120px'"
+      class="hison-col-12 hison-size-m"
+      :height="'80px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -306,8 +324,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="captionPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'520px'"
+      class="hison-col-12 hison-size-m"
+      :height="'380px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -319,7 +337,7 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="captionEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
+      class="hison-col-12 hison-size-m"
       :height="'220px'"
       :rownum-visible="false"
       :status-visible="false"
@@ -332,8 +350,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="captionMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'620px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

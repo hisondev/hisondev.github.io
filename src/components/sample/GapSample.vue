@@ -30,7 +30,7 @@ HGap은 레이아웃에 수직/수평 간격을 추가하는 경량 유틸리티
   id="gap02"
   class="hison-col-12 hison-color-primary"
   line="horizontal"
-  :line-width="2"
+  :line-width="1"
   line-style="dashed"
 />
 
@@ -81,7 +81,7 @@ It supports empty gaps, horizontal/vertical dividers, theme-aware colors, and fu
   id="gap02"
   class="hison-col-12 hison-color-primary"
   line="horizontal"
-  :line-width="2"
+  :line-width="1"
   line-style="dashed"
 />
 
@@ -200,10 +200,10 @@ const mountSlotGrid = async (grid: HGridMethods) => {
 }
 
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '16%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '36%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '30%' },
   { id: 'default', header: 'default', dataType: 'text', width: '10%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '38%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '45%' },
 ]
 const mountPropGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? propGridDataEn : propGridDataKo)
@@ -211,8 +211,8 @@ const mountPropGrid = async (grid: HGridMethods) => {
 
 const eventColumn: HGridColumn[] = [
   { id: 'event', header: 'event', dataType: 'text', width: '20%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '45%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '35%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '45%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
@@ -236,28 +236,22 @@ const contents = props.lang === 'en' ? en : ko
     <HParagraph class="hison-col-12">{{ contents.t1000 }}</HParagraph>
     <HGap/>
     <!-- Live demo -->
-    <HGap id="gap-demo-a" class="hison-col-12 hison-size-m"/>
-    <HGap id="gap-demo-b" class="hison-col-12 hison-color-primary" line="horizontal" :line-width="2" line-style="dashed"/>
-    <div class="hison-layout" style="gap: 6px;">
-      <HButton text="Left"/>
-      <HGap id="gap-demo-c" class="hison-col-1 hison-color-muted" line="vertical"/>
-      <HButton text="Right"/>
-    </div>
+    <HGap id="gap-demo-b" class="hison-col-12 hison-color-primary" line="horizontal" :line-width="1" line-style="dashed"/>
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="gapSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'120px'"
+      class="hison-col-12 hison-size-m"
+      :height="'80px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -269,8 +263,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="gapPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'340px'"
+      class="hison-col-12 hison-size-m"
+      :height="'280px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -282,8 +276,8 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="gapEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'140px'"
+      class="hison-col-12 hison-size-m"
+      :height="'120px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -295,7 +289,7 @@ const contents = props.lang === 'en' ? en : ko
     <HGrid
       id="gapMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
+      class="hison-col-12 hison-size-m"
       :height="'520px'"
       :rownum-visible="false"
       :status-visible="false"

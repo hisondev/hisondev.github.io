@@ -47,7 +47,7 @@ const ko = {
   t3100:
 `디바이스 너비에 따라 해당 class가 반영됩니다.`,
   t3110:
-`예를들어 현재 Label 컴포넌트는 hison-color-danger-pc hison-color-warning-mb를 기입하였습니다. 브라우저 너비를 변화하여 보세요.`,
+`예를들어 현재 Label 컴포넌트는 hison-color-primary-pc hison-color-muted-mb를 기입하였습니다. 브라우저 너비를 변화하여 보세요.`,
 
   t3200:
 `지원하는 클래스 접두어는 아래와 같습니다.`,

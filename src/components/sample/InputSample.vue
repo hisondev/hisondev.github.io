@@ -1,17 +1,10 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { defineProps } from 'vue'
 import type { HGridColumn, HGridMethods } from 'hisonvue'
 import CodeParagraph from '../CodeParagraph.vue'
 
 const props = defineProps<{ lang: string }>()
 
-/* ----------------------------- Demo reactive states ----------------------------- */
-const demoStatus = ref<'A' | 'I' | ''>('A')
-const demoText = ref<string>('Hello Hisonvue')
-const demoNumber = ref<number|''>(12345)
-const demoRadioGroup = ref<{ [k: string]: string | null }>({ lang: 'r-ko', theme: null })
-
-/* ----------------------------------- i18n text ---------------------------------- */
 const ko = {
   t1000:
 `하단은 HInput(다목적 입력) 컴포넌트의 샘플입니다.
@@ -31,13 +24,119 @@ HInput은 다양한 입력 타입(text/number/date/checkbox/radio/select 등)과
   t1040: `템플릿 사용 예시`,
   c1040:
 `<HInput
-  id="userStatus"
-  inputType="select"
+  id="text"
+  class="hison-col-9"
+  :input-type="'text'"
+  :model-value="props.lang==='en' ? 'This is text type input' : 'text 타입 input입니다.'"
+/>
+<HInput
+  id="mask"
+  class="hison-col-9"
+  :input-type="'mask'"
+  :model-value="'HR-123'"
+  :format="'AA-999'"
+/>
+<HInput
+  id="digit"
+  class="hison-col-9"
+  :input-type="'digit'"
+  :model-value="12345"
+/>
+<HInput
+  id="email"
+  class="hison-col-9"
+  :input-type="'email'"
+  :model-value="'hison0319@gmail.com'"
+/>
+<HInput
+  id="password"
+  class="hison-col-9"
+  :input-type="'password'"
+  :model-value="'1234'"
+/>
+<HInput
+  id="textarea"
+  class="hison-col-9"
+  :input-type="'textarea'"
+  :model-value="props.lang==='en' ? 'This is textarea type input' : 'textarea 타입 input입니다.'"
+/>
+<HInput
+  id="date"
+  class="hison-col-9"
+  :input-type="'date'"
+  :model-value="'2025-12-31'"
+/>
+<HInput
+  id="month"
+  class="hison-col-9"
+  :input-type="'month'"
+  :model-value="'2025-12'"
+/>
+<HInput
+  id="time"
+  class="hison-col-9"
+  :input-type="'time'"
+  :model-value="'121212'"
+/>
+<HInput
+  class="hison-col-9"
+  :input-type="'number'"
+  :model-value="1234.1234"
+  :format="'#,##0.##'"
+/>
+<HInput
+  id="checkbox"
+  class="hison-col-9"
+  :input-type="'checkbox'"
+  :model-value="true"
+/>
+<HInput
+  id="radio1"
+  name="radio"
+  class="hison-col-3"
+  :input-type="'radio'"
+  :model-value="true"
+/>
+<HInput
+  id="radio2"
+  name="radio"
+  class="hison-col-3"
+  :input-type="'radio'"
+  :model-value="false"
+/>
+<HInput
+  id="radio3"
+  name="radio"
+  class="hison-col-3"
+  :input-type="'radio'"
+  :model-value="false"
+/>
+<HInput
+  id="range"
+  class="hison-col-9"
+  :input-type="'range'"
+  :model-value="50"
+/>
+<HInput
+  id="color"
+  class="hison-col-9"
+  :input-type="'color'"
+  :model-value="'#128483'"
+/>
+<HInput
+  id="select"
+  class="hison-col-9"
+  :input-type="'select'"
+  :model-value="'v3'"
   :options="[
-    { text: 'Active', value: 'A' },
-    { text: 'Inactive', value: 'I' }
+    { text: 'text1', value: 'v1' },
+    { text: 'text2', value: 'v2' },
+    { text: 'text3', value: 'v3' },
+    { text: 'text4', value: 'v4' },
+    { text: 'text5', value: 'v5' },
+    { text: 'text6', value: 'v6' },
+    { text: 'text7', value: 'v7' },
   ]"
-  v-model="status"
 />`,
   t1050: `런타임 사용 예시`,
   c1050:
@@ -59,6 +158,7 @@ r1.setName('locale')`,
 <!-- 결과 예: { lang: "r-ko", theme: null } -->`,
   t1100: `slot`,
   t1200: `props`,
+  t1250: `input types`,
   t1300: `event emit`,
   t1400: `component methods`,
 }
@@ -81,14 +181,121 @@ and full runtime control via hison.component.getInput(id).`,
 · Consistent readonly view (span + hidden input)`,
   t1040: `Template Example`,
   c1040:
+
 `<HInput
-  id="userStatus"
-  inputType="select"
+  id="text"
+  class="hison-col-9"
+  :input-type="'text'"
+  :model-value="props.lang==='en' ? 'This is text type input' : 'text 타입 input입니다.'"
+/>
+<HInput
+  id="mask"
+  class="hison-col-9"
+  :input-type="'mask'"
+  :model-value="'HR-123'"
+  :format="'AA-999'"
+/>
+<HInput
+  id="digit"
+  class="hison-col-9"
+  :input-type="'digit'"
+  :model-value="12345"
+/>
+<HInput
+  id="email"
+  class="hison-col-9"
+  :input-type="'email'"
+  :model-value="'hison0319@gmail.com'"
+/>
+<HInput
+  id="password"
+  class="hison-col-9"
+  :input-type="'password'"
+  :model-value="'1234'"
+/>
+<HInput
+  id="textarea"
+  class="hison-col-9"
+  :input-type="'textarea'"
+  :model-value="props.lang==='en' ? 'This is textarea type input' : 'textarea 타입 input입니다.'"
+/>
+<HInput
+  id="date"
+  class="hison-col-9"
+  :input-type="'date'"
+  :model-value="'2025-12-31'"
+/>
+<HInput
+  id="month"
+  class="hison-col-9"
+  :input-type="'month'"
+  :model-value="'2025-12'"
+/>
+<HInput
+  id="time"
+  class="hison-col-9"
+  :input-type="'time'"
+  :model-value="'121212'"
+/>
+<HInput
+  class="hison-col-9"
+  :input-type="'number'"
+  :model-value="1234.1234"
+  :format="'#,##0.##'"
+/>
+<HInput
+  id="checkbox"
+  class="hison-col-9"
+  :input-type="'checkbox'"
+  :model-value="true"
+/>
+<HInput
+  id="radio1"
+  name="radio"
+  class="hison-col-3"
+  :input-type="'radio'"
+  :model-value="true"
+/>
+<HInput
+  id="radio2"
+  name="radio"
+  class="hison-col-3"
+  :input-type="'radio'"
+  :model-value="false"
+/>
+<HInput
+  id="radio3"
+  name="radio"
+  class="hison-col-3"
+  :input-type="'radio'"
+  :model-value="false"
+/>
+<HInput
+  id="range"
+  class="hison-col-9"
+  :input-type="'range'"
+  :model-value="50"
+/>
+<HInput
+  id="color"
+  class="hison-col-9"
+  :input-type="'color'"
+  :model-value="'#128483'"
+/>
+<HInput
+  id="select"
+  class="hison-col-9"
+  :input-type="'select'"
+  :model-value="'v3'"
   :options="[
-    { text: 'Active', value: 'A' },
-    { text: 'Inactive', value: 'I' }
+    { text: 'text1', value: 'v1' },
+    { text: 'text2', value: 'v2' },
+    { text: 'text3', value: 'v3' },
+    { text: 'text4', value: 'v4' },
+    { text: 'text5', value: 'v5' },
+    { text: 'text6', value: 'v6' },
+    { text: 'text7', value: 'v7' },
   ]"
-  v-model="status"
 />`,
   t1050: `Runtime Example`,
   c1050:
@@ -110,6 +317,7 @@ r1.setName('locale')`,
 <!-- Result e.g.: { lang: "r-ko", theme: null } -->`,
   t1100: `slot`,
   t1200: `props`,
+  t1250: `input types`,
   t1300: `event emit`,
   t1400: `component methods`,
 }
@@ -129,7 +337,7 @@ const propGridDataKo = [
   { prop: "style", type: "string | CSSProperties | CSSProperties[]", default: "-", explain: "루트 인라인 스타일." },
   { prop: "visible", type: "boolean", default: "true", explain: "컴포넌트 표시 여부." },
   { prop: "modelValue", type: "any", default: "-", explain: "v-model 바인딩 값." },
-  { prop: "inputType", type: "'text'|'mask'|'number'|'digit'|'date'|'month'|'time'|'email'|'password'|'checkbox'|'radio'|'range'|'color'|'textarea'|'select'", default: "'text'", explain: "입력 타입." },
+  { prop: "inputType", type: "'text'|'mask'|'number'|'digit'|'date'\n|'month'|'time'|'email'|'password'\n|'checkbox'|'radio'|'range'|'color'\n|'textarea'|'select'", default: "'text'", explain: "입력 타입." },
   { prop: "format", type: "string", default: "-", explain: "숫자/날짜/마스크 표시 포맷." },
   { prop: "nullText", type: "string", default: "-", explain: "읽기전용일 때 값이 없으면 표시할 텍스트." },
   { prop: "maxNumber / minNumber / roundNumber", type: "String|Number", default: "-", explain: "숫자 제약 및 반올림 자리수." },
@@ -151,7 +359,7 @@ const propGridDataEn = [
   { prop: "style", type: "string | CSSProperties | CSSProperties[]", default: "-", explain: "Inline style." },
   { prop: "visible", type: "boolean", default: "true", explain: "Visibility." },
   { prop: "modelValue", type: "any", default: "-", explain: "v-model value." },
-  { prop: "inputType", type: "'text'|'mask'|'number'|'digit'|'date'|'month'|'time'|'email'|'password'|'checkbox'|'radio'|'range'|'color'|'textarea'|'select'", default: "'text'", explain: "Input type." },
+  { prop: "inputType", type: "'text'|'mask'|'number'|'digit'|'date'\n|'month'|'time'|'email'|'password'\n|'checkbox'|'radio'|'range'|'color'\n|'textarea'|'select'", default: "'text'", explain: "Input type." },
   { prop: "format", type: "string", default: "-", explain: "Format for number/date/mask." },
   { prop: "nullText", type: "string", default: "-", explain: "Readonly empty text." },
   { prop: "maxNumber / minNumber / roundNumber", type: "String|Number", default: "-", explain: "Numeric constraints & rounding." },
@@ -265,6 +473,41 @@ const methodGridDataEn = [
   { method: "reload()", param: "-", return: "void", explain: "Force re-render." },
 ]
 
+const inputTypeGridDataKo = [
+  { type: "text", format: "-", value: "string", explain: "일반 문자열을 받는 input" },
+  { type: "mask", format: "문자: A/a 숫자: 9", value: "string", explain: "format의 형태로만 입력가능.\nA: 대문자만 입력가능\n a: 소문자만 입력가능\n9: 숫자만 입력가능\n그외: 동일한 문자만 입력가능\nEx) AA-999이면 HR-123" },
+  { type: "digit", format: "[0-9]", value: "number", explain: "0에서 9까지 단순 숫자만 입력가능" },
+  { type: "email", format: "사용자 커스텀 필요", value: "string", explain: "단순하게 html input type email을 활용함." },
+  { type: "password", format: "'·'으로 표현", value: "string", explain: "html input type password를 활용하며, 보여주기시 모든 문자를 ·로 표기함" },
+  { type: "textarea", format: "-", value: "string", explain: "html textarea를 활용함." },
+  { type: "date", format: "hison DateFormat", value: "string", explain: "입력 시 html input date를 활용하며, 출력 시 설정된 날짜 포맷의 문자열로 출력함." },
+  { type: "month", format: "hison YearMonthFormat", value: "string", explain: "입력 시 html input month를 활용하며, 출력 시 설정된 년월 포맷의 문자열로 출력함." },
+  { type: "time", format: "hison TimeFormat", value: "string", explain: "입력 시 html input time을 활용하며, 출력 시 설정된 Time 포맷의 문자열로 출력함." },
+  { type: "number", format: "integer: #,###/#,##0/#/0 \ndecimal: #/0 ", value: "number", explain: "입력 시 html input number를 활용함. format에 따라 문자열 출력함.\n정수부  #,###: 1,234\n#,##0: 1,234는 동일 하지만 1의 자리 숫자가 없어도 0으로 표기.\n소수부: #: 숫자가 있을 때만 표기\n0: 숫자가 없으면 '0'으로 표기\nEx) 1234.9876(#,###.##) => 1,234.99\nformat마지막에 '%'가 있으면 백분율 표기\n그외 앞뒤로 특정 문자는 문자와 함께 표기.\nhison.utils.getNumberFormat을 이용함." },
+  { type: "checkbox", format: "-", value: "boolean", explain: "value는 boolean이지만 출력 텍스트는 checkedText, uncheckedText 활용" },
+  { type: "radio", format: "-", value: "boolean", explain: "value는 boolean이지만 출력 텍스트는 checkedText, uncheckedText 활용\n name속성을 동일하게 지정하면 동일한 분류의 radio로 묶임." },
+  { type: "range", format: "-", value: "number", explain: "html input type range활용." },
+  { type: "color", format: "-", value: "string", explain: "html input type coler활용." },
+  { type: "select", format: "-", value: "Array", explain: "html input type select활용.\noptions를 통해 select option지정\nmodel-value의 값은 options에 있는 value로 설정하면 됨." }
+]
+const inputTypeGridDataEn = [
+  { type: "text", format: "-", value: "string", explain: "An input that receives a plain string." },
+  { type: "mask", format: "Char: A/a  Number: 9", value: "string", explain: "Input is restricted to match the given format.\nA: uppercase only\n a: lowercase only\n9: numbers only\nOthers: must match the same literal character\nEx) AA-999 → HR-123" },
+  { type: "digit", format: "[0-9]", value: "number", explain: "Allows only simple numeric input from 0 to 9." },
+  { type: "email", format: "Custom required", value: "string", explain: "Uses the standard HTML input type 'email'." },
+  { type: "password", format: "expressed as '·'", value: "string", explain: "Uses HTML input type 'password'; all characters are shown as · when visible." },
+  { type: "textarea", format: "-", value: "string", explain: "Uses an HTML textarea element." },
+  { type: "date", format: "hison DateFormat", value: "string", explain: "Uses HTML input type 'date' for entry and outputs a formatted date string according to the configured format." },
+  { type: "month", format: "hison YearMonthFormat", value: "string", explain: "Uses HTML input type 'month' for entry and outputs a formatted year-month string according to the configured format." },
+  { type: "time", format: "hison TimeFormat", value: "string", explain: "Uses HTML input type 'time' for entry and outputs a formatted time string according to the configured format." },
+  { type: "number", format: "integer: #,###/#,##0/#/0 \ndecimal: #/0", value: "number", explain: "Uses HTML input type 'number'. Outputs formatted strings based on the given format.\nInteger part: #,### → 1,234\n#,##0 → same as above but shows 0 if the ones digit is missing.\nDecimal part: #: displays only when digits exist\n0: displays '0' when no digits exist\nEx) 1234.9876 (#,###.##) → 1,234.99\nIf the format ends with '%', it is shown as a percentage.\nOther characters before or after the format are shown together.\nUses hison.utils.getNumberFormat." },
+  { type: "checkbox", format: "-", value: "boolean", explain: "The value is boolean, but the displayed text uses checkedText and uncheckedText." },
+  { type: "radio", format: "-", value: "boolean", explain: "The value is boolean, but the displayed text uses checkedText and uncheckedText.\nWhen 'name' attributes are identical, they form a radio group." },
+  { type: "range", format: "-", value: "number", explain: "Uses HTML input type 'range'." },
+  { type: "color", format: "-", value: "string", explain: "Uses HTML input type 'color'." },
+  { type: "select", format: "-", value: "Array", explain: "Uses HTML select element.\nOptions are defined via 'options'.\nThe model-value should correspond to one of the option values." }
+]
+
 // column defs & loaders
 const slotColumn: HGridColumn[] = [
   { id: 'slot', header: 'slot', dataType: 'text', width: '24%' },
@@ -272,20 +515,26 @@ const slotColumn: HGridColumn[] = [
 ]
 const propColumn: HGridColumn[] = [
   { id: 'prop', header: 'prop', dataType: 'text', width: '20%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '40%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '25%' },
   { id: 'default', header: 'default', dataType: 'text', width: '12%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '28%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '43%' },
 ]
 const eventColumn: HGridColumn[] = [
   { id: 'event', header: 'event', dataType: 'text', width: '22%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '44%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '34%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '39%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '39%' },
 ]
 const methodColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '26%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '34%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '14%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '26%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '25%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '15%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '20%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
+]
+const inputTypeColumn: HGridColumn[] = [
+  { id: 'type', header: 'type', dataType: 'text', width: '25%' },
+  { id: 'format', header: 'format', dataType: 'text', width: '15%' },
+  { id: 'value', header: 'value', dataType: 'text', width: '20%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
 ]
 
 const mountSlotGrid = async (grid: HGridMethods) => {
@@ -300,6 +549,9 @@ const mountEventGrid = async (grid: HGridMethods) => {
 const mountMethodGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? methodGridDataEn : methodGridDataKo)
 }
+const mountInputTypeGrid = async (grid: HGridMethods) => {
+  grid.load(props.lang === 'en' ? inputTypeGridDataEn : inputTypeGridDataKo)
+}
 </script>
 
 <template>
@@ -307,50 +559,166 @@ const mountMethodGrid = async (grid: HGridMethods) => {
     <HParagraph class="hison-col-12">{{ contents.t1000 }}</HParagraph>
 
     <HCaption :level="5" class="hison-col-12">{{ contents.t1010 }}</HCaption>
-    <HLayout class="hison-col-12" style="gap: 8px;">
-      <!-- text -->
-      <HInput
-        id="inp-demo-text"
-        class="hison-col-12-mb hison-col-4-pc"
-        inputType="text"
-        v-model="demoText"
-        :placeholder="props.lang==='en' ? 'Type here' : '여기에 입력'"
-        :border="true"
-      />
-      <!-- number w/ format -->
-      <HInput
-        id="inp-demo-number"
-        class="hison-col-12-mb hison-col-4-pc"
-        inputType="number"
-        :format="'#,##0'"
-        :maxNumber="99999999"
-        v-model="demoNumber"
-        :title="props.lang==='en' ? 'Formatted number' : '숫자 포맷'"
-      />
-      <!-- select -->
-      <HInput
-        id="inp-demo-select"
-        class="hison-col-12-mb hison-col-4-pc"
-        inputType="select"
-        v-model="demoStatus"
-        :options="[
-          { text: props.lang==='en' ? 'Active' : '활성', value: 'A' },
-          { text: props.lang==='en' ? 'Inactive' : '비활성', value: 'I' }
-        ]"
-      />
-    </HLayout>
-
-    <HGap/>
-    <!-- Radio group live -->
-    <HCaption :level="6" class="hison-col-12">{{ props.lang==='en' ? 'Radio Group (by name)' : '라디오 그룹(name 기반)' }}</HCaption>
-    <HInputGroup id="prefForm" v-model="demoRadioGroup" class="hison-col-12 hison-size-s">
-      <HLayout class="hison-col-12" style="gap:10px; align-items:center;">
-        <HCaption :level="6" class="hison-col-12-mb hison-col-2-pc">lang</HCaption>
-        <HInput id="r-ko" inputType="radio" name="lang" :modelValue="true"/>
-        <HInput id="r-en" inputType="radio" name="lang"/>
-        <HCaption :level="6" class="hison-col-12-mb hison-col-2-pc">theme</HCaption>
-        <HInput id="r-dark" inputType="radio" name="theme"/>
-        <HInput id="r-light" inputType="radio" name="theme"/>
+    <HInputGroup id="group1">
+      <HLayout>
+        <HLabel class="hison-col-3">Type: text</HLabel>
+        <HInput
+          id="text"
+          class="hison-col-9"
+          :input-type="'text'"
+          :model-value="props.lang==='en' ? 'This is text type input' : 'text 타입 input입니다.'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: mask (format: AA-999)</HLabel>
+        <HInput
+          id="mask"
+          class="hison-col-9"
+          :input-type="'mask'"
+          :model-value="'HR-123'"
+          :format="'AA-999'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: digit</HLabel>
+        <HInput
+          id="digit"
+          class="hison-col-9"
+          :input-type="'digit'"
+          :model-value="12345"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: email</HLabel>
+        <HInput
+          id="email"
+          class="hison-col-9"
+          :input-type="'email'"
+          :model-value="'hison0319@gmail.com'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: password</HLabel>
+        <HInput
+          id="password"
+          class="hison-col-9"
+          :input-type="'password'"
+          :model-value="'1234'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: textarea</HLabel>
+        <HInput
+          id="textarea"
+          class="hison-col-9"
+          :input-type="'textarea'"
+          :model-value="props.lang==='en' ? 'This is textarea type input' : 'textarea 타입 input입니다.'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: date</HLabel>
+        <HInput
+          id="date"
+          class="hison-col-9"
+          :input-type="'date'"
+          :model-value="'2025-12-31'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: month</HLabel>
+        <HInput
+          id="month"
+          class="hison-col-9"
+          :input-type="'month'"
+          :model-value="'2025-12'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: time</HLabel>
+        <HInput
+          id="time"
+          class="hison-col-9"
+          :input-type="'time'"
+          :model-value="'121212'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: number (format: #,##0.##)</HLabel>
+        <HInput
+          class="hison-col-9"
+          :input-type="'number'"
+          :model-value="1234.1234"
+          :format="'#,##0.##'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: checkbox</HLabel>
+        <HInput
+          id="checkbox"
+          class="hison-col-9"
+          :input-type="'checkbox'"
+          :model-value="true"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: radio</HLabel>
+        <HInput
+          id="radio1"
+          name="radio"
+          class="hison-col-3"
+          :input-type="'radio'"
+          :model-value="true"
+        />
+        <HInput
+          id="radio2"
+          name="radio"
+          class="hison-col-3"
+          :input-type="'radio'"
+          :model-value="false"
+        />
+        <HInput
+          id="radio3"
+          name="radio"
+          class="hison-col-3"
+          :input-type="'radio'"
+          :model-value="false"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: range</HLabel>
+        <HInput
+          id="range"
+          class="hison-col-9"
+          :input-type="'range'"
+          :model-value="50"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: color</HLabel>
+        <HInput
+          id="color"
+          class="hison-col-9"
+          :input-type="'color'"
+          :model-value="'#128483'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: select</HLabel>
+        <HInput
+          id="select"
+          class="hison-col-9"
+          :input-type="'select'"
+          :model-value="'v3'"
+          :options="[
+            { text: 'text1', value: 'v1' },
+            { text: 'text2', value: 'v2' },
+            { text: 'text3', value: 'v3' },
+            { text: 'text4', value: 'v4' },
+            { text: 'text5', value: 'v5' },
+            { text: 'text6', value: 'v6' },
+            { text: 'text7', value: 'v7' },
+          ]"
+        />
       </HLayout>
     </HInputGroup>
 
@@ -358,20 +726,20 @@ const mountMethodGrid = async (grid: HGridMethods) => {
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1040 }}</HCaption>
-    <CodeParagraph :code="contents.c1040"/>
+    <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1050 }}</HCaption>
-    <CodeParagraph :code="contents.c1050"/>
+    <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1060 }}</HCaption>
-    <CodeParagraph :code="contents.c1060"/>
+    <CodeParagraph :code="contents.c1060" :dynamicWidth="false"/>
 
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="inputSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'110px'"
+      class="hison-col-12 hison-size-m"
+      :height="'80px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -384,8 +752,8 @@ const mountMethodGrid = async (grid: HGridMethods) => {
     <HGrid
       id="inputPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'680px'"
+      class="hison-col-12 hison-size-m"
+      :height="'500px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -394,12 +762,26 @@ const mountMethodGrid = async (grid: HGridMethods) => {
     />
 
     <HGap/>
+    <HCaption :level="6" class="hison-col-12">{{ contents.t1250 }}</HCaption>
+    <HGrid
+      id="inputTypeGrid"
+      :columns="inputTypeColumn"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
+      :rownum-visible="false"
+      :status-visible="false"
+      :locked="true"
+      :locked-color="false"
+      @mounted="mountInputTypeGrid"
+    />
+
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1300 }}</HCaption>
     <HGrid
       id="inputEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'560px'"
+      class="hison-col-12 hison-size-m"
+      :height="'300px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -412,8 +794,8 @@ const mountMethodGrid = async (grid: HGridMethods) => {
     <HGrid
       id="inputMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'900px'"
+      class="hison-col-12 hison-size-m"
+      :height="'800px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

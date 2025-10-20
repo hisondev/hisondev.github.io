@@ -1,19 +1,9 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
-import type { HGridColumn, HGridMethods } from 'hisonvue'
+import { defineProps } from 'vue'
+import { hison, type HGridColumn, type HGridMethods } from 'hisonvue'
 import CodeParagraph from '../CodeParagraph.vue'
-
 const props = defineProps<{ lang: string }>()
 
-/* -------------------------------- demo states -------------------------------- */
-const form = ref<Record<string, any>>({
-  userid: 'hison',
-  email: 'a@b.com',
-  agree: null as string | null,
-})
-const liveRequiredFail = ref<string>('')
-
-/* ----------------------------------- i18n ------------------------------------ */
 const ko = {
   t1000:
 `하단은 HInputGroup(그룹 입력 컨트롤러) 컴포넌트의 샘플입니다.
@@ -21,15 +11,213 @@ const ko = {
 HInputGroup은 여러 HInput을 감싸고, 데이터 로드/초기화/수정여부/필수검증/일괄 편집모드 적용 등을
 런타임 메서드로 제공합니다. 라디오 타입은 name을 그룹키로 묶어 { [name]: 선택된 라디오 id|null } 형태로 관리합니다.`,
   t1010: '라이브 데모',
+  t1015: '데모 컴포넌트',
+  c1015:
+`<HInputGroup id="group1">
+  <HLayout>
+    <HLabel class="hison-col-3">Type: text</HLabel>
+    <HInput
+      id="text"
+      class="hison-col-9"
+      :input-type="'text'"
+      :model-value="props.lang==='en' ? 'This is text type input' : 'text 타입 input입니다.'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: mask (format: AA-999)</HLabel>
+    <HInput
+      id="mask"
+      class="hison-col-9"
+      :input-type="'mask'"
+      :model-value="'HR-123'"
+      :format="'AA-999'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: digit</HLabel>
+    <HInput
+      id="digit"
+      class="hison-col-9"
+      :input-type="'digit'"
+      :model-value="12345"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: email</HLabel>
+    <HInput
+      id="email"
+      class="hison-col-9"
+      :input-type="'email'"
+      :model-value="'hison0319@gmail.com'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: password</HLabel>
+    <HInput
+      id="password"
+      class="hison-col-9"
+      :input-type="'password'"
+      :model-value="'1234'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: textarea</HLabel>
+    <HInput
+      id="textarea"
+      class="hison-col-9"
+      :input-type="'textarea'"
+      :model-value="props.lang==='en' ? 'This is textarea type input' : 'textarea 타입 input입니다.'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: date</HLabel>
+    <HInput
+      id="date"
+      class="hison-col-9"
+      :input-type="'date'"
+      :model-value="'2025-12-31'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: month</HLabel>
+    <HInput
+      id="month"
+      class="hison-col-9"
+      :input-type="'month'"
+      :model-value="'2025-12'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: time</HLabel>
+    <HInput
+      id="time"
+      class="hison-col-9"
+      :input-type="'time'"
+      :model-value="'121212'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: number (format: #,##0.##)</HLabel>
+    <HInput
+      class="hison-col-9"
+      :input-type="'number'"
+      :model-value="1234.1234"
+      :format="'#,##0.##'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: checkbox</HLabel>
+    <HInput
+      id="checkbox"
+      class="hison-col-9"
+      :input-type="'checkbox'"
+      :model-value="true"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: radio</HLabel>
+    <HInput
+      id="radio1"
+      name="radio"
+      class="hison-col-3"
+      :input-type="'radio'"
+      :model-value="true"
+    />
+    <HInput
+      id="radio2"
+      name="radio"
+      class="hison-col-3"
+      :input-type="'radio'"
+      :model-value="false"
+    />
+    <HInput
+      id="radio3"
+      name="radio"
+      class="hison-col-3"
+      :input-type="'radio'"
+      :model-value="false"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: range</HLabel>
+    <HInput
+      id="range"
+      class="hison-col-9"
+      :input-type="'range'"
+      :model-value="50"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: color</HLabel>
+    <HInput
+      id="color"
+      class="hison-col-9"
+      :input-type="'color'"
+      :model-value="'#128483'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: select</HLabel>
+    <HInput
+      id="select"
+      class="hison-col-9"
+      :input-type="'select'"
+      :model-value="'v3'"
+      :options="[
+        { text: 'text1', value: 'v1' },
+        { text: 'text2', value: 'v2' },
+        { text: 'text3', value: 'v3' },
+        { text: 'text4', value: 'v4' },
+        { text: 'text5', value: 'v5' },
+        { text: 'text6', value: 'v6' },
+        { text: 'text7', value: 'v7' },
+      ]"
+    />
+  </HLayout>
+</HInputGroup>`,
   t1020: '데모 동작',
   c1020:
-`const grp = hison.component.getInputGroup('group1')
-grp.load({ userid: 'abc', email: 'test@example.com', agree: 'agreeY' })
-const data = grp.getDataObject()     // { userid, email, agree }
-grp.setEditMode('readonly')          // 전체 읽기전용
-grp.clear(true)                      // 값 초기화 + status 'C'
-const firstInvalid = grp.checkRequired()
-if (firstInvalid) firstInvalid.focus()`,
+`//샘플 로드
+function onLoadSample() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.load({
+    text: 'load text',
+    mask: 'FA-123',
+    digit: '98765',
+    email: 'test@example.com',
+    password: '43214321',
+    textarea: 'load textarea\\nload textarea',
+    date: '2010-01-01',
+    month: '2010-01',
+    time: '212121',
+    number: 4321.4321,
+    checkbox: false,
+    radio3: true,
+    range: 25,
+    color: '#123123',
+    select: 'v7',
+  })
+}
+//초기화
+function onClear() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.clear(true)
+}
+//전체 비활성화
+function onDisable() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.setEditMode('disable')
+}
+//전체 읽기전용
+function onReadonly() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.setEditMode('readonly')
+}
+//전체 편집가능
+function onEditable() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp?.setEditMode('editable')
+}`,
   t1100: 'slot',
   t1200: 'props',
   t1300: 'events',
@@ -40,10 +228,9 @@ if (firstInvalid) firstInvalid.focus()`,
 · [검증] 버튼은 필수값 체크(checkRequired)를 수행합니다.`,
   btnLoad: '샘플 로드',
   btnClear: '초기화',
+  btnDisable: '전체 비활성화',
   btnReadonly: '전체 읽기전용',
   btnEditable: '전체 편집가능',
-  btnCheckReq: '검증(필수)',
-  reqFail: '필수값이 비어 있습니다 → ',
 }
 
 const en = {
@@ -54,15 +241,213 @@ HInputGroup wraps multiple HInput components and provides runtime APIs for loadi
 tracking modification, validating required fields, and applying group-wide edit mode. Radios are grouped by 'name'
 and represented as { [groupName]: selectedRadioId | null }.`,
   t1010: 'Live Demo',
+  t1015: 'Component Demo',
+  c1015:
+`<HInputGroup id="group1">
+  <HLayout>
+    <HLabel class="hison-col-3">Type: text</HLabel>
+    <HInput
+      id="text"
+      class="hison-col-9"
+      :input-type="'text'"
+      :model-value="props.lang==='en' ? 'This is text type input' : 'text 타입 input입니다.'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: mask (format: AA-999)</HLabel>
+    <HInput
+      id="mask"
+      class="hison-col-9"
+      :input-type="'mask'"
+      :model-value="'HR-123'"
+      :format="'AA-999'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: digit</HLabel>
+    <HInput
+      id="digit"
+      class="hison-col-9"
+      :input-type="'digit'"
+      :model-value="12345"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: email</HLabel>
+    <HInput
+      id="email"
+      class="hison-col-9"
+      :input-type="'email'"
+      :model-value="'hison0319@gmail.com'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: password</HLabel>
+    <HInput
+      id="password"
+      class="hison-col-9"
+      :input-type="'password'"
+      :model-value="'1234'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: textarea</HLabel>
+    <HInput
+      id="textarea"
+      class="hison-col-9"
+      :input-type="'textarea'"
+      :model-value="props.lang==='en' ? 'This is textarea type input' : 'textarea 타입 input입니다.'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: date</HLabel>
+    <HInput
+      id="date"
+      class="hison-col-9"
+      :input-type="'date'"
+      :model-value="'2025-12-31'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: month</HLabel>
+    <HInput
+      id="month"
+      class="hison-col-9"
+      :input-type="'month'"
+      :model-value="'2025-12'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: time</HLabel>
+    <HInput
+      id="time"
+      class="hison-col-9"
+      :input-type="'time'"
+      :model-value="'121212'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: number (format: #,##0.##)</HLabel>
+    <HInput
+      class="hison-col-9"
+      :input-type="'number'"
+      :model-value="1234.1234"
+      :format="'#,##0.##'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: checkbox</HLabel>
+    <HInput
+      id="checkbox"
+      class="hison-col-9"
+      :input-type="'checkbox'"
+      :model-value="true"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: radio</HLabel>
+    <HInput
+      id="radio1"
+      name="radio"
+      class="hison-col-3"
+      :input-type="'radio'"
+      :model-value="true"
+    />
+    <HInput
+      id="radio2"
+      name="radio"
+      class="hison-col-3"
+      :input-type="'radio'"
+      :model-value="false"
+    />
+    <HInput
+      id="radio3"
+      name="radio"
+      class="hison-col-3"
+      :input-type="'radio'"
+      :model-value="false"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: range</HLabel>
+    <HInput
+      id="range"
+      class="hison-col-9"
+      :input-type="'range'"
+      :model-value="50"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: color</HLabel>
+    <HInput
+      id="color"
+      class="hison-col-9"
+      :input-type="'color'"
+      :model-value="'#128483'"
+    />
+  </HLayout>
+  <HLayout>
+    <HLabel class="hison-col-3">Type: select</HLabel>
+    <HInput
+      id="select"
+      class="hison-col-9"
+      :input-type="'select'"
+      :model-value="'v3'"
+      :options="[
+        { text: 'text1', value: 'v1' },
+        { text: 'text2', value: 'v2' },
+        { text: 'text3', value: 'v3' },
+        { text: 'text4', value: 'v4' },
+        { text: 'text5', value: 'v5' },
+        { text: 'text6', value: 'v6' },
+        { text: 'text7', value: 'v7' },
+      ]"
+    />
+  </HLayout>
+</HInputGroup>`,
   t1020: 'Runtime usage example',
   c1020:
-`const grp = hison.component.getInputGroup('group1')
-grp.load({ userid: 'abc', email: 'test@example.com', agree: 'agreeY' })
-const data = grp.getDataObject()     // { userid, email, agree }
-grp.setEditMode('readonly')          // make all readonly
-grp.clear(true)                      // reset and set status 'C'
-const firstInvalid = grp.checkRequired()
-if (firstInvalid) firstInvalid.focus()`,
+`//Load sample
+function onLoadSample() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.load({
+    text: 'load text',
+    mask: 'FA-123',
+    digit: '98765',
+    email: 'test@example.com',
+    password: '43214321',
+    textarea: 'load textarea\\nload textarea',
+    date: '2010-01-01',
+    month: '2010-01',
+    time: '212121',
+    number: 4321.4321,
+    checkbox: false,
+    radio3: true,
+    range: 25,
+    color: '#123123',
+    select: 'v7',
+  })
+}
+//Clear
+function onClear() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.clear(true)
+}
+//Disable all
+function onDisable() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.setEditMode('disable')
+}
+//Readonly all
+function onReadonly() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.setEditMode('readonly')
+}
+//Editable all
+function onEditable() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp?.setEditMode('editable')
+}`,
   t1100: 'slot',
   t1200: 'props',
   t1300: 'events',
@@ -73,10 +458,9 @@ if (firstInvalid) firstInvalid.focus()`,
 · [Validate] triggers checkRequired().`,
   btnLoad: 'Load sample',
   btnClear: 'Clear',
+  btnDisable: 'Disable all',
   btnReadonly: 'Readonly all',
   btnEditable: 'Editable all',
-  btnCheckReq: 'Validate (required)',
-  reqFail: 'Required field is empty → ',
 }
 
 const T = props.lang === 'en' ? en : ko
@@ -189,34 +573,40 @@ const mountMethodGrid = async (grid: HGridMethods) => {
 
 /* -------------------------------- demo actions -------------------------------- */
 function onLoadSample() {
-  const grp = (window as any).hison?.component?.getInputGroup?.('group1')
-  grp?.load({
-    userid: 'abc',
+  const grp = hison.component.getInputGroup('group1')!
+  grp.load({
+    text: 'load text',
+    mask: 'FA-123',
+    digit: '98765',
     email: 'test@example.com',
-    agree: 'agreeY',
+    password: '43214321',
+    textarea: 'load textarea\nload textarea',
+    date: '2010-01-01',
+    month: '2010-01',
+    time: '212121',
+    number: 4321.4321,
+    checkbox: false,
+    radio3: true,
+    range: 25,
+    color: '#123123',
+    select: 'v7',
   })
 }
 function onClear() {
-  const grp = (window as any).hison?.component?.getInputGroup?.('group1')
-  grp?.clear(true)
+  const grp = hison.component.getInputGroup('group1')!
+  grp.clear(true)
+}
+function onDisable() {
+  const grp = hison.component.getInputGroup('group1')!
+  grp.setEditMode('disable')
 }
 function onReadonly() {
-  const grp = (window as any).hison?.component?.getInputGroup?.('group1')
-  grp?.setEditMode('readonly')
+  const grp = hison.component.getInputGroup('group1')!
+  grp.setEditMode('readonly')
 }
 function onEditable() {
-  const grp = (window as any).hison?.component?.getInputGroup?.('group1')
+  const grp = hison.component.getInputGroup('group1')!
   grp?.setEditMode('editable')
-}
-function onCheckRequired() {
-  const grp = (window as any).hison?.component?.getInputGroup?.('group1')
-  const fail = grp?.checkRequired()
-  if (fail) {
-    liveRequiredFail.value = `${T.reqFail}${fail.getId?.() ?? ''}`
-    fail.focus?.()
-  } else {
-    liveRequiredFail.value = ''
-  }
 }
 </script>
 
@@ -226,41 +616,194 @@ function onCheckRequired() {
 
     <HCaption :level="5" class="hison-col-12">{{ T.t1010 }}</HCaption>
 
-    <HInputGroup id="group1" v-model="form" class="hison-col-12">
-      <HLayout class="hison-col-12" style="gap:10px; align-items:flex-end;">
-        <HInput id="userid" inputType="text" class="hison-col-12-mb hison-col-3-pc" :required="true" :placeholder="props.lang==='en' ? 'User ID (required)' : '사용자ID(필수)'" />
-        <HInput id="email" inputType="email" class="hison-col-12-mb hison-col-4-pc" :placeholder="props.lang==='en' ? 'Email' : '이메일'" />
-        <HLayout class="hison-col-12-mb hison-col-5-pc" style="display:flex; gap:10px; align-items:center;">
-          <HCaption :level="6" class="hison-col-12-mb hison-col-3-pc">agree</HCaption>
-          <HInput id="agreeY" inputType="radio" name="agree" :title="'Yes'"/>
-          <HInput id="agreeN" inputType="radio" name="agree" :title="'No'"/>
-        </HLayout>
-      </HLayout>
-    </HInputGroup>
-
     <HLayout class="hison-col-12" style="gap:8px; margin-top:10px;">
       <HButton :text="T.btnLoad" @click="onLoadSample" />
       <HButton :text="T.btnClear" @click="onClear" />
+      <HButton :text="T.btnDisable" @click="onDisable" />
       <HButton :text="T.btnReadonly" @click="onReadonly" />
       <HButton :text="T.btnEditable" @click="onEditable" />
-      <HButton :text="T.btnCheckReq" @click="onCheckRequired" />
     </HLayout>
-
-    <HParagraph v-if="liveRequiredFail" class="hison-col-12 hison-color-danger">{{ liveRequiredFail }}</HParagraph>
+    <HGap class="hison-size-s"/>
+    <HInputGroup id="group1">
+      <HLayout>
+        <HLabel class="hison-col-3">Type: text</HLabel>
+        <HInput
+          id="text"
+          class="hison-col-9"
+          :input-type="'text'"
+          :model-value="props.lang==='en' ? 'This is text type input' : 'text 타입 input입니다.'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: mask (format: AA-999)</HLabel>
+        <HInput
+          id="mask"
+          class="hison-col-9"
+          :input-type="'mask'"
+          :model-value="'HR-123'"
+          :format="'AA-999'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: digit</HLabel>
+        <HInput
+          id="digit"
+          class="hison-col-9"
+          :input-type="'digit'"
+          :model-value="12345"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: email</HLabel>
+        <HInput
+          id="email"
+          class="hison-col-9"
+          :input-type="'email'"
+          :model-value="'hison0319@gmail.com'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: password</HLabel>
+        <HInput
+          id="password"
+          class="hison-col-9"
+          :input-type="'password'"
+          :model-value="'1234'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: textarea</HLabel>
+        <HInput
+          id="textarea"
+          class="hison-col-9"
+          style="height: 60px;"
+          :input-type="'textarea'"
+          :model-value="props.lang==='en' ? 'This is textarea type input' : 'textarea 타입 input입니다.'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: date</HLabel>
+        <HInput
+          id="date"
+          class="hison-col-9"
+          :input-type="'date'"
+          :model-value="'2025-12-31'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: month</HLabel>
+        <HInput
+          id="month"
+          class="hison-col-9"
+          :input-type="'month'"
+          :model-value="'2025-12'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: time</HLabel>
+        <HInput
+          id="time"
+          class="hison-col-9"
+          :input-type="'time'"
+          :model-value="'121212'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: number (format: #,##0.##)</HLabel>
+        <HInput
+          class="hison-col-9"
+          :input-type="'number'"
+          :model-value="1234.1234"
+          :format="'#,##0.##'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: checkbox</HLabel>
+        <HInput
+          id="checkbox"
+          class="hison-col-9"
+          :input-type="'checkbox'"
+          :model-value="true"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: radio</HLabel>
+        <HInput
+          id="radio1"
+          name="radio"
+          class="hison-col-3"
+          :input-type="'radio'"
+          :model-value="true"
+        />
+        <HInput
+          id="radio2"
+          name="radio"
+          class="hison-col-3"
+          :input-type="'radio'"
+          :model-value="false"
+        />
+        <HInput
+          id="radio3"
+          name="radio"
+          class="hison-col-3"
+          :input-type="'radio'"
+          :model-value="false"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: range</HLabel>
+        <HInput
+          id="range"
+          class="hison-col-9"
+          :input-type="'range'"
+          :model-value="50"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: color</HLabel>
+        <HInput
+          id="color"
+          class="hison-col-9"
+          :input-type="'color'"
+          :model-value="'#128483'"
+        />
+      </HLayout>
+      <HLayout>
+        <HLabel class="hison-col-3">Type: select</HLabel>
+        <HInput
+          id="select"
+          class="hison-col-9"
+          :input-type="'select'"
+          :model-value="'v3'"
+          :options="[
+            { text: 'text1', value: 'v1' },
+            { text: 'text2', value: 'v2' },
+            { text: 'text3', value: 'v3' },
+            { text: 'text4', value: 'v4' },
+            { text: 'text5', value: 'v5' },
+            { text: 'text6', value: 'v6' },
+            { text: 'text7', value: 'v7' },
+          ]"
+        />
+      </HLayout>
+    </HInputGroup>
 
     <HGap/>
     <HParagraph class="hison-col-12">{{ T.demoExplain }}</HParagraph>
 
+    <HCaption :level="6" class="hison-col-12">{{ T.t1015 }}</HCaption>
+    <CodeParagraph :code="T.c1015" :dynamicWidth="false"/>
+
     <HCaption :level="6" class="hison-col-12">{{ T.t1020 }}</HCaption>
-    <CodeParagraph :code="T.c1020" />
+    <CodeParagraph :code="T.c1020" :dynamicWidth="false"/>
 
     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1100 }}</HCaption>
     <HGrid
       id="igSlotGrid"
       :columns="slotColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'130px'"
+      class="hison-col-12 hison-size-m"
+      :height="'80px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -273,8 +816,8 @@ function onCheckRequired() {
     <HGrid
       id="igPropGrid"
       :columns="propColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'340px'"
+      class="hison-col-12 hison-size-m"
+      :height="'160px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -287,8 +830,8 @@ function onCheckRequired() {
     <HGrid
       id="igEventGrid"
       :columns="eventColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'200px'"
+      class="hison-col-12 hison-size-m"
+      :height="'100px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -301,8 +844,8 @@ function onCheckRequired() {
     <HGrid
       id="igMethodGrid"
       :columns="methodColumn"
-      class="hison-col-12 hison-size-s"
-      :height="'620px'"
+      class="hison-col-12 hison-size-m"
+      :height="'400px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
