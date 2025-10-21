@@ -237,10 +237,6 @@ const inputOnChange = (oldValue: Lang, newValue: Lang, input: HInputMethods) => 
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3610 }}</HParagraph>
         <CodeParagraph :key="getKey()" :code="contents.c3610"/>
         <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3700 }}</HCaption>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3710 }}</HParagraph>
-        <CodeParagraph :key="getKey()" :code="contents.c3710"/>
-        <HGap/>
         <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4000 }}</HCaption>
         <CodeParagraph :key="getKey()" :dynamicWidth="false" :code="contents.c4000"/>
         <HGap/>

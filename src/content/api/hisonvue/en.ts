@@ -90,15 +90,6 @@ hison-size-m-pc, hison-size-12-xl(화면의 너비가 1200이상이면 요소 'm
 .hison-pos-center { margin-left: auto; margin-right: auto; }
 .hison-pos-right { margin-left: auto; }`,
 
-  t3700:
-`hison-pos-vertical-`,
-  t3710:
-`HLayout 내부에서 요소의 수평적 위치를 지정하는 class접두어입니다. (요소의 순서를 변경하지는 못합니다.)`,
-  c3710:
-`.hison-pos-vertical-top { margin-bottom: auto; }
-.hison-pos-vertical-center { margin-top: auto; margin-bottom: auto; }
-.hison-pos-vertical-bottom { margin-top: auto; }`,
-
   t4000:
 `css변수를 사용하며 hison.style, hisonConfig.componentStyle, 직접 변경 등을 통해 제어할 수 있습니다.`,
   c4000:
