@@ -307,28 +307,28 @@ const mountSlotGrid = async (grid: HGridMethods) => {
 }
 
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '16%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '36%' },
-  { id: 'default', header: 'default', dataType: 'text', width: '12%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '36%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '25%' },
+  { id: 'default', header: 'default', dataType: 'text', width: '15%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '45%' },
 ]
 const mountPropGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? propGridDataEn : propGridDataKo)
 }
 
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '18%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '42%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '40%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '20%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '30%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '50%' },
 ]
 const mountEventGrid = async (grid: HGridMethods) => {
   grid.load(props.lang === 'en' ? eventGridDataEn : eventGridDataKo)
 }
 
 const methodColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '24%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '32%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '14%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '20%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '30%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '20%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '30%' },
 ]
 const mountMethodGrid = async (grid: HGridMethods) => {
@@ -378,7 +378,7 @@ const contents = props.lang === 'en' ? en : ko
       id="imageboxPropGrid"
       :columns="propColumn"
       class="hison-col-12 hison-size-m"
-      :height="'420px'"
+      :height="'460px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -391,7 +391,7 @@ const contents = props.lang === 'en' ? en : ko
       id="imageboxEventGrid"
       :columns="eventColumn"
       class="hison-col-12 hison-size-m"
-      :height="'360px'"
+      :height="'400px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

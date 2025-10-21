@@ -79,30 +79,6 @@ layout.setBorder(true)`,
 }
 const T = props.lang === 'en' ? en : ko
 
-/* ------------------------------ grid definition ----------------------------- */
-const colSlot: HGridColumn[] = [
-  { id: 'slot', header: 'slot', dataType: 'text', width: '24%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '76%' },
-]
-const colProp: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '22%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '42%' },
-  { id: 'default', header: 'default', dataType: 'text', width: '12%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '24%' },
-]
-const colEvent: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '30%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '42%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '28%' },
-]
-const colMethod: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '34%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '28%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '14%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '24%' },
-]
-
-/* -------------------------------- grid data --------------------------------- */
 // Slots
 const slotDataKo = [{ slot: 'default', explain: '레이아웃 내부 콘텐츠 영역.' }]
 const slotDataEn = [{ slot: 'default', explain: 'Content area of the layout.' }]
@@ -177,7 +153,28 @@ const methodDataEn = [
   { method: 'getHeight()/setHeight(css)', param: 'string', return: 'string|void', explain: 'Container height.' },
 ]
 
-/* ------------------------------ data loaders -------------------------------- */
+const colSlot: HGridColumn[] = [
+  { id: 'slot', header: 'slot', dataType: 'text', width: '25%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '75%' },
+]
+const colProp: HGridColumn[] = [
+  { id: 'prop', header: 'prop', dataType: 'text', width: '20%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '35%' },
+  { id: 'default', header: 'default', dataType: 'text', width: '10%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '35%' },
+]
+const colEvent: HGridColumn[] = [
+  { id: 'event', header: 'event', dataType: 'text', width: '35%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '30%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '35%' },
+]
+const colMethod: HGridColumn[] = [
+  { id: 'method', header: 'method', dataType: 'text', width: '35%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '25%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '15%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '25%' },
+]
+
 const mountSlotGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? slotDataEn : slotDataKo)
 const mountPropGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? propDataEn : propDataKo)
 const mountEventGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? eventDataEn : eventDataKo)

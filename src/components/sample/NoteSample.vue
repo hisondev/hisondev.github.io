@@ -640,20 +640,20 @@ const methodGridDataEn = [
 ];
 
 const slotColumn: HGridColumn[] = [
-  { id: 'slot', header: 'slot', dataType: 'text', width: '22%' },
+  { id: 'slot', header: 'slot', dataType: 'text', width: '20%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '78%' },
 ]
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '22%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '46%' },
-  { id: 'default', header: 'default', dataType: 'text', width: '8%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '24%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '20%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '30%' },
+  { id: 'default', header: 'default', dataType: 'text', width: '10%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
 ]
 const eventPropColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '38%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '34%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '30%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '25%' },
   { id: 'returns', header: 'returns', dataType: 'text', width: '10%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '18%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '35%' },
 ]
 const eventColumn: HGridColumn[] = [
   { id: 'event', header: 'event', dataType: 'text', width: '30%' },
@@ -661,15 +661,12 @@ const eventColumn: HGridColumn[] = [
   { id: 'args', header: 'args', dataType: 'text', width: '30%' },
 ]
 const methodColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '28%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '32%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '14%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '26%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '20%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '25%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '15%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
 ]
 
-/* =========================================================
- * API table loaders
- * =======================================================*/
 const mountSlotGrid = (grid: HGridMethods) =>
   grid.load(props.lang === 'en' ? slotGridDataEn : slotGridDataKo)
 
@@ -788,7 +785,7 @@ const mountMethodGrid = (grid: HGridMethods) =>
       id="noteMethodGrid"
       :columns="methodColumn"
       class="hison-col-12 hison-size-m"
-      :height="'450px'"
+      :height="'550px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

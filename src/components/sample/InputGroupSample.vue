@@ -540,21 +540,21 @@ const slotColumn: HGridColumn[] = [
   { id: 'explain', header: 'explain', dataType: 'text', width: '76%' },
 ]
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '20%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '40%' },
-  { id: 'default', header: 'default', dataType: 'text', width: '12%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '28%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '10%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '30%' },
+  { id: 'default', header: 'default', dataType: 'text', width: '15%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '45%' },
 ]
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '26%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '20%' },
   { id: 'trigger', header: 'trigger', dataType: 'text', width: '40%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '34%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '40%' },
 ]
 const methodColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '28%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '32%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '14%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '26%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '25%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '20%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '15%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
 ]
 
 /* ------------------------------ grid data loaders ----------------------------- */

@@ -520,9 +520,9 @@ const propColumn: HGridColumn[] = [
   { id: 'explain', header: 'explain', dataType: 'text', width: '43%' },
 ]
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '22%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '39%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '39%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '20%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '45%' },
 ]
 const methodColumn: HGridColumn[] = [
   { id: 'method', header: 'method', dataType: 'text', width: '25%' },
@@ -531,10 +531,10 @@ const methodColumn: HGridColumn[] = [
   { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
 ]
 const inputTypeColumn: HGridColumn[] = [
-  { id: 'type', header: 'type', dataType: 'text', width: '25%' },
-  { id: 'format', header: 'format', dataType: 'text', width: '15%' },
-  { id: 'value', header: 'value', dataType: 'text', width: '20%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '15%' },
+  { id: 'format', header: 'format', dataType: 'text', width: '20%' },
+  { id: 'value', header: 'value', dataType: 'text', width: '15%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '50%' },
 ]
 
 const mountSlotGrid = async (grid: HGridMethods) => {
@@ -753,7 +753,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       id="inputPropGrid"
       :columns="propColumn"
       class="hison-col-12 hison-size-m"
-      :height="'500px'"
+      :height="'600px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -781,7 +781,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       id="inputEventGrid"
       :columns="eventColumn"
       class="hison-col-12 hison-size-m"
-      :height="'300px'"
+      :height="'400px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

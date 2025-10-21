@@ -157,25 +157,25 @@ const methodGridDataEn = [
 
 /* ------------------------------ grid definitions ------------------------------ */
 const slotColumn: HGridColumn[] = [
-  { id: 'slot', header: 'slot', dataType: 'text', width: '24%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '76%' },
+  { id: 'slot', header: 'slot', dataType: 'text', width: '20%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '80%' },
 ]
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '22%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '42%' },
-  { id: 'default', header: 'default', dataType: 'text', width: '12%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '24%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '25%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '30%' },
+  { id: 'default', header: 'default', dataType: 'text', width: '10%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '35%' },
 ]
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '30%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '42%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '28%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '35%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '30%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '35%' },
 ]
 const methodColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '34%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '28%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '14%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '24%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '40%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '25%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '10%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '25%' },
 ]
 
 /* ------------------------------ grid data loaders ----------------------------- */
@@ -256,7 +256,7 @@ const mountMethodGrid = async (grid: HGridMethods) => {
       id="lbPropGrid"
       :columns="propColumn"
       class="hison-col-12 hison-size-m"
-      :height="'280px'"
+      :height="'320px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

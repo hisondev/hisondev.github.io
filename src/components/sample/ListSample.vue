@@ -57,30 +57,6 @@ list.focus()`,
 }
 const T = props.lang === 'en' ? en : ko
 
-/* ------------------------------ grid definition ----------------------------- */
-const colSlot: HGridColumn[] = [
-  { id: 'slot', header: 'slot', dataType: 'text', width: '22%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '78%' },
-]
-const colProp: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '22%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '42%' },
-  { id: 'default', header: 'default', dataType: 'text', width: '12%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '24%' },
-]
-const colEvent: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '30%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '40%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '30%' },
-]
-const colMethod: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '34%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '28%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '14%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '24%' },
-]
-
-/* -------------------------------- grid data --------------------------------- */
 // Slots
 const slotDataKo = [
   { slot: 'default', explain: '사용자 정의 항목을 직접 렌더링. 제공 시 textList는 무시됩니다.' },
@@ -163,6 +139,28 @@ const methodDataEn = [
   { method: 'focus(index?)', param: 'number?', return: 'void', explain: 'Focus item (when possible).' },
 ]
 
+const colSlot: HGridColumn[] = [
+  { id: 'slot', header: 'slot', dataType: 'text', width: '22%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '78%' },
+]
+const colProp: HGridColumn[] = [
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '35%' },
+  { id: 'default', header: 'default', dataType: 'text', width: '10%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
+]
+const colEvent: HGridColumn[] = [
+  { id: 'event', header: 'event', dataType: 'text', width: '35%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '30%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '35%' },
+]
+const colMethod: HGridColumn[] = [
+  { id: 'method', header: 'method', dataType: 'text', width: '30%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '25%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '15%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '30%' },
+]
+
 const mountSlotGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? slotDataEn : slotDataKo)
 const mountPropGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? propDataEn : propDataKo)
 const mountEventGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? eventDataEn : eventDataKo)
@@ -209,7 +207,7 @@ const mountMethodGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? method
       id="listPropGrid"
       :columns="colProp"
       class="hison-col-12 hison-size-m"
-      :height="'400px'"
+      :height="'420px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"
@@ -237,7 +235,7 @@ const mountMethodGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? method
       id="listMethodGrid"
       :columns="colMethod"
       class="hison-col-12 hison-size-m"
-      :height="'380px'"
+      :height="'400px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

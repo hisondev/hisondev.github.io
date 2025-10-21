@@ -354,29 +354,26 @@ const methodGridDataEn = [
   { method: "getFootElement()", param: "-", return: "HTMLTableSectionElement | null", explain: "Raw <tfoot> element." },
 ]
 
-/* =======================
- * grid columns & loaders
- * ======================= */
 const slotColumn: HGridColumn[] = [
-  { id: 'slot', header: 'slot', dataType: 'text', width: '22%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '78%' },
+  { id: 'slot', header: 'slot', dataType: 'text', width: '20%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '80%' },
 ]
 const propColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '18%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '46%' },
-  { id: 'default', header: 'default', dataType: 'text', width: '8%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '28%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '20%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '35%' },
+  { id: 'default', header: 'default', dataType: 'text', width: '10%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '35%' },
 ]
 const eventColumn: HGridColumn[] = [
-  { id: 'event', header: 'event', dataType: 'text', width: '30%' },
-  { id: 'trigger', header: 'trigger', dataType: 'text', width: '40%' },
-  { id: 'args', header: 'args', dataType: 'text', width: '30%' },
+  { id: 'event', header: 'event', dataType: 'text', width: '25%' },
+  { id: 'trigger', header: 'trigger', dataType: 'text', width: '35%' },
+  { id: 'args', header: 'args', dataType: 'text', width: '40%' },
 ]
 const methodColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '28%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '32%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '14%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '26%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '25%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '25%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '25%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '25%' },
 ]
 
 const mountSlotGrid = async (grid: HGridMethods) => {
@@ -465,7 +462,7 @@ const contents = props.lang === 'en' ? en : ko
       id="tableEventGrid"
       :columns="eventColumn"
       class="hison-col-12 hison-size-m"
-      :height="'100px'"
+      :height="'120px'"
       :rownum-visible="false"
       :status-visible="false"
       :locked="true"

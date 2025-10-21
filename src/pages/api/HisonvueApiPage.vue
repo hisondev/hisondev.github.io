@@ -82,6 +82,173 @@ const inputOnChange = (oldValue: Lang, newValue: Lang, input: HInputMethods) => 
         <HGap/>
         <HCaption class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
         <HGap :line="'horizontal'"/>
+        <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead1 }}</HCaption>
+        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t1000 }}</HCaption>
+        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t1100 }}</HCaption>
+        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t1200 }}</HCaption>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1300 }}</HParagraph>
+        <HGap :line="'horizontal'"/>
+        <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead2 }}</HCaption>
+        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2000 }}</HCaption>
+        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2100 }}</HCaption>
+        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2200 }}</HCaption>
+        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2300 }}</HCaption>
+        <HGap :line="'horizontal'"/>
+        <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead3 }}</HCaption>
+        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3000 }}</HCaption>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3010 }}</HParagraph>
+        <HTable
+            :key="getKey()"
+            class="hison-col-6-pc hison-col-12-mb"
+            style="margin-bottom: 10px;"
+        >  
+            <tr>
+                <td>{{ contents.t3020 }}</td>
+                <td>{{ contents.t3030 }}</td>
+            </tr>
+            <tr>
+                <td>{{ contents.t3040 }}</td>
+                <td>{{ contents.t3050 }}</td>
+            </tr>
+            <tr>
+                <td>{{ contents.t3060 }}</td>
+                <td>{{ contents.t3070 }}</td>
+            </tr>
+            <tr>
+                <td>{{ contents.t3080 }}</td>
+                <td>{{ contents.t3090 }}</td>
+            </tr>
+        </HTable>
+        <HGap/>
+        <HLabel
+            :key="getKey()"
+            class="hison-col-12 hison-color-primary-pc hison-color-muted-mb"
+            :border="true"
+            :background-type="'filled'"
+        >{{ contents.t3110 }}</HLabel>
+        <HGap/>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3200 }}</HParagraph>
+        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3300 }}</HCaption>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3310 }}</HParagraph>
+        <HLayout>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+            <HLabel
+                :key="getKey()"
+                class="hison-col-1 hison-color-muted"
+                :border="false"
+                :background-type="'filled'"
+                :text-align="'center'"
+            >1</HLabel>
+        </HLayout>
+        <HGap/>
+        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3400 }}</HCaption>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3410 }}</HParagraph>
+        <HButton class="hison-size-xl hison-pos-vertical-bottom">XL BUTTON</HButton>
+        <HButton class="hison-size-l hison-pos-vertical-bottom">L BUTTON</HButton>
+        <HButton class="hison-size-m hison-pos-vertical-bottom">M BUTTON</HButton>
+        <HButton class="hison-size-s hison-pos-vertical-bottom">S BUTTON</HButton>
+        <HGap/>
+        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3500 }}</HCaption>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3510 }}</HParagraph>
+        <HButton class="hison-col-2-pc hison-col-4-mb">default primary</HButton>
+        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-muted">default muted</HButton>
+        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-info">default info</HButton>
+        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-success">default success</HButton>
+        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-danger">default danger</HButton>
+        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-warning">default warning</HButton>
+        <HGap/>
+        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3600 }}</HCaption>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3610 }}</HParagraph>
+        <CodeParagraph :key="getKey()" :code="contents.c3610"/>
+        <HGap/>
+        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3700 }}</HCaption>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3710 }}</HParagraph>
+        <CodeParagraph :key="getKey()" :code="contents.c3710"/>
+        <HGap/>
+        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4000 }}</HCaption>
+        <CodeParagraph :key="getKey()" :dynamicWidth="false" :code="contents.c4000"/>
+        <HGap/>
+        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t5000 }}</HCaption>
+        <CodeParagraph :key="getKey()" :dynamicWidth="false" :code="contents.c5000"/>
+        <HGap/>
+        <HGap/>
+        <HGap :line="'horizontal'"/>
         <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead4 }}</HCaption>
         <HInput
             id="select"
@@ -293,173 +460,6 @@ const inputOnChange = (oldValue: Lang, newValue: Lang, input: HInputMethods) => 
                 <TableSample :key="getKey()" :lang="store.state.lang"/>
             </HLayout>
         </HLayout>
-        <HGap :line="'horizontal'"/>
-        <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead1 }}</HCaption>
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t1000 }}</HCaption>
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t1100 }}</HCaption>
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t1200 }}</HCaption>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1300 }}</HParagraph>
-        <HGap :line="'horizontal'"/>
-        <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead2 }}</HCaption>
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2000 }}</HCaption>
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2100 }}</HCaption>
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2200 }}</HCaption>
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2300 }}</HCaption>
-        <HGap :line="'horizontal'"/>
-        <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead3 }}</HCaption>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3000 }}</HCaption>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3010 }}</HParagraph>
-        <HTable
-            :key="getKey()"
-            class="hison-col-6-pc hison-col-12-mb"
-            style="margin-bottom: 10px;"
-        >  
-            <tr>
-                <td>{{ contents.t3020 }}</td>
-                <td>{{ contents.t3030 }}</td>
-            </tr>
-            <tr>
-                <td>{{ contents.t3040 }}</td>
-                <td>{{ contents.t3050 }}</td>
-            </tr>
-            <tr>
-                <td>{{ contents.t3060 }}</td>
-                <td>{{ contents.t3070 }}</td>
-            </tr>
-            <tr>
-                <td>{{ contents.t3080 }}</td>
-                <td>{{ contents.t3090 }}</td>
-            </tr>
-        </HTable>
-        <HGap/>
-        <HLabel
-            :key="getKey()"
-            class="hison-col-12 hison-color-primary-pc hison-color-muted-mb"
-            :border="true"
-            :background-type="'filled'"
-        >{{ contents.t3110 }}</HLabel>
-        <HGap/>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3200 }}</HParagraph>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3300 }}</HCaption>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3310 }}</HParagraph>
-        <HLayout>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-            <HLabel
-                :key="getKey()"
-                class="hison-col-1 hison-color-muted"
-                :border="false"
-                :background-type="'filled'"
-                :text-align="'center'"
-            >1</HLabel>
-        </HLayout>
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3400 }}</HCaption>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3410 }}</HParagraph>
-        <HButton class="hison-size-xl hison-pos-vertical-bottom">XL BUTTON</HButton>
-        <HButton class="hison-size-l hison-pos-vertical-bottom">L BUTTON</HButton>
-        <HButton class="hison-size-m hison-pos-vertical-bottom">M BUTTON</HButton>
-        <HButton class="hison-size-s hison-pos-vertical-bottom">S BUTTON</HButton>
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3500 }}</HCaption>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3510 }}</HParagraph>
-        <HButton class="hison-col-2-pc hison-col-4-mb">default primary</HButton>
-        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-muted">default muted</HButton>
-        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-info">default info</HButton>
-        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-success">default success</HButton>
-        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-danger">default danger</HButton>
-        <HButton class="hison-col-2-pc hison-col-4-mb hison-color-warning">default warning</HButton>
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3600 }}</HCaption>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3610 }}</HParagraph>
-        <CodeParagraph :key="getKey()" :code="contents.c3610"/>
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3700 }}</HCaption>
-        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3710 }}</HParagraph>
-        <CodeParagraph :key="getKey()" :code="contents.c3710"/>
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4000 }}</HCaption>
-        <CodeParagraph :key="getKey()" :dynamicWidth="false" :code="contents.c4000"/>
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t5000 }}</HCaption>
-        <CodeParagraph :key="getKey()" :dynamicWidth="false" :code="contents.c5000"/>
-        <HGap/>
-        <HGap/>
         <HGap/>
         <HGap/>
         <HGap/>
