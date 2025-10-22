@@ -4,10 +4,18 @@ const ko = {
 `확장된 hison`,
   t1000:
 `hison.component`,
+  t1010:
+`그외 hison에 대한 기능 정보는 hisonjs API문서를 참조하기 바랍니다. 모든 컴포넌트는 고유한 id로 등록됩니다. 이 id로 메서드 접근 할 수 있습니다.`,
   t1100:
 `hison.style`,
+  t1110:
+`클라이언트 단 전체적인 스타일을 동적으로 제어할 수 있습니다.`,
   t1200:
 `hison.cssEvent`,
+  t1250:
+`hison. (etc)`,
+  t1210:
+`요소 액티브시 발생하는 css적인 기능의 이벤트를 동적으로 제어할 수 있습니다.`,
   t1300:
 `그외 hison에 대한 기능 정보는 hisonjs API문서를 참조하기 바랍니다.`,
 
@@ -15,6 +23,14 @@ const ko = {
 `hisonConfig`,
   t2000:
 `hisonConfig.기본`,
+  t2010:
+`hisonConfig (utils)`,
+  t2020:
+`hisonConfig (shield)`,
+  t2030:
+`hisonConfig (data)`,
+  t2040:
+`hisonConfig (link)`,
   t2100:
 `hisonConfig.component`,
   t2200:
@@ -72,7 +88,7 @@ hison-size-m-pc, hison-size-xl-mb(화면의 너비가 1200이상이면 요소 'm
   t3600:
 `hison-pos-*`,
   t3610:
-`HLayout 내부에서 요소의 수직적 위치를 지정하는 class접두어입니다. (요소의 순서를 변경하지는 못합니다.)`,
+`HLayout 내부에서 요소의 수평적 위치를 지정하는 class접두어입니다. (요소의 순서를 변경하지는 못합니다.)`,
   c3610:
 `.hison-pos-left { margin-right: auto; }
 .hison-pos-center { margin-left: auto; margin-right: auto; }

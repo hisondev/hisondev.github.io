@@ -1,97 +1,82 @@
 const en = {
   caption: 'HISONVUE API',
-  subhead1:
-`확장된 hison`,
-  t1000:
-`hison.component`,
-  t1100:
-`hison.style`,
-  t1200:
-`hison.cssEvent`,
+
+  subhead1: `Extended hison`,
+
+  t1000: `hison.component`,
+  t1010:
+    `For other features of hison, please refer to the hisonjs API documentation. ` +
+    `All components are registered with a unique id, which can be used to access their methods.`,
+
+  t1100: `hison.style`,
+  t1110: `Allows dynamic control of the overall client-side style.`,
+
+  t1200: `hison.cssEvent`,
+  t1250: `hison. (etc)`,
+  t1210: `Allows dynamic control of CSS-related events triggered when an element becomes active.`,
+
   t1300:
-`그외 hison에 대한 기능 정보는 hisonjs API문서를 참조하기 바랍니다.`,
+    `For other hison features, please refer to the hisonjs API documentation.`,
 
-  subhead2:
-`hisonConfig`,
-  t2000:
-`hisonConfig.기본`,
-  t2100:
-`hisonConfig.component`,
-  t2200:
-`hisonConfig.componentStyle`,
-  t2300:
-`hisonConfig.event.cssEvnet`,
+  subhead2: `hisonConfig`,
 
-  subhead3:
-`hisonvue css`,
+  t2000: `hisonConfig (base)`,
+  t2010: `hisonConfig (utils)`,
+  t2020: `hisonConfig (shield)`,
+  t2030: `hisonConfig (data)`,
+  t2040: `hisonConfig (link)`,
+  t2100: `hisonConfig.component`,
+  t2200: `hisonConfig.componentStyle`,
+  t2300: `hisonConfig.event.cssEvent`,
+
+  subhead3: `hisonvue css`,
+
   t3000:
-`클래스에 접두어, 접미어를 통해 반응형 웹을 지원합니다.`,
+    `Supports responsive design using class prefixes and suffixes.`,
   t3010:
-`지원하는 접미어는 아래와 같습니다.`,
-  t3020:
-`-mb (모바일)`,
-  t3030:
-`디바이스 너비가 768px 미만`,
-  t3040:
-`-tb (테블릿)`,
-  t3050:
-`디바이스 너비가 1200px 미만`,
-  t3060:
-`-pc (일반 PC)`,
-  t3070:
-`디바이스 너비가 1980px 미만`,
-  t3080:
-`-wd (Wide PC)`,
-  t3090:
-`디바이스 너비가 1980px 이상`,
+    `The following class suffixes are supported:`,
+  t3020: `-mb (Mobile)`,
+  t3030: `Device width below 768px`,
+  t3040: `-tb (Tablet)`,
+  t3050: `Device width below 1200px`,
+  t3060: `-pc (Desktop PC)`,
+  t3070: `Device width below 1980px`,
+  t3080: `-wd (Wide PC)`,
+  t3090: `Device width above 1980px`,
   t3100:
-`디바이스 너비에 따라 해당 class가 반영됩니다.`,
+    `The appropriate class is applied automatically based on the device width.`,
   t3110:
-`예를들어 현재 Label 컴포넌트는 hison-color-primary-pc hison-color-muted-mb를 기입하였습니다. 브라우저 너비를 변화하여 보세요.`,
+    `For example, the current Label component uses "hison-color-primary-pc" and "hison-color-muted-mb". ` +
+    `Try resizing the browser to see the effect.`,
 
-  t3200:
-`지원하는 클래스 접두어는 아래와 같습니다.`,
-  t3300:
-`hison-col-`,
+  t3200: `The following class prefixes are supported:`,
+  t3300: `hison-col-*`,
   t3310:
-`가로 너비를 지정합니다. 12분할 방식을 사용합니다.
-hison-col또한 hison-col-6-pc, hison-col-12-mb와 같은 방식으로 사용할 수 있습니다.
-(화면의 너비가 1200이상이면 가로 너비 50%, 미만이면 가로 너비 100%)`,
+    `Defines horizontal width using a 12-column grid system. ` +
+    `You can use responsive forms like hison-col-6-pc or hison-col-12-mb. ` +
+    `(When the screen width is 1200px or greater, width is 50%; below that, 100%.)`,
 
-  t3400:
-`hison-size-`,
+  t3400: `hison-size-*`,
   t3410:
-`size는 xl, l, m, s이 있습니다. 기본 설정을 별도로 hisonConfig.componentStyle등을 통해 사용자 커스텀 가능합니다.
-hison-size-m-pc, hison-size-12-xl(화면의 너비가 1200이상이면 요소 'm' 사이즈 50%, 미만이면 요소 'xl' 사이즈로 출력)`,
+    `Available sizes are xl, l, m, and s. The default configuration can be customized via hisonConfig.componentStyle. ` +
+    `Example: hison-size-m-pc or hison-size-xl-mb — when the screen width is above 1200px, size “m” is applied; otherwise, “xl” is used.`,
 
-  t3500:
-`hison-color-`,
+  t3500: `hison-color-*`,
   t3510:
-`color의 종류는 아래와 같습니다.. 기본 설정을 별도로 hisonConfig.componentStyle등을 통해 사용자 커스텀 가능합니다. 커스텀시 메인 색상만 지정하면 그림자, 텍스트 색상 등은 시스템 내부에서 자동으로 조정합니다.`,
-  t3520:
-`default primary`,
-  t3530:
-`default muted`,
-  t3540:
-`default info`,
-  t3550:
-`default success`,
-  t3560:
-`default danger`,
-  t3570:
-`default warning`,
+    `The available color types are listed below. These can be customized via hisonConfig.componentStyle. ` +
+    `When customizing, defining only the main color is enough — related shades, text, and shadow colors are automatically adjusted internally.`,
 
-  t3600:
-`hison-pos-`,
+  t3600: `hison-pos-*`,
   t3610:
-`HLayout 내부에서 요소의 수직적 위치를 지정하는 class접두어입니다. (요소의 순서를 변경하지는 못합니다.)`,
+    `A class prefix used inside HLayout to specify the horizontal alignment of elements. ` +
+    `(This does not change the order of the elements.)`,
   c3610:
 `.hison-pos-left { margin-right: auto; }
 .hison-pos-center { margin-left: auto; margin-right: auto; }
 .hison-pos-right { margin-left: auto; }`,
 
   t4000:
-`css변수를 사용하며 hison.style, hisonConfig.componentStyle, 직접 변경 등을 통해 제어할 수 있습니다.`,
+    `Uses CSS variables that can be controlled through hison.style, hisonConfig.componentStyle, or direct modification.`,
   c4000:
 `:root {
     --hison-filledColor: '';

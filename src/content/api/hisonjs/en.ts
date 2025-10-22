@@ -3,16 +3,14 @@ const en = {
   subhead1:
 `hison.utils`,
   t1000:
-`hison.utils methods`,
+`hison.utils Methods`,
   t1100:
 `hison.utils Config`,
 
   subhead2:
 `hison.sheild`,
   t2000:
-`hison.sheild methods`,
-  t2100:
-`hison.sheild Config`,
+`hison.sheild Methods & Config`,
 
   subhead3:
 `hison.data`,
@@ -22,17 +20,17 @@ const en = {
 `new hison.data.DataModel()`,
   t3200:
 `hison.data Config`,
-  t3300:
-`condition`,
 
   subhead4:
 `hison.link`,
   t4000:
 `new hison.link.Api*()`,
   t4100:
-`new hison.link.CachingModule()`,
+`api link Config`,
   t4200:
-`hison.link Config`,
+`new hison.link.CachingModule()`,
+  t4300:
+`caching module Config`,
 } as const;
 
 export default en;
