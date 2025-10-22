@@ -4,44 +4,44 @@ export const apiLinkGridDataKo = [
     method: 'constructor',
     param: 'String cmd, Option {}',
     return: 'ApiLink',
-    explain: 'ApiLink를 생성 반환한다. 1. cmd를 세팅한다. cmd는 서비스명 + \'.\' + 메소드명이다. 서버에 지정된 서비스의 메소드를 호출한다. (ex) MemberService.getMember) 2. option을 세팅한다. option은 객체형식이며 세부내용은 아래와 같다. logging : true시 promise통신 시 콘솔에 로그를 출력한다. cachingModule : newCachingModule을 통해 생성한 cachingModule모듈을 삽입하면 해당 ApiLink는 캐싱 로직을 수행한다.',
+    explain: 'ApiLink를 생성 반환한다. 1. cmd를 세팅한다. cmd는 서비스명 + \'.\' + 메소드명이다.\n서버에 지정된 서비스의 메소드를 호출한다. (ex) MemberService.getMember)\n2. option을 세팅한다. option은 객체형식이며 세부내용은 아래와 같다.\nlogging : true시 promise통신 시 콘솔에 로그를 출력한다.\ncachingModule : newCachingModule을 통해 생성한 cachingModule모듈을 삽입하면 해당 ApiLink는 캐싱 로직을 수행한다.',
     note: ''
     },
 
     // HTTP Methods
     {
     method: 'get',
-    param: 'resourcePath "", callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'resourcePath "", callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await get => result',
-    explain: '1. resourcePath에 대한 GET 요청을 promise를 통해 수행한다. 2. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다. 3. option은 객체형식으로 전달하며 세부내용은 아래와 같다. options.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다. options.timeout : 응답 초과 시간을 제한한다. default는 5초 이다. options.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다. 4. (Promise를 반환한다.) 따라서 await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있으며, promise체이닝 등도 사용가능하다.',
+    explain: '1. resourcePath에 대한 GET 요청을 promise를 통해 수행한다.\n2. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다.\n3. option은 객체형식으로 전달하며 세부내용은 아래와 같다.\noptions.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다.\noptions.timeout : 응답 초과 시간을 제한한다. default는 5초 이다.\noptions.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다.\n4. (Promise를 반환한다.) 따라서 await newApiLink(\"farboo\").get(url);의 형태로,\nawait로 사용 후 동기화된 결과 값을 받을 수 있으며, promise체이닝 등도 사용가능하다.',
     note: ''
     },
     {
     method: 'post',
-    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await post => result',
-    explain: '1. 저장된 cmd에 대한 POST 요청을 promise를 통해 수행한다. 2. requestDataWrapper 는 요청에 대한 body이다. 3. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다. 4. option은 객체형식으로 전달하며 세부내용은 아래와 같다. options.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다. options.timeout : 응답 초과 시간을 제한한다. default는 5초 이다. options.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다. 5. await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있다.',
+    explain: '1. 저장된 cmd에 대한 POST 요청을 promise를 통해 수행한다.\n2. requestDataWrapper 는 요청에 대한 body이다.\n3. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다.\n4. option은 객체형식으로 전달하며 세부내용은 아래와 같다.\noptions.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다.\noptions.timeout : 응답 초과 시간을 제한한다. default는 5초 이다.\noptions.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다.\n5. await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있다.',
     note: ''
     },
     {
     method: 'put',
-    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await put => result',
-    explain: '1. 저장된 cmd에 대한 PUT 요청을 promise를 통해 수행한다. 2. requestDataWrapper 는 요청에 대한 body이다. 3. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다. 4. option은 객체형식으로 전달하며 세부내용은 아래와 같다. options.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다. options.timeout : 응답 초과 시간을 제한한다. default는 5초 이다. options.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다. 5. await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있다.',
+    explain: '1. 저장된 cmd에 대한 PUT 요청을 promise를 통해 수행한다.\n2. requestDataWrapper 는 요청에 대한 body이다.\n3. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다.\n4. option은 객체형식으로 전달하며 세부내용은 아래와 같다.\noptions.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다.\noptions.timeout : 응답 초과 시간을 제한한다. default는 5초 이다.\noptions.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다.\n5. await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있다.',
     note: ''
     },
     {
     method: 'patch',
-    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await patch => result',
-    explain: '1. 저장된 cmd에 대한 PATCH 요청을 promise를 통해 수행한다. 2. requestDataWrapper 는 요청에 대한 body이다. 3. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다. 4. option은 객체형식으로 전달하며 세부내용은 아래와 같다. options.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다. options.timeout : 응답 초과 시간을 제한한다. default는 5초 이다. options.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다. 5. await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있다.',
+    explain: '1. 저장된 cmd에 대한 PATCH 요청을 promise를 통해 수행한다.\n2. requestDataWrapper 는 요청에 대한 body이다.\n3. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다.\n4. option은 객체형식으로 전달하며 세부내용은 아래와 같다.\noptions.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다.\noptions.timeout : 응답 초과 시간을 제한한다. default는 5초 이다.\noptions.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다.\n5. await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있다.',
     note: ''
     },
     {
     method: 'delete',
-    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await delete => result',
-    explain: '1. 저장된 cmd에 대한 DELETE 요청을 promise를 통해 수행한다. 2. requestDataWrapper 는 요청에 대한 body이다. 3. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다. 4. option은 객체형식으로 전달하며 세부내용은 아래와 같다. options.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다. options.timeout : 응답 초과 시간을 제한한다. default는 5초 이다. options.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다. 5. await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있다.',
+    explain: '1. 저장된 cmd에 대한 DELETE 요청을 promise를 통해 수행한다.\n2. requestDataWrapper 는 요청에 대한 body이다.\n3. 수행 후처리 함수 callbackWorkedFunc(resultData, response)과 에러 후처리 함수callbackErrorFunc(error)를 주입할 수 있다.\n4. option은 객체형식으로 전달하며 세부내용은 아래와 같다.\noptions.headers : 기존 {\'Content-Type\': \'application/json\'}에 더해서 추가할 header 내용을 객체 형태로 담는다.\noptions.timeout : 응답 초과 시간을 제한한다. default는 5초 이다.\noptions.fetchOptions : fetch에 추가할 옵션을 객체 형태로 담는다.\n5. await newApiLink(\"farboo\").get(url);의 형태로, await로 사용 후 동기화된 결과 값을 받을 수 있다.',
     note: ''
     },
 
@@ -57,14 +57,14 @@ export const apiLinkGridDataKo = [
     method: 'onEventEmit',
     param: 'eventName "", eventFunc funtion()',
     return: 'none',
-    explain: '각 eventName에 따라 eventFunc를 호출한다. requestStarted_GET : GET 메소드 호출 전에 호출되는 이벤트. 파라메터로 요청 URL과 option을 받는다. requestStarted_POST : POST 메소드 호출 전에 호출되는 이벤트. 파라메터로 요청 DataWrapper와 option을 받는다. requestStarted_PUT : PUT 메소드 호출 전에 호출되는 이벤트. 파라메터로 요청 DataWrapper와 option을 받는다. requestStarted_PATCH : PATCH 메소드 호출 전에 호출되는 이벤트. 파라메터로 요청 DataWrapper와 option을 받는다. requestStarted_DELETE : DELETE 메소드 호출 전에 호출되는 이벤트. 파라메터로 요청 DataWrapper와 option을 받는다. requestCompleted_Response : Promise fetch 응답 후 바로 호출되는 이벤트(logging 이후에 호출). 파라메터로 응답 response객체를 받는다. requestCompleted_Data : Promise fetch 응답 결과 후 바로 호출되는 이벤트. 파라메터로 결과 {resultData, response}를 받는다. requestError : Promise fetch 에러 후 바로 호출되는 이벤트(logging 이후에 호출). 파라메터로 error객체를 받는다.',
+    explain: '각 eventName에 따라 eventFunc를 호출한다.\nrequestStarted_GET : GET 메소드 호출 전에 호출되는 이벤트. 파라메터로 요청 URL과 option을 받는다.\nrequestStarted_POST : POST 메소드 호출 전에 호출되는 이벤트.\n파라메터로 요청 DataWrapper와 option을 받는다.\nrequestStarted_PUT : PUT 메소드 호출 전에 호출되는 이벤트.\n파라메터로 요청 DataWrapper와 option을 받는다.\nrequestStarted_PATCH : PATCH 메소드 호출 전에 호출되는 이벤트. 파라메터로 요청 DataWrapper와 option을 받는다.\nrequestStarted_DELETE : DELETE 메소드 호출 전에 호출되는 이벤트.\n파라메터로 요청 DataWrapper와 option을 받는다.\nrequestCompleted_Response : Promise fetch 응답 후 바로 호출되는 이벤트(logging 이후에 호출).\n파라메터로 응답 response객체를 받는다.\nrequestCompleted_Data : Promise fetch 응답 결과 후 바로 호출되는 이벤트.\n파라메터로 결과 {resultData, response}를 받는다.\nrequestError : Promise fetch 에러 후 바로 호출되는 이벤트(logging 이후에 호출).\n파라메터로 error객체를 받는다.',
     note: ''
     },
     {
     method: 'isApiLink',
     param: '(field)',
     return: 'Boolean true',
-    explain: 'newApiLink()을 통해 생성한 ApiLink인지 확인하기 위한 필드. 항상 true를 반환한다.',
+    explain: 'newApiLink()을 통해 생성한 ApiLink인지 확인하기 위한 필드.\n항상 true를 반환한다.',
     note: ''
     }
 ]
@@ -173,7 +173,7 @@ export const cachingModuleGridDataKo = [
     method: 'onmessage',
     param: 'Function',
     return: 'none',
-    explain: 'Web Socket의 서버 메세지 반환 시 발생 이벤트를 정의한다. Default로 캐싱모듈의 .clear()가 정의되어있다.',
+    explain: 'Web Socket의 서버 메세지 반환 시 발생 이벤트를 정의한다.\nDefault로 캐싱모듈의 .clear()가 정의되어있다.',
     note: ''
     },
     {
@@ -222,44 +222,44 @@ export const apiLinkGridDataEn = [
     method: 'constructor',
     param: 'String cmd, Option {}',
     return: 'ApiLink',
-    explain: 'Creates and returns an ApiLink instance. 1. Sets the command (cmd). cmd is serviceName + \'.\' + methodName, which calls a specified service method on the server (e.g., MemberService.getMember). 2. Sets options. Options is an object with the following details: logging: If true, outputs logs to the console during promise communication. cachingModule: If a module created by newCachingModule is inserted, this ApiLink performs caching logic.',
+    explain: 'Creates and returns an ApiLink instance. 1. Sets the command (cmd).\ncmd is serviceName + \'.\' + methodName, which calls a specified service method on the server\n(e.g., MemberService.getMember).\n2. Sets options. Options is an object with the following details: logging: If true, outputs logs to the console during promise communication.\ncachingModule: If a module created by newCachingModule is inserted, this ApiLink performs caching logic.',
     note: ''
     },
 
     // HTTP Methods
     {
     method: 'get',
-    param: 'resourcePath string, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'resourcePath string, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await get => result',
-    explain: '1. Executes a GET request for the resourcePath via a Promise. 2. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected. 3. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing {\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is 5 seconds. options.fetchOptions: An object containing additional options for fetch. 4. (Returns a Promise). Thus, it can be used with await newApiLink(\"farboo\").get(url); to receive a synchronized result value, and promise chaining is also possible.',
+    explain: '1. Executes a GET request for the resourcePath via a Promise.\n2. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected.\n3. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing\n{\'Content-Type\': \'application/json\'}.\noptions.timeout: Limits the response timeout. Default is\n5 seconds. options.fetchOptions: An object containing additional options for fetch.\n4. (Returns a Promise). Thus, it can be used with await newApiLink(\"farboo\").get(url);\nto receive a synchronized result value, and promise chaining is also possible.',
     note: ''
     },
     {
     method: 'post',
-    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await post => result',
-    explain: '1. Executes a POST request for the saved cmd via a Promise. 2. requestDataWrapper is the body for the request. 3. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected. 4. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing {\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is 5 seconds. options.fetchOptions: An object containing additional options for fetch. 5. Can be used with await newApiLink(\"farboo\").post(requestDataWrapper); to receive a synchronized result value.',
+    explain: '1. Executes a POST request for the saved cmd via a Promise.\n2. requestDataWrapper is the body for the request.\n3. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected.\n4. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing\n{\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is\n5 seconds. options.fetchOptions: An object containing additional options for fetch.\n5. Can be used with await newApiLink(\"farboo\").post(requestDataWrapper); to receive a synchronized result value.',
     note: ''
     },
     {
     method: 'put',
-    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await put => result',
-    explain: '1. Executes a PUT request for the saved cmd via a Promise. 2. requestDataWrapper is the body for the request. 3. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected. 4. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing {\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is 5 seconds. options.fetchOptions: An object containing additional options for fetch. 5. Can be used with await newApiLink(\"farboo\").put(requestDataWrapper); to receive a synchronized result value.',
+    explain: '1. Executes a PUT request for the saved cmd via a Promise.\n2. requestDataWrapper is the body for the request.\n3. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected.\n4. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing\n{\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is\n5 seconds. options.fetchOptions: An object containing additional options for fetch.\n5. Can be used with await newApiLink(\"farboo\").put(requestDataWrapper); to receive a synchronized result value.',
     note: ''
     },
     {
     method: 'patch',
-    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await patch => result',
-    explain: '1. Executes a PATCH request for the saved cmd via a Promise. 2. requestDataWrapper is the body for the request. 3. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected. 4. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing {\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is 5 seconds. options.fetchOptions: An object containing additional options for fetch. 5. Can be used with await newApiLink(\"farboo\").patch(requestDataWrapper); to receive a synchronized result value.',
+    explain: '1. Executes a PATCH request for the saved cmd via a Promise.\n2. requestDataWrapper is the body for the request.\n3. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected.\n4. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing\n{\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is\n5 seconds. options.fetchOptions: An object containing additional options for fetch.\n5. Can be used with await newApiLink(\"farboo\").patch(requestDataWrapper); to receive a synchronized result value.',
     note: ''
     },
     {
     method: 'delete',
-    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(), callbackErrorFunc function(), options {}',
+    param: 'requestDataWrapper DataWrapper, callbackWorkedFunc function(),\ncallbackErrorFunc function(), options {}',
     return: 'await delete => result',
-    explain: '1. Executes a DELETE request for the saved cmd via a Promise. 2. requestDataWrapper is the body for the request. 3. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected. 4. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing {\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is 5 seconds. options.fetchOptions: An object containing additional options for fetch. 5. Can be used with await newApiLink(\"farboo\").delete(requestDataWrapper); to receive a synchronized result value.',
+    explain: '1. Executes a DELETE request for the saved cmd via a Promise.\n2. requestDataWrapper is the body for the request.\n3. A success handler callbackWorkedFunc(resultData, response) and an error handler callbackErrorFunc(error) can be injected.\n4. options are passed as an object with the following details: options.headers: An object containing additional headers to be added to the existing\n{\'Content-Type\': \'application/json\'}. options.timeout: Limits the response timeout. Default is\n5 seconds. options.fetchOptions: An object containing additional options for fetch.\n5. Can be used with await newApiLink(\"farboo\").delete(requestDataWrapper); to receive a synchronized result value.',
     note: ''
     },
 
@@ -275,7 +275,7 @@ export const apiLinkGridDataEn = [
     method: 'onEventEmit',
     param: 'eventName string, eventFunc function()',
     return: 'none',
-    explain: 'Calls eventFunc based on each eventName. requestStarted_GET: Event called before GET method execution. Receives the request URL and option as parameters. requestStarted_POST: Event called before POST method execution. Receives the request DataWrapper and option as parameters. requestStarted_PUT: Event called before PUT method execution. Receives the request DataWrapper and option as parameters. requestStarted_PATCH: Event called before PATCH method execution. Receives the request DataWrapper and option as parameters. requestStarted_DELETE: Event called before DELETE method execution. Receives the request DataWrapper and option as parameters. requestCompleted_Response: Event called immediately after Promise fetch response (after logging). Receives the response object as a parameter. requestCompleted_Data: Event called immediately after Promise fetch response result. Receives the result {resultData, response} as a parameter. requestError: Event called immediately after Promise fetch error (after logging). Receives the error object as a parameter.',
+    explain: 'Calls eventFunc based on each eventName.\nrequestStarted_GET: Event called before GET method execution.\nReceives the request URL and option as parameters.\nrequestStarted_POST: Event called before POST method execution.\nReceives the request DataWrapper and option as parameters.\nrequestStarted_PUT: Event called before PUT method execution. Receives the request DataWrapper and option as parameters.\nrequestStarted_PATCH: Event called before PATCH method execution.\nReceives the request DataWrapper and option as parameters.\nrequestStarted_DELETE: Event called before DELETE method execution.\nReceives the request DataWrapper and option as parameters.\nrequestCompleted_Response: Event called immediately after Promise fetch response (after logging).\nReceives the response object as a parameter.\nrequestCompleted_Data: Event called immediately after Promise fetch response result.\nReceives the result {resultData, response} as a parameter.\nrequestError: Event called immediately after Promise fetch error (after logging). Receives the error object as a parameter.',
     note: ''
     },
     {
@@ -391,7 +391,7 @@ export const cachingModuleGridDataEn = [
     method: 'onmessage',
     param: 'Function',
     return: 'none',
-    explain: 'Defines the event that occurs when a server message is returned via Web Socket. Default behavior is to call the caching module\'s .clear().',
+    explain: 'Defines the event that occurs when a server message is returned via Web Socket.\nDefault behavior is to call the caching module\'s .clear().',
     note: ''
     },
     {

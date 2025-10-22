@@ -43,21 +43,20 @@ const dataModelColumn: HGridColumn[] = [
   { id: 'note', header: 'note', dataType: 'text', width: '30%' },
 ]
 const dataConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
-  { id: 'type', header: 'type', dataType: 'text', width: '15%' },
-  { id: 'default', header: 'default', dataType: 'text', width: '15%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '12%' },
+  { id: 'type', header: 'type', dataType: 'text', width: '12%' },
+  { id: 'default', header: 'default', dataType: 'text', width: '12%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '64%' },
 ]
 const apiLinkColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '10%' },
-  { id: 'param', header: 'param', dataType: 'text', width: '10%' },
-  { id: 'return', header: 'return', dataType: 'text', width: '10%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
-  { id: 'note', header: 'note', dataType: 'text', width: '30%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '15%' },
+  { id: 'param', header: 'param', dataType: 'text', width: '15%' },
+  { id: 'return', header: 'return', dataType: 'text', width: '15%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const apiLinkPropColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '30%' },
-  { id: 'explain', header: 'explain', dataType: 'text', width: '70%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '20%' },
+  { id: 'explain', header: 'explain', dataType: 'text', width: '80%' },
 ]
 const cachingModuleColumn: HGridColumn[] = [
   { id: 'method', header: 'method', dataType: 'text', width: '10%' },
@@ -130,7 +129,7 @@ const mountCachingModulePropGrid = async (grid: HGridMethods) => {
             :key="getKey()"
             :columns="utilsConfigColumn"
             class="hison-col-12 hison-size-m"
-            :height="'600px'"
+            :height="'550px'"
             :rownum-visible="false"
             :status-visible="false"
             :locked="true"
@@ -162,7 +161,7 @@ const mountCachingModulePropGrid = async (grid: HGridMethods) => {
             :key="getKey()"
             :columns="dataWrapperColumn"
             class="hison-col-12 hison-size-m"
-            :height="'600px'"
+            :height="'800px'"
             :rownum-visible="false"
             :status-visible="false"
             :locked="true"
@@ -190,7 +189,7 @@ const mountCachingModulePropGrid = async (grid: HGridMethods) => {
             :key="getKey()"
             :columns="dataConfigColumn"
             class="hison-col-12 hison-size-m"
-            :height="'800px'"
+            :height="'300px'"
             :rownum-visible="false"
             :status-visible="false"
             :locked="true"
@@ -220,7 +219,7 @@ const mountCachingModulePropGrid = async (grid: HGridMethods) => {
             :key="getKey()"
             :columns="apiLinkPropColumn"
             class="hison-col-12 hison-size-m"
-            :height="'800px'"
+            :height="'650px'"
             :rownum-visible="false"
             :status-visible="false"
             :locked="true"
@@ -234,7 +233,7 @@ const mountCachingModulePropGrid = async (grid: HGridMethods) => {
             :key="getKey()"
             :columns="cachingModuleColumn"
             class="hison-col-12 hison-size-m"
-            :height="'800px'"
+            :height="'350px'"
             :rownum-visible="false"
             :status-visible="false"
             :locked="true"
@@ -248,7 +247,7 @@ const mountCachingModulePropGrid = async (grid: HGridMethods) => {
             :key="getKey()"
             :columns="cachingModulePropColumn"
             class="hison-col-12 hison-size-m"
-            :height="'800px'"
+            :height="'150px'"
             :rownum-visible="false"
             :status-visible="false"
             :locked="true"

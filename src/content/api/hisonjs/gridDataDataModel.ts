@@ -180,22 +180,22 @@ export const dataModelGridDataKo = [
     method: 'constructor',
     param: '[String column]',
     return: 'DataModel',
-    explain: '생성자. newDataModel(Array[String]); 파라메터로 받은 객체를 통해 새로운 DataModel의 컬럼을 생성하여 반환한다.',
-    note: '클로저함수를 활용. 삽입되는 Param은 깊은 복사되어 값으로 삽입된다. 문자열이 아닌 원시타입 변수는 문자열로 자동 변환된다.'
+    explain: '생성자. newDataModel(Array[String]);\n파라메터로 받은 객체를 통해 새로운 DataModel의 컬럼을 생성하여 반환한다.',
+    note: '클로저함수를 활용. 삽입되는 Param은 깊은 복사되어 값으로 삽입된다.\n문자열이 아닌 원시타입 변수는 문자열로 자동 변환된다.'
     },
     {
     method: 'constructor',
     param: '[{}]',
     return: 'DataModel',
-    explain: '생성자. newDataModel(Array[object]); 파라메터로 받은 객체를 통해 새로운 DataModel의 컬럼과 여러행을 생성하여 반환한다.',
-    note: '클로저함수를 활용. 삽입되는 Param은 깊은 복사되어 값으로 삽입된다. 문자열이 아닌 원시타입 변수는 문자열로 자동 변환된다.'
+    explain: '생성자. newDataModel(Array[object]);\n파라메터로 받은 객체를 통해 새로운 DataModel의 컬럼과 여러행을 생성하여 반환한다.',
+    note: '클로저함수를 활용. 삽입되는 Param은 깊은 복사되어 값으로 삽입된다.\n문자열이 아닌 원시타입 변수는 문자열로 자동 변환된다.'
     },
     {
     method: 'constructor',
     param: '{}',
     return: 'DataModel',
-    explain: '생성자. newDataModel(object); 파라메터로 받은 객체를 통해 새로운 DataModel의 컬럼과 단일행을 생성하여 반환한다.',
-    note: '클로저함수를 활용. 삽입되는 Param은 깊은 복사되어 값으로 삽입된다. 문자열이 아닌 원시타입 변수는 문자열로 자동 변환된다.'
+    explain: '생성자. newDataModel(object);\n파라메터로 받은 객체를 통해 새로운 DataModel의 컬럼과 단일행을 생성하여 반환한다.',
+    note: '클로저함수를 활용. 삽입되는 Param은 깊은 복사되어 값으로 삽입된다.\n문자열이 아닌 원시타입 변수는 문자열로 자동 변환된다.'
     },
 
     // Core / Utility Methods
@@ -275,14 +275,14 @@ export const dataModelGridDataKo = [
     method: 'addColumn',
     param: 'String column',
     return: 'DataModel',
-    explain: '컬럼을 삽입하고 행에 해당 컬럼을 key, 값을 null로 삽입한다. DataModel을 반환한다.',
+    explain: '컬럼을 삽입하고 행에 해당 컬럼을 key, 값을 null로 삽입한다.\nDataModel을 반환한다.',
     note: ''
     },
     {
     method: 'addColumns',
     param: '[String column]',
     return: 'DataModel',
-    explain: '컬럼들을 배열로 삽입하고 행에 해당 컬럼들을 key, 값을 null로 삽입한다. DataModel을 반환한다.',
+    explain: '컬럼들을 배열로 삽입하고 행에 해당 컬럼들을 key, 값을 null로 삽입한다.\nDataModel을 반환한다.',
     note: ''
     },
     {
@@ -324,7 +324,7 @@ export const dataModelGridDataKo = [
     method: 'setColumnSorting',
     param: '[String column]',
     return: 'DataModel',
-    explain: '컬럼을 파라메터 [column]의 순서로 정렬한다. 파라메터에 없는 컬럼은 기존 순서로 마지막으로 삽입된다. 기존 컬럼에 없는 파라메터가 전달되면 에러.',
+    explain: '컬럼을 파라메터 [column]의 순서로 정렬한다.\n파라메터에 없는 컬럼은 기존 순서로 마지막으로 삽입된다.\n기존 컬럼에 없는 파라메터가 전달되면 에러.',
     note: ''
     },
     {
@@ -392,42 +392,42 @@ export const dataModelGridDataKo = [
     param: 'none',
     return: 'DataModel',
     explain: '마지막에 행을 추가한다.',
-    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다. 컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
+    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다.\n컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
     },
     {
     method: 'addRow',
     param: 'Integer rowIndex',
     return: 'DataModel',
     explain: '지정된 인덱스로 행을 추가한다.',
-    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다. 컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
+    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다.\n컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
     },
     {
     method: 'addRow',
     param: '{}',
     return: 'DataModel',
     explain: '파라메터 Object를 행으로 추가하고 DataModel을 반환한다.',
-    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다. 컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
+    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다.\n컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
     },
     {
     method: 'addRow',
     param: 'Integer rowIndex, {}',
     return: 'DataModel',
     explain: '지정된 인덱스로 Map<String, Object>을 통해 행을 추가한다.',
-    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다. 컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
+    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다.\n컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
     },
     {
     method: 'addRows',
     param: '[{}]',
     return: 'DataModel',
     explain: '파라메터 Array[Object]을 행으로 추가하고 DataModel을 반환한다.',
-    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다. 컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
+    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다.\n컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
     },
     {
     method: 'addRows',
     param: 'DataModel',
     return: 'DataModel',
     explain: '파라메터 DataModel을 행으로 추가하고 DataModel을 반환한다.',
-    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다. 컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
+    note: '깊은 복사를 통해 추가. 컬럼에 정의된 데이터만 삽입된다.\n컬럼에는 정의 되었고 데이터는 없으면 자동으로 null을 삽입한다.'
     },
     {
     method: 'removeRow',
@@ -458,7 +458,7 @@ export const dataModelGridDataKo = [
     method: 'isNotNullColumn',
     param: 'String column',
     return: 'Boolean',
-    explain: '파라메터 column의 값들 중 null이 있는 행이 있는지 체크. 하나라도 null이 있으면 false를 반환한다. 모두 not null이면 true를 반환한다.',
+    explain: '파라메터 column의 값들 중 null이 있는 행이 있는지 체크.\n하나라도 null이 있으면 false를 반환한다. 모두 not null이면 true를 반환한다.',
     note: ''
     },
     {
@@ -472,56 +472,56 @@ export const dataModelGridDataKo = [
     method: 'isNotDuplColumn',
     param: 'String column',
     return: 'Boolean',
-    explain: '파라메터 column의 값들 중 중복되는 값이 있는지 체크. 중복되면 false, 중복되지 않으면 true를 반환한다.',
+    explain: '파라메터 column의 값들 중 중복되는 값이 있는지 체크.\n중복되면 false, 중복되지 않으면 true를 반환한다.',
     note: ''
     },
     {
     method: 'findFirstRowDuplColumn',
     param: 'String column',
     return: '{}',
-    explain: '파라메터 column의 값들 중 앞선 행에 중복되는 값이 있는 첫번째 행을 HashMap<String, Object>로 반환한다.',
+    explain: '파라메터 column의 값들 중 앞선 행에 중복되는 값이 있는\n첫번째 행을 HashMap<String, Object>로 반환한다.',
     note: ''
     },
     {
     method: 'isValidValue',
     param: 'String column, Function validator(value)',
     return: 'Boolean',
-    explain: '파라메터 column의 값들 중 파라메터 validator의 유효성 검사를 모두 통과하면 true, 하나라도 다르면 false.',
+    explain: '파라메터 column의 값들 중 파라메터 validator의\n유효성 검사를 모두 통과하면 true, 하나라도 다르면 false.',
     note: ''
     },
     {
     method: 'findFirstRowInvalidValue',
     param: 'String column, Function validator(value)',
     return: '{}',
-    explain: '파라메터 column의 값들 중 파라메터 validator를 검사하여 유효하지 않은 첫번째 행을 반환한다.',
+    explain: '파라메터 column의 값들 중 파라메터 validator를\n검사하여 유효하지 않은 첫번째 행을 반환한다.',
     note: ''
     },
     {
     method: 'searchRowIndexes',
     param: '{column : value}, boolean isNegative',
     return: '[]',
-    explain: '파라메터 {column : value}와 값이 일치하는 행의 index를 List로 반환한다. (각 조건은 AND조건, 단순 equals로 비교한다.) boolean isNative가 true이면 반전.',
+    explain: '파라메터 {column : value}와 값이 일치하는 행의 index를 List로 반환한다.\n(각 조건은 AND조건, 단순 equals로 비교한다.) boolean isNative가 true이면 반전.',
     note: ''
     },
     {
     method: 'searchRows',
     param: '{column : value}, boolean isNegative',
     return: '[{}]',
-    explain: '파라메터 {column : value}와 값이 일치하는 행을 List로 반환한다. (각 조건은 AND조건, 단순 equals로 비교한다.) boolean isNative가 true이면 반전.',
+    explain: '파라메터 {column : value}와 값이 일치하는 행을 List로 반환한다.\n(각 조건은 AND조건, 단순 equals로 비교한다.) boolean isNative가 true이면 반전.',
     note: ''
     },
     {
     method: 'searchRowsAsDataModel',
     param: '{column : value}, boolean isNegative',
     return: 'DataModel',
-    explain: '파라메터 {column : value}와 값이 일치하는 행을 DataModel 반환한다. (각 조건은 AND조건, 단순 equals로 비교한다.) boolean isNative가 true이면 반전.',
+    explain: '파라메터 {column : value}와 값이 일치하는 행을 DataModel 반환한다.\n(각 조건은 AND조건, 단순 equals로 비교한다.) boolean isNative가 true이면 반전.',
     note: ''
     },
     {
     method: 'searchAndModify',
     param: '{column : value}, boolean isNegative',
     return: 'DataModel',
-    explain: '파라메터 {column : value}와 값이 일치하는 행만 남김. 현재 DataModel 변경하여 반환한다. (각 조건은 AND조건, 단순 equals로 비교한다.) boolean isNative가 true이면 반전.',
+    explain: '파라메터 {column : value}와 값이 일치하는 행만 남김. 현재 DataModel 변경하여 반환한다.\n(각 조건은 AND조건, 단순 equals로 비교한다.) boolean isNative가 true이면 반전.',
     note: ''
     },
     {
@@ -549,7 +549,7 @@ export const dataModelGridDataKo = [
     method: 'filterAndModify',
     param: 'Function filter({})',
     return: 'DataModel',
-    explain: '파라메터 filter({})에 해당하는 행만 남긴다. 현재 DataModel을 변경하여 반환한다.',
+    explain: '파라메터 filter({})에 해당하는 행만 남긴다.\n현재 DataModel을 변경하여 반환한다.',
     note: ''
     },
 
@@ -558,14 +558,14 @@ export const dataModelGridDataKo = [
     method: 'sortRowAscending',
     param: 'String column, Boolean isIntegerOrder',
     return: 'DataModel',
-    explain: '파라메터 column의 값을 기준으로 오름차순으로 정렬한다. isIntegerOrder true인 경우 숫자로 인식해서 정렬한다.',
+    explain: '파라메터 column의 값을 기준으로 오름차순으로 정렬한다.\nisIntegerOrder true인 경우 숫자로 인식해서 정렬한다.',
     note: ''
     },
     {
     method: 'sortRowDescending',
     param: 'String column, Boolean isIntegerOrder',
     return: 'DataModel',
-    explain: '파라메터 column의 값을 기준으로 내림차순으로 정렬한다. isIntegerOrder true인 경우 숫자로 인식해서 정렬한다.',
+    explain: '파라메터 column의 값을 기준으로 내림차순으로 정렬한다.\nisIntegerOrder true인 경우 숫자로 인식해서 정렬한다.',
     note: ''
     },
     {
@@ -759,22 +759,22 @@ export const dataModelGridDataEn = [
     method: 'constructor',
     param: '[String column]',
     return: 'DataModel',
-    explain: 'Constructor. newDataModel(Array[String]); Creates new DataModel columns using the array parameter.',
-    note: 'Utilizes a closure function. The inserted parameter is deeply copied and inserted as a value. Non-string primitives are automatically converted to strings.'
+    explain: 'Constructor. newDataModel(Array[String]);\nCreates new DataModel columns using the array parameter.',
+    note: 'Utilizes a closure function. The inserted parameter is deeply copied and inserted as a value.\nNon-string primitives are automatically converted to strings.'
     },
     {
     method: 'constructor',
     param: '[{}]',
     return: 'DataModel',
-    explain: 'Constructor. newDataModel(Array[object]); Creates new DataModel columns and multiple rows using the array parameter.',
-    note: 'Utilizes a closure function. The inserted parameter is deeply copied and inserted as a value. Non-string primitives are automatically converted to strings.'
+    explain: 'Constructor. newDataModel(Array[object]);\nCreates new DataModel columns and multiple rows using the array parameter.',
+    note: 'Utilizes a closure function. The inserted parameter is deeply copied and inserted as a value.\nNon-string primitives are automatically converted to strings.'
     },
     {
     method: 'constructor',
     param: '{}',
     return: 'DataModel',
-    explain: 'Constructor. newDataModel(object); Creates new DataModel columns and a single row using the object parameter.',
-    note: 'Utilizes a closure function. The inserted parameter is deeply copied and inserted as a value. Non-string primitives are automatically converted to strings.'
+    explain: 'Constructor. newDataModel(object);\nCreates new DataModel columns and a single row using the object parameter.',
+    note: 'Utilizes a closure function. The inserted parameter is deeply copied and inserted as a value.\nNon-string primitives are automatically converted to strings.'
     },
 
     // Core / Utility Methods
@@ -782,7 +782,7 @@ export const dataModelGridDataEn = [
     method: 'isDataModel',
     param: '(field)',
     return: 'Boolean true',
-    explain: 'A field to confirm if the DataModel was created via newDataModel(). Always returns true.',
+    explain: 'A field to confirm if the DataModel was created via newDataModel().\nAlways returns true.',
     note: ''
     },
     {
@@ -796,7 +796,7 @@ export const dataModelGridDataEn = [
     method: 'clear',
     param: 'none',
     return: 'DataModel',
-    explain: 'Initializes (clears) the DataModel\'s columns and rows, and returns the DataModel.',
+    explain: 'Initializes (clears) the DataModel\'s columns and rows,\nand returns the DataModel.',
     note: ''
     },
     {
@@ -854,14 +854,14 @@ export const dataModelGridDataEn = [
     method: 'addColumn',
     param: 'String column',
     return: 'DataModel',
-    explain: 'Inserts a column. Sets the column key to null for all existing rows. Returns the DataModel.',
+    explain: 'Inserts a column. Sets the column key to null for all existing rows.\nReturns the DataModel.',
     note: ''
     },
     {
     method: 'addColumns',
     param: '[String column]',
     return: 'DataModel',
-    explain: 'Inserts an array of columns. Sets the column keys to null for all existing rows. Returns the DataModel.',
+    explain: 'Inserts an array of columns.\nSets the column keys to null for all existing rows. Returns the DataModel.',
     note: ''
     },
     {
@@ -889,21 +889,21 @@ export const dataModelGridDataEn = [
     method: 'removeColumns',
     param: '[String column]',
     return: 'DataModel',
-    explain: 'Deletes the parameter columns, and removes the corresponding column keys and values from all rows.',
+    explain: 'Deletes the parameter columns,\nand removes the corresponding column keys and values from all rows.',
     note: ''
     },
     {
     method: 'setValidColumns',
     param: '[String column]',
     return: 'DataModel',
-    explain: 'Keeps only the columns in [column] and deletes the rest of the columns and their values in each row.',
+    explain: 'Keeps only the columns in [column] and deletes\nthe rest of the columns and their values in each row.',
     note: ''
     },
     {
     method: 'setColumnSorting',
     param: '[String column]',
     return: 'DataModel',
-    explain: 'Sorts the columns according to the order in the parameter [column]. Columns not in the parameter are inserted last in their original order. Throws an error if a parameter column does not exist.',
+    explain: 'Sorts the columns according to the order in the parameter [column].\nColumns not in the parameter are inserted last in their original order.\nThrows an error if a parameter column does not exist.',
     note: ''
     },
     {
@@ -971,42 +971,42 @@ export const dataModelGridDataEn = [
     param: 'none',
     return: 'DataModel',
     explain: 'Appends a new row to the end.',
-    note: 'Added via deep copy. Only data defined in columns is inserted. If data is missing for a defined column, null is automatically inserted.'
+    note: 'Added via deep copy. Only data defined in columns is inserted.\nIf data is missing for a defined column, null is automatically inserted.'
     },
     {
     method: 'addRow',
     param: 'Integer rowIndex',
     return: 'DataModel',
     explain: 'Appends a new row at the specified index.',
-    note: 'Added via deep copy. Only data defined in columns is inserted. If data is missing for a defined column, null is automatically inserted.'
+    note: 'Added via deep copy. Only data defined in columns is inserted.\nIf data is missing for a defined column, null is automatically inserted.'
     },
     {
     method: 'addRow',
     param: '{}',
     return: 'DataModel',
-    explain: 'Appends the parameter Object as a row and returns the DataModel.',
-    note: 'Added via deep copy. Only data defined in columns is inserted. If data is missing for a defined column, null is automatically inserted.'
+    explain: 'Appends the parameter Object\nas a row and returns the DataModel.',
+    note: 'Added via deep copy. Only data defined in columns is inserted.\nIf data is missing for a defined column, null is automatically inserted.'
     },
     {
     method: 'addRow',
     param: 'Integer rowIndex, {}',
     return: 'DataModel',
-    explain: 'Appends the Map<String, Object> as a row at the specified index.',
-    note: 'Added via deep copy. Only data defined in columns is inserted. If data is missing for a defined column, null is automatically inserted.'
+    explain: 'Appends the Map<String, Object>\nas a row at the specified index.',
+    note: 'Added via deep copy. Only data defined in columns is inserted.\nIf data is missing for a defined column, null is automatically inserted.'
     },
     {
     method: 'addRows',
     param: '[{}]',
     return: 'DataModel',
-    explain: 'Appends the parameter Array[Object] as rows and returns the DataModel.',
-    note: 'Added via deep copy. Only data defined in columns is inserted. If data is missing for a defined column, null is automatically inserted.'
+    explain: 'Appends the parameter Array[Object]\nas rows and returns the DataModel.',
+    note: 'Added via deep copy. Only data defined in columns is inserted.\nIf data is missing for a defined column, null is automatically inserted.'
     },
     {
     method: 'addRows',
     param: 'DataModel',
     return: 'DataModel',
-    explain: 'Appends the parameter DataModel as rows and returns the DataModel.',
-    note: 'Added via deep copy. Only data defined in columns is inserted. If data is missing for a defined column, null is automatically inserted.'
+    explain: 'Appends the parameter DataModel\nas rows and returns the DataModel.',
+    note: 'Added via deep copy. Only data defined in columns is inserted.\nIf data is missing for a defined column, null is automatically inserted.'
     },
     {
     method: 'removeRow',
@@ -1037,7 +1037,7 @@ export const dataModelGridDataEn = [
     method: 'isNotNullColumn',
     param: 'String column',
     return: 'Boolean',
-    explain: 'Checks if any row has a null value in the parameter column. Returns false if at least one null exists, true if all are non-null.',
+    explain: 'Checks if any row has a null value in the parameter column.\nReturns false if at least one null exists, true if all are non-null.',
     note: ''
     },
     {
@@ -1051,56 +1051,56 @@ export const dataModelGridDataEn = [
     method: 'isNotDuplColumn',
     param: 'String column',
     return: 'Boolean',
-    explain: 'Checks if there are duplicate values in the parameter column. Returns false if duplicated, true if not duplicated.',
+    explain: 'Checks if there are duplicate values in the parameter column.\nReturns false if duplicated, true if not duplicated.',
     note: ''
     },
     {
     method: 'findFirstRowDuplColumn',
     param: 'String column',
     return: '{}',
-    explain: 'Returns the first row with a duplicate value (in a preceding row) in the parameter column as HashMap<String, Object>.',
+    explain: 'Returns the first row with a duplicate value\n(in a preceding row) in the parameter column as HashMap<String, Object>.',
     note: ''
     },
     {
     method: 'isValidValue',
     param: 'String column, Function validator(value)',
     return: 'Boolean',
-    explain: 'Returns true if all values in the parameter column pass the validator function, false if even one fails.',
+    explain: 'Returns true if all values in the parameter column pass\nthe validator function, false if even one fails.',
     note: ''
     },
     {
     method: 'findFirstRowInvalidValue',
     param: 'String column, Function validator(value)',
     return: '{}',
-    explain: 'Returns the first row that fails the validation check of the validator function on the parameter column.',
+    explain: 'Returns the first row that fails the validation check of\nthe validator function on the parameter column.',
     note: ''
     },
     {
     method: 'searchRowIndexes',
     param: '{column : value}, boolean isNegative',
     return: '[]',
-    explain: 'Returns a List of row indexes where the values match {column : value}. (Conditions are AND, simple equals comparison.) Inverts the result if boolean isNegative is true.',
+    explain: 'Returns a List of row indexes where the values match {column : value}.\n(Conditions are AND, simple equals comparison.)\nInverts the result if boolean isNegative is true.',
     note: ''
     },
     {
     method: 'searchRows',
     param: '{column : value}, boolean isNegative',
     return: '[{}]',
-    explain: 'Returns a List of rows (as [{}] ) where the values match {column : value}. (Conditions are AND, simple equals comparison.) Inverts the result if boolean isNegative is true.',
+    explain: 'Returns a List of rows (as [{}] ) where the values match {column : value}.\n(Conditions are AND, simple equals comparison.)\nInverts the result if boolean isNegative is true.',
     note: ''
     },
     {
     method: 'searchRowsAsDataModel',
     param: '{column : value}, boolean isNegative',
     return: 'DataModel',
-    explain: 'Returns a DataModel containing rows where the values match {column : value}. (Conditions are AND, simple equals comparison.) Inverts the result if boolean isNegative is true.',
+    explain: 'Returns a DataModel containing rows where the values match {column : value}.\n(Conditions are AND, simple equals comparison.)\nInverts the result if boolean isNegative is true.',
     note: ''
     },
     {
     method: 'searchAndModify',
     param: '{column : value}, boolean isNegative',
     return: 'DataModel',
-    explain: 'Keeps only the rows where the values match {column : value}. Modifies and returns the current DataModel. (Conditions are AND, simple equals comparison.) Inverts the result if boolean isNegative is true.',
+    explain: 'Keeps only the rows where the values match {column : value}.\nModifies and returns the current DataModel. (Conditions are AND, simple equals comparison.)\nInverts the result if boolean isNegative is true.',
     note: ''
     },
     {
@@ -1128,7 +1128,7 @@ export const dataModelGridDataEn = [
     method: 'filterAndModify',
     param: 'Function filter({})',
     return: 'DataModel',
-    explain: 'Keeps only the rows that satisfy the parameter filter({}) function. Modifies and returns the current DataModel.',
+    explain: 'Keeps only the rows that satisfy the parameter filter({}) function.\nModifies and returns the current DataModel.',
     note: ''
     },
 
@@ -1137,14 +1137,14 @@ export const dataModelGridDataEn = [
     method: 'sortRowAscending',
     param: 'String column, Boolean isIntegerOrder',
     return: 'DataModel',
-    explain: 'Sorts the rows in ascending order based on the value of the parameter column. If isIntegerOrder is true, sorts numerically.',
+    explain: 'Sorts the rows in ascending order based on the value of the parameter column.\nIf isIntegerOrder is true, sorts numerically.',
     note: ''
     },
     {
     method: 'sortRowDescending',
     param: 'String column, Boolean isIntegerOrder',
     return: 'DataModel',
-    explain: 'Sorts the rows in descending order based on the value of the parameter column. If isIntegerOrder is true, sorts numerically.',
+    explain: 'Sorts the rows in descending order based on the value of the parameter column.\nIf isIntegerOrder is true, sorts numerically.',
     note: ''
     },
     {
