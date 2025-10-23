@@ -13,7 +13,7 @@ HInputGroup은 여러 HInput을 감싸고, 데이터 로드/초기화/수정여�
   t1010: '라이브 데모',
   t1015: '데모 컴포넌트',
   c1015:
-`<HInputGroup id="group1">
+`<HInputGroup id="inputgroup1">
   <HLayout>
     <HLabel class="hison-col-3">Type: text</HLabel>
     <HInput
@@ -39,7 +39,7 @@ HInputGroup은 여러 HInput을 감싸고, 데이터 로드/초기화/수정여�
       id="digit"
       class="hison-col-9"
       :input-type="'digit'"
-      :model-value="12345"
+      :model-value="'12345'"
     />
   </HLayout>
   <HLayout>
@@ -179,7 +179,7 @@ HInputGroup은 여러 HInput을 감싸고, 데이터 로드/초기화/수정여�
   c1020:
 `//샘플 로드
 function onLoadSample() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.load({
     text: 'load text',
     mask: 'FA-123',
@@ -200,22 +200,22 @@ function onLoadSample() {
 }
 //초기화
 function onClear() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.clear(true)
 }
 //전체 비활성화
 function onDisable() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.setEditMode('disable')
 }
 //전체 읽기전용
 function onReadonly() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.setEditMode('readonly')
 }
 //전체 편집가능
 function onEditable() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp?.setEditMode('editable')
 }`,
   t1100: 'slot',
@@ -243,7 +243,7 @@ and represented as { [groupName]: selectedRadioId | null }.`,
   t1010: 'Live Demo',
   t1015: 'Component Demo',
   c1015:
-`<HInputGroup id="group1">
+`<HInputGroup id="inputgroup1">
   <HLayout>
     <HLabel class="hison-col-3">Type: text</HLabel>
     <HInput
@@ -269,7 +269,7 @@ and represented as { [groupName]: selectedRadioId | null }.`,
       id="digit"
       class="hison-col-9"
       :input-type="'digit'"
-      :model-value="12345"
+      :model-value="'12345'"
     />
   </HLayout>
   <HLayout>
@@ -409,7 +409,7 @@ and represented as { [groupName]: selectedRadioId | null }.`,
   c1020:
 `//Load sample
 function onLoadSample() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.load({
     text: 'load text',
     mask: 'FA-123',
@@ -430,22 +430,22 @@ function onLoadSample() {
 }
 //Clear
 function onClear() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.clear(true)
 }
 //Disable all
 function onDisable() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.setEditMode('disable')
 }
 //Readonly all
 function onReadonly() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.setEditMode('readonly')
 }
 //Editable all
 function onEditable() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp?.setEditMode('editable')
 }`,
   t1100: 'slot',
@@ -573,7 +573,7 @@ const mountMethodGrid = async (grid: HGridMethods) => {
 
 /* -------------------------------- demo actions -------------------------------- */
 function onLoadSample() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.load({
     text: 'load text',
     mask: 'FA-123',
@@ -593,19 +593,19 @@ function onLoadSample() {
   })
 }
 function onClear() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.clear(true)
 }
 function onDisable() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.setEditMode('disable')
 }
 function onReadonly() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp.setEditMode('readonly')
 }
 function onEditable() {
-  const grp = hison.component.getInputGroup('group1')!
+  const grp = hison.component.getInputGroup('inputgroup1')!
   grp?.setEditMode('editable')
 }
 </script>
@@ -624,7 +624,7 @@ function onEditable() {
       <HButton :text="T.btnEditable" @click="onEditable" />
     </HLayout>
     <HGap class="hison-size-s"/>
-    <HInputGroup id="group1">
+    <HInputGroup id="inputgroup1">
       <HLayout>
         <HLabel class="hison-col-3">Type: text</HLabel>
         <HInput
@@ -650,7 +650,7 @@ function onEditable() {
           id="digit"
           class="hison-col-9"
           :input-type="'digit'"
-          :model-value="12345"
+          :model-value="'12345'"
         />
       </HLayout>
       <HLayout>

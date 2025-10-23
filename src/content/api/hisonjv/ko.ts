@@ -14,16 +14,20 @@ const ko = {
   t2100:
 `DataModel`,
   t2200:
-`Data Model Config`,
+`Data Model Converter`,
+  t2300:
+`Condition`,
 
   subhead3:
 `API Link`,
   t3000:
 `ApiLink`,
   t3100:
-`WebSocket`,
+`ApiLink Handler`,
   t3200:
-`API Link Config`,
+`Service Runtime Exception`,
+  t3300:
+`Caching Handler`,
 } as const;
 
 export default ko;

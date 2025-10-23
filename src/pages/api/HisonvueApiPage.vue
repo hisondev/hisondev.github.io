@@ -4,8 +4,8 @@ import AccordionSample from '@/components/sample/AccordionSample.vue';
 import CodeParagraph from '@/components/CodeParagraph.vue';
 import { apiHisonvueContents, componentConfigGridData, componentStyleConfigGridData, cssEventConfigGridData, dataConfigGridData, hisonComponentGridData, hisonCssEventGridData, hisonEtcGridData, hisonStyleGridData, linkConfigGridData, shieldConfigGridData, utilsConfigGridData } from '@/content/api/hisonvue';
 import type { Lang } from '@/store';
-import { hison, type HGridColumn, type HGridMethods, type HInputMethods } from 'hisonvue';
-import { computed } from 'vue';
+import { type HGridColumn, type HGridMethods, type HInputMethods } from 'hisonvue';
+import { computed, ref, watch } from 'vue';
 import { useStore } from 'vuex';
 import BaggieSample from '@/components/sample/BaggieSample.vue';
 import BannerSample from '@/components/sample/BannerSample.vue';
@@ -36,6 +36,15 @@ const store = useStore()
 const contents = computed(() => apiHisonvueContents[store.state.lang as Lang])
 const getKey = () => store.state.lang + getUUID()
 
+const selected = ref<string>(contents.value.t6000)
+watch(() => store.state.lang, () => {
+  selected.value = contents.value.t6000
+})
+const inputOnChange = (oldValue: Lang, newValue: Lang, input: HInputMethods) => {
+    void oldValue; void input;
+    selected.value = newValue
+}
+
 const componentKeys = [
     contents.value.t6000,
     contents.value.t6100,
@@ -63,83 +72,72 @@ const componentKeys = [
     contents.value.t8300,
     contents.value.t8400
 ]
-
 const option = componentKeys.map(v => ({ text: v, value: v }))
-const inputOnChange = (oldValue: Lang, newValue: Lang, input: HInputMethods) => {
-    void oldValue; void input;
-    for (const component of componentKeys) {
-        const layout = hison.component.getLayout(component)
-        if(layout) layout.setVisible(false)
-    }
-    const selectLayout = hison.component.getLayout(newValue)
-    if(selectLayout) selectLayout.setVisible(true)
-
-}
 
 const hisonComponentColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '15%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '15%' },
   { id: 'return', header: 'return', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const hisonStyleColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '15%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '15%' },
   { id: 'return', header: 'return', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const hisonCssEventColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '15%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '15%' },
   { id: 'return', header: 'return', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const hisonEtcGridColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '15%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '15%' },
   { id: 'return', header: 'return', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 
 const utilsConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'type', header: 'type', dataType: 'text', width: '15%' },
   { id: 'default', header: 'default', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const shieldConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'type', header: 'type', dataType: 'text', width: '15%' },
   { id: 'default', header: 'default', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const dataConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'type', header: 'type', dataType: 'text', width: '15%' },
   { id: 'default', header: 'default', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const linkConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'type', header: 'type', dataType: 'text', width: '15%' },
   { id: 'default', header: 'default', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 
 const componentConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'type', header: 'type', dataType: 'text', width: '15%' },
   { id: 'default', header: 'default', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const componentStyleConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'type', header: 'type', dataType: 'text', width: '15%' },
   { id: 'default', header: 'default', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const cssEventConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '15%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'type', header: 'type', dataType: 'text', width: '15%' },
   { id: 'default', header: 'default', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
@@ -189,7 +187,6 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
         <HGap :line="'horizontal'"/>
         <HAccordion
             :title="contents.subhead1"
-            :duration="2000"
         >
             <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead1 }}</HCaption>
             <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t1000 }}</HCaption>
@@ -254,7 +251,6 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
         <HGap :line="'horizontal'"/>
         <HAccordion
             :title="contents.subhead2"
-            :duration="2000"
         >
             <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead2 }}</HCaption>
             <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t2000 }}</HCaption>
@@ -360,7 +356,6 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
         <HGap :line="'horizontal'"/>
         <HAccordion
             :title="contents.subhead3"
-            :duration="2000"
         >
             <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead3 }}</HCaption>
             <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3000 }}</HCaption>
@@ -516,22 +511,20 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
         <HGap :line="'horizontal'"/>
         <HAccordion
             :title="contents.subhead4"
-            :duration="2000"
         >
             <HCaption :level="4" :key="getKey()" class="hison-col-12">{{ contents.subhead4 }}</HCaption>
             <HInput
-                id="select"
                 class="hison-col-12"
                 :inputType="'select'"
                 :options="option"
-                v-model="contents.t6000"
+                v-model="selected"
                 @change="inputOnChange"
             ></HInput>
             <HLayout>
                 <HLayout
                     :id="contents.t6000"
                     style="padding: 30px;"
-                    :visible="true"
+                    v-if="selected === contents.t6000"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6000 }}</HCaption>
                     <AccordionSample :key="getKey()" :lang="store.state.lang"/>
@@ -539,7 +532,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6100"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6100"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6100 }}</HCaption>
                     <BaggieSample :key="getKey()" :lang="store.state.lang"/>
@@ -547,7 +540,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6200"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6200"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6200 }}</HCaption>
                     <BannerSample :key="getKey()" :lang="store.state.lang"/>
@@ -555,7 +548,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6300"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6300"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6300 }}</HCaption>
                     <ButtonSample :key="getKey()" :lang="store.state.lang"/>
@@ -563,7 +556,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6400"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6400"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6400 }}</HCaption>
                     <CalendarSample :key="getKey()" :lang="store.state.lang"/>
@@ -571,7 +564,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6500"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6500"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6500 }}</HCaption>
                     <CaptionSample :key="getKey()" :lang="store.state.lang"/>
@@ -579,7 +572,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6600"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6600"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6600 }}</HCaption>
                     <ChartSample :key="getKey()" :lang="store.state.lang"/>
@@ -587,7 +580,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6700"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6700"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6700 }}</HCaption>
                     <DrawerSample :key="getKey()" :lang="store.state.lang"/>
@@ -595,7 +588,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6800"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6800"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6800 }}</HCaption>
                     <DropdownSample :key="getKey()" :lang="store.state.lang"/>
@@ -603,7 +596,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t6900"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t6900"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t6900 }}</HCaption>
                     <FilesetSample :key="getKey()" :lang="store.state.lang"/>
@@ -611,7 +604,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7000"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7000"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7000 }}</HCaption>
                     <GapSample :key="getKey()" :lang="store.state.lang"/>
@@ -619,7 +612,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7100"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7100"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7100 }}</HCaption>
                     <GridSample :key="getKey()" :lang="store.state.lang"/>
@@ -627,7 +620,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7200"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7200"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7200 }}</HCaption>
                     <ImageboxSample :key="getKey()" :lang="store.state.lang"/>
@@ -635,7 +628,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7300"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7300"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7300 }}</HCaption>
                     <InputSample :key="getKey()" :lang="store.state.lang"/>
@@ -643,7 +636,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7400"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7400"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7400 }}</HCaption>
                     <InputGroupSample :key="getKey()" :lang="store.state.lang"/>
@@ -651,7 +644,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7500"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7500"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7500 }}</HCaption>
                     <LabelSample :key="getKey()" :lang="store.state.lang"/>
@@ -659,7 +652,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7600"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7600"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7600 }}</HCaption>
                     <LayoutSample :key="getKey()" :lang="store.state.lang"/>
@@ -667,7 +660,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7700"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7700"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7700 }}</HCaption>
                     <ListSample :key="getKey()" :lang="store.state.lang"/>
@@ -675,7 +668,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7800"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7800"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7800 }}</HCaption>
                     <ModalSample :key="getKey()" :lang="store.state.lang"/>
@@ -683,7 +676,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t7900"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t7900"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t7900 }}</HCaption>
                     <NoteSample :key="getKey()" :lang="store.state.lang"/>
@@ -691,7 +684,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t8000"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t8000"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t8000 }}</HCaption>
                     <PaginationSample :key="getKey()" :lang="store.state.lang"/>
@@ -699,7 +692,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t8100"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t8100"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t8100 }}</HCaption>
                     <ParagraphSample :key="getKey()" :lang="store.state.lang"/>
@@ -707,7 +700,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t8200"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t8200"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t8200 }}</HCaption>
                     <PopupSample :key="getKey()" :lang="store.state.lang"/>
@@ -715,7 +708,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t8300"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t8300"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t8300 }}</HCaption>
                     <SpinnerSample :key="getKey()" :lang="store.state.lang"/>
@@ -723,7 +716,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 <HLayout
                     :id="contents.t8400"
                     style="padding: 30px;"
-                    :visible="false"
+                    v-if="selected === contents.t8400"
                 >
                     <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.t8400 }}</HCaption>
                     <TableSample :key="getKey()" :lang="store.state.lang"/>

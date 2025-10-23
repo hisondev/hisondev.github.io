@@ -2,9 +2,9 @@
 export const dataWrapperGridDataKo = [
     {
     method: 'constructor',
-    param: 'strings : HashMap<String, String>, dataModels : HashMap<String, DataModel>',
+    param: 'strings : HashMap<String, String>,\ndataModels : HashMap<String, DataModel>',
     return: '',
-    explain: 'strings : HashMap<String, String>과 dataModels : HashMap<String, DataModel>을 생성합니다.',
+    explain: 'strings : HashMap<String, String>과\ndataModels : HashMap<String, DataModel>을 생성합니다.',
     note: ''
     },
     {
@@ -95,14 +95,14 @@ export const dataWrapperGridDataKo = [
     method: 'toString',
     param: '',
     return: 'String',
-    explain: '각 키와 값을 \\n을 구분자로 구분하여 String으로 출력합니다. DataModel은 DataModel의 toString()을 사용합니다.',
+    explain: '각 키와 값을 \\n을 구분자로 구분하여 String으로 출력합니다.\nDataModel은 DataModel의 toString()을 사용합니다.',
     note: ''
     },
     {
     method: 'toString',
     param: 'String dataModelSeparator',
     return: 'String',
-    explain: '각 키와 값을 \\n을 구분자로 구분하여 String으로 출력합니다. DataModel은 DataModel의 toString()을 사용하며, dataModelSeparator를 전달합니다.',
+    explain: '각 키와 값을 \\n을 구분자로 구분하여 String으로 출력합니다.\nDataModel은 DataModel의 toString()을 사용하며, dataModelSeparator를 전달합니다.',
     note: ''
     }
 ]
@@ -151,7 +151,7 @@ export const dataModelGridDataKo = [
     // 6. constructor (Object[] queryResult, String[] columnNames)
     {
     method: 'constructor',
-    param: 'Object[] queryResult, String[] columnNames',
+    param: 'Object[] queryResult,\nString[] columnNames',
     return: 'DataModel',
     explain: 'Object[](행)와 String[](컬럼)을 이용해 한 행을 삽입한 후 DataModel을 생성합니다.',
     note: 'entityManager.createNativeQuery.getResult와 함께 사용하십시오.'
@@ -186,7 +186,7 @@ export const dataModelGridDataKo = [
     param: 'Object(Entity) entity',
     return: 'DataModel',
     explain: 'Object(Entity)를 이용해 한 행을 삽입한 후 DataModel을 생성합니다.',
-    note: 'java.reflect 사용으로 인한 성능 저하 우려가 있습니다. 해당 Object는 @entity여야 합니다. (convertEntityToDataModel, isEntity 사용)'
+    note: 'java.reflect 사용으로 인한 성능 저하 우려가 있습니다.\n해당 Object는 @entity여야 합니다. (convertEntityToDataModel, isEntity 사용)'
     },
     // 11. constructor (List<T> newRows, T = String)
     {
@@ -218,7 +218,7 @@ export const dataModelGridDataKo = [
     param: 'List<T> newRows (T = Object(Entity))',
     return: 'DataModel',
     explain: 'T = Object(Entity): List<Object>를 이용해 행을 삽입한 후 DataModel을 생성합니다.',
-    note: 'List<Object>의 경우 java.reflect 사용으로 인한 성능 저하 우려가 있습니다. 해당 Object는 @entity여야 합니다. (convertEntityToDataModel, isEntity 사용)'
+    note: 'List<Object>의 경우 java.reflect 사용으로 인한 성능 저하 우려가 있습니다.\n해당 Object는 @entity여야 합니다. (convertEntityToDataModel, isEntity 사용)'
     },
     // 15. constructor (List<Object[]> queryResults, String[] columnNames)
     {
@@ -327,9 +327,9 @@ export const dataModelGridDataKo = [
     // 28. setColumnSameFormat(String column, Function<Object, Object> formatter)
     {
     method: 'setColumnSameFormat',
-    param: 'String column, Function<Object, Object> formatter',
+    param: 'String column,\nFunction<Object, Object> formatter',
     return: 'DataModel',
-    explain: '지정된 String(column)에 Function<Object, Object>를 이용해 동일한 포맷을 설정하고 현재 DataModel을 반환합니다.',
+    explain: '지정된 String(column)에 Function<Object, Object>를\n이용해 동일한 포맷을 설정하고 현재 DataModel을 반환합니다.',
     note: ''
     },
     // 29. addRow() (파라미터 없음)
@@ -354,12 +354,12 @@ export const dataModelGridDataKo = [
     param: 'Map<String, Object> newRow',
     return: 'DataModel',
     explain: 'Map<String, Object>를 이용해 행을 추가합니다.',
-    note: '존재하지 않는 컬럼은 스킵됩니다. DataConverterDefault의 getConvertValueToDataModelRowValue를 사용합니다. 커스터마이징 가능합니다.'
+    note: '존재하지 않는 컬럼은 스킵됩니다. DataConverterDefault의\ngetConvertValueToDataModelRowValue를 사용합니다. 커스터마이징 가능합니다.'
     },
     // 32. addRow(int rowIndex, Map<String, Object> newRow)
     {
     method: 'addRow',
-    param: 'int rowIndex, Map<String, Object> newRow',
+    param: 'int rowIndex,\nMap<String, Object> newRow',
     return: 'DataModel',
     explain: '지정된 인덱스에 Map<String, Object>를 이용해 행을 추가합니다.',
     note: '인덱스가 범위를 벗어나면 에러가 발생합니다.'
@@ -383,7 +383,7 @@ export const dataModelGridDataKo = [
     // 35. addRow(Object[] queryResult, String[] columnNames)
     {
     method: 'addRow',
-    param: 'Object[] queryResult, String[] columnNames',
+    param: 'Object[] queryResult,\nString[] columnNames',
     return: 'DataModel',
     explain: 'Object[] queryResult와 String[] columnNames를 이용해 행을 추가합니다.',
     note: '존재하지 않는 컬럼은 스킵됩니다.'
@@ -391,7 +391,7 @@ export const dataModelGridDataKo = [
     // 36. addRow(int rowIndex, Object[] queryResult, String[] columnNames)
     {
     method: 'addRow',
-    param: 'int rowIndex, Object[] queryResult, String[] columnNames',
+    param: 'int rowIndex,\nObject[] queryResult,\nString[] columnNames',
     return: 'DataModel',
     explain: '지정된 인덱스에 Object[] queryResult와 String[] columnNames를 이용해 행을 추가합니다.',
     note: '존재하지 않는 컬럼은 스킵됩니다. 인덱스가 범위를 벗어나면 에러가 발생합니다.'
@@ -407,7 +407,7 @@ export const dataModelGridDataKo = [
     // 38. addRow(int rowIndex, HttpSession session)
     {
     method: 'addRow',
-    param: 'int rowIndex, HttpSession session',
+    param: 'int rowIndex,\nHttpSession session',
     return: 'DataModel',
     explain: '지정된 인덱스에 HttpSession을 이용해 행을 추가합니다.',
     note: '존재하지 않는 컬럼은 스킵됩니다. 인덱스가 범위를 벗어나면 에러가 발생합니다.'
@@ -417,8 +417,8 @@ export const dataModelGridDataKo = [
     method: 'addRow',
     param: 'Object entity',
     return: 'DataModel',
-    explain: 'jackson.databind의 ObjectMapper를 이용하여 Object(Entity)를 DataModel에 행으로 추가합니다.',
-    note: '존재하지 않는 컬럼은 스킵됩니다. DataConverterDefault의 getObjectMapperForConvertEntitiesToDataModel 및 isEntity를 사용합니다. 커스터마이징 가능합니다.'
+    explain: 'jackson.databind의 ObjectMapper를 이용하여\nObject(Entity)를 DataModel에 행으로 추가합니다.',
+    note: '존재하지 않는 컬럼은 스킵됩니다.\nDataConverterDefault의 getObjectMapperForConvertEntitiesToDataModel 및 isEntity를 사용합니다.\n커스터마이징 가능합니다.'
     },
     // 40. addRow(int rowIndex, Object entity)
     {
@@ -439,10 +439,10 @@ export const dataModelGridDataKo = [
     // 42. addRows(List<T> newRows) - T = Map / T = Tuple / T = Object(Entity)
     {
     method: 'addRows',
-    param: 'List<T> newRows (T = Map / T = Tuple / T = Object(Entity))',
+    param: 'List<T> newRows\n(T = Map / T = Tuple / T = Object(Entity))',
     return: 'DataModel',
-    explain: 'T = Map: List<Map<String, Object>>, T = Tuple: List<Tuple>, T = Object(Entity): List<Object>를 이용해 행을 추가합니다.',
-    note: '존재하지 않는 컬럼은 스킵됩니다. List<Object>의 경우 java.reflect 사용으로 인한 성능 저하 우려가 있습니다. 해당 Object는 @entity여야 합니다. DataConverterDefault의 getObjectMapperForConvertEntitiesToDataModel 및 isEntity를 사용합니다. 커스터마이징 가능합니다.'
+    explain: 'T = Map: List<Map<String, Object>>, T = Tuple: List<Tuple>,\nT = Object(Entity): List<Object>를 이용해 행을 추가합니다.',
+    note: '존재하지 않는 컬럼은 스킵됩니다. List<Object>의 경우 java.reflect 사용으로 인한 성능 저하 우려가 있습니다.\n해당 Object는 @entity여야 합니다. DataConverterDefault의 getObjectMapperForConvertEntitiesToDataModel 및\nisEntity를 사용합니다. 커스터마이징 가능합니다.'
     },
     // 43. addRows(ResultSet rs)
     {
@@ -457,8 +457,8 @@ export const dataModelGridDataKo = [
     method: 'addRows',
     param: 'JsonNode node',
     return: 'DataModel',
-    explain: 'jackson.databind의 ObjectMapper를 이용하여 JsonNode를 DataModel에 행으로 추가합니다.',
-    note: '존재하지 않는 컬럼은 스킵됩니다. DataConverterDefault의 getConvertJsonValueNodeToDataModelRowValue를 사용합니다. 커스터마이징 가능합니다.'
+    explain: 'jackson.databind의 ObjectMapper를 이용하여\nJsonNode를 DataModel에 행으로 추가합니다.',
+    note: '존재하지 않는 컬럼은 스킵됩니다.\nDataConverterDefault의 getConvertJsonValueNodeToDataModelRowValue를 사용합니다.\n커스터마이징 가능합니다.'
     },
     // 45. addRows(List<Object[]> queryResults, String[] columnNames)
     {
@@ -466,7 +466,7 @@ export const dataModelGridDataKo = [
     param: 'List<Object[]> queryResults, String[] columnNames',
     return: 'DataModel',
     explain: 'List<Object[]>(행)와 String[](컬럼)을 이용해 행을 추가합니다.',
-    note: '존재하지 않는 컬럼은 스킵됩니다. List<Object[]>는 행을, String[]는 컬럼을 나타냅니다.'
+    note: '존재하지 않는 컬럼은 스킵됩니다.\nList<Object[]>는 행을, String[]는 컬럼을 나타냅니다.'
     },
     // 46. getColumnCount()
     {
@@ -553,7 +553,7 @@ export const dataModelGridDataKo = [
     method: 'setValue',
     param: 'int rowIndex, String column, Object value',
     return: 'DataModel',
-    explain: 'int(rowIndex)번째 행의 String(column) 값에 Object(value)를 넣고 현재 DataModel을 반환합니다.',
+    explain: 'int(rowIndex)번째 행의 String(column)\n값에 Object(value)를 넣고 현재 DataModel을 반환합니다.',
     note: ''
     },
     // 57. removeRow(int rowIndex)
@@ -601,7 +601,7 @@ export const dataModelGridDataKo = [
     method: 'setValidColumns',
     param: 'String[] columns',
     return: 'DataModel',
-    explain: 'String[](columns)에 해당하는 컬럼만 남기고 나머지 컬럼과 해당 컬럼의 각 행의 값들을 삭제합니다.',
+    explain: 'String[](columns)에 해당하는 컬럼만 남기고\n나머지 컬럼과 해당 컬럼의 각 행의 값들을 삭제합니다.',
     note: ''
     },
     // 63. setValidColumns(List<String> columns)
@@ -609,7 +609,7 @@ export const dataModelGridDataKo = [
     method: 'setValidColumns',
     param: 'List<String> columns',
     return: 'DataModel',
-    explain: 'List<String>(columns)에 해당하는 컬럼만 남기고 나머지 컬럼과 해당 컬럼의 각 행의 값들을 삭제합니다.',
+    explain: 'List<String>(columns)에 해당하는 컬럼만\n남기고 나머지 컬럼과 해당 컬럼의 각 행의 값들을 삭제합니다.',
     note: ''
     },
     // 64. setValidColumns(Set<String> columns)
@@ -617,7 +617,7 @@ export const dataModelGridDataKo = [
     method: 'setValidColumns',
     param: 'Set<String> columns',
     return: 'DataModel',
-    explain: 'Set<String>(columns)에 해당하는 컬럼만 남기고 나머지 컬럼과 해당 컬럼의 각 행의 값들을 삭제합니다.',
+    explain: 'Set<String>(columns)에 해당하는 컬럼만\n남기고 나머지 컬럼과 해당 컬럼의 각 행의 값들을 삭제합니다.',
     note: ''
     },
     // 65. isNotNullColumn(String column)
@@ -625,7 +625,7 @@ export const dataModelGridDataKo = [
     method: 'isNotNullColumn',
     param: 'String column',
     return: 'boolean',
-    explain: 'String(column)에 null 값이 있는 행이 있는지 확인합니다. null이 하나라도 있으면 false를 반환합니다. 모두 not null이면 true를 반환합니다.',
+    explain: 'String(column)에 null 값이 있는 행이 있는지 확인합니다.\nnull이 하나라도 있으면 false를 반환합니다. 모두 not null이면 true를 반환합니다.',
     note: ''
     },
     // 66. findFirstRowNullColumn(String column)
@@ -641,7 +641,7 @@ export const dataModelGridDataKo = [
     method: 'isNotDuplColumn',
     param: 'String column',
     return: 'boolean',
-    explain: 'String(column)에 중복된 값이 있는지 확인합니다. 중복되면 false, 중복되지 않으면 true를 반환합니다.',
+    explain: 'String(column)에 중복된 값이 있는지 확인합니다.\n중복되면 false, 중복되지 않으면 true를 반환합니다.',
     note: ''
     },
     // 68. findFirstRowDuplColumn(String column)
@@ -649,21 +649,21 @@ export const dataModelGridDataKo = [
     method: 'findFirstRowDuplColumn',
     param: 'String column',
     return: 'HashMap<String, Object>',
-    explain: 'String(column)에 중복된 값(이전 행들과 비교하여)이 있는 첫 번째 행을 HashMap<String, Object>로 반환합니다.',
+    explain: 'String(column)에 중복된 값(이전 행들과 비교하여)이 있는\n첫 번째 행을 HashMap<String, Object>로 반환합니다.',
     note: ''
     },
     // 69. isValidValue(String column, Predicate<Object> validator)
     {
     method: 'isValidValue',
-    param: 'String column, Predicate<Object> validator',
+    param: 'String column,\nPredicate<Object> validator',
     return: 'boolean',
-    explain: 'String(column)의 모든 값이 Predicate<Object>(validator)의 유효성 검사를 통과하는지 확인합니다. 모두 통과하면 true, 하나라도 실패하면 false를 반환합니다.',
+    explain: 'String(column)의 모든 값이 Predicate<Object>(validator)의 유효성 검사를 통과하는지 확인합니다.\n모두 통과하면 true, 하나라도 실패하면 false를 반환합니다.',
     note: 'Null 값은 검사하지 않습니다.'
     },
     // 70. findFirstRowInvalidValue(String column, Predicate<Object> validator)
     {
     method: 'findFirstRowInvalidValue',
-    param: 'String column, Predicate<Object> validator',
+    param: 'String column,\nPredicate<Object> validator',
     return: 'HashMap<String, Object>',
     explain: 'String(column)의 값에 대해 Predicate<Object>(validator)를 검사하여 첫 번째로 유효하지 않은 행을 반환합니다.',
     note: 'Null 값은 검사하지 않습니다.'
@@ -673,15 +673,15 @@ export const dataModelGridDataKo = [
     method: 'searchRowIndexes',
     param: 'Condition... conditions',
     return: 'List<Integer>',
-    explain: 'Condition[] conditions의 조건을 만족하는 행의 인덱스를 List로 반환합니다. (각 조건은 AND 조건이며, 단순 equals로 비교합니다.)',
+    explain: 'Condition[] conditions의 조건을 만족하는 행의 인덱스를 List로 반환합니다.\n(각 조건은 AND 조건이며, 단순 equals로 비교합니다.)',
     note: ''
     },
     // 72. searchRowIndexes(boolean bool, Condition... conditions)
     {
     method: 'searchRowIndexes',
-    param: 'boolean bool, Condition... conditions',
+    param: 'boolean bool,\nCondition... conditions',
     return: 'List<Integer>',
-    explain: 'Condition[] conditions의 조건을 만족하는 행의 인덱스를 List로 반환합니다. (각 조건은 AND 조건이며, 단순 equals로 비교합니다.) boolean bool이 false이면 각 조건이 반전됩니다.',
+    explain: 'Condition[] conditions의 조건을 만족하는 행의 인덱스를 List로 반환합니다.\n(각 조건은 AND 조건이며, 단순 equals로 비교합니다.) boolean bool이 false이면 각 조건이 반전됩니다.',
     note: ''
     },
     // 73. searchRows(Condition... conditions)
@@ -689,15 +689,15 @@ export const dataModelGridDataKo = [
     method: 'searchRows',
     param: 'Condition... conditions',
     return: 'List<HashMap<String, Object>>',
-    explain: 'Condition[] conditions의 조건을 만족하는 행들을 List로 반환합니다. (각 조건은 AND 조건이며, 단순 equals로 비교합니다.)',
+    explain: 'Condition[] conditions의 조건을 만족하는 행들을 List로 반환합니다.\n(각 조건은 AND 조건이며, 단순 equals로 비교합니다.)',
     note: ''
     },
     // 74. searchRows(boolean bool, Condition... conditions)
     {
     method: 'searchRows',
-    param: 'boolean bool, Condition... conditions',
+    param: 'boolean bool,\nCondition... conditions',
     return: 'List<HashMap<String, Object>>',
-    explain: 'Condition[] conditions의 조건을 만족하는 행들을 List로 반환합니다. (각 조건은 AND 조건이며, 단순 equals로 비교합니다.) boolean bool이 false이면 각 조건이 반전됩니다.',
+    explain: 'Condition[] conditions의 조건을 만족하는 행들을 List로 반환합니다.\n(각 조건은 AND 조건이며, 단순 equals로 비교합니다.) boolean bool이 false이면 각 조건이 반전됩니다.',
     note: ''
     },
     // 75. searchRowsAsDataModel(Condition... conditions)
@@ -705,15 +705,15 @@ export const dataModelGridDataKo = [
     method: 'searchRowsAsDataModel',
     param: 'Condition... conditions',
     return: 'DataModel',
-    explain: 'Condition[] conditions의 조건을 만족하는 행들을 포함하는 DataModel을 반환합니다. (각 조건은 AND 조건이며, 단순 equals로 비교합니다.)',
+    explain: 'Condition[] conditions의 조건을 만족하는 행들을 포함하는 DataModel을 반환합니다.\n(각 조건은 AND 조건이며, 단순 equals로 비교합니다.)',
     note: '새로운 DataModel을 반환합니다.'
     },
     // 76. searchRowsAsDataModel(boolean bool, Condition... conditions)
     {
     method: 'searchRowsAsDataModel',
-    param: 'boolean bool, Condition... conditions',
+    param: 'boolean bool,\nCondition... conditions',
     return: 'DataModel',
-    explain: 'Condition[] conditions의 조건을 만족하는 행들을 포함하는 DataModel을 반환합니다. (각 조건은 AND 조건이며, 단순 equals로 비교합니다.) boolean bool이 false이면 각 조건이 반전됩니다.',
+    explain: 'Condition[] conditions의 조건을 만족하는 행들을 포함하는 DataModel을 반환합니다.\n(각 조건은 AND 조건이며, 단순 equals로 비교합니다.) boolean bool이 false이면 각 조건이 반전됩니다.',
     note: '새로운 DataModel을 반환합니다.'
     },
     // 77. searchAndModify(Condition... conditions)
@@ -721,47 +721,47 @@ export const dataModelGridDataKo = [
     method: 'searchAndModify',
     param: 'Condition... conditions',
     return: 'DataModel',
-    explain: 'Condition[] conditions의 조건을 만족하는 행들만 남깁니다. 수정된 현재 DataModel을 반환합니다. (각 조건은 AND 조건이며, 단순 equals로 비교합니다.)',
+    explain: 'Condition[] conditions의 조건을 만족하는 행들만 남깁니다.\n수정된 현재 DataModel을 반환합니다.\n(각 조건은 AND 조건이며, 단순 equals로 비교합니다.)',
     note: '현재 DataModel이 수정됩니다.'
     },
     // 78. searchAndModify(boolean bool, Condition... conditions)
     {
     method: 'searchAndModify',
-    param: 'boolean bool, Condition... conditions',
+    param: 'boolean bool,\nCondition... conditions',
     return: 'DataModel',
-    explain: 'Condition[] conditions의 조건을 만족하는 행들만 남깁니다. 수정된 현재 DataModel을 반환합니다. (각 조건은 AND 조건이며, 단순 equals로 비교합니다.) boolean bool이 false이면 각 조건이 반전됩니다.',
+    explain: 'Condition[] conditions의 조건을 만족하는 행들만 남깁니다.\n수정된 현재 DataModel을 반환합니다.\n(각 조건은 AND 조건이며, 단순 equals로 비교합니다.)\nboolean bool이 false이면 각 조건이 반전됩니다.',
     note: '현재 DataModel이 수정됩니다.'
     },
     // 79. filterRowIndexes(Predicate<HashMap<String, Object>> filter)
     {
     method: 'filterRowIndexes',
-    param: 'Predicate<HashMap<String, Object>> filter',
+    param: 'Predicate<HashMap<String, Object>>\nfilter',
     return: 'List<Integer>',
-    explain: 'Predicate<HashMap<String, Object>> filter의 조건을 만족하는 행의 인덱스를 List로 반환합니다.',
+    explain: 'Predicate<HashMap<String, Object>>\nfilter의 조건을 만족하는 행의 인덱스를 List로 반환합니다.',
     note: ''
     },
     // 80. filterRows(Predicate<HashMap<String, Object>> filter)
     {
     method: 'filterRows',
-    param: 'Predicate<HashMap<String, Object>> filter',
+    param: 'Predicate<HashMap<String, Object>>\nfilter',
     return: 'List<HashMap<String, Object>>',
-    explain: 'Predicate<HashMap<String, Object>> filter의 조건을 만족하는 행들을 List로 반환합니다.',
+    explain: 'Predicate<HashMap<String, Object>>\nfilter의 조건을 만족하는 행들을 List로 반환합니다.',
     note: ''
     },
     // 81. filterRowsAsDataModel(Predicate<HashMap<String, Object>> filter)
     {
     method: 'filterRowsAsDataModel',
-    param: 'Predicate<HashMap<String, Object>> filter',
+    param: 'Predicate<HashMap<String, Object>>\nfilter',
     return: 'DataModel',
-    explain: 'Predicate<HashMap<String, Object>> filter의 조건을 만족하는 행들을 포함하는 DataModel을 반환합니다.',
+    explain: 'Predicate<HashMap<String, Object>>\nfilter의 조건을 만족하는 행들을 포함하는 DataModel을 반환합니다.',
     note: ''
     },
     // 82. filterAndModify(Predicate<HashMap<String, Object>> filter)
     {
     method: 'filterAndModify',
-    param: 'Predicate<HashMap<String, Object>> filter',
+    param: 'Predicate<HashMap<String, Object>>\nfilter',
     return: 'DataModel',
-    explain: 'Predicate<HashMap<String, Object>> filter의 조건을 만족하는 행들만 남깁니다. 수정된 현재 DataModel을 반환합니다.',
+    explain: 'Predicate<HashMap<String, Object>>\nfilter의 조건을 만족하는 행들만 남깁니다. 수정된 현재 DataModel을 반환합니다.',
     note: ''
     },
     // 83. sortColumnAscending()
@@ -799,9 +799,9 @@ export const dataModelGridDataKo = [
     // 87. sortRowAscending(String column, Boolean isIntegerOrder)
     {
     method: 'sortRowAscending',
-    param: 'String column, Boolean isIntegerOrder',
+    param: 'String column,\nBoolean isIntegerOrder',
     return: 'DataModel',
-    explain: 'String(column)의 값을 기준으로 오름차순 정렬합니다. isIntegerOrder가 true이면 값을 숫자로 인식하여 정렬합니다.',
+    explain: 'String(column)의 값을 기준으로 오름차순 정렬합니다.\nisIntegerOrder가 true이면 값을 숫자로 인식하여 정렬합니다.',
     note: '숫자로 인식할 수 없는 값이 있으면 에러가 발생합니다.'
     },
     // 88. sortRowDescending(String column)
@@ -815,9 +815,9 @@ export const dataModelGridDataKo = [
     // 89. sortRowDescending(String column, Boolean isIntegerOrder)
     {
     method: 'sortRowDescending',
-    param: 'String column, Boolean isIntegerOrder',
+    param: 'String column,\nBoolean isIntegerOrder',
     return: 'DataModel',
-    explain: 'String(column)의 값을 기준으로 내림차순 정렬합니다. isIntegerOrder가 true이면 값을 숫자로 인식하여 정렬합니다.',
+    explain: 'String(column)의 값을 기준으로 내림차순 정렬합니다.\nisIntegerOrder가 true이면 값을 숫자로 인식하여 정렬합니다.',
     note: '숫자로 인식할 수 없는 값이 있으면 에러가 발생합니다.'
     },
     // 90. sortRowReverse()
@@ -833,8 +833,8 @@ export const dataModelGridDataKo = [
     method: 'setFreezeDataModel',
     param: '-',
     return: 'DataModel',
-    explain: 'DataModel의 행과 컬럼 순서, 내부 데이터가 변경되지 않도록 설정합니다.',
-    note: 'DataConverter에 정의되지 않은 특수 객체는 get을 통해 참조 주소를 가져가기 때문에 근본적으로 불변하지 않습니다.'
+    explain: 'DataModel의 행과 컬럼 순서,\n내부 데이터가 변경되지 않도록 설정합니다.',
+    note: 'DataConverter에 정의되지 않은 특수 객체는\nget을 통해 참조 주소를 가져가기 때문에 근본적으로 불변하지 않습니다.'
     },
     // 92. setFreezeValues()
     {
@@ -842,7 +842,7 @@ export const dataModelGridDataKo = [
     param: '-',
     return: 'DataModel',
     explain: 'DataModel의 내부 데이터가 변경되지 않도록 설정합니다.',
-    note: 'DataConverter에 정의되지 않은 특수 객체는 get을 통해 참조 주소를 가져가기 때문에 근본적으로 불변하지 않습니다.'
+    note: 'DataConverter에 정의되지 않은 특수 객체는\nget을 통해 참조 주소를 가져가기 때문에 근본적으로 불변하지 않습니다.'
     }
 ]
 
@@ -852,14 +852,14 @@ export const dataModelConverterGridDataKo = [
     param: 'DataModel dataModel',
     return: 'JsonNode',
     explain: 'DataModel을 JsonNode로 변환하여 반환합니다.',
-    note: 'jackson-databind의 ObjectMapper를 사용하여 변환합니다. 변환 로직 커스터마이징에 사용됩니다.'
+    note: 'jackson-databind의 ObjectMapper를 사용하여 변환합니다.\n변환 로직 커스터마이징에 사용됩니다.'
     },
     {
     method: 'getConvertedEntities',
     param: 'DataModel dataModel, Class<?> entityClass',
     return: 'List<Object>',
     explain: 'DataModel을 지정된 엔티티 클래스의 List<Object>로 변환하여 반환합니다.',
-    note: 'jackson-databind의 ObjectMapper를 사용하여 변환합니다. 변환 로직 커스터마이징에 사용됩니다.'
+    note: 'jackson-databind의 ObjectMapper를 사용하여 변환합니다.\n변환 로직 커스터마이징에 사용됩니다.'
     },
     {
     method: 'getConvertValueToDataModelRowValue',
@@ -906,9 +906,9 @@ export const dataWrapperGridDataEn = [
     // 1. constructor (HashMap, HashMap)
     {
     method: 'constructor',
-    param: 'strings : HashMap<String, String>, dataModels : HashMap<String, DataModel>',
+    param: 'strings : HashMap<String, String>,\ndataModels : HashMap<String, DataModel>',
     return: '-',
-    explain: 'Creates strings : HashMap<String, String> and dataModels : HashMap<String, DataModel>.',
+    explain: 'Creates strings : HashMap<String, String>\nand dataModels : HashMap<String, DataModel>.',
     note: ''
     },
     // 2. constructor (String key, Object value)
@@ -1012,7 +1012,7 @@ export const dataWrapperGridDataEn = [
     method: 'toString',
     param: '-',
     return: 'String',
-    explain: 'Prints each key–value pair as a string separated by \\n. For DataModel, uses its toString() method.',
+    explain: 'Prints each key–value pair as a string separated by \\n.\nFor DataModel, uses its toString() method.',
     note: ''
     },
     // 15. toString (2)
@@ -1020,7 +1020,7 @@ export const dataWrapperGridDataEn = [
     method: 'toString',
     param: 'String dataModelSeparator',
     return: 'String',
-    explain: 'Prints each key–value pair as a string separated by \\n, using DataModel.toString(). Passes dataModelSeparator to the DataModel.',
+    explain: 'Prints each key–value pair as a string separated by \\n,\nusing DataModel.toString(). Passes dataModelSeparator to the DataModel.',
     note: ''
     }
 ]
@@ -1069,9 +1069,9 @@ export const dataModelGridDataEn = [
     // 6. constructor (Object[] queryResult, String[] columnNames)
     {
     method: 'constructor',
-    param: 'Object[] queryResult, String[] columnNames',
+    param: 'Object[] queryResult,\nString[] columnNames',
     return: 'DataModel',
-    explain: 'Creates a DataModel after inserting a row using Object[] and String[]. Object[] represents the row, and String[] represents the column.',
+    explain: 'Creates a DataModel after inserting a row using Object[] and String[].\nObject[] represents the row, and String[] represents the column.',
     note: 'Use with entityManager.createNativeQuery.getResult.'
     },
     // 7. constructor (HttpSession session)
@@ -1104,7 +1104,7 @@ export const dataModelGridDataEn = [
     param: 'Object(Entity) entity',
     return: 'DataModel',
     explain: 'Creates a DataModel after inserting a row using Object(Entity).',
-    note: 'Concerns about performance degradation using java.reflect. The Object must be an @entity (uses convertEntityToDataModel, isEntity).'
+    note: 'Concerns about performance degradation using java.reflect.\nThe Object must be an @entity (uses convertEntityToDataModel, isEntity).'
     },
     // 11. constructor (List<T> newRows, T = String)
     {
@@ -1133,17 +1133,17 @@ export const dataModelGridDataEn = [
     // 14. constructor (List<T> newRows, T = Object(Entity))
     {
     method: 'constructor',
-    param: 'List<T> newRows (T = Object(Entity))',
+    param: 'List<T> newRows\n(T = Object(Entity))',
     return: 'DataModel',
-    explain: 'T = Object(Entity): Creates a DataModel after inserting rows using List<Object>.',
-    note: 'Concerns about performance degradation for List<Object> using java.reflect. The Object must be an @entity (uses convertEntityToDataModel, isEntity).'
+    explain: 'T = Object(Entity): Creates a DataModel\nafter inserting rows using List<Object>.',
+    note: 'Concerns about performance degradation for List<Object> using java.reflect.\nThe Object must be an @entity (uses convertEntityToDataModel, isEntity).'
     },
     // 15. constructor (List<Object[]> queryResults, String[] columnNames)
     {
     method: 'constructor',
-    param: 'List<Object[]> queryResults, String[] columnNames',
+    param: 'List<Object[]> queryResults,\nString[] columnNames',
     return: 'DataModel',
-    explain: 'Creates a DataModel after inserting rows using List<Object[]> and String[]. List<Object[]> represents the rows, and String[] represents the column.',
+    explain: 'Creates a DataModel after inserting rows using List<Object[]> and String[].\nList<Object[]> represents the rows, and String[] represents the column.',
     note: 'Use with entityManager.createNativeQuery.getResultList.'
     },
     // 16. toString()
@@ -1159,7 +1159,7 @@ export const dataModelGridDataEn = [
     method: 'toString',
     param: 'String separator',
     return: 'String',
-    explain: 'Prints as a String, using the specified String as the column separator and \\n as the row separator.',
+    explain: 'Prints as a String, using the specified String\nas the column separator and \\n as the row separator.',
     note: ''
     },
     // 18. isDefine()
@@ -1191,7 +1191,7 @@ export const dataModelGridDataEn = [
     method: 'insertDataModel',
     param: 'DataModel dataModel',
     return: 'DataModel',
-    explain: 'Performs a union all operation on the current DataModel with the parameter DataModel and returns the current DataModel.',
+    explain: 'Performs a union all operation on the current\nDataModel with the parameter DataModel and returns the current DataModel.',
     note: ''
     },
     // 22. getConvertedJson()
@@ -1199,7 +1199,7 @@ export const dataModelGridDataEn = [
     method: 'getConvertedJson',
     param: '-',
     return: 'JsonNode',
-    explain: "Converts the current DataModel to a JsonNode using jackson.databind's ObjectMapper and returns it.",
+    explain: "Converts the current DataModel to a JsonNode\nusing jackson.databind's ObjectMapper and returns it.",
     note: "Uses DataConverterDefault's getConvertedJson. Customizable."
     },
     // 23. getConvertedEntities(Class<?> entityClass)
@@ -1207,7 +1207,7 @@ export const dataModelGridDataEn = [
     method: 'getConvertedEntities',
     param: 'Class<?> entityClass',
     return: 'List<Object>',
-    explain: "Converts the current DataModel to a List of the specified entityClass using jackson.databind's ObjectMapper and returns it.",
+    explain: "Converts the current DataModel to a List of the specified entityClass\nusing jackson.databind's ObjectMapper and returns it.",
     note: "Uses DataConverterDefault's getConvertedEntities. Customizable."
     },
     // 24. setColumns(String[] columns)
@@ -1245,9 +1245,9 @@ export const dataModelGridDataEn = [
     // 28. setColumnSameFormat(String column, Function<Object, Object> formatter)
     {
     method: 'setColumnSameFormat',
-    param: 'String column, Function<Object, Object> formatter',
+    param: 'String column,\nFunction<Object, Object> formatter',
     return: 'DataModel',
-    explain: 'Sets the same format using the Function<Object, Object> for the specified String(column). Returns the current DataModel.',
+    explain: 'Sets the same format using the Function<Object, Object> for the specified String(column).\nReturns the current DataModel.',
     note: ''
     },
     // 29. addRow() (파라미터 없음)
@@ -1272,12 +1272,12 @@ export const dataModelGridDataEn = [
     param: 'Map<String, Object> newRow',
     return: 'DataModel',
     explain: 'Appends a row using Map<String, Object>.',
-    note: "Columns that do not exist are skipped. Uses DataConverterDefault's getConvertValueToDataModelRowValue. Customizable."
+    note: "Columns that do not exist are skipped.\nUses DataConverterDefault's getConvertValueToDataModelRowValue. Customizable."
     },
     // 32. addRow(int rowIndex, Map<String, Object> newRow)
     {
     method: 'addRow',
-    param: 'int rowIndex, Map<String, Object> newRow',
+    param: 'int rowIndex,\nMap<String, Object> newRow',
     return: 'DataModel',
     explain: 'Appends a row to the specified index using Map<String, Object>.',
     note: 'An error occurs if the index is out of bounds.'
@@ -1301,7 +1301,7 @@ export const dataModelGridDataEn = [
     // 35. addRow(Object[] queryResult, String[] columnNames)
     {
     method: 'addRow',
-    param: 'Object[] queryResult, String[] columnNames',
+    param: 'Object[] queryResult,\nString[] columnNames',
     return: 'DataModel',
     explain: 'Appends a row using Object[] queryResult and String[] columnNames.',
     note: 'Columns that do not exist are skipped.'
@@ -1309,7 +1309,7 @@ export const dataModelGridDataEn = [
     // 36. addRow(int rowIndex, Object[] queryResult, String[] columnNames)
     {
     method: 'addRow',
-    param: 'int rowIndex, Object[] queryResult, String[] columnNames',
+    param: 'int rowIndex,\nObject[] queryResult,\nString[] columnNames',
     return: 'DataModel',
     explain: 'Appends a row to the specified index using Object[] queryResult and String[] columnNames.',
     note: 'Columns that do not exist are skipped. An error occurs if the index is out of bounds.'
@@ -1325,7 +1325,7 @@ export const dataModelGridDataEn = [
     // 38. addRow(int rowIndex, HttpSession session)
     {
     method: 'addRow',
-    param: 'int rowIndex, HttpSession session',
+    param: 'int rowIndex,\nHttpSession session',
     return: 'DataModel',
     explain: 'Appends a row to the specified index using HttpSession.',
     note: 'Columns that do not exist are skipped. An error occurs if the index is out of bounds.'
@@ -1336,12 +1336,12 @@ export const dataModelGridDataEn = [
     param: 'Object entity',
     return: 'DataModel',
     explain: "Appends a row to the DataModel using Object(Entity) via jackson.databind's ObjectMapper.",
-    note: "Columns that do not exist are skipped. Uses DataConverterDefault's getObjectMapperForConvertEntitiesToDataModel and isEntity. Customizable."
+    note: "Columns that do not exist are skipped.\nUses DataConverterDefault's getObjectMapperForConvertEntitiesToDataModel and isEntity. Customizable."
     },
     // 40. addRow(int rowIndex, Object entity)
     {
     method: 'addRow',
-    param: 'int rowIndex, Object entity',
+    param: 'int rowIndex,\nObject entity',
     return: 'DataModel',
     explain: "Appends a row to the specified index using Object(Entity) via jackson.databind's ObjectMapper.",
     note: 'Columns that do not exist are skipped. An error occurs if the index is out of bounds.'
@@ -1359,8 +1359,8 @@ export const dataModelGridDataEn = [
     method: 'addRows',
     param: 'List<T> newRows (T = Map/Tuple/Object(Entity))',
     return: 'DataModel',
-    explain: 'Appends rows using: T = Map: List<Map<String, Object>>, T = Tuple: List<Tuple>, T = Object(Entity): List<Object>.',
-    note: 'Columns that do not exist are skipped. Concerns about performance degradation for List<Object> using java.reflect. The Object must be an @entity. Uses DataConverterDefault\'s getObjectMapperForConvertEntitiesToDataModel and isEntity. Customizable.'
+    explain: 'Appends rows using: T = Map: List<Map<String, Object>>,\nT = Tuple: List<Tuple>, T = Object(Entity): List<Object>.',
+    note: 'Columns that do not exist are skipped.\nConcerns about performance degradation for List<Object> using java.reflect.\nThe Object must be an @entity.\nUses DataConverterDefault\'s getObjectMapperForConvertEntitiesToDataModel and isEntity.\nCustomizable.'
     },
     // 43. addRows(ResultSet rs)
     {
@@ -1376,15 +1376,15 @@ export const dataModelGridDataEn = [
     param: 'JsonNode node',
     return: 'DataModel',
     explain: "Appends a row to the DataModel using JsonNode via jackson.databind's ObjectMapper.",
-    note: "Columns that do not exist are skipped. Uses DataConverterDefault's getConvertJsonValueNodeToDataModelRowValue. Customizable."
+    note: "Columns that do not exist are skipped.\nUses DataConverterDefault's getConvertJsonValueNodeToDataModelRowValue. Customizable."
     },
     // 45. addRows(List<Object[]> queryResults, String[] columnNames)
     {
     method: 'addRows',
-    param: 'List<Object[]> queryResults, String[] columnNames',
+    param: 'List<Object[]> queryResults,\nString[] columnNames',
     return: 'DataModel',
-    explain: 'Appends rows using List<Object[]> and String[]. List<Object[]> represents the rows, and String[] represents the column.',
-    note: 'Columns that do not exist are skipped. List<Object[]> represents rows, and String[] represents columns.'
+    explain: 'Appends rows using List<Object[]> and String[].\nList<Object[]> represents the rows, and String[] represents the column.',
+    note: 'Columns that do not exist are skipped.\nList<Object[]> represents rows, and String[] represents columns.'
     },
     // 46. getColumnCount()
     {
@@ -1469,9 +1469,9 @@ export const dataModelGridDataEn = [
     // 56. setValue(int rowIndex, String column, Object value)
     {
     method: 'setValue',
-    param: 'int rowIndex, String column, Object value',
+    param: 'int rowIndex,\nString column,\nObject value',
     return: 'DataModel',
-    explain: 'Puts Object(value) into the value of String(column) in the int(rowIndex)-th row. Returns the current DataModel.',
+    explain: 'Puts Object(value) into the value of String(column) in the int(rowIndex)-th row.\nReturns the current DataModel.',
     note: ''
     },
     // 57. removeRow(int rowIndex)
@@ -1519,7 +1519,7 @@ export const dataModelGridDataEn = [
     method: 'setValidColumns',
     param: 'String[] columns',
     return: 'DataModel',
-    explain: 'Keeps only the columns corresponding to String[](columns) and deletes the rest of the columns and their values in each row.',
+    explain: 'Keeps only the columns corresponding to String[](columns)\nand deletes the rest of the columns and their values in each row.',
     note: ''
     },
     // 63. setValidColumns(List<String> columns)
@@ -1527,7 +1527,7 @@ export const dataModelGridDataEn = [
     method: 'setValidColumns',
     param: 'List<String> columns',
     return: 'DataModel',
-    explain: 'Keeps only the columns corresponding to List<String>(columns) and deletes the rest of the columns and their values in each row.',
+    explain: 'Keeps only the columns corresponding to List<String>(columns)\nand deletes the rest of the columns and their values in each row.',
     note: ''
     },
     // 64. setValidColumns(Set<String> columns)
@@ -1535,7 +1535,7 @@ export const dataModelGridDataEn = [
     method: 'setValidColumns',
     param: 'Set<String> columns',
     return: 'DataModel',
-    explain: 'Keeps only the columns corresponding to Set<String>(columns) and deletes the rest of the columns and their values in each row.',
+    explain: 'Keeps only the columns corresponding to Set<String>(columns)\nand deletes the rest of the columns and their values in each row.',
     note: ''
     },
     // 65. isNotNullColumn(String column)
@@ -1543,7 +1543,7 @@ export const dataModelGridDataEn = [
     method: 'isNotNullColumn',
     param: 'String column',
     return: 'boolean',
-    explain: 'Checks if there is any row with a null value in String(column). Returns false if there is at least one null. Returns true if all are not null.',
+    explain: 'Checks if there is any row with a null value in String(column).\nReturns false if there is at least one null.\nReturns true if all are not null.',
     note: ''
     },
     // 66. findFirstRowNullColumn(String column)
@@ -1559,7 +1559,7 @@ export const dataModelGridDataEn = [
     method: 'isNotDuplColumn',
     param: 'String column',
     return: 'boolean',
-    explain: 'Checks if there are any duplicate values in String(column). Returns false if duplicated, and true if not duplicated.',
+    explain: 'Checks if there are any duplicate values in String(column).\nReturns false if duplicated, and true if not duplicated.',
     note: ''
     },
     // 68. findFirstRowDuplColumn(String column)
@@ -1567,23 +1567,23 @@ export const dataModelGridDataEn = [
     method: 'findFirstRowDuplColumn',
     param: 'String column',
     return: 'HashMap<String, Object>',
-    explain: 'Returns the first row with a duplicate value in String(column) (compared to preceding rows) as a HashMap<String, Object>.',
+    explain: 'Returns the first row with a duplicate value in String(column)\n(compared to preceding rows) as a HashMap<String, Object>.',
     note: ''
     },
     // 69. isValidValue(String column, Predicate<Object> validator)
     {
     method: 'isValidValue',
-    param: 'String column, Predicate<Object> validator',
+    param: 'String column,\nPredicate<Object> validator',
     return: 'boolean',
-    explain: 'Checks if all values in String(column) pass the validation of Predicate<Object>(validator). Returns true if all pass, false if at least one fails.',
+    explain: 'Checks if all values in String(column) pass the validation of Predicate<Object>(validator).\nReturns true if all pass, false if at least one fails.',
     note: 'Null values are not checked.'
     },
     // 70. findFirstRowInvalidValue(String column, Predicate<Object> validator)
     {
     method: 'findFirstRowInvalidValue',
-    param: 'String column, Predicate<Object> validator',
+    param: 'String column,\nPredicate<Object> validator',
     return: 'HashMap<String, Object>',
-    explain: 'Checks the Predicate<Object>(validator) for values in String(column) and returns the first invalid row.',
+    explain: 'Checks the Predicate<Object>(validator) for values in String(column)\nand returns the first invalid row.',
     note: 'Null values are not checked.'
     },
     // 71. searchRowIndexes(Condition... conditions)
@@ -1591,7 +1591,7 @@ export const dataModelGridDataEn = [
     method: 'searchRowIndexes',
     param: 'Condition... conditions',
     return: 'List<Integer>',
-    explain: 'Returns the indexes of the rows that satisfy the conditions in Condition[] conditions as a List. (Each condition is an AND condition, compared by simple equals.)',
+    explain: 'Returns the indexes of the rows that satisfy\nthe conditions in Condition[] conditions as a List.\n(Each condition is an AND condition, compared by simple equals.)',
     note: ''
     },
     // 72. searchRowIndexes(boolean bool, Condition... conditions)
@@ -1599,7 +1599,7 @@ export const dataModelGridDataEn = [
     method: 'searchRowIndexes',
     param: 'boolean bool, Condition... conditions',
     return: 'List<Integer>',
-    explain: 'Returns the indexes of the rows that satisfy the conditions in Condition[] conditions as a List. (Each condition is an AND condition, compared by simple equals.) If boolean bool is false, each condition is inverted.',
+    explain: 'Returns the indexes of the rows that satisfy\nthe conditions in Condition[] conditions as a List.\n(Each condition is an AND condition, compared by simple equals.)\nIf boolean bool is false, each condition is inverted.',
     note: ''
     },
     // 73. searchRows(Condition... conditions)
@@ -1607,15 +1607,15 @@ export const dataModelGridDataEn = [
     method: 'searchRows',
     param: 'Condition... conditions',
     return: 'List<HashMap<String, Object>>',
-    explain: 'Returns the rows that satisfy the conditions in Condition[] conditions as a List. (Each condition is an AND condition, compared by simple equals.)',
+    explain: 'Returns the rows that satisfy the conditions in Condition[] conditions as a List.\n(Each condition is an AND condition, compared by simple equals.)',
     note: ''
     },
     // 74. searchRows(boolean bool, Condition... conditions)
     {
     method: 'searchRows',
-    param: 'boolean bool, Condition... conditions',
+    param: 'boolean bool,\nCondition... conditions',
     return: 'List<HashMap<String, Object>>',
-    explain: 'Returns the rows that satisfy the conditions in Condition[] conditions as a List. (Each condition is an AND condition, compared by simple equals.) If boolean bool is false, each condition is inverted.',
+    explain: 'Returns the rows that satisfy the conditions in Condition[] conditions as a List. \n(Each condition is an AND condition, compared by simple equals.)\nIf boolean bool is false, each condition is inverted.',
     note: ''
     },
     // 75. searchRowsAsDataModel(Condition... conditions)
@@ -1623,15 +1623,15 @@ export const dataModelGridDataEn = [
     method: 'searchRowsAsDataModel',
     param: 'Condition... conditions',
     return: 'DataModel',
-    explain: 'Returns a DataModel containing the rows that satisfy the conditions in Condition[] conditions. (Each condition is an AND condition, compared by simple equals.)',
+    explain: 'Returns a DataModel containing the rows that satisfy the conditions in Condition[] conditions.\n(Each condition is an AND condition, compared by simple equals.)',
     note: 'Returns a new DataModel.'
     },
     // 76. searchRowsAsDataModel(boolean bool, Condition... conditions)
     {
     method: 'searchRowsAsDataModel',
-    param: 'boolean bool, Condition... conditions',
+    param: 'boolean bool,\nCondition... conditions',
     return: 'DataModel',
-    explain: 'Returns a DataModel containing the rows that satisfy the conditions in Condition[] conditions. (Each condition is an AND condition, compared by simple equals.) If boolean bool is false, each condition is inverted.',
+    explain: 'Returns a DataModel containing the rows that satisfy the conditions in Condition[] conditions.\n(Each condition is an AND condition, compared by simple equals.)\nIf boolean bool is false, each condition is inverted.',
     note: 'Returns a new DataModel.'
     },
     // 77. searchAndModify(Condition... conditions)
@@ -1639,15 +1639,15 @@ export const dataModelGridDataEn = [
     method: 'searchAndModify',
     param: 'Condition... conditions',
     return: 'DataModel',
-    explain: 'Keeps only the rows that satisfy the conditions in Condition[] conditions. Returns the modified current DataModel. (Each condition is an AND condition, compared by simple equals.)',
+    explain: 'Keeps only the rows that satisfy the conditions in Condition[] conditions. Returns the modified current DataModel.\n(Each condition is an AND condition, compared by simple equals.)',
     note: 'The current DataModel is modified.'
     },
     // 78. searchAndModify(boolean bool, Condition... conditions)
     {
     method: 'searchAndModify',
-    param: 'boolean bool, Condition... conditions',
+    param: 'boolean bool,\nCondition... conditions',
     return: 'DataModel',
-    explain: 'Keeps only the rows that satisfy the conditions in Condition[] conditions. Returns the modified current DataModel. (Each condition is an AND condition, compared by simple equals.) If boolean bool is false, each condition is inverted.',
+    explain: 'Keeps only the rows that satisfy the conditions in Condition[] conditions.\nReturns the modified current DataModel.\n(Each condition is an AND condition, compared by simple equals.)\nIf boolean bool is false, each condition is inverted.',
     note: 'The current DataModel is modified.'
     },
     // 79. filterRowIndexes(Predicate<HashMap<String, Object>> filter)
@@ -1679,7 +1679,7 @@ export const dataModelGridDataEn = [
     method: 'filterAndModify',
     param: 'Predicate<HashMap<String, Object>> filter',
     return: 'DataModel',
-    explain: 'Keeps only the rows that satisfy the Predicate<HashMap<String, Object>> filter. Returns the modified current DataModel.',
+    explain: 'Keeps only the rows that satisfy the Predicate<HashMap<String, Object>> filter.\nReturns the modified current DataModel.',
     note: ''
     },
     // 83. sortColumnAscending()
@@ -1717,9 +1717,9 @@ export const dataModelGridDataEn = [
     // 87. sortRowAscending(String column, Boolean isIntegerOrder)
     {
     method: 'sortRowAscending',
-    param: 'String column, Boolean isIntegerOrder',
+    param: 'String column,\nBoolean isIntegerOrder',
     return: 'DataModel',
-    explain: 'Sorts in ascending order based on the value of String(column). If isIntegerOrder is true, it sorts by recognizing the values as numbers.',
+    explain: 'Sorts in ascending order based on the value of String(column).\nIf isIntegerOrder is true, it sorts by recognizing the values as numbers.',
     note: 'An error occurs if there is a value that cannot be recognized as a number.'
     },
     // 88. sortRowDescending(String column)
@@ -1733,9 +1733,9 @@ export const dataModelGridDataEn = [
     // 89. sortRowDescending(String column, Boolean isIntegerOrder)
     {
     method: 'sortRowDescending',
-    param: 'String column, Boolean isIntegerOrder',
+    param: 'String column,\nBoolean isIntegerOrder',
     return: 'DataModel',
-    explain: 'Sorts in descending order based on the value of String(column). If isIntegerOrder is true, it sorts by recognizing the values as numbers.',
+    explain: 'Sorts in descending order based on the value of String(column).\nIf isIntegerOrder is true, it sorts by recognizing the values as numbers.',
     note: 'An error occurs if there is a value that cannot be recognized as a number.'
     },
     // 90. sortRowReverse()
@@ -1752,7 +1752,7 @@ export const dataModelGridDataEn = [
     param: '-',
     return: 'DataModel',
     explain: 'Sets the DataModel so that the order of rows and columns and the internal data cannot be changed.',
-    note: 'Special objects not defined in DataConverter are not fundamentally immutable, as retrieving them via get returns their reference address.'
+    note: 'Special objects not defined in DataConverter are not fundamentally immutable,\nas retrieving them via get returns their reference address.'
     },
     // 92. setFreezeValues()
     {
@@ -1760,7 +1760,7 @@ export const dataModelGridDataEn = [
     param: '-',
     return: 'DataModel',
     explain: 'Sets the DataModel so that the internal data cannot be changed.',
-    note: 'Special objects not defined in DataConverter are not fundamentally immutable, as retrieving them via get returns their reference address.'
+    note: 'Special objects not defined in DataConverter are not fundamentally immutable,\nas retrieving them via get returns their reference address.'
     }
 ]
 
@@ -1776,71 +1776,71 @@ export const dataModelConverterGridDataEn = [
     method: 'getConvertJsonValueNodeToDataModelRowValue',
     param: 'JsonNode valueNode',
     return: 'String',
-    explain: 'This method converts the JsonNode delivered from the client into a String before insertion into the DataModel. By default, it converts the ISO date-time format to the date-time format retrieved from getDateFormat().',
+    explain: 'This method converts the JsonNode delivered from the\nclient into a String before insertion into the DataModel.\nBy default, it converts the ISO date-time format to the\ndate-time format retrieved from getDateFormat().',
     note: ''
     },
     {
     method: 'getConvertedJson',
     param: 'DataModel dm',
     return: 'JsonNode',
-    explain: 'Converts the DataModel to a JsonNode. Used in DataModel\'s getConvertedJson() method. This is used for serialization before delivering Json data to the client. The ObjectMapper is inserted via getObjectMapperForConvertDataModelToJson(). Converting is done using ObjectMapper. By default, the DataModel rows are converted to a JsonNode and delivered.',
+    explain: 'Converts the DataModel to a JsonNode.\nUsed in DataModel\'s getConvertedJson() method.\nThis is used for serialization before delivering Json data to the client.\nThe ObjectMapper is inserted via getObjectMapperForConvertDataModelToJson().\nConverting is done using ObjectMapper.\nBy default, the DataModel rows are converted to a JsonNode and delivered.',
     note: 'com.fasterxml.jackson.databind dependency'
     },
     {
     method: 'serialize',
     param: 'DataModel dataModel, JsonGenerator gen, SerializerProvider serializers',
     return: '-',
-    explain: 'Used to serialize the DataModel into JSON format (Jackson\'s custom serializer).',
+    explain: 'Used to serialize the DataModel into\nJSON format (Jackson\'s custom serializer).',
     note: ''
     },
     {
     method: 'getObjectMapperForConvertDataModelToJson',
     param: '-',
     return: 'ObjectMapper',
-    explain: 'Returns the ObjectMapper to be used in getConvertedJson(). By default, it includes the functionality to convert Java LocalDateTime to the date-time format retrieved from getDateFormat() via javaTimeModule and LocalDateTimeDeserializer.',
-    note: 'com.fasterxml.jackson.databind, com.fasterxml.jackson.datatype.jsr310, com.fasterxml.jackson.datatype.jsr310.deser dependency'
+    explain: 'Returns the ObjectMapper to be used in getConvertedJson().\nBy default, it includes the functionality to convert Java LocalDateTime to the date-time format\nretrieved from getDateFormat() via javaTimeModule and LocalDateTimeDeserializer.',
+    note: 'com.fasterxml.jackson.databind, com.fasterxml.jackson.datatype.jsr310,\ncom.fasterxml.jackson.datatype.jsr310.deser dependency'
     },
     {
     method: 'getConvertedEntities',
     param: 'Class<T> entityClass, DataModel dm',
     return: 'List<T>',
-    explain: 'Converts the DataModel to an Entity Class List. Used in DataModel\'s getConvertedEntities() method. The ObjectMapper is inserted via getObjectMapperForConvertDataModelToEntities(). Converting is done using ObjectMapper.',
+    explain: 'Converts the DataModel to an Entity Class List.\nUsed in DataModel\'s getConvertedEntities() method.\nThe ObjectMapper is inserted via getObjectMapperForConvertDataModelToEntities().\nConverting is done using ObjectMapper.',
     note: 'com.fasterxml.jackson.databind dependency'
     },
     {
     method: 'getObjectMapperForConvertDataModelToEntities',
     param: '-',
     return: 'ObjectMapper',
-    explain: 'Returns the ObjectMapper to be used in getConvertedEntities(). By default, it includes the functionality to convert Java LocalDateTime to the date-time format retrieved from getDateFormat() via javaTimeModule and LocalDateTimeDeserializer.',
-    note: 'com.fasterxml.jackson.databind, com.fasterxml.jackson.datatype.jsr310, com.fasterxml.jackson.datatype.jsr310.deser dependency'
+    explain: 'Returns the ObjectMapper to be used in getConvertedEntities().\nBy default, it includes the functionality to convert Java LocalDateTime to the date-time format\nretrieved from getDateFormat() via javaTimeModule and LocalDateTimeDeserializer.',
+    note: 'com.fasterxml.jackson.databind, com.fasterxml.jackson.datatype.jsr310,\ncom.fasterxml.jackson.datatype.jsr310.deser dependency'
     },
     {
     method: 'getObjectMapperForConvertEntitiesToDataModel',
     param: '-',
     return: 'ObjectMapper',
-    explain: 'Returns the ObjectMapper to be used in DataModel\'s getConvertedEntitiesToMaps() method. By default, it includes the functionality to convert Java LocalDateTime to the date-time format retrieved from getDateFormat() via javaTimeModule and LocalDateTimeDeserializer.',
-    note: 'com.fasterxml.jackson.databind, com.fasterxml.jackson.datatype.jsr310, com.fasterxml.jackson.datatype.jsr310.deser dependency'
+    explain: 'Returns the ObjectMapper to be used in DataModel\'s getConvertedEntitiesToMaps() method.\nBy default, it includes the functionality to convert Java LocalDateTime to the date-time format\nretrieved from getDateFormat() via javaTimeModule and LocalDateTimeDeserializer.',
+    note: 'com.fasterxml.jackson.databind, com.fasterxml.jackson.datatype.jsr310,\ncom.fasterxml.jackson.datatype.jsr310.deser dependency'
     },
     {
     method: 'getConvertValueToDataModelRowValue',
     param: 'Object value, ObjectMapper',
     return: 'Object',
-    explain: 'This method is used in DataModel\'s addRow and setValue to convert values into a valid form (String or Object) before insertion into the DataModel row. By default, all primitive variables are inserted as String values. null is inserted as null. LocalDateTime is converted to the date-time format retrieved from getDateFormat() and inserted.',
-    note: 'An error occurs if an undefined type value is delivered. Customization is needed if you want to use other types.'
+    explain: 'This method is used in DataModel\'s addRow and setValue to convert values into a valid form (String or Object) before insertion into the DataModel row.\nBy default, all primitive variables are inserted as String values.\nnull is inserted as null.\nLocalDateTime is converted to the date-time format retrieved from getDateFormat() and inserted.',
+    note: 'An error occurs if an undefined type value is delivered.\nCustomization is needed if you want to use other types.'
     },
     {
     method: 'getTimeZoneId',
     param: '-',
     return: 'String',
-    explain: 'Returns the location standard when converting the ISO-8601 date-time format string delivered from the client to the server. Used in getConvertJsonValueNodeToDataModelRowValue(). By default, it returns null, which defaults to US Eastern Time.',
+    explain: 'Returns the location standard when converting the ISO-8601 date-time format string delivered from the client to the server.\nUsed in getConvertJsonValueNodeToDataModelRowValue().\nBy default, it returns null, which defaults to US Eastern Time.',
     note: 'To use Korea as the standard, return \"Asia/Seoul\".'
     },
     {
     method: 'getDateFormat',
     param: '-',
     return: 'String',
-    explain: 'Returns the date-time format for java LocalDateTime. Defaults to \"yyyy-MM-dd HH:mm:ss\". Used in various conversion methods. All are default methods and can be customized.',
-    note: 'Customization example: public class CustomDataConverter extends DataConverterDefault...'
+    explain: 'Returns the date-time format for java LocalDateTime.\nDefaults to \"yyyy-MM-dd HH:mm:ss\".\nUsed in various conversion methods.\nAll are default methods and can be customized.',
+    note: 'Customization example:\npublic class CustomDataConverter extends DataConverterDefault...'
     }
 ]
 

@@ -522,49 +522,49 @@ export const componentStyleConfigGridDataKo = [
     {
         prop: "minHeightM",
         type: "number",
-        default: "1.95",
+        default: "2",
         explain:
         "컴포넌트 크기가 medium(`m`)일 때의 기본 높이입니다. 단위: rem.\n기본적인 컴포넌트 높이로 사용됩니다.",
     },
     {
         prop: "minHeightL",
         type: "number",
-        default: "2.25",
+        default: "2.3",
         explain:
         "컴포넌트 크기가 large(`l`)일 때의 기본 높이입니다. 단위: rem.\n입력창, 버튼 등 큰 요소에 적용됩니다.",
     },
     {
         prop: "minHeightXL",
         type: "number",
-        default: "2.55",
+        default: "2.6",
         explain:
         "컴포넌트 크기가 extra large(`xl`)일 때의 기본 높이입니다. 단위: rem.\n히어로 섹션이나 확장된 UI에 사용됩니다.",
     },
     {
         prop: "fontSizeS",
         type: "number",
-        default: "0.7",
+        default: "0.8",
         explain:
         "크기가 small(`s`)일 때의 기본 폰트 크기입니다. 단위: rem.\n컴팩트한 UI 요소에 적용됩니다.",
     },
     {
         prop: "fontSizeM",
         type: "number",
-        default: "0.75",
+        default: "0.9",
         explain:
         "크기가 medium(`m`)일 때의 기본 폰트 크기입니다. 단위: rem.\n대부분의 기본 컴포넌트에 사용됩니다.",
     },
     {
         prop: "fontSizeL",
         type: "number",
-        default: "0.85",
+        default: "1.0",
         explain:
         "크기가 large(`l`)일 때의 기본 폰트 크기입니다. 단위: rem.\n제목이나 큰 버튼 등에 사용됩니다.",
     },
     {
         prop: "fontSizeXL",
         type: "number",
-        default: "1",
+        default: "1.1",
         explain:
         "크기가 extra large(`xl`)일 때의 기본 폰트 크기입니다. 단위: rem.\n헤더나 강조 텍스트에 사용됩니다.",
     },
@@ -1344,49 +1344,49 @@ export const componentStyleConfigGridDataEn = [
     {
         prop: "minHeightM",
         type: "number",
-        default: "1.95",
+        default: "2",
         explain:
         "The default element height when size is medium (`m`). Unit: rem.\nDefault global component height.",
     },
     {
         prop: "minHeightL",
         type: "number",
-        default: "2.25",
+        default: "2.3",
         explain:
         "The default element height when size is large (`l`). Unit: rem.\nUsed for larger controls such as primary inputs or buttons.",
     },
     {
         prop: "minHeightXL",
         type: "number",
-        default: "2.55",
+        default: "2.6",
         explain:
         "The default element height when size is extra large (`xl`). Unit: rem.\nApplied to hero elements or expanded UI blocks.",
     },
     {
         prop: "fontSizeS",
         type: "number",
-        default: "0.7",
+        default: "0.8",
         explain:
         "The default font size when size is small (`s`). Unit: rem.\nUsed in compact UI elements.",
     },
     {
         prop: "fontSizeM",
         type: "number",
-        default: "0.75",
+        default: "0.9",
         explain:
         "The default font size when size is medium (`m`). Unit: rem.\nStandard font size across most components.",
     },
     {
         prop: "fontSizeL",
         type: "number",
-        default: "0.85",
+        default: "1",
         explain:
         "The default font size when size is large (`l`). Unit: rem.\nUsed for headers or larger interactive elements.",
     },
     {
         prop: "fontSizeXL",
         type: "number",
-        default: "1",
+        default: "1.1",
         explain:
         "The default font size when size is extra large (`xl`). Unit: rem.\nUsed for titles or emphasized text.",
     },

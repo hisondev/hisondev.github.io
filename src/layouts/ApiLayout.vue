@@ -15,18 +15,19 @@
         :leave-animation-class="'none'"
     >
         <h-layout
-        style="height: 110px; padding: 10px; align-content: flex-end; align-items: flex-end;"
+        style="height: 110px; padding: 10px; align-content: flex-end; align-items: flex-end;" :back-color="'primary'"
         >
         <h-caption
             :level="5"
             class="hison-col-12-mb hison-col-2-tb"
             :text-align="'center'"
+            :background-type="'filled'"
             v-on:click="onLogoClick"
             style="cursor: pointer;"
         >HISONDEV</h-caption>
         <h-label
             class="hison-col-2 hison-pos-vertical-bottom"
-            :background-type="'empty'"
+            :background-type="'filled'"
             :border="false"
             :text-align="'center'"
             :text="'Intro'"
@@ -34,22 +35,26 @@
         ></h-label>
         <h-gap
             :line="'vertical'"
+            :background-type="'filled'"
+            :lineColor="'#fff'"
             class="hison-col-1 hison-pos-vertical-bottom"
         ></h-gap>
         <h-label
             class="hison-col-2 hison-pos-vertical-bottom"
-            :background-type="'empty'"
+            :background-type="'filled'"
             :border="false"
             :text-align="'center'"
             :href="'/getting-started'"
         >Getting Start</h-label>
         <h-gap
             :line="'vertical'"
+            :background-type="'filled'"
+            :lineColor="'#fff'"
             class="hison-col-1 hison-pos-vertical-bottom"
         ></h-gap>
         <h-label
             class="hison-col-2 hison-pos-vertical-bottom"
-            :background-type="'empty'"
+            :background-type="'filled'"
             :border="false"
             :text-align="'center'"
             :href="'/api'"
@@ -58,6 +63,7 @@
         <HDropdown
             v-model="langDropdownModel"
             class="hison-col-2 hison-pos-vertical-bottom hison-pos-right"
+            :background-type="'filled'"
             @change="langDropdownOnChange"
             :textAlign="'left'"
             :trigger="'click'"
@@ -120,7 +126,7 @@
 
 <script setup lang="ts">
 import type { Lang } from '@/store';
-import type { HDropdownMethods, HDropdownModel } from 'hisonvue';
+import { BackgroundType, type HDropdownMethods, type HDropdownModel } from 'hisonvue';
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';

@@ -279,11 +279,11 @@ const contents = props.lang === 'en' ? en : ko
     <HParagraph class="hison-col-12">{{ contents.t1000 }}</HParagraph>
     <HGap/>
     <HAccordion
-        :title="contents.t1010"
+      :title="contents.t1010"
     >
-        <HLayout class="hison-col-12" style="height: 100px; padding-top: 0;">
-            <HParagraph>{{ contents.t1020 }}</HParagraph>
-        </HLayout>
+      <HLayout class="hison-col-12" style="height: 100px; padding-top: 0;">
+          <HParagraph>{{ contents.t1020 }}</HParagraph>
+      </HLayout>
     </HAccordion>
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
@@ -293,54 +293,54 @@ const contents = props.lang === 'en' ? en : ko
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
-        id="accordionSlotGrid"
-        :columns="slotColumn"
-        class="hison-col-12 hison-size-m"
-        :height="'150px'"
-        :rownum-visible="false"
-        :status-visible="false"
-        :locked="true"
-        :locked-color="false"
-        @mounted="mountSlotGrid"
+      id="accordionSlotGrid"
+      :columns="slotColumn"
+      class="hison-col-12 hison-size-m"
+      :height="'150px'"
+      :rownum-visible="false"
+      :status-visible="false"
+      :locked="true"
+      :locked-color="false"
+      @mounted="mountSlotGrid"
     />
     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1200 }}</HCaption>
     <HGrid
-        id="accordionPropGrid"
-        :columns="propColumn"
-        class="hison-col-12 hison-size-m"
-        :height="'350px'"
-        :rownum-visible="false"
-        :status-visible="false"
-        :locked="true"
-        :locked-color="false"
-        @mounted="mountPropGrid"
+      id="accordionPropGrid"
+      :columns="propColumn"
+      class="hison-col-12 hison-size-m"
+      :height="'350px'"
+      :rownum-visible="false"
+      :status-visible="false"
+      :locked="true"
+      :locked-color="false"
+      @mounted="mountPropGrid"
     />
     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1300 }}</HCaption>
     <HGrid
-        id="accordionEventGrid"
-        :columns="eventColumn"
-        class="hison-col-12 hison-size-m"
-        :height="'200px'"
-        :rownum-visible="false"
-        :status-visible="false"
-        :locked="true"
-        :locked-color="false"
-        @mounted="mountEventGrid"
+      id="accordionEventGrid"
+      :columns="eventColumn"
+      class="hison-col-12 hison-size-m"
+      :height="'200px'"
+      :rownum-visible="false"
+      :status-visible="false"
+      :locked="true"
+      :locked-color="false"
+      @mounted="mountEventGrid"
     />
     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1400 }}</HCaption>
     <HGrid
-        id="accordionMethodGrid"
-        :columns="methodColumn"
-        class="hison-col-12 hison-size-m"
-        :height="'600px'"
-        :rownum-visible="false"
-        :status-visible="false"
-        :locked="true"
-        :locked-color="false"
-        @mounted="mountMethodGrid"
+      id="accordionMethodGrid"
+      :columns="methodColumn"
+      class="hison-col-12 hison-size-m"
+      :height="'600px'"
+      :rownum-visible="false"
+      :status-visible="false"
+      :locked="true"
+      :locked-color="false"
+      @mounted="mountMethodGrid"
     />
   </HLayout>
 </template>

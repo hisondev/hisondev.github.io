@@ -10,63 +10,62 @@ const store = useStore()
 const contents = computed(() => apiHisonjsContents[store.state.lang as Lang])
 const getKey = () => store.state.lang + getUUID()
 
-
 const utilsColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '10%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '10%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '15%' },
   { id: 'return', header: 'return', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '30%' },
   { id: 'note', header: 'note', dataType: 'text', width: '30%' },
 ]
 const utilsConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '10%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '10%', rowMerge: true },
   { id: 'default', header: 'default', dataType: 'text', width: '10%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '30%' },
   { id: 'note', header: 'note', dataType: 'text', width: '50%' },
 ]
 const sheildMethodAndPropColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '20%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '20%', rowMerge: true },
   { id: 'explain', header: 'explain', dataType: 'text', width: '80%' },
 ]
 const dataWrapperColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '10%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '10%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '10%' },
   { id: 'return', header: 'return', dataType: 'text', width: '10%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
   { id: 'note', header: 'note', dataType: 'text', width: '30%' },
 ]
 const dataModelColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '10%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '10%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '10%' },
   { id: 'return', header: 'return', dataType: 'text', width: '10%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
   { id: 'note', header: 'note', dataType: 'text', width: '30%' },
 ]
 const dataConfigColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '12%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '12%', rowMerge: true },
   { id: 'type', header: 'type', dataType: 'text', width: '12%' },
   { id: 'default', header: 'default', dataType: 'text', width: '12%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '64%' },
 ]
 const apiLinkColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '15%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '15%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '15%' },
   { id: 'return', header: 'return', dataType: 'text', width: '15%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '55%' },
 ]
 const apiLinkPropColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '20%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '20%', rowMerge: true },
   { id: 'explain', header: 'explain', dataType: 'text', width: '80%' },
 ]
 const cachingModuleColumn: HGridColumn[] = [
-  { id: 'method', header: 'method', dataType: 'text', width: '10%' },
+  { id: 'method', header: 'method', dataType: 'text', width: '10%', rowMerge: true },
   { id: 'param', header: 'param', dataType: 'text', width: '10%' },
   { id: 'return', header: 'return', dataType: 'text', width: '10%' },
   { id: 'explain', header: 'explain', dataType: 'text', width: '40%' },
   { id: 'note', header: 'note', dataType: 'text', width: '30%' },
 ]
 const cachingModulePropColumn: HGridColumn[] = [
-  { id: 'prop', header: 'prop', dataType: 'text', width: '30%' },
+  { id: 'prop', header: 'prop', dataType: 'text', width: '30%', rowMerge: true },
   { id: 'explain', header: 'explain', dataType: 'text', width: '70%' },
 ]
 
@@ -104,159 +103,180 @@ const mountCachingModulePropGrid = async (grid: HGridMethods) => {
 </script>
 
 <template>
-    <HLayout>
-        <HGap/>
-        <HCaption class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
-        <HGap :line="'horizontal'"/>
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.subhead1 }}</HCaption>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t1000 }}</HCaption>
-        <HGrid
-            id="utilsGrid"
-            :key="getKey()"
-            :columns="utilsColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'800px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountUtilsGrid"
-        />
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t1100 }}</HCaption>
-        <HGrid
-            id="utilsConfigGrid"
-            :key="getKey()"
-            :columns="utilsConfigColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'550px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountUtilsConfigGrid"
-        />
-        <HGap/>
+  <HLayout>
+    <HGap/>
+    <HCaption class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
+    <HGap :line="'horizontal'"/>
+    <HAccordion
+        :title="contents.subhead1"
+    >
+      <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.subhead1 }}</HCaption>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t1000 }}</HCaption>
+      <HGrid
+          id="utilsGrid"
+          :key="getKey()"
+          :columns="utilsColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'800px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountUtilsGrid"
+      />
+      <HGap/>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t1100 }}</HCaption>
+      <HGrid
+          id="utilsConfigGrid"
+          :key="getKey()"
+          :columns="utilsConfigColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'550px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountUtilsConfigGrid"
+      />
+      <HGap/>
+    </HAccordion>
+    <HGap :line="'horizontal'"/>
 
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.subhead2 }}</HCaption>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t2000 }}</HCaption>
-        <HGrid
-            id="sheildMethodAndPropGrid"
-            :key="getKey()"
-            :columns="sheildMethodAndPropColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'300px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountSheildMethodAndPropGrid"
-        />
-        <HGap/>
+    <HAccordion
+        :title="contents.subhead2"
+    >
+      <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.subhead2 }}</HCaption>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t2000 }}</HCaption>
+      <HGrid
+          id="sheildMethodAndPropGrid"
+          :key="getKey()"
+          :columns="sheildMethodAndPropColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'300px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountSheildMethodAndPropGrid"
+      />
+      <HGap/>
+    </HAccordion>
+    <HGap :line="'horizontal'"/>
 
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.subhead3 }}</HCaption>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3000 }}</HCaption>
-        <HGrid
-            id="dataWrapperGrid"
-            :key="getKey()"
-            :columns="dataWrapperColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'800px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountDataWrapperGrid"
-        />
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3100 }}</HCaption>
-        <HGrid
-            id="dataModelGrid"
-            :key="getKey()"
-            :columns="dataModelColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'800px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountDataModelGrid"
-        />
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3200 }}</HCaption>
-        <HGrid
-            id="dataConfigGrid"
-            :key="getKey()"
-            :columns="dataConfigColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'300px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountDataConfigGrid"
-        />
-        <HGap/>
+    <HAccordion
+        :title="contents.subhead3"
+    >
+      <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.subhead3 }}</HCaption>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3000 }}</HCaption>
+      <HGrid
+          id="dataWrapperGrid"
+          :key="getKey()"
+          :columns="dataWrapperColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'800px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountDataWrapperGrid"
+      />
+      <HGap/>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3100 }}</HCaption>
+      <HGrid
+          id="dataModelGrid"
+          :key="getKey()"
+          :columns="dataModelColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'800px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountDataModelGrid"
+      />
+      <HGap/>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3200 }}</HCaption>
+      <HGrid
+          id="dataConfigGrid"
+          :key="getKey()"
+          :columns="dataConfigColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'300px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountDataConfigGrid"
+      />
+      <HGap/>
+    </HAccordion>
+    <HGap :line="'horizontal'"/>
 
-        <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.subhead4 }}</HCaption>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4000 }}</HCaption>
-        <HGrid
-            id="apiLinkGrid"
-            :key="getKey()"
-            :columns="apiLinkColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'800px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountApiLinkGrid"
-        />
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4100 }}</HCaption>
-        <HGrid
-            id="apiLinkPropGrid"
-            :key="getKey()"
-            :columns="apiLinkPropColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'650px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountApiLinkPropGrid"
-        />
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4200 }}</HCaption>
-        <HGrid
-            id="cachingModuleGrid"
-            :key="getKey()"
-            :columns="cachingModuleColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'350px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountCachingModuleGrid"
-        />
-        <HGap/>
-        <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4300 }}</HCaption>
-        <HGrid
-            id="cachingModulePropGrid"
-            :key="getKey()"
-            :columns="cachingModulePropColumn"
-            class="hison-col-12 hison-size-m"
-            :height="'150px'"
-            :rownum-visible="false"
-            :status-visible="false"
-            :locked="true"
-            :locked-color="false"
-            @mounted="mountCachingModulePropGrid"
-        />
-        <HGap/>
-        <HGap/>
-    </HLayout>
+    <HAccordion
+        :title="contents.subhead4"
+    >
+      <HCaption :level="5" :key="getKey()" class="hison-col-12">{{ contents.subhead4 }}</HCaption>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4000 }}</HCaption>
+      <HGrid
+          id="apiLinkGrid"
+          :key="getKey()"
+          :columns="apiLinkColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'800px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountApiLinkGrid"
+      />
+      <HGap/>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4100 }}</HCaption>
+      <HGrid
+          id="apiLinkPropGrid"
+          :key="getKey()"
+          :columns="apiLinkPropColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'650px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountApiLinkPropGrid"
+      />
+      <HGap/>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4200 }}</HCaption>
+      <HGrid
+          id="cachingModuleGrid"
+          :key="getKey()"
+          :columns="cachingModuleColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'350px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountCachingModuleGrid"
+      />
+      <HGap/>
+      <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t4300 }}</HCaption>
+      <HGrid
+          id="cachingModulePropGrid"
+          :key="getKey()"
+          :columns="cachingModulePropColumn"
+          class="hison-col-12 hison-size-m"
+          :height="'150px'"
+          :rownum-visible="false"
+          :status-visible="false"
+          :locked="true"
+          :locked-color="false"
+          @mounted="mountCachingModulePropGrid"
+      />
+      <HGap/>
+    </HAccordion>
+    <HGap :line="'horizontal'"/>
+    <HGap/>
+    <HGap/>
+  </HLayout>
 </template>
 
 <style scoped>

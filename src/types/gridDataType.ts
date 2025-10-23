@@ -31,3 +31,10 @@ export type propSimpleGridRow = {
   prop: string
   explain: string
 }
+
+export type propJavaGridRow = {
+  field: string
+  default: string
+  explain: string
+  note: string
+}

@@ -40,7 +40,7 @@ HInput은 다양한 입력 타입(text/number/date/checkbox/radio/select 등)과
   id="digit"
   class="hison-col-9"
   :input-type="'digit'"
-  :model-value="12345"
+  :model-value="'12345'"
 />
 <HInput
   id="email"
@@ -183,56 +183,56 @@ and full runtime control via hison.component.getInput(id).`,
   c1040:
 
 `<HInput
-  id="text"
+  id="textInput"
   class="hison-col-9"
   :input-type="'text'"
   :model-value="props.lang==='en' ? 'This is text type input' : 'text 타입 input입니다.'"
 />
 <HInput
-  id="mask"
+  id="maskInput"
   class="hison-col-9"
   :input-type="'mask'"
   :model-value="'HR-123'"
   :format="'AA-999'"
 />
 <HInput
-  id="digit"
+  id="digitInput"
   class="hison-col-9"
   :input-type="'digit'"
-  :model-value="12345"
+  :model-value="'12345'"
 />
 <HInput
-  id="email"
+  id="emailInput"
   class="hison-col-9"
   :input-type="'email'"
   :model-value="'hison0319@gmail.com'"
 />
 <HInput
-  id="password"
+  id="passwordInput"
   class="hison-col-9"
   :input-type="'password'"
   :model-value="'1234'"
 />
 <HInput
-  id="textarea"
+  id="textareaInput"
   class="hison-col-9"
   :input-type="'textarea'"
   :model-value="props.lang==='en' ? 'This is textarea type input' : 'textarea 타입 input입니다.'"
 />
 <HInput
-  id="date"
+  id="dateInput"
   class="hison-col-9"
   :input-type="'date'"
   :model-value="'2025-12-31'"
 />
 <HInput
-  id="month"
+  id="monthInput"
   class="hison-col-9"
   :input-type="'month'"
   :model-value="'2025-12'"
 />
 <HInput
-  id="time"
+  id="timeInput"
   class="hison-col-9"
   :input-type="'time'"
   :model-value="'121212'"
@@ -244,46 +244,46 @@ and full runtime control via hison.component.getInput(id).`,
   :format="'#,##0.##'"
 />
 <HInput
-  id="checkbox"
+  id="checkboxInput"
   class="hison-col-9"
   :input-type="'checkbox'"
   :model-value="true"
 />
 <HInput
-  id="radio1"
+  id="radio1Input"
   name="radio"
   class="hison-col-3"
   :input-type="'radio'"
   :model-value="true"
 />
 <HInput
-  id="radio2"
+  id="radio2Input"
   name="radio"
   class="hison-col-3"
   :input-type="'radio'"
   :model-value="false"
 />
 <HInput
-  id="radio3"
+  id="radio3Input"
   name="radio"
   class="hison-col-3"
   :input-type="'radio'"
   :model-value="false"
 />
 <HInput
-  id="range"
+  id="rangeInput"
   class="hison-col-9"
   :input-type="'range'"
   :model-value="50"
 />
 <HInput
-  id="color"
+  id="colorInput"
   class="hison-col-9"
   :input-type="'color'"
   :model-value="'#128483'"
 />
 <HInput
-  id="select"
+  id="selectInput"
   class="hison-col-9"
   :input-type="'select'"
   :model-value="'v3'"
@@ -563,7 +563,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: text</HLabel>
         <HInput
-          id="text"
+          id="textInput"
           class="hison-col-9"
           :input-type="'text'"
           :model-value="props.lang==='en' ? 'This is text type input' : 'text 타입 input입니다.'"
@@ -572,7 +572,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: mask (format: AA-999)</HLabel>
         <HInput
-          id="mask"
+          id="maskInput"
           class="hison-col-9"
           :input-type="'mask'"
           :model-value="'HR-123'"
@@ -582,16 +582,16 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: digit</HLabel>
         <HInput
-          id="digit"
+          id="digitInput"
           class="hison-col-9"
           :input-type="'digit'"
-          :model-value="12345"
+          :model-value="'12345'"
         />
       </HLayout>
       <HLayout>
         <HLabel class="hison-col-3">Type: email</HLabel>
         <HInput
-          id="email"
+          id="emailInput"
           class="hison-col-9"
           :input-type="'email'"
           :model-value="'hison0319@gmail.com'"
@@ -600,7 +600,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: password</HLabel>
         <HInput
-          id="password"
+          id="passwordInput"
           class="hison-col-9"
           :input-type="'password'"
           :model-value="'1234'"
@@ -609,7 +609,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: textarea</HLabel>
         <HInput
-          id="textarea"
+          id="textareaInput"
           class="hison-col-9"
           :input-type="'textarea'"
           :model-value="props.lang==='en' ? 'This is textarea type input' : 'textarea 타입 input입니다.'"
@@ -618,7 +618,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: date</HLabel>
         <HInput
-          id="date"
+          id="dateInput"
           class="hison-col-9"
           :input-type="'date'"
           :model-value="'2025-12-31'"
@@ -627,7 +627,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: month</HLabel>
         <HInput
-          id="month"
+          id="monthInput"
           class="hison-col-9"
           :input-type="'month'"
           :model-value="'2025-12'"
@@ -636,7 +636,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: time</HLabel>
         <HInput
-          id="time"
+          id="timeInput"
           class="hison-col-9"
           :input-type="'time'"
           :model-value="'121212'"
@@ -654,7 +654,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: checkbox</HLabel>
         <HInput
-          id="checkbox"
+          id="checkboxInput"
           class="hison-col-9"
           :input-type="'checkbox'"
           :model-value="true"
@@ -663,21 +663,21 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: radio</HLabel>
         <HInput
-          id="radio1"
+          id="radio1Input"
           name="radio"
           class="hison-col-3"
           :input-type="'radio'"
           :model-value="true"
         />
         <HInput
-          id="radio2"
+          id="radio2Input"
           name="radio"
           class="hison-col-3"
           :input-type="'radio'"
           :model-value="false"
         />
         <HInput
-          id="radio3"
+          id="radio3Input"
           name="radio"
           class="hison-col-3"
           :input-type="'radio'"
@@ -687,7 +687,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: range</HLabel>
         <HInput
-          id="range"
+          id="rangeInput"
           class="hison-col-9"
           :input-type="'range'"
           :model-value="50"
@@ -696,7 +696,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: color</HLabel>
         <HInput
-          id="color"
+          id="colorInput"
           class="hison-col-9"
           :input-type="'color'"
           :model-value="'#128483'"
@@ -705,7 +705,7 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
       <HLayout>
         <HLabel class="hison-col-3">Type: select</HLabel>
         <HInput
-          id="select"
+          id="selectInput"
           class="hison-col-9"
           :input-type="'select'"
           :model-value="'v3'"
