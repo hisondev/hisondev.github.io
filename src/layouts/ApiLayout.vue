@@ -126,7 +126,7 @@
 
 <script setup lang="ts">
 import type { Lang } from '@/store';
-import { BackgroundType, type HDropdownMethods, type HDropdownModel } from 'hisonvue';
+import { type HDropdownMethods, type HDropdownModel } from 'hisonvue';
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';

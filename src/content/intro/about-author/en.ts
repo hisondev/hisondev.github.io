@@ -1,5 +1,5 @@
 const en = {
-  caption: `Hello I'm Hani Son`,
+  caption: `Hello. I am developer HanI Son.`,
 } as const;
 
 export default en;
