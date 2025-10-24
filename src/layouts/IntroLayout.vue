@@ -19,7 +19,7 @@
     >
       <h-caption
         :level="5"
-        class="hison-col-12-mb hison-col-2-tb"
+        class="hison-col-12-mb hison-col-2-tb hison-col-2-pc"
         style="cursor: pointer; color: #eee;"
         :text-align="'center'"
         :background-type="'transparent'"
@@ -132,13 +132,13 @@
           style="position: absolute; bottom: 0;"
       >
         <h-label
-            class="hison-col-12-mb hison-col-8-tb"
+            class="hison-col-12-mb hison-col-8-tb hison-col-8-pc"
             :text-align="'center'"
             :toggle-target="'darkModeToggle'"
             :text="'dark mode'"
         />
         <h-input
-            class="hison-col-12-mb hison-col-4-tb"
+            class="hison-col-12-mb hison-col-4-tb hison-col-4-pc"
             id="darkModeToggle"
             input-type="checkbox"
             :model-value="darkMode"
