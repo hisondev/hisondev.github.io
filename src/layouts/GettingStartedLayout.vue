@@ -20,14 +20,15 @@
         <h-caption
             :level="5"
             class="hison-col-12-mb hison-col-2-tb"
+            style="cursor: pointer; color: #eee;"
             :text-align="'center'"
-            :background-type="'filled'"
+            :background-type="'transparent'"
             v-on:click="onLogoClick"
-            style="cursor: pointer;"
         >HISONDEV</h-caption>
         <h-label
             class="hison-col-2 hison-pos-vertical-bottom"
-            :background-type="'filled'"
+            style="color: #eee !important;"
+            :background-type="'transparent'"
             :border="false"
             :text-align="'center'"
             :text="'Intro'"
@@ -35,13 +36,14 @@
         ></h-label>
         <h-gap
             :line="'vertical'"
-            :background-type="'filled'"
+            :background-type="'transparent'"
             :lineColor="'#fff'"
             class="hison-col-1 hison-pos-vertical-bottom"
         ></h-gap>
         <h-label
             class="hison-col-2 hison-pos-vertical-bottom"
-            :background-type="'filled'"
+            style="color: #eee !important;"
+            :background-type="'transparent'"
             :border="false"
             :text-align="'center'"
             :href="'/getting-started'"
@@ -49,13 +51,14 @@
         >Getting Start</h-label>
         <h-gap
             :line="'vertical'"
-            :background-type="'filled'"
+            :background-type="'transparent'"
             :lineColor="'#fff'"
             class="hison-col-1 hison-pos-vertical-bottom"
         ></h-gap>
         <h-label
             class="hison-col-2 hison-pos-vertical-bottom"
-            :background-type="'filled'"
+            style="color: #eee !important;"
+            :background-type="'transparent'"
             :border="false"
             :text-align="'center'"
             :href="'/api'"
@@ -76,6 +79,7 @@
     ><span></span></h-layout>
     <h-drawer
         class="hison-col-1-pc hison-col-2-mb"
+        style="height: 100%;"
         :visible="true"
         :position="'left'"
         :border="true"
@@ -86,7 +90,7 @@
         :leave-animation-class="'none'"
     >
         <h-layout
-            style="padding-top: 120px;"
+            style="padding-top: 120px; height: 100%; position: relative;"
         >
             <h-label
                 class="hison-col-12"
@@ -115,6 +119,24 @@
                 :font-bold="route.path.includes('hisonvue')"
                 :font-underline="route.path.includes('hisonvue')"
             >hisonvue</h-label>
+            <h-layout
+                style="position: absolute; bottom: 0;"
+            >
+                <h-label
+                    class="hison-col-12-mb hison-col-8-tb"
+                    :text-align="'center'"
+                    :toggle-target="'darkModeToggle'"
+                    :text="'dark mode'"
+                />
+                <h-input
+                    class="hison-col-12-mb hison-col-4-tb"
+                    id="darkModeToggle"
+                    input-type="checkbox"
+                    :model-value="darkMode"
+                    :toggle-style="'switch'"
+                    @change="darkModeOnChange"
+                />
+            </h-layout>
         </h-layout>
     </h-drawer>
     <h-layout
@@ -124,8 +146,8 @@
 
 <script setup lang="ts">
 import type { Lang } from '@/store';
-import type { HDropdownMethods, HDropdownModel } from 'hisonvue';
-import { ref } from 'vue';
+import { hison, type HDropdownMethods, type HDropdownModel, type HInputMethods } from 'hisonvue';
+import { onMounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 
@@ -140,11 +162,23 @@ const langDropdownModel = ref<HDropdownModel>({
       { label: 'ko', value: 'ko'},
     ],
 })
+
+const darkMode = ref<boolean>(store.state.darkMode)
+
 const langDropdownOnChange = (oldValue: Lang, newValue: Lang, dropdown: HDropdownMethods) => {
     void oldValue; void dropdown;
     store.commit('setLang', newValue)
-    console.log('lang', store.state.lang)
 }
+
+const darkModeOnChange = (oldValue: boolean, newValue: boolean, input: HInputMethods) => {
+  void oldValue; void input;
+  store.dispatch('setDarkMode', newValue)
+  hison.style.setInvertColor(newValue)
+}
+
+onMounted(()=>{
+  hison.style.setInvertColor(darkMode.value)
+})
 
 const onLogoClick = () => {
     router.replace('/')

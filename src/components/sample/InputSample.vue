@@ -351,6 +351,7 @@ const propGridDataKo = [
   { prop: "border", type: "boolean", default: "true", explain: "보더(박스섀도) 표시." },
   { prop: "checkedText / uncheckedText", type: "string", default: "'Y' / 'N'", explain: "checkbox/radio의 읽기전용 표시 텍스트." },
   { prop: "inputTextdHandler", type: "(value:any)=>string", default: "-", explain: "읽기전용 span 텍스트 포매터." },
+  { prop: "toggleStyle", type: "'default' | 'switch'", default: "'default'", explain: "input이 checkbox 또는 radio 타입(toggle type)인 경우 적용할 style.\ndefault: 기본 모양, switch: 스위치 모양의 토글." },
 ]
 const propGridDataEn = [
   { prop: "id", type: "string", default: "-", explain: "Unique id. Access via hison.component.getInput(id)." },
@@ -373,6 +374,7 @@ const propGridDataEn = [
   { prop: "border", type: "boolean", default: "true", explain: "Border (box-shadow)." },
   { prop: "checkedText / uncheckedText", type: "string", default: "'Y' / 'N'", explain: "Readonly text for checkbox/radio." },
   { prop: "inputTextdHandler", type: "(value:any)=>string", default: "-", explain: "Custom span text formatter." },
+  { prop: "toggleStyle", type: "'default' | 'switch'", default: "'default'", explain: "Style to apply when input is checkbox or radio type (toggle type). \ndefault: default appearance, switch: toggle with switch appearance." },
 ]
 
 // Events
@@ -434,6 +436,7 @@ const methodGridDataKo = [
   { method: "getTextAlign()/setTextAlign()", param: "TextAlign", return: "TextAlignValue|void", explain: "정렬(left/center/right)." },
   { method: "isBorder()/setBorder()", param: "boolean", return: "boolean|void", explain: "보더(섀도) 토글." },
   { method: "isModified()/setModified()", param: "boolean", return: "boolean|void", explain: "수정 플래그." },
+  { method: "getToggleStyle()/setToggleStyle()", param: "string", return: "'default'|'switch'", explain: "radio, checkbox의 모양." },
   { method: "getTabIndex()/setTabIndex()", param: "number|null", return: "number|null|void", explain: "포커스 순서." },
   { method: "focus()", param: "-", return: "void", explain: "입력 포커스." },
   { method: "getId()", param: "-", return: "string", explain: "컴포넌트 고유 ID." },
@@ -467,6 +470,7 @@ const methodGridDataEn = [
   { method: "getTextAlign()/setTextAlign()", param: "TextAlign", return: "TextAlignValue|void", explain: "Alignment." },
   { method: "isBorder()/setBorder()", param: "boolean", return: "boolean|void", explain: "Border toggle." },
   { method: "isModified()/setModified()", param: "boolean", return: "boolean|void", explain: "Modified flag." },
+  { method: "getToggleStyle()/setToggleStyle()", param: "string", return: "'default'|'switch'", explain: "radio, checkbox style" },
   { method: "getTabIndex()/setTabIndex()", param: "number|null", return: "number|null|void", explain: "Tab index." },
   { method: "focus()", param: "-", return: "void", explain: "Focus input." },
   { method: "getId()", param: "-", return: "string", explain: "Unique id." },

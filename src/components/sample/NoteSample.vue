@@ -175,22 +175,10 @@ app.mount('#app')`,
 
 const contents = props.lang === 'en' ? en : ko
 
-/* =========================================================
- * Live demo
- * =======================================================*/
 const noteData = ref<NoteData>()
 const onMounted = () => {
-  // eslint-disable-next-line no-console
-  console.log('HNote mounted')
 }
 
-/* 禁(예시): 굵게 전 토글 방지 */
-const boldBeforeClick = (_e: Event) => false
-
-/* =========================================================
- * API Grids data
- * =======================================================*/
-// slots – 현재 HNote는 공개 슬롯을 제공하지 않는다고 가정
 const slotGridDataKo = [{ slot: '-', explain: 'HNote는 공개 슬록(템플릿 슬롯)을 제공하지 않습니다.' }]
 const slotGridDataEn = [{ slot: '-', explain: 'HNote does not expose template slots.' }]
 
@@ -699,10 +687,8 @@ const mountMethodGrid = (grid: HGridMethods) =>
     <HNote
       :model-value="noteData"
       id="note1"
-      class="hison-col-12 hison-size-m"
+      class="hison-col-12"
       textarea-height="260px"
-      :boldBeforeClick="boldBeforeClick"
-      @mounted="onMounted"
     />
     <HGap/>
 

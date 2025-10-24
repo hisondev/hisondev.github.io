@@ -4,8 +4,6 @@ const ko = {
 `확장된 hison`,
   t1000:
 `hison.component`,
-  t1010:
-`그외 hison에 대한 기능 정보는 hisonjs API문서를 참조하기 바랍니다. 모든 컴포넌트는 고유한 id로 등록됩니다. 이 id로 메서드 접근 할 수 있습니다.`,
   t1100:
 `hison.style`,
   t1110:
@@ -17,7 +15,7 @@ const ko = {
   t1210:
 `요소 액티브시 발생하는 css적인 기능의 이벤트를 동적으로 제어할 수 있습니다.`,
   t1300:
-`그외 hison에 대한 기능 정보는 hisonjs API문서를 참조하기 바랍니다.`,
+`※ 그외 hison에 대한 기능 정보는 hisonjs API문서를 참조하기 바랍니다.`,
 
   subhead2:
 `hisonConfig`,

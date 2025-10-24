@@ -89,6 +89,7 @@ const propGridDataKo = [
   { prop: 'textAlign', type: "'left'|'center'|'right'", default: 'left', explain: '텍스트 정렬.' },
   { prop: 'border', type: 'boolean', default: 'false', explain: '박스-섀도우 보더 표시.' },
   { prop: 'backgroundType', type: "'filled'|'empty'|'transparent'", default: "'empty'", explain: '배경 스타일.' },
+  { prop: 'toggleTarget', type: "string", default: "-", explain: '타켓으로 하고싶은 radio, checkbox HInput의 id 속성값.\n지정하면 HLable클릭 시 해당 HInput의 값 토글됨.' },
 ]
 const propGridDataEn = [
   { prop: 'id', type: 'string', default: '-', explain: 'Unique ID. Access via hison.component.getLabel(id).' },
@@ -103,6 +104,7 @@ const propGridDataEn = [
   { prop: 'textAlign', type: "'left'|'center'|'right'", default: 'left', explain: 'Text alignment.' },
   { prop: 'border', type: 'boolean', default: 'false', explain: 'Border (box-shadow).' },
   { prop: 'backgroundType', type: "'filled'|'empty'|'transparent'", default: "'empty'", explain: 'Background style.' },
+  { prop: 'toggleTarget', type: "string", default: "-", explain: 'The id attribute value of the radio or checkbox HInput you want to target.\nIf specified, the value of the corresponding HInput will be\ntoggled when the HLable is clicked.' },
 ]
 
 // Events
@@ -134,6 +136,7 @@ const methodGridDataKo = [
   { method: 'getTextAlign()/setTextAlign()', param: "TextAlign", return: 'TextAlign|void', explain: '정렬 조회/설정.' },
   { method: 'isBorder()/setBorder()', param: 'boolean', return: 'boolean|void', explain: '보더 토글.' },
   { method: 'getBackgroundType()/setBackgroundType()', param: "BackgroundType", return: 'type|void', explain: '배경 타입.' },
+  { method: 'getToggleTarget()/setToggleTarget()', param: 'string', return: 'string', explain: '타겟이될 checkbox 또는 radio 타입의 HInput의 id속성 값.' },
   { method: 'getTabIndex()/setTabIndex()', param: 'number|null', return: 'number|null|void', explain: 'tabindex 조회/설정.' },
   { method: 'focus()', param: '-', return: 'void', explain: '<a>일 때 포커스.' },
 ]
@@ -151,6 +154,7 @@ const methodGridDataEn = [
   { method: 'getTextAlign()/setTextAlign()', param: "TextAlign", return: 'TextAlign|void', explain: 'Alignment get/set.' },
   { method: 'isBorder()/setBorder()', param: 'boolean', return: 'boolean|void', explain: 'Border toggle.' },
   { method: 'getBackgroundType()/setBackgroundType()', param: "BackgroundType", return: 'type|void', explain: 'Background type.' },
+  { method: 'getToggleTarget()/setToggleTarget()', param: 'string', return: 'string', explain: 'The id attribute value of the HInput of the checkbox or radio type to be targeted' },
   { method: 'getTabIndex()/setTabIndex()', param: 'number|null', return: 'number|null|void', explain: 'tabindex get/set.' },
   { method: 'focus()', param: '-', return: 'void', explain: 'Focus when anchor.' },
 ]

@@ -181,7 +181,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
 </script>
 
 <template>
-    <HLayout>
+    <HLayout style="min-height: calc(100vh - 110px);">
         <HGap/>
         <HCaption class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
         <HGap :line="'horizontal'"/>
@@ -245,7 +245,7 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
                 @mounted="mountHisonEtcGridGrid"
             />
             <HGap/>
-            <HParagraph :key="getKey()" class="hison-col-12 hison-color-danger" :font-bold="true">{{ contents.t1300 }}</HParagraph>
+            <HParagraph :key="getKey()" class="hison-col-12" :font-bold="true">{{ contents.t1300 }}</HParagraph>
             <HGap/>
         </HAccordion>
         <HGap :line="'horizontal'"/>

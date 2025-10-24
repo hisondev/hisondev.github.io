@@ -15,7 +15,7 @@ const utilsBaggieOnClick = () => { window.open( contents.value.h4000, '_blank', 
 </script>
 
 <template>
-    <HLayout>
+    <HLayout style="min-height: calc(100vh - 110px);">
         <HGap/>
         <HCaption class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
         <HGap :line="'horizontal'"/>

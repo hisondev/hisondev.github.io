@@ -4,17 +4,11 @@ const en = {
   subhead1: `Extended hison`,
 
   t1000: `hison.component`,
-  t1010:
-    `For other features of hison, please refer to the hisonjs API documentation. ` +
-    `All components are registered with a unique id, which can be used to access their methods.`,
-
   t1100: `hison.style`,
   t1110: `Allows dynamic control of the overall client-side style.`,
-
   t1200: `hison.cssEvent`,
   t1250: `hison. (etc)`,
   t1210: `Allows dynamic control of CSS-related events triggered when an element becomes active.`,
-
   t1300:
     `For other hison features, please refer to the hisonjs API documentation.`,
 
