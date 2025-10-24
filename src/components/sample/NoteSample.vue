@@ -176,8 +176,6 @@ app.mount('#app')`,
 const contents = props.lang === 'en' ? en : ko
 
 const noteData = ref<NoteData>()
-const onMounted = () => {
-}
 
 const slotGridDataKo = [{ slot: '-', explain: 'HNote는 공개 슬록(템플릿 슬롯)을 제공하지 않습니다.' }]
 const slotGridDataEn = [{ slot: '-', explain: 'HNote does not expose template slots.' }]
