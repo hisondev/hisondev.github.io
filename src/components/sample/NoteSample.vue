@@ -45,7 +45,48 @@ HNote는 vanillanote2 기반의 리치 텍스트 에디터로, 파일/이미지/
 `const note = hison.component.getNote('note1')
 note.setNoteData({ html: '<p>Hello World</p>' })
 note.focus()`,
-
+  t1055: `연관 Interface`,
+  c1055:
+`/**
+ * 단일 Vanillanote 에디터 인스턴스의 전체 데이터 스냅샷입니다.
+ *
+ * - 'VanillanoteElement.getNoteData()'에 의해 반환됩니다.
+ * - 'VanillanoteElement.setNoteData()'를 통해 에디터 내용을 복원할 수 있습니다.
+ *
+ * 포함 항목:
+ * - HTML 구조 ('html')
+ * - 서식이 제거된 일반 텍스트 ('plainText')
+ * - 첨부된 링크, 파일, 이미지, 비디오 목록
+ * - 업로드 중 사용되는 파일 및 이미지의 활성 'File' 객체
+ *
+ * @example
+ * const note = vn.getNote('myEditorId');
+ * const data = note?.getNoteData();
+ *
+ * // 서버에 저장 또는 전송
+ * saveNoteData(data);
+ *
+ * // 이후 복원
+ * note?.setNoteData(savedData);
+ */
+export interface NoteData {
+    /** 에디터의 직렬화된 HTML 콘텐츠 */
+    html: string;
+    /** HTML 태그가 제거된 일반 텍스트 표현 */
+    plainText: string;
+    /** 삽입된 하이퍼링크 목록 */
+    links: NoteLinkData[];
+    /** 첨부된 파일 목록 */
+    files: NoteFileData[];
+    /** 첨부된 이미지 목록 */
+    images: NoteImageData[];
+    /** 첨부된 비디오 목록 */
+    videos: NoteVideoData[];
+    /** 첨부된 파일의 실제 'File' 객체 (UUID를 키로 사용) */
+    fileObjects: Record<string, File>;
+    /** 첨부된 이미지의 실제 'File' 객체 (UUID를 키로 사용) */
+    imageObjects: Record<string, File>;
+}`,
   // 전역 설정: VanillanoteConfig
   t1060: `전역 설정: hisonConfig에 VanillanoteConfig 커스터마이징`,
   c1060:
@@ -73,6 +114,28 @@ vanillanoteConfig.beforeAlert = (msg) => {
   return true
 }
 vanillanoteConfig.languageSet.KOR.boldTooltip = '굵게(B)'
+
+// FontAwesome 아이콘 변경
+function getFontAwesome(oldEl, iconType, iconId, cssText) {
+  let newEl = document.createElement('i');
+  for (let i = 0; i < oldEl.attributes.length; i++) {
+    const attr = oldEl.attributes[i];
+    newEl.setAttribute(attr.name, attr.value);
+  }
+  newEl.classList.remove('material-symbols-rounded');
+  newEl.classList.add(iconType);
+  newEl.classList.add(iconId);
+  if(cssText) {
+    newEl.setAttribute('style', cssText)
+  }
+  return newEl;
+};
+vn.elements.paragraphStyleSelects[0].replaceChild(
+  getFontAwesome(vn.elements.paragraphStyleSelects[0].firstChild, 'fas', 'fa-paragraph'),
+  vn.elements.paragraphStyleSelects[0].firstChild,
+);
+
+//....logic
 
 // 4) hisonConfig에 주입 (⚠️ ComponentConfig.note는 VanillanoteConfig)
 hisonConfig.ComponentConfig.note = vanillanoteConfig
@@ -133,7 +196,48 @@ Use \`v-model\` for two-way binding and access runtime instance via hison.compon
 `const note = hison.component.getNote('note1')
 note.setNoteData({ html: '<p>Hello World</p>' })
 note.focus()`,
-
+  t1055: `Related Interface`,
+  c1055:
+`/**
+ * Full data snapshot of a single Vanillanote editor instance.
+ *
+ * - Returned by 'VanillanoteElement.getNoteData()'.
+ * - Can be used with 'VanillanoteElement.setNoteData()' to restore the editor's content.
+ *
+ * Includes:
+ * - HTML structure ('html').
+ * - Plain text without formatting ('plainText').
+ * - Lists of attached links, files, images, and videos.
+ * - Active 'File' objects for files and images (used during uploads).
+ *
+ * @example
+ * const note = vn.getNote('myEditorId');
+ * const data = note?.getNoteData();
+ *
+ * // Save or send to server
+ * saveNoteData(data);
+ *
+ * // Later...
+ * note?.setNoteData(savedData);
+ */
+export interface NoteData {
+    /** Serialized HTML content of the editor. */
+    html: string;
+    /** Plain text representation without any HTML tags. */
+    plainText: string;
+    /** List of embedded hyperlinks. */
+    links: NoteLinkData[];
+    /** List of attached files. */
+    files: NoteFileData[];
+    /** List of attached images. */
+    images: NoteImageData[];
+    /** List of attached videos. */
+    videos: NoteVideoData[];
+    /** Actual 'File' objects for attached files, keyed by UUID. */
+    fileObjects: Record<string, File>;
+    /** Actual 'File' objects for attached images, keyed by UUID. */
+    imageObjects: Record<string, File>;
+}`,
   t1060: `Global setup: customize VanillanoteConfig in hisonConfig`,
   c1060:
 `// src/main.ts (example)
@@ -151,6 +255,28 @@ const vanillanoteConfig = getVanillanoteConfig()
 vanillanoteConfig.useGoogleIcon = true
 vanillanoteConfig.beforeAlert = (msg) => { return true }
 vanillanoteConfig.languageSet.ENG.boldTooltip = 'Bold'
+
+// change FontAwesome icon
+function getFontAwesome(oldEl, iconType, iconId, cssText) {
+  let newEl = document.createElement('i');
+  for (let i = 0; i < oldEl.attributes.length; i++) {
+    const attr = oldEl.attributes[i];
+    newEl.setAttribute(attr.name, attr.value);
+  }
+  newEl.classList.remove('material-symbols-rounded');
+  newEl.classList.add(iconType);
+  newEl.classList.add(iconId);
+  if(cssText) {
+    newEl.setAttribute('style', cssText)
+  }
+  return newEl;
+};
+vn.elements.paragraphStyleSelects[0].replaceChild(
+  getFontAwesome(vn.elements.paragraphStyleSelects[0].firstChild, 'fas', 'fa-paragraph'),
+  vn.elements.paragraphStyleSelects[0].firstChild,
+);
+
+//....logic
 
 // Inject into hisonConfig (⚠️ ComponentConfig.note is VanillanoteConfig)
 hisonConfig.ComponentConfig.note = vanillanoteConfig
@@ -689,20 +815,22 @@ const mountMethodGrid = (grid: HGridMethods) =>
       textarea-height="260px"
     />
     <HGap/>
-
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
-
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
     <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
-
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
-
+    <HGap/>
+    <HParagraph class="hison-col-12">{{ contents.t1055 }}</HParagraph>
+    <CodeParagraph :code="contents.c1055" :dynamicWidth="false"/>
     <!-- hisonConfig + VanillanoteConfig -->
+     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1060 }}</HParagraph>
     <CodeParagraph :code="contents.c1060" :dynamicWidth="false"/>
-
     <!-- Slots -->
+     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="noteSlotGrid"

@@ -12,8 +12,15 @@ const ko = {
 HLayout은 표시/배경/보더/높이/배경이미지를 런타임 메서드로 제어할 수 있는
 컨테이너입니다. hison-col-*, hison-pos-* 클래스와 함께 반응형 그리드를 구성합니다.`,
   live: '라이브 데모',
-  codeTitle: '런타임 사용 예',
-  code:
+  code1Title: '템플릿 사용 예',
+  code1:
+`<HLayout
+  class="hison-col-12-pc hison-col-6-mb"
+>
+  <!-- slots -->
+</HLayout>`,
+  code2Title: '런타임 사용 예',
+  code2:
 `const layout = hison.component.getLayout('layout-demo')
 layout.setVisible(true)
 layout.setBackColor('#f7f7f7')       // 또는 'primary' 같은 테마 키
@@ -48,8 +55,15 @@ const en = {
 HLayout lets you control visibility, background, border, height and background image
 via runtime methods. Works with hison-col-* / hison-pos-* responsive classes.`,
   live: 'Live Demo',
-  codeTitle: 'Runtime usage example',
-  code:
+  code1Title: 'Template Example',
+  code1:
+`<HLayout
+  class="hison-col-12-pc hison-col-6-mb"
+>
+  <!-- slots -->
+</HLayout>`,
+  code2Title: 'Runtime usage example',
+  code2:
 `const layout = hison.component.getLayout('layout-demo')
 layout.setVisible(true)
 layout.setBackColor('#f7f7f7')       // or theme key like 'primary'
@@ -250,8 +264,12 @@ const mountMethodGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? method
     </HLayout>
 
     <HGap />
-    <HCaption :level="6" class="hison-col-12">{{ T.codeTitle }}</HCaption>
-    <CodeParagraph :code="T.code" :dynamicWidth="false"/>
+    <HCaption :level="6" class="hison-col-12">{{ T.code1Title }}</HCaption>
+    <CodeParagraph :code="T.code1" :dynamicWidth="false"/>
+
+    <HGap />
+    <HCaption :level="6" class="hison-col-12">{{ T.code2Title }}</HCaption>
+    <CodeParagraph :code="T.code2" :dynamicWidth="false"/>
 
     <HGap />
     <HCaption :level="6" class="hison-col-12">{{ T.slots }}</HCaption>

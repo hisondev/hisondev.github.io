@@ -40,6 +40,46 @@ chart.update()
 chart.setVisible(false)
 chart.setLoadDelay(1000)
 chart.reload()`,
+  t1060: `연관 Interface`,
+  c1060:
+`/**
+ * TData는 데이터 포인트 유형을 나타냅니다. 지정하지 않으면 차트 유형에 따라 기본값이 제공됩니다.
+ * TLabel은 레이블 유형을 나타냅니다.
+ */
+export interface ChartData<
+  TType extends ChartType = ChartType,
+  TData = DefaultDataPoint<TType>,
+  TLabel = unknown
+> {
+  labels?: TLabel[];
+  xLabels?: TLabel[];
+  yLabels?: TLabel[];
+  datasets: ChartDataset<TType, TData>[];
+}
+
+export type ChartType = keyof ChartTypeRegistry;
+
+export type ChartOptions<TType extends ChartType = ChartType> = Exclude<
+DeepPartial<
+CoreChartOptions<TType> &
+ElementChartOptions<TType> &
+PluginChartOptions<TType> &
+DatasetChartOptions<TType> &
+ScaleChartOptions<TType> &
+ChartTypeRegistry[TType]['chartOptions']
+>,
+DeepPartial<unknown[]>
+>
+
+export type ChartDataset<
+  TType extends ChartType = ChartType,
+  TData = DefaultDataPoint<TType>
+> = DeepPartial<
+{ [key in ChartType]: { type: key } & ChartTypeRegistry[key]['datasetOptions'] }[TType]
+> & ChartDatasetProperties<TType, TData>;
+
+//자세한 사항은 Chart.js를 참조해 주세요.
+`,
   t1100: `slot`,
   t1200: `props`,
   t1300: `event emit`,
@@ -81,6 +121,47 @@ chart.update()
 chart.setVisible(false)
 chart.setLoadDelay(1000)
 chart.reload()`,
+  t1060: `Related Interface`,
+  c1060:
+`/**
+ * TData represents the data point type. If unspecified, a default is provided
+ *   based on the chart type.
+ * TLabel represents the label type
+ */
+export interface ChartData<
+  TType extends ChartType = ChartType,
+  TData = DefaultDataPoint<TType>,
+  TLabel = unknown
+> {
+  labels?: TLabel[];
+  xLabels?: TLabel[];
+  yLabels?: TLabel[];
+  datasets: ChartDataset<TType, TData>[];
+}
+
+export type ChartType = keyof ChartTypeRegistry;
+
+export type ChartOptions<TType extends ChartType = ChartType> = Exclude<
+DeepPartial<
+CoreChartOptions<TType> &
+ElementChartOptions<TType> &
+PluginChartOptions<TType> &
+DatasetChartOptions<TType> &
+ScaleChartOptions<TType> &
+ChartTypeRegistry[TType]['chartOptions']
+>,
+DeepPartial<unknown[]>
+>
+
+export type ChartDataset<
+  TType extends ChartType = ChartType,
+  TData = DefaultDataPoint<TType>
+> = DeepPartial<
+{ [key in ChartType]: { type: key } & ChartTypeRegistry[key]['datasetOptions'] }[TType]
+> & ChartDatasetProperties<TType, TData>;
+
+//Please see Chart.js for more details.
+`,
   t1100: `slot`,
   t1200: `props`,
   t1300: `event emit`,
@@ -274,11 +355,16 @@ const contents = props.lang === 'en' ? en : ko
     />
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
     <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
-
+    <HGap/>
+    <HParagraph class="hison-col-12">{{ contents.t1060 }}</HParagraph>
+    <CodeParagraph :code="contents.c1060" :dynamicWidth="false"/>
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="chartSlotGrid"

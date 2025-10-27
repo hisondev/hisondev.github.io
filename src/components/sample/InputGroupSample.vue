@@ -790,13 +790,12 @@ function onEditable() {
 
     <HGap/>
     <HParagraph class="hison-col-12">{{ T.demoExplain }}</HParagraph>
-
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1015 }}</HCaption>
     <CodeParagraph :code="T.c1015" :dynamicWidth="false"/>
-
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1020 }}</HCaption>
     <CodeParagraph :code="T.c1020" :dynamicWidth="false"/>
-
     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1100 }}</HCaption>
     <HGrid

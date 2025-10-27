@@ -56,11 +56,230 @@ hison.component.getGrid(id)로 GridMethods 인스턴스를 획득해 조작합�
 grid.load([
   { id: 1, name: 'Alpha', qty: 10 },
   { id: 2, name: 'Beta',  qty: 20 },
-])
+]) //Record<string, any>[] 형태의 타입을 그리드 값으로 받습니다. hison.data.DataModel사용 가능
 grid.setCellValue(0, 'qty', 11)
 const r0 = grid.getRowData(0)
 console.log(r0.name)  // 'Alpha'`,
-
+  t1055: `연관 Interface`,
+  c1055:
+`/**
+ * 컬럼에 대한 설정 정보를 정의합니다.
+ */
+export interface HGridColumn {
+  /**
+   * 필수값입니다. 컬럼의 id입니다.
+   */
+  id: string
+  /**
+   * 컬럼의 이름입니다. null인 경우, 그리드 Id가 자동으로 삽입됩니다.
+   */
+  name?: string
+  /**
+   * 헤더 텍스트 값입니다. 구분자는 ';'를 사용합니다.
+   * 빈 값은 자동으로 병합됩니다.
+   */
+  header?: string
+  /**
+   * 푸터에 값을 삽입합니다. 구분자는 ';'를 사용합니다.
+   * 일반 텍스트: 문자열을 그대로 푸터에 삽입합니다.
+   * $$MAX: 최대값을 계산하여 푸터에 표시합니다.
+   * $$MIN: 최소값을 계산하여 푸터에 표시합니다.
+   * $$SUM: 합계를 계산하여 푸터에 표시합니다.
+   * $$AVG: 평균값을 계산하여 푸터에 표시합니다(null 제외).
+   */
+  footer?: string
+  /**
+   * 컬럼의 타입을 설정합니다.
+   * text: 텍스트 입력 타입. 더블클릭 시 textarea 입력창이 생성됩니다.
+   * number: 숫자 입력 타입. 더블클릭 시 number 입력창이 생성됩니다.
+   * date: 날짜 입력 타입. 더블클릭 시 date 입력창이 생성됩니다.
+   * month: 월 입력 타입. 더블클릭 시 month 입력창이 생성됩니다.
+   * mask: 포맷에 맞는 텍스트 입력 타입. 더블클릭 시 text 입력창이 생성되며 format 속성에 의해 제어됩니다.
+   * select: 선택 입력 타입. 값 입력 시 옵션을 받습니다. 예) [{value:"val1", text:"text1", selected:true}, {value:"val2", text:"text2"}..]
+   * checkbox: 체크박스 타입. grid info의 checkedValue와 일치하면 체크되고, 그렇지 않으면 해제됩니다.
+   * button: 버튼 타입. 삽입된 값이 버튼의 innerText로 표시됩니다. 값이 없으면 버튼이 생성되지 않습니다.
+   * link: a 태그 타입. {text:"text", value:"https://..", target:"_blank"} 형태의 객체를 삽입합니다.
+   *       text는 innerText, value는 href, target은 target 속성으로 설정됩니다.
+   * code: 지정된 코드 외의 값은 가질 수 없고 표시되지 않는 타입입니다.
+   *       nullValue가 코드 목록에 없으면 허용되지 않으며, 빈 값은 default-code로 저장됩니다.
+   */
+  dataType?: string
+  /**
+   * untarget이 true이면, 이 컬럼의 셀은 선택할 수 없습니다.
+   */
+  untarget?: boolean
+  /**
+   * rowMerge가 true이면, 이 컬럼은 위의 셀과 값, 데이터 타입, 포맷이 동일할 경우 행을 병합합니다.
+   */
+  rowMerge?: boolean
+  /**
+   * colMerge가 true이면, 이 컬럼은 앞의 셀과 값, 데이터 타입, 포맷이 동일할 경우 열을 병합합니다.
+   */
+  colMerge?: boolean
+  /**
+   * visible이 false이면, 이 컬럼의 너비는 0이 되며 크기 변경이 불가능합니다(숨김 처리).
+   */
+  visible?: boolean
+  /**
+   * required가 true이면, checkRequired() 메서드를 통해 입력값을 검증할 수 있습니다.
+   */
+  required?: boolean
+  /**
+   * resizable이 false이면, 사용자가 이 컬럼의 너비를 변경할 수 없습니다.
+   */
+  resizable?: boolean
+  /**
+   * 사용자가 이 컬럼에 대해 정렬 기능을 사용할 수 있는지 여부를 설정합니다.
+   */
+  sortable?: boolean
+  /**
+   * 사용자가 이 컬럼에 대해 필터링 기능을 사용할 수 있는지 여부를 설정합니다.
+   */
+  filterable?: boolean
+  /**
+   * 컬럼의 너비를 설정합니다. cssText 형식으로 입력합니다.
+   * 숫자만 입력할 경우 단위는 'px'입니다.
+   */
+  width?: string
+  /**
+   * 이 컬럼의 select 박스 너비를 설정합니다. cssText 형식으로 입력합니다.
+   * 단위는 px 또는 %만 사용할 수 있습니다.
+   */
+  selectSize?: string
+  /**
+   * locked가 true이면, 이 컬럼의 셀은 변경할 수 없습니다.
+   */
+  locked?: boolean
+  /**
+   * lockedColor가 true이면, locked 상태일 때 해당 셀의 배경색이 표시됩니다.
+   */
+  lockedColor?: boolean
+  /**
+   * data-type이 mask, number인 컬럼의 포맷을 설정합니다.
+   *
+   * Mask 형식:
+   * A: 대문자, a: 소문자, 9: 숫자, 그 외: 일치하는 문자.
+   * 예) format: "AAA-991", value: "ABC-123456" => 결과: "ABC-12"
+   *
+   * 숫자 형식:
+   * 정수부:
+   * "#,###": 천 단위 구분 표시, 0은 null로 표시,
+   * "#,##0": 천 단위 구분 표시, 0은 0으로 표시,
+   * "#": 그대로 표시, 0은 null로 표시,
+   * "0": 그대로 표시, 0은 0으로 표시.
+   * 소수부:
+   * "#": 값이 있을 때 표시,
+   * "0": 값이 없을 때 0으로 표시.
+   * 기타: 앞뒤 문자는 그대로 표시되며 마지막 문자가 "%"이면 백분율로 표시됩니다.
+   *
+   * 예1) format: "#,##0.## $", number: 1234.1234 => 결과: "1,234.12 $"
+   * 예2) format: "0%", number: 0.12 => 결과: "12%"
+   */
+  format?: string
+  /**
+   * data-type이 code인 컬럼에만 유효합니다.
+   * ';'로 구분된 코드를 설정합니다.
+   * 이 컬럼은 지정된 코드 값만 가질 수 있습니다.
+   * 예) "US;KR;JP" => "US", "KR", "JP"만 허용됩니다.
+   */
+  codes?: string
+  /**
+   * data-type이 code인 컬럼에만 유효합니다.
+   * 값이 없을 경우, grid.info의 nullValue 대신 default-code가 기본값으로 사용됩니다.
+   */
+  defaultCode?: string
+  /**
+   * data-type이 text인 컬럼에만 유효합니다.
+   * 입력 가능한 문자열의 최대 길이를 설정합니다. 양의 정수만 입력 가능합니다.
+   */
+  maxLength?: number
+  /**
+   * data-type이 text인 컬럼에만 유효합니다.
+   * 입력 가능한 문자열의 최대 바이트 크기를 설정합니다. 양의 정수만 입력 가능합니다.
+   *
+   * 바이트 크기 기준은 다음과 같습니다.
+   * vg.lessoreq0x7ffByte: charCode ≤ 0x7FF, 기본값 2 (영문 등 일반 기호, UTF-8 기준)
+   * vg.lessoreq0xffffByte: charCode ≤ 0xFFFF, 기본값 3 (추가 라틴 문자 등, UTF-8 기준)
+   * vg.greater0xffffByte: charCode > 0xFFFF, 기본값 4 (이모지, 한글, 한자, 일본어 등, UTF-8 기준)
+   */
+  maxByte?: number
+  /**
+   * data-type이 number인 컬럼에만 유효합니다.
+   * 입력 가능한 최대값을 설정합니다. 초과 시 최대값으로 저장됩니다.
+   * 숫자만 입력 가능합니다.
+   */
+  maxNumber?: number
+  /**
+   * data-type이 number인 컬럼에만 유효합니다.
+   * 입력 가능한 최소값을 설정합니다. 미만 시 최소값으로 저장됩니다.
+   * 숫자만 입력 가능합니다.
+   */
+  minNumber?: number
+  /**
+   * data-type이 number인 컬럼에만 유효합니다.
+   * 반올림 위치를 지정합니다.
+   * 양의 정수: 소수점 이하 반올림 자리 지정.
+   * 음의 정수: 정수부 반올림 자리 지정.
+   * 예) roundNumber: 2, number: 1234.1234 => 결과: 1234.12
+   * 예) roundNumber: -2, number: 1234.1234 => 결과: 1200
+   */
+  roundNumber?: number
+  /**
+   * 컬럼의 수평 정렬을 설정합니다.
+   * 'left', 'center', 'right' 중 하나를 선택합니다.
+   * 지정하지 않으면 데이터 타입에 따라 기본 정렬이 결정됩니다.
+   * text, mask: left / number: right / date, month, code, select, checkbox, button, link: center
+   */
+  align?: GridAlign | GridAlignValue
+  /**
+   * 컬럼의 수직 정렬을 설정합니다.
+   * 'top', 'center', 'bottom' 중 하나를 선택합니다.
+   * 지정하지 않으면 기본값은 center입니다.
+   */
+  verticalAlign?: GridVerticalAlign | GridVerticalAlignValue
+  /**
+   * 컬럼의 기본 overflow-wrap 속성을 설정합니다.
+   * cssText 형식으로 입력합니다.
+   */
+  overflowWrap?: string
+  /**
+   * 컬럼의 기본 word-break 속성을 설정합니다.
+   * cssText 형식으로 입력합니다.
+   */
+  wordBreak?: string
+  /**
+   * 컬럼의 기본 white-space 속성을 설정합니다.
+   * cssText 형식으로 입력합니다.
+   */
+  whiteSpace?: string
+  /**
+   * 컬럼의 배경색을 설정합니다.
+   * 16진수 색상 코드(cssText)를 입력합니다. 예) "#ffffff"
+   */
+  backColor?: string
+  /**
+   * 컬럼의 글자색을 설정합니다.
+   * 16진수 색상 코드(cssText)를 입력합니다. 예) "#ffffff"
+   */
+  fontColor?: string
+  /**
+   * fontBold가 true이면, 이 컬럼 셀의 텍스트가 굵게 표시됩니다.
+   */
+  fontBold?: boolean
+  /**
+   * fontItalic이 true이면, 이 컬럼 셀의 텍스트가 이탤릭체로 표시됩니다.
+   */
+  fontItalic?: boolean
+  /**
+   * fontThruline이 true이면, 이 컬럼 셀의 텍스트에 취소선이 표시됩니다.
+   */
+  fontThruline?: boolean
+  /**
+   * fontUnderline이 true이면, 이 컬럼 셀의 텍스트에 밑줄이 표시됩니다.
+   */
+  fontUnderline?: boolean
+}`,
+  t1056: `※ 그리드는 컬럼을 지정해야 하며 HGridColumn interface type으로 삽입 가능합니다.`,
   // hisonConfig + VanillagridConfig
   t1060: `전역 설정: hisonConfig에 VanillagridConfig 커스터마이징`,
   c1060:
@@ -157,11 +376,197 @@ calling hison.component.getGrid(id).`,
 grid.load([
   { id: 1, name: 'Alpha', qty: 10 },
   { id: 2, name: 'Beta',  qty: 20 },
-])
+])//The grid value receives a type in the form of Record<string, any>[]. You can use hison.data.DataModel.
 grid.setCellValue(0, 'qty', 11)
 const r0 = grid.getRowData(0)
 console.log(r0.name)  // 'Alpha'`,
-
+  t1055: `Related Interface`,
+  c1055:
+`/**
+ * This is config about the column.
+ */
+export interface HGridColumn {
+  /**
+   * Required value. It is the id of the column.
+   */
+  id: string
+  /**
+   * The name of the column. If null, the grid Id is inserted.
+   */
+  name?: string
+  /**
+   * Header text value. Use ';' as the delimiter. Empty values are automatically merged.
+   */
+  header?: string
+  /**
+   * Insert the footer using ';' as the delimiter. General text: Insert the string as text in the footer.
+   * $$MAX: Calculate and display the maximum value in the footer.
+   * $$MIN: Calculate and display the minimum value in the footer.
+   * $$SUM: Calculate and display the sum in the footer.
+   * $$AVG: Calculate and display the average in the footer (excluding null).
+   */
+  footer?: string
+  /**
+   * Sets the type of the column.
+   * text: Text input type. A textarea input box is created on double click.
+   * number: Number input type. An input number type is created on double click.
+   * date: Date input type. An input date type is created on double click.
+   * month: Month input type. An input month type is created on double click.
+   * mask: Text input type that matches the format. An input text type is created on double click. Controlled by the format attribute.
+   * select: Input select type. Options are received when inserting values. Ex) [{value:"val1", text:"text1", selected:true},{value:"val2", text:"text2"}..]
+   * checkbox: Input checkbox type. Checked if it matches the checkedValue of the grid info, unchecked otherwise.
+   * button: Button type. The inserted value is displayed as the innerText of the button. If there is no value, the button is not created.
+   * link: a tag. Insert the value as an object in the form {text:"text", value:"https://..", target:"_blank"}. The text is set as innerText, the value as href, and the target as target.
+   * code: A type that cannot have or display values other than the specified codes. If nullValue is not in the codes, it is not allowed. Empty values are stored as default-code.
+   */
+  dataType?: string
+  /**
+   * If untarget is true, the cells in this column cannot be selected.
+   */
+  untarget?: boolean
+  /**
+   * If rowMerge is true, this column merges rows based on the cell above if the value, data-type, and format are the same.
+   */
+  rowMerge?: boolean
+  /**
+   * If colMerge is true, this column merges columns based on the cell in front if the value, data-type, and format are the same.
+   */
+  colMerge?: boolean
+  /**
+   * If visible is false, this column's width becomes 0 and size cannot be changed (hidden).
+   */
+  visible?: boolean
+  /**
+   * If required is true, this column can be checked for input using the checkRequired() method.
+   */
+  required?: boolean
+  /**
+   * If resizable is false, the user cannot change the width size of this column.
+   */
+  resizable?: boolean
+  /**
+   * Indicates whether the user can use the sorting feature for this column.
+   */
+  sortable?: boolean
+  /**
+   * Indicates whether the user can use the filtering feature for this column.
+   */
+  filterable?: boolean
+  /**
+   * The width of the column. Insert cssText. If only a number is entered, the unit is 'px'.
+   */
+  width?: string
+  /**
+   * Sets the select width size for this column. Insert cssText. The unit can only be px or %.
+   */
+  selectSize?: string
+  /**
+   * If locked is true, the cells in this column cannot be changed.
+   */
+  locked?: boolean
+  /**
+   * If lockedColor is true, the cells in this column will display a background color indicating the locked state when locked.
+   */
+  lockedColor?: boolean
+  /**
+   * Sets the format for data-type mask, number.
+   * Mask format: A: Uppercase letter, a: Lowercase letter, 9: Number, others: Matching character.
+   * Ex) format: "AAA-991", value: "ABC-123456" => result: "ABC-12"
+   * 
+   * Number format:
+   * Integer part:
+   * "#,###": Display with thousand separators, 0 is displayed as null, "#,##0": Display with thousand separators,
+   * 0 is displayed as 0, "#": Display as is, 0 is displayed as null, "0": Display as is, 0 is displayed as 0.
+   * Decimal part: "#": Display if present, "0": Display as 0 if not present.
+   * Others: Characters before and after are displayed as is, and if the last character is "%", it is displayed as a percentage.
+   * Ex1) format: "#,##0.## $", number: 1234.1234 => result: "1,234.12 $"
+   * Ex2) format: "0%", number: 0.12 => result: "12%"
+   */
+  format?: string
+  /**
+   * Valid only for columns with data-type code. Sets codes separated by ";". This column can only have the specified code values.
+   * Ex) "US;KR;JP" => Can only have the values "US", "KR", "JP"
+   */
+  codes?: string
+  /**
+   * Valid only for columns with data-type code. If a column with data-type code has no value, the default-code is used as the value instead of grid.info's nullValue.
+   */
+  defaultCode?: string
+  /**
+   * Valid only for columns with data-type text. Sets the maximum string length that can be inserted into the value. Enter only positive integers.
+   */
+  maxLength?: number
+  /**
+   * Valid only for columns with data-type text. Sets the maximum byte size of the string that can be inserted into the value. Enter only positive integers.
+   * Byte size criteria are set with vg.lessoreq0x7ffByte, vg.lessoreq0xffffByte, vg.greater0xffffByte.
+   * lessoreq0x7ffByte: Characters with charCode less than or equal to 0x7FF, default value is 2 (common symbols or English alphabet based on UTF-8).
+   * lessoreq0xffffByte: Characters with charCode less than or equal to 0xFFFF, default value is 3 (additional alphabets such as Latin based on UTF-8).
+   * greater0xffffByte: Characters with charCode greater than 0xFFFF, default value is 4 (emoji, Korean, Chinese, Japanese, etc. based on UTF-8).
+   */
+  maxByte?: number
+  /**
+   * Valid only for columns with data-type number. Sets the maximum value. If a value exceeding this is entered, it is stored as the maximum value. Enter only numbers.
+   */
+  maxNumber?: number
+  /**
+   * Valid only for columns with data-type number. Sets the minimum value. If a value below this is entered, it is stored as the minimum value. Enter only numbers.
+   */
+  minNumber?: number
+  /**
+   * Valid only for columns with data-type number. Specifies the rounding place.
+   * roundNumber positive integer: Specifies the decimal place to round.
+   * roundNumber negative integer: Specifies the integer place to round.
+   * Ex) roundNumber: 2, number: 1234.1234 => result: 1234.12
+   * Ex) roundNumber: -2, number: 1234.1234 => result: 1200
+   */
+  roundNumber?: number
+  /**
+   * Sets the align of the column. Choose from 'left', 'center', 'right'. If no value is specified, the default align follows the data-type.
+   * text, mask: left, number: right, date, month, code, select, checkbox, button, link: center.
+   */
+  align?: GridAlign | GridAlignValue
+  /**
+   * Sets the default vertical-align of the column. Choose from 'top', 'center', 'bottom'. If no value is specified, it defaults to center.
+   */
+  verticalAlign?: GridVerticalAlign | GridVerticalAlignValue
+  /**
+   * Sets the default overflow-wrap of the column. Enter the overflow-wrap in cssText.
+   */
+  overflowWrap?: string
+  /**
+   * Sets the default word-break of the column. Enter the word-break in cssText.
+   */
+  wordBreak?: string
+  /**
+   * Sets the default white-space of the column. Enter the white-space in cssText.
+   */
+  whiteSpace?: string
+  /**
+   * Sets the background color of the column. Insert the 16-digit color code in cssText. Ex) "#ffffff"
+   */
+  backColor?: string
+  /**
+   * Sets the font color of the column. Insert the 16-digit color code in cssText. Ex) "#ffffff"
+   */
+  fontColor?: string
+  /**
+   * If fontBold is true, the innerText of the column's cells will be bold.
+   */
+  fontBold?: boolean
+  /**
+   * If fontItalic is true, the innerText of the column's cells will be italic.
+   */
+  fontItalic?: boolean
+  /**
+   * If fontThruline is true, the innerText of the column's cells will have a strikethrough.
+   */
+  fontThruline?: boolean
+  /**
+   * If fontUnderline is true, the innerText of the column's cells will be underlined.
+   */
+  fontUnderline?: boolean
+}`,
+  t1056: `※ The grid must specify columns and can be inserted with the HGridColumn interface type.`,
   t1060: `Global setup: customize VanillagridConfig in hisonConfig`,
   c1060:
 `// src/main.ts (example)
@@ -2767,17 +3172,21 @@ const mountMethodGrid = async (grid: HGridMethods) => {
     <HGap/>
 
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
-
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
     <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
-
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
-
+    <HGap/>
+    <HParagraph class="hison-col-12">{{ contents.t1055 }}</HParagraph>
+    <CodeParagraph :code="contents.c1055" :dynamicWidth="false"/>
+    <HParagraph class="hison-col-12">{{ contents.t1056 }}</HParagraph>
+    <HGap/>
     <!-- hisonConfig + VanillagridConfig -->
     <HParagraph class="hison-col-12">{{ contents.t1060 }}</HParagraph>
     <CodeParagraph :code="contents.c1060" :dynamicWidth="false"/>
-
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="gridSlotGrid"

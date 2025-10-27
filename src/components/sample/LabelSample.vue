@@ -29,6 +29,57 @@ lb.mergeAnchorAttrs({ target: '_blank' })
 //[굵게/밑줄/보더/배경] 버튼으로 스타일을 토글할 수 있습니다.
 lb.setFontBold(true)
 lb.setBackgroundType('transparent')`,
+  t1030: `연관 Interface`,
+  c1030:
+`/**
+ * 'HLabel' 내부의 '<a>' 요소에 바인딩할 수 있는 추가 속성을 정의합니다.
+ *
+ * 표준 HTML 앵커(<a>) 속성과 ARIA 접근성 속성에 직접 매핑됩니다.
+ * 접근성 향상 및 고급 링크 동작을 위한 유연성을 제공합니다.
+ *
+ * @example
+ * {
+ *   target: '_blank',
+ *   rel: 'noopener noreferrer',
+ *   download: true,
+ *   hreflang: 'en',
+ *   'aria-label': '외부 링크'
+ * }
+ */
+export interface HLabelAnchorAttrs {
+  /** 링크를 열 위치를 지정합니다 ('_self', '_blank', '_parent', '_top' 등) */
+  target?: '_self' | '_blank' | '_parent' | '_top' | (string & {});
+  /** 링크 대상 객체와의 관계를 지정합니다 (예: '"noopener noreferrer"') */
+  rel?: string;
+  /** 다운로드용 링크로 표시하며, 파일명을 지정할 수도 있습니다 */
+  download?: boolean | string;
+  /** 연결된 리소스의 언어를 지정합니다 (예: '"en"', '"ko"') */
+  hreflang?: string;
+  /** 요청 시 참조 정보(referrer)에 대한 정책을 지정합니다 */
+  referrerpolicy?:
+    | 'no-referrer'
+    | 'no-referrer-when-downgrade'
+    | 'origin'
+    | 'origin-when-cross-origin'
+    | 'same-origin'
+    | 'strict-origin'
+    | 'strict-origin-when-cross-origin'
+    | 'unsafe-url';
+  /** 연결된 리소스의 MIME 타입을 지정합니다 */
+  type?: string;
+  /** 링크 클릭 시 알림을 보낼 URL들을 공백으로 구분하여 지정합니다 */
+  ping?: string;
+  /** 접근성을 위한 ARIA 역할을 지정합니다 */
+  role?: string;
+  /** 키보드 탐색 시 탭 순서를 지정합니다 */
+  tabindex?: number;
+  /** 스크린 리더에서 읽을 수 있는 접근성 라벨 텍스트 */
+  'aria-label'?: string;
+  /** 관련 링크 집합 내에서 현재 항목을 나타냅니다 */
+  'aria-current'?: 'page' | 'step' | 'location' | 'date' | 'time' | boolean;
+  /** 그 외 사용자 정의 속성을 추가할 수 있습니다 */
+  [key: string]: unknown;
+}`,
   t1100: 'slot',
   t1200: 'props',
   t1300: 'events',
@@ -59,6 +110,57 @@ lb.mergeAnchorAttrs({ target: '_blank' })
 //Toggle bold/underline/border/background with the style buttons.
 lb.setFontBold(true)
 lb.setBackgroundType('transparent')`,
+  t1030: `Related Interface`,
+  c1030:
+`/**
+ * Defines additional attributes that can be bound to an '<a>' element in 'HLabel'.
+ *
+ * These map directly to standard HTML anchor attributes plus ARIA support.
+ * Provides flexibility for accessibility and advanced link behavior.
+ *
+ * @example
+ * {
+ *   target: '_blank',
+ *   rel: 'noopener noreferrer',
+ *   download: true,
+ *   hreflang: 'en',
+ *   'aria-label': 'External link'
+ * }
+ */
+export interface HLabelAnchorAttrs {
+  /** Where to display the linked URL ('_self', '_blank', '_parent', '_top', etc.) */
+  target?: '_self' | '_blank' | '_parent' | '_top' | (string & {});
+  /** Relationship of the target object (e.g., '"noopener noreferrer"') */
+  rel?: string;
+  /** Marks link for download; may specify filename */
+  download?: boolean | string;
+  /** Language of the linked resource (e.g., '"en"', '"ko"') */
+  hreflang?: string;
+  /** Referrer policy for the request */
+  referrerpolicy?:
+    | 'no-referrer'
+    | 'no-referrer-when-downgrade'
+    | 'origin'
+    | 'origin-when-cross-origin'
+    | 'same-origin'
+    | 'strict-origin'
+    | 'strict-origin-when-cross-origin'
+    | 'unsafe-url';
+  /** MIME type of the linked resource */
+  type?: string;
+  /** Space-separated URLs to notify when link is clicked */
+  ping?: string;
+  /** ARIA role for accessibility */
+  role?: string;
+  /** Tab order index for keyboard navigation */
+  tabindex?: number;
+  /** Accessible label text */
+  'aria-label'?: string;
+  /** Indicates the current item within a set of related links */
+  'aria-current'?: 'page' | 'step' | 'location' | 'date' | 'time' | boolean;
+  /** Any additional custom attribute */
+  [key: string]: unknown;
+}`,
   t1100: 'slot',
   t1200: 'props',
   t1300: 'events',
@@ -237,9 +339,12 @@ const mountMethodGrid = async (grid: HGridMethods) => {
     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1010 }}</HCaption>
     <CodeParagraph :code="T.c1010" :dynamicWidth="false"/>
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1020 }}</HCaption>
     <CodeParagraph :code="T.c1020" :dynamicWidth="false"/>
-
+    <HGap/>
+    <HCaption :level="6" class="hison-col-12">{{ T.t1030 }}</HCaption>
+    <CodeParagraph :code="T.c1030" :dynamicWidth="false"/>
     <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ T.t1100 }}</HCaption>
     <HGrid

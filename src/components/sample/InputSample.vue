@@ -728,16 +728,16 @@ const mountInputTypeGrid = async (grid: HGridMethods) => {
 
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
-
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1040 }}</HCaption>
     <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
-
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1050 }}</HCaption>
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
-
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1060 }}</HCaption>
     <CodeParagraph :code="contents.c1060" :dynamicWidth="false"/>
-
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="inputSlotGrid"

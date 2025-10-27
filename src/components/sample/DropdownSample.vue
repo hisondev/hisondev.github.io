@@ -57,6 +57,47 @@ dd.setMaxHeight(180)
 dd.setAnimate(true)
 dd.setDuration(500)
 dd.setEasing('ease-in-out')`,
+  t1060: `연관 Interface`,
+  c1060:
+`/**
+ * 'HDropdown'에서 선택 가능한 옵션을 정의합니다.
+ *
+ * 각 옵션은 사용자에게 표시되는 'label'과 프로그램에서 사용되는 'value'를 가집니다.
+ * 선택적으로 'disabled'를 설정하면 항목은 표시되지만 선택할 수 없습니다.
+ *
+ * @example
+ * { label: '한국', value: 'KR' }
+ */
+export interface HDropdownOption {
+  /** 드롭다운 메뉴에 표시되는 텍스트 */
+  label: string
+  /** 이 옵션과 연결된 프로그램용 값 */
+  value: any
+  /** true일 경우, 항목은 표시되지만 선택할 수 없습니다 */
+  disabled?: boolean
+}
+
+/**
+ * 'HDropdown'의 v-model 페이로드입니다.
+ *
+ * 현재 선택된 'value'와 전체 'options' 목록을 포함합니다.
+ * 양방향 바인딩 및 런타임 업데이트에 사용됩니다.
+ *
+ * @example
+ * {
+ *   value: 'KR',
+ *   options: [
+ *     { label: '한국', value: 'KR' },
+ *     { label: '일본', value: 'JP' }
+ *   ]
+ * }
+ */
+export interface HDropdownModel {
+  /** 현재 선택된 옵션의 값 */
+  value: any
+  /** 선택 가능한 전체 옵션 목록 */
+  options: HDropdownOption[]
+}`,
   t1100: `slot`,
   t1200: `props`,
   t1300: `event emit`,
@@ -115,6 +156,47 @@ dd.setMaxHeight(180)
 dd.setAnimate(true)
 dd.setDuration(500)
 dd.setEasing('ease-in-out')`,
+  t1060: `Related Interface`,
+  c1060:
+`/**
+ * Defines a selectable option in 'HDropdown'.
+ *
+ * Each option has a 'label' (shown to user) and 'value' (programmatic).
+ * Optional 'disabled' makes the item visible but not selectable.
+ *
+ * @example
+ * { label: 'Korea', value: 'KR' }
+ */
+export interface HDropdownOption {
+  /** Display text shown in the dropdown menu */
+  label: string
+  /** Programmatic value associated with this option */
+  value: any
+  /** If true, option is visible but cannot be selected */
+  disabled?: boolean
+}
+
+/**
+ * v-model payload for 'HDropdown'.
+ *
+ * Contains the current 'value' and the list of 'options'.
+ * Used for two-way binding and runtime updates.
+ *
+ * @example
+ * {
+ *   value: 'KR',
+ *   options: [
+ *     { label: 'Korea', value: 'KR' },
+ *     { label: 'Japan', value: 'JP' }
+ *   ]
+ * }
+ */
+export interface HDropdownModel {
+  /** Currently selected option value */
+  value: any
+  /** Full list of selectable options */
+  options: HDropdownOption[]
+}`,
   t1100: `slot`,
   t1200: `props`,
   t1300: `event emit`,
@@ -347,11 +429,16 @@ const contents = props.lang === 'en' ? en : ko
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
     <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
-
+    <HGap/>
+    <HParagraph class="hison-col-12">{{ contents.t1060 }}</HParagraph>
+    <CodeParagraph :code="contents.c1060" :dynamicWidth="false"/>
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="dropdownSlotGrid"

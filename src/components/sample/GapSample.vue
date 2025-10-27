@@ -241,11 +241,13 @@ const contents = props.lang === 'en' ? en : ko
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
     <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
-
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="gapSlotGrid"

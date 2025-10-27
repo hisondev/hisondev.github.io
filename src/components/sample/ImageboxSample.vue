@@ -63,6 +63,53 @@ const addBtn = hison.component.getButton(\`hison_imagebox_add_button_\${'profile
 const rmBtn  = hison.component.getButton(\`hison_imagebox_remove_button_\${'profileImage'}\`)
 addBtn.setDisable(true)
 rmBtn.setDisable(true)`,
+  t1060: `관련 Interface`,
+  c1060:
+`/**
+ * HFileset, HImagebox 컴포넌트에 첨부된 파일 항목을 나타냅니다.
+ * 
+ * 이 인터페이스는 서버에서 제공된 파일(이미 업로드된 파일)과
+ * 입력 또는 드래그 앤 드롭으로 새로 선택된 파일 모두를 표현하는 데 사용됩니다.
+ */
+export interface AttachedFileItem {
+  /**
+   * 서버에 저장된 파일의 고유 식별자입니다.
+   * DB에 저장된 기존 파일을 구분하는 데 사용됩니다.
+   */
+  fileId?: string;
+  /**
+   * 파일의 표시 이름(확장자 포함)입니다.
+   */
+  fileName: string;
+  /**
+   * 파일의 크기(바이트 단위)입니다.
+   * 서버에서 로드된 파일의 경우 제공되지 않을 수도 있습니다.
+   */
+  fileSize?: number;
+  /**
+   * 서버에서 파일을 다운로드할 수 있는 경로 또는 URL입니다.
+   */
+  filePath?: string;
+  /**
+   * 파일 확장자입니다. 예: 'pdf', 'jpg', 'docx'.
+   * 제공되지 않은 경우 'fileName'에서 자동으로 추출됩니다.
+   */
+  extension?: string;
+  /**
+   * 네이티브 File 객체입니다. (입력 또는 드래그 앤 드롭으로 선택된 경우)
+   * 새로 업로드된 파일에만 존재합니다.
+   */
+  file?: File;
+  /**
+   * 사용자가 새로 추가한 파일인지 여부를 나타냅니다.
+   */
+  isNew?: boolean;
+  /**
+   * 삭제 대상으로 표시된 파일인지 여부를 나타냅니다.
+   * 삭제된 파일은 화면의 파일 목록에 표시되지 않습니다.
+   */
+  isDeleted?: boolean;
+}`,
   t1100: `slot`,
   t1200: `props`,
   t1300: `event emit`,
@@ -126,6 +173,53 @@ const addBtn = hison.component.getButton(\`hison_imagebox_add_button_\${'profile
 const rmBtn  = hison.component.getButton(\`hison_imagebox_remove_button_\${'profileImage'}\`)
 addBtn.setDisable(true)
 rmBtn.setDisable(true)`,
+  t1060: `Related Interface`,
+  c1060:
+`/**
+ * Represents a file item attached to the HFileset, HImagebox component.
+ * 
+ * This interface is used to describe both server-provided files (already uploaded)
+ * and new files selected via input or drag-and-drop.
+ */
+export interface AttachedFileItem {
+  /**
+   * Unique identifier of the file from the server.
+   * Used to distinguish pre-existing files stored in the DB.
+   */
+  fileId?: string;
+  /**
+   * Display name of the file (including extension).
+   */
+  fileName: string;
+  /**
+   * Size of the file in bytes.
+   * This may be undefined for server-loaded files unless provided.
+   */
+  fileSize?: number;
+  /**
+   * Path or URL to download the file from the server.
+   */
+  filePath?: string;
+  /**
+   * File extension, such as 'pdf', 'jpg', 'docx'.
+   * This is automatically extracted from 'fileName' if not provided.
+   */
+  extension?: string;
+  /**
+   * Native File object (from input or drag-and-drop).
+   * Exists only for newly uploaded files.
+   */
+  file?: File;
+  /**
+   * Indicates whether this file was newly added by the user.
+   */
+  isNew?: boolean;
+  /**
+   * Indicates whether this file has been marked for deletion.
+   * Deleted files will not appear in the visible file list.
+   */
+  isDeleted?: boolean;
+}`,
   t1100: `slot`,
   t1200: `props`,
   t1300: `event emit`,
@@ -355,11 +449,16 @@ const contents = props.lang === 'en' ? en : ko
     <HParagraph class="hison-col-12">{{ contents.t1010 }}</HParagraph>
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
     <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
-
+    <HGap/>
+    <HParagraph class="hison-col-12">{{ contents.t1060 }}</HParagraph>
+    <CodeParagraph :code="contents.c1060" :dynamicWidth="false"/>
+    <HGap/>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid
       id="imageboxSlotGrid"

@@ -51,6 +51,90 @@ calendar.setSelectedDate('2025-07-01')
 calendar.setEvents([{ start: '2025-07-02', end: '2025-07-02', title: 'Meeting' }])
 calendar.setTimeFormat('HH:mm')
 calendar.setActiveView('week')`,
+  t1055: `관련 Interface`,
+  c1055:
+`/**
+ * 특정 요일의 특별한 시간 구간을 정의합니다.
+ * 점심시간, 점검 시간 등 특정 시간대를 강조 표시할 때 사용되며,
+ * 해당 구간에 사용자 정의 배경색이나 클래스를 적용할 수 있습니다.
+ *
+ * - 시간 단위는 자정(0분) 기준 **분 단위(0–1440)** 입니다.
+ * - 'className'을 사용하여 해당 시간 구간에 특정 CSS 스타일을 적용할 수 있습니다.
+ *
+ * @example
+ * {
+ *   from: 12 * 60,     // 12:00 PM
+ *   to: 13 * 60,       // 1:00 PM
+ *   className: 'lunch-time'
+ * }
+ */
+export type HCalendarSpecialTime = {
+  from: number
+  to: number
+  className?: string
+}
+
+/**
+ * 요일별로 특별한 시간 구간을 매핑합니다.
+ * 각 요일에 대해 사용자 정의 시간대(스타일 포함)를 지정할 수 있습니다.
+ *
+ * - 키 값은 0(일요일)부터 6(토요일)까지입니다.
+ * - 값은 'HCalendarSpecialTime' 객체 배열입니다.
+ *
+ * @example
+ * {
+ *   1: [ { from: 720, to: 780, className: 'meeting-block' } ],  // 월요일 12:00–13:00
+ *   5: [ { from: 1080, to: 1140 } ]                             // 금요일 18:00–19:00
+ * }
+ */
+export type HCalendarSpecialTimeMap =  { [key in DayOfWeek]?: HCalendarSpecialTime[] }
+
+/**
+ * 달력에 표시되는 이벤트(일정)를 정의합니다.
+ *
+ * 'start'와 'end' 필드는 날짜 문자열(예: '2025-06-16 10:00') 또는 JavaScript 'Date' 객체를 모두 지원합니다.
+ *
+ * 선택적 필드를 통해 이벤트의 표시 방식이나 상호작용을 제어할 수 있습니다.
+ * 이는 'vue-cal'의 동작과 직접적으로 매핑됩니다.
+ *
+ * @example
+ * {
+ *   start: '2025-07-01 09:00',
+ *   end: '2025-07-01 10:30',
+ *   title: '팀 미팅',
+ *   background: true,
+ *   deletable: true,
+ *   class: 'event-blue'
+ * }
+ */
+export type HCalendarEvent = {
+  start: Date | string;
+  end: Date | string;
+  title?: string;
+  content?: string;
+  class?: string;
+  /**
+   * true일 경우, 이벤트는 배경 강조 영역으로 처리됩니다.
+   * 블록 형태로 표시되지 않으며, 배경 영역의 색상만 변경됩니다.
+   */
+  background?: boolean;
+  /**
+   * 'vue-cal'의 스케줄 그룹핑 또는 외부 일정 로직과 연결할 때 사용하는 선택적 속성입니다.
+   */
+  schedule?: number;
+  /**
+   * true일 경우, 이벤트는 특정 시간이 아닌 하루 종일 지속되는 일정으로 표시됩니다.
+   */
+  allDay?: boolean;
+  /**
+   * true일 경우, 사용자가 이 이벤트를 삭제할 수 있습니다.
+   */
+  deletable?: boolean;
+  /**
+   * true일 경우, 사용자가 이 이벤트의 크기를 조절할 수 없습니다.
+   */
+  resizable?: boolean;
+}`,
   t1060:
 `호환성 안내
 
@@ -108,6 +192,91 @@ calendar.setSelectedDate('2025-07-01')
 calendar.setEvents([{ start: '2025-07-02', end: '2025-07-02', title: 'Meeting' }])
 calendar.setTimeFormat('HH:mm')
 calendar.setActiveView('week')`,
+  t1055: `Related Interface`,
+  c1055:
+`/**
+ * Defines a special time block on a specific day.
+ * This can be used to highlight time ranges (e.g., lunch breaks, maintenance periods)
+ * with a custom background color or class.
+ *
+ * - Time units are in **minutes** from midnight (0–1440).
+ * - Use 'className' to apply specific CSS styling to that time range.
+ *
+ * @example
+ * {
+ *   from: 12 * 60,     // 12:00 PM
+ *   to: 13 * 60,       // 1:00 PM
+ *   className: 'lunch-time'
+ * }
+ */
+export type HCalendarSpecialTime = {
+  from: number
+  to: number
+  className?: string
+}
+
+/**
+ * Maps days of the week to arrays of special time blocks.
+ * Allows you to specify custom time ranges (with styles) for each day.
+ *
+ * - Keys are 0 (Sunday) through 6 (Saturday).
+ * - Values are arrays of 'HCalendarSpecialTime' entries.
+ *
+ * @example
+ * {
+ *   1: [ { from: 720, to: 780, className: 'meeting-block' } ],  // Monday 12:00–13:00
+ *   5: [ { from: 1080, to: 1140 } ]                             // Friday 18:00–19:00
+ * }
+ */
+export type HCalendarSpecialTimeMap =  { [key in DayOfWeek]?: HCalendarSpecialTime[] }
+
+/**
+ * Defines a calendar event shown on the calendar.
+ *
+ * Supports both formatted date strings (e.g., '2025-06-16 10:00')
+ * and JavaScript 'Date' objects for 'start' and 'end' fields.
+ *
+ * Optional fields can control how the event is rendered or interacted with.
+ * These map directly to 'vue-cal' behavior.
+ *
+ * @example
+ * {
+ *   start: '2025-07-01 09:00',
+ *   end: '2025-07-01 10:30',
+ *   title: 'Team Meeting',
+ *   background: true,
+ *   deletable: true,
+ *   class: 'event-blue'
+ * }
+ */
+export type HCalendarEvent = {
+  start: Date | string;
+  end: Date | string;
+  title?: string;
+  content?: string;
+  class?: string;
+  /**
+   * If true, the event is treated as a background highlight.
+   * Does not display as a block, but colors the background area.
+   */
+  background?: boolean;
+  /**
+   * Optional 'vue-cal' property to group events or apply external schedule logic.
+   */
+  schedule?: number;
+  /**
+   * If true, the event spans the whole day without a specific time.
+   */
+  allDay?: boolean;
+  /**
+   * If true, the user can delete this event.
+   */
+  deletable?: boolean;
+  /**
+   * If true, the user cannot resize this event.
+   */
+  resizable?: boolean;
+}`,
   t1060:
 `Compatibility
 
@@ -446,10 +615,16 @@ const contents = props.lang === 'en' ? en : ko
     />
     <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1030 }}</HParagraph>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1040 }}</HParagraph>
     <CodeParagraph :code="contents.c1040" :dynamicWidth="false"/>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1050 }}</HParagraph>
     <CodeParagraph :code="contents.c1050" :dynamicWidth="false"/>
+    <HGap/>
+    <HParagraph class="hison-col-12">{{ contents.t1055 }}</HParagraph>
+    <CodeParagraph :code="contents.c1055" :dynamicWidth="false"/>
+    <HGap/>
     <HParagraph class="hison-col-12">{{ contents.t1060 }}</HParagraph>
     <HCaption :level="6" class="hison-col-12">{{ contents.t1100 }}</HCaption>
     <HGrid

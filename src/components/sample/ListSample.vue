@@ -17,8 +17,17 @@ const ko = {
 · 마커(불릿/번호), 배경/보더, 포커스 가능(tabIndex), 이벤트 바인딩(addEvent)을 런타임으로 제어할 수 있습니다.`,
   live: '라이브 데모',
   controls: '컨트롤',
-  codeTitle: '런타임 사용 예',
-  code:
+  code1Title: '템플릿 사용 예',
+  code1:
+`<HList
+  id="list-demo"
+  class="hison-col-12 hison-size-m hison-color-primary"
+  :text-list="['Item A', 'Item B', 'Item C', 'Item D', 'Item E', 'Item F', 'Item G']"
+  :list-border="true"
+>
+</HList>`,
+  code2Title: '런타임 사용 예',
+  code2:
 `const list = hison.component.getList('list-demo')
 list.setListType('ol')
 list.setShowMarker(true)
@@ -40,8 +49,17 @@ const en = {
 · Control marker (bullet/index), background/borders, focusability (tabIndex), and event binding (addEvent) at runtime.`,
   live: 'Live Demo',
   controls: 'Controls',
-  codeTitle: 'Runtime usage example',
-  code:
+  code1Title: 'Template Example',
+  code1:
+`<HList
+  id="list-demo"
+  class="hison-col-12 hison-size-m hison-color-primary"
+  :text-list="['Item A', 'Item B', 'Item C', 'Item D', 'Item E', 'Item F', 'Item G']"
+  :list-border="true"
+>
+</HList>`,
+  code2Title: 'Runtime usage example',
+  code2:
 `const list = hison.component.getList('list-demo')
 list.setListType('ol')
 list.setShowMarker(true)
@@ -184,8 +202,12 @@ const mountMethodGrid = (g: HGridMethods) => g.load(props.lang === 'en' ? method
     </HList>
 
     <HGap />
-    <HCaption :level="6" class="hison-col-12">{{ T.codeTitle }}</HCaption>
-    <CodeParagraph :code="T.code" :dynamicWidth="false"/>
+    <HCaption :level="6" class="hison-col-12">{{ T.code1Title }}</HCaption>
+    <CodeParagraph :code="T.code1" :dynamicWidth="false"/>
+
+    <HGap />
+    <HCaption :level="6" class="hison-col-12">{{ T.code2Title }}</HCaption>
+    <CodeParagraph :code="T.code2" :dynamicWidth="false"/>
 
     <HGap />
     <HCaption :level="6" class="hison-col-12">{{ T.slots }}</HCaption>

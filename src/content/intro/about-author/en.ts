@@ -140,30 +140,29 @@ and found my way into the industry. Since then, I’ve been showing up every day
 I find real satisfaction in building a project and watching it come to life.
 Honestly, I enjoy making things so much that a lot of the time, development doesn’t even feel like “work” to me 😂.
 And I fully understand the importance and the reward of solving real problems.`,
-  t2060:
-`Second, I take any job I do very seriously — and I try to be the kind of person people actually enjoy working with.`,
-  t2065:
-`Wherever I work, I try to understand the overall system first.
-Even with a small issue, I look at the bigger structure and try to solve the underlying problem, not just the symptom.
-I’ve had a fair amount of real-world experience, and in every place I’ve worked, my managers have often said things like,
-“You’re genuinely invested in your work — the kind of person we want on our team.”
-To give a few examples:
-During college, while working part-time at a private academy, the director suggested I consider becoming an instructor.
-When I graduated, my department chair told me that if I joined his lab for graduate school, he’d personally help pay off my student loans.
-During my time as an officer, my battalion commander encouraged me to consider staying long-term.
-And as a developer, after working on an ERP modernization project, the project lead asked me to stay on with the operations team —
-and I ended up continuing in that environment on one-year contracts for about five years.`,
-  t2070:
-`Third, I'm a high-return developer when it comes to growth.`,
-  t2075:
-`I didn’t start as a CS major, so my first salary wasn’t high.
-But I improved quickly, earned trust, and within a year I switched to freelance and doubled my income.
-I’ve always been stronger in engineering and problem-solving than in humanities-style work.
-I loved science and systems thinking even as a kid, and I genuinely believe I’m good at understanding how a system works — fast.
-These days I also lean hard on AI to move even faster. For this hisondev project, I made heavy use of ChatGPT and Gemini.
-If I exaggerate a bit: I designed the concept, initial structure, and direction — and the AI helped produce and refine much of the implementation, while I validated and integrated it.
-When I’m chasing a goal, I don’t just follow one path.
-I look for alternative approaches, optimize, and push until the result is real.`,
+t2060:
+`Second, wherever I work, I try to be the kind of teammate people genuinely want to work with.`,
+t2065:
+`I always start by understanding the entire system before diving into individual tasks.
+Even with small issues, I try to identify the root cause rather than just fixing the symptoms, and I actively look for ways to improve the overall structure.
+Through various professional experiences, I’ve often heard from my managers that I’m “genuinely dedicated and someone they enjoy working with.”
+To share a few examples:
+During college, while working part-time at a private academy, the director encouraged me to consider becoming an instructor.
+When I graduated, my department chair told me that if I joined his graduate lab, he would personally pay off my student loans.
+During my military service as an officer, my battalion commander recommended I consider long-term service.
+And as a developer, after participating in an ERP modernization project, the project lead asked me to stay on with the operations team —
+so I continued in that role on one-year contracts for nearly five years.`,
+t2070:
+`Third, I consider myself a developer with great growth efficiency — I learn fast and deliver value quickly.`,
+t2075:
+`I started out as a non-CS major, so my initial salary wasn’t high.
+But I quickly proved my ability, earned trust, and within a year switched to freelance, doubling my income.
+I’ve always been stronger in engineering and analytical thinking than in humanities-oriented fields.
+I loved science and system logic even as a kid, and I’ve always been quick to grasp how things work.
+These days, I make extensive use of AI to achieve faster and more efficient results. In this hisondev project, for example, I used ChatGPT and Gemini heavily.
+To put it simply, I designed the architecture, initial structure, and concept — the AI generated and refined much of the implementation, while I reviewed, integrated, and even regenerated documentation and code comments through AI.
+When pursuing a goal, I explore multiple approaches, think outside the box, and push forward until the result is achieved — often a step ahead of others.`,
+
 
   subhead3:
 `Technical focus. I’m strongest in Java, Spring, TypeScript, working with and understanding the browser DOM, ERP domain knowledge in real-world corporate environments, and especially relational database design and SQL tuning.`,
