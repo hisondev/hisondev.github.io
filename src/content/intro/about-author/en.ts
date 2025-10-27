@@ -40,8 +40,7 @@ Everything is written in TypeScript, so you get full IntelliSense support.
 
 Second, hisonvue is a Vue UI component library.
 It's built on top of hisonjs, and with a single \`npm install hisonvue\`, you can start using both.
-It currently offers 25 core components — including components that are commonly needed in real projects but are usually painful to implement yourself
-(for example, rich text editors, data grids, etc.).
+It currently offers 25 core components — including components that are commonly needed in real projects but are usually painful to implement yourself.
 
 I’ll admit this: I’m a lazy developer. Just to be clear, not lazy about work or responsibility — I’m not that kind of lazy 😂.
 I just absolutely hate writing the same code twice.
@@ -223,10 +222,10 @@ I try to maintain consistent quality and take responsibility for the entire life
   t4020:
 `Team / Title: IT Development Team / Staff Developer`,
   t4030:
-`• Contributed to an ERP modernization project for a major financial institution.
-• Adapted Samsung SDI’s HR management logic into the client's ERP.
-• Performed data migration from legacy systems.
-• Operated and maintained logic for HR management, retiree management, payroll, and year-end tax settlement.`,
+`Contributed to an ERP modernization project for a major financial institution.
+Adapted Samsung SDI’s HR management logic into the client's ERP.
+Performed data migration from legacy systems.
+Operated and maintained logic for HR management, retiree management, payroll, and year-end tax settlement.`,
 
   t4100:
 `Period: Jan 2022 ~ Dec 2022`,
@@ -235,12 +234,12 @@ I try to maintain consistent quality and take responsibility for the entire life
   t4120:
 `Team / Title: IT / Staff Developer`,
   t4130:
-`• Supported the finance, accounting, and HR systems at Samoo Architects & Engineers and participated in ERP modernization.
-• Developed internal financial reports: balance sheet, income statement, P&L per department, project cost/performance dashboards tailored to the company’s internal structure.
-• Built and improved bond/guarantee insurance management screens.
-• Implemented batch download logic for corporate card receipt attachments.
-• Contributed common/reusable modules, designed and improved accounting statement management, and supported integration testing across finance and HR.
-• Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
+`Supported the finance, accounting, and HR systems at Samoo Architects & Engineers and participated in ERP modernization.
+Developed internal financial reports: balance sheet, income statement, P&L per department, project cost/performance dashboards tailored to the company’s internal structure.
+Built and improved bond/guarantee insurance management screens.
+Implemented batch download logic for corporate card receipt attachments.
+Contributed common/reusable modules, designed and improved accounting statement management, and supported integration testing across finance and HR.
+Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
 
   t4200:
 `Period: Jan 2023 ~ Dec 2023`,
@@ -249,12 +248,12 @@ I try to maintain consistent quality and take responsibility for the entire life
   t4220:
 `Team / Title: IT / Staff Developer`,
   t4230:
-`• Operated finance/accounting and subcontractor management systems, plus the external vendor portal, for Samoo Architects & Engineers.
-• Supported ERP systems used by ~1,000 internal users, as well as external partner access.
-• Maintained and enhanced modules across expense management, budgeting, vouchers, financial statements, P&L, treasury/cash flow, and overseas finance.
-• Improved the expense processing workflow: business trip costs, corporate card usage, transportation costs, etc., including account-splitting logic.
-• Built schedulers to validate vendor business registration against the national tax authority and developed automated fund transfer logic for accounts payable.
-• Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
+`Operated finance/accounting and subcontractor management systems, plus the external vendor portal, for Samoo Architects & Engineers.
+Supported ERP systems used by ~1,000 internal users, as well as external partner access.
+Maintained and enhanced modules across expense management, budgeting, vouchers, financial statements, P&L, treasury/cash flow, and overseas finance.
+Improved the expense processing workflow: business trip costs, corporate card usage, transportation costs, etc., including account-splitting logic.
+Built schedulers to validate vendor business registration against the national tax authority and developed automated fund transfer logic for accounts payable.
+Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
 
   t4300:
 `Period: Jan 2024 ~ Dec 2024`,
@@ -263,12 +262,12 @@ I try to maintain consistent quality and take responsibility for the entire life
   t4320:
 `Team / Title: IT / Assistant Manager`,
   t4330:
-`• Continued operations for finance/accounting and subcontractor management systems, including the external partner portal, at Samoo Architects & Engineers.
-• Maintained and improved shared/common source code. Enhanced batch processes, such as automated domestic address registration, and built reusable internal components.
-• Worked closely with business stakeholders to design and implement logic for progress payment terms, vendor performance evaluation, and safety compliance evaluation under industrial accident prevention laws.
-• Developed voucher creation, submission, and approval flows, plus account balance inquiries and settlement-related voucher management.
-• Provided phone support and real-time troubleshooting directly to partner companies using the external portal.
-• Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
+`Continued operations for finance/accounting and subcontractor management systems, including the external partner portal, at Samoo Architects & Engineers.
+Maintained and improved shared/common source code. Enhanced batch processes, such as automated domestic address registration, and built reusable internal components.
+Worked closely with business stakeholders to design and implement logic for progress payment terms, vendor performance evaluation, and safety compliance evaluation under industrial accident prevention laws.
+Developed voucher creation, submission, and approval flows, plus account balance inquiries and settlement-related voucher management.
+Provided phone support and real-time troubleshooting directly to partner companies using the external portal.
+Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
 
   t4400:
 `Period: Jan 2025 ~ Dec 2025`,
@@ -277,10 +276,10 @@ I try to maintain consistent quality and take responsibility for the entire life
   t4420:
 `Team / Title: IT / Assistant Manager`,
   t4430:
-`• Ongoing operation of finance/accounting and subcontractor systems, plus the external vendor portal, for Samoo Architects & Engineers.
-• Tuned queries and improved performance for profit-and-loss views, performance/status dashboards, balance sheet / closing logic, and receivables management screens based on real user requirements.
-• Refactored voucher management logic: unified multiple separate voucher-creation flows across different screens into a single reusable process.
-• Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
+`Ongoing operation of finance/accounting and subcontractor systems, plus the external vendor portal, for Samoo Architects & Engineers.
+Tuned queries and improved performance for profit-and-loss views, performance/status dashboards, balance sheet / closing logic, and receivables management screens based on real user requirements.
+Refactored voucher management logic: unified multiple separate voucher-creation flows across different screens into a single reusable process.
+Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
 
   subhead5:
 `Certifications`,
