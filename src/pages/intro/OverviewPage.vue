@@ -13,7 +13,7 @@ const getKey = () => store.state.lang + getUUID()
 <template>
     <HLayout style="min-height: calc(100vh - 110px);">
         <HGap/>
-        <HCaption class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
+        <HCaption class="hison-col-12 hison-size-s-mb" :key="getKey()">{{ contents.caption }}</HCaption>
         <HGap :line="'horizontal'"/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1000 }}</HParagraph>
         <HGap :line="'horizontal'"/>

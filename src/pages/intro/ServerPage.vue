@@ -17,7 +17,7 @@ const utilsBaggieOnClick = () => { window.open( contents.value.h4000, '_blank', 
 <template>
     <HLayout style="min-height: calc(100vh - 110px);">
         <HGap/>
-        <HCaption class="hison-col-12" :key="getKey()">{{ contents.caption }}</HCaption>
+        <HCaption class="hison-col-12 hison-size-s-mb" :key="getKey()">{{ contents.caption }}</HCaption>
         <HGap :line="'horizontal'"/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1000 }}</HParagraph>
         <HList class="hison-col-12" listItemStyle="margin: 0;">
