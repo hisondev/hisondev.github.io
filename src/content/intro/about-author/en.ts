@@ -26,7 +26,6 @@ All classes defined in data-model and api-link are also fully extendable.
 You can inherit them and adapt them to match your own project's style and rules.
 
 Finally, the utils library is a collection of shared utility methods meant to be genuinely useful in small projects.`,
-
   t1100:
 `Client-side support (hisonjs, hisonvue)`,
   t1110:
@@ -56,7 +55,6 @@ Every hisonvue component can be controlled dynamically at runtime through the \`
 It supports SSR, so it runs in both standard Vue and Nuxt environments.
 In particular, components like HInput and HInputGroup ship with a lot of features focused on data handling and management.
 Because hisonvue extends hisonjs, you also get data modeling, API communication through api-link, utilities, and security — and it all integrates naturally with the backend side (hisonjv).`,
-
   t1200:
 `In the end, hisondev is about increasing developer productivity on both the server side and the client side — and making those two sides work together naturally.
 It's especially helpful for small projects that still care about clean structure and maintainability.
@@ -77,11 +75,9 @@ But I was already plugging in x/y coordinates for characters and monsters, doing
 And even though I didn’t know what calculus was, I remember using curve-like formulas to give each character different stats based on their attributes.
 Looking back now, that still amazes me.
 That’s how deeply I was absorbed in development, even then.`,
-
   t2015:
 `I’d have my friends play what I made, take their feedback, fix things, upload new builds to the community, and share it online.
 That’s probably when I first realized how fun development can be.`,
-
   t2020:
 `Of course, from my strict father’s point of view, what he saw was just his kid sitting in front of a computer all day playing games 😅.
 Eventually I got the “no more computer” ban.
@@ -99,12 +95,10 @@ I don’t regret my major at all. Studying hardware and engineering gave me a mu
 My capstone project was a ‘Doppler-based blood flow velocity measurement device.’
 Our team handled everything end to end: sourcing sensors, designing circuits, programming what was essentially embedded-level logic, driving the device, and measuring signals with an oscilloscope.
 That experience gave me a real sense of what engineering is supposed to be: solving real-world problems in a way that’s both practical and meaningful.`,
-
   t2025:
 `That mindset still shapes the way I work as a developer today.
 I don’t just want to write clever code in isolation like solving a private puzzle.
 I want to talk to real users and stakeholders, understand real problems, and then build code that the whole team can actually use and maintain together.`,
-
   t2030:
 `The third chapter of my developer story is… a hanbok rental business for tourists.
 
@@ -129,44 +123,44 @@ In the end, the business achieved an annual revenue of around 300 million KRW.
 Then COVID-19 hit.
 And a business built almost entirely on tourism… was hit very, very hard.
 That period was honestly tough for me, but —`,
-
   t2033:
 `— that experience is what pushed me toward becoming a professional developer.
 Running that business forced me to build and operate a website, understand SEO, watch traffic data, and improve based on real user behavior.
 That became the bridge that led me fully into software development.`,
-
   t2037:
 `After that, I moved fast. I entered a government-supported training program, completed a full-stack development course,
 and found my way into the industry. Since then, I’ve been showing up every day, building things, and genuinely enjoying it.`,
 
   t2040:
-`In summary:
-
-First, I’m someone who genuinely enjoys development and takes code seriously.
-I think hard about writing code that is as simple as possible — code that future teammates (or whoever inherits it) can actually understand.
+`In summary`,
+  t2050:
+`First, I’m someone who genuinely enjoys development and takes code seriously.`,
+  t2055:
+`I think hard about writing code that is as simple as possible — code that future teammates (or whoever inherits it) can actually understand.
 I find real satisfaction in building a project and watching it come to life.
 Honestly, I enjoy making things so much that a lot of the time, development doesn’t even feel like “work” to me 😂.
-And I fully understand the importance and the reward of solving real problems.
-
-Second, I take any job I do very seriously.
-Wherever I work, I try to understand the overall system first.
+And I fully understand the importance and the reward of solving real problems.`,
+  t2060:
+`Second, I take any job I do very seriously — and I try to be the kind of person people actually enjoy working with.`,
+  t2065:
+`Wherever I work, I try to understand the overall system first.
 Even with a small issue, I look at the bigger structure and try to solve the underlying problem, not just the symptom.
-I’ve had a decent amount of real-world experience, and in most places I’ve worked, managers have told me some version of:
-“You really think about this stuff like it’s your own.”
+I’ve had a fair amount of real-world experience, and in every place I’ve worked, my managers have often said things like,
+“You’re genuinely invested in your work — the kind of person we want on our team.”
 To give a few examples:
 During college, while working part-time at a private academy, the director suggested I consider becoming an instructor.
 When I graduated, my department chair told me that if I joined his lab for graduate school, he’d personally help pay off my student loans.
 During my time as an officer, my battalion commander encouraged me to consider staying long-term.
 And as a developer, after working on an ERP modernization project, the project lead asked me to stay on with the operations team —
-and I ended up continuing in that environment on one-year contracts for about five years.
-
-Third, I consider myself “high value.”
-I didn’t start as a CS major, so my first salary wasn’t high.
+and I ended up continuing in that environment on one-year contracts for about five years.`,
+  t2070:
+`Third, I'm a high-return developer when it comes to growth.`,
+  t2075:
+`I didn’t start as a CS major, so my first salary wasn’t high.
 But I improved quickly, earned trust, and within a year I switched to freelance and doubled my income.
 I’ve always been stronger in engineering and problem-solving than in humanities-style work.
 I loved science and systems thinking even as a kid, and I genuinely believe I’m good at understanding how a system works — fast.
-These days I also lean hard on AI to move even faster.
-For this project, I made heavy use of ChatGPT and Gemini.
+These days I also lean hard on AI to move even faster. For this hisondev project, I made heavy use of ChatGPT and Gemini.
 If I exaggerate a bit: I designed the concept, initial structure, and direction — and the AI helped produce and refine much of the implementation, while I validated and integrated it.
 When I’m chasing a goal, I don’t just follow one path.
 I look for alternative approaches, optimize, and push until the result is real.`,
@@ -226,7 +220,6 @@ I try to maintain consistent quality and take responsibility for the entire life
 Adapted Samsung SDI’s HR management logic into the client's ERP.
 Performed data migration from legacy systems.
 Operated and maintained logic for HR management, retiree management, payroll, and year-end tax settlement.`,
-
   t4100:
 `Period: Jan 2022 ~ Dec 2022`,
   t4110:
@@ -240,7 +233,6 @@ Built and improved bond/guarantee insurance management screens.
 Implemented batch download logic for corporate card receipt attachments.
 Contributed common/reusable modules, designed and improved accounting statement management, and supported integration testing across finance and HR.
 Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
-
   t4200:
 `Period: Jan 2023 ~ Dec 2023`,
   t4210:
@@ -254,7 +246,6 @@ Maintained and enhanced modules across expense management, budgeting, vouchers, 
 Improved the expense processing workflow: business trip costs, corporate card usage, transportation costs, etc., including account-splitting logic.
 Built schedulers to validate vendor business registration against the national tax authority and developed automated fund transfer logic for accounts payable.
 Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
-
   t4300:
 `Period: Jan 2024 ~ Dec 2024`,
   t4310:
@@ -268,7 +259,6 @@ Worked closely with business stakeholders to design and implement logic for prog
 Developed voucher creation, submission, and approval flows, plus account balance inquiries and settlement-related voucher management.
 Provided phone support and real-time troubleshooting directly to partner companies using the external portal.
 Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
-
   t4400:
 `Period: Jan 2025 ~ Dec 2025`,
   t4410:

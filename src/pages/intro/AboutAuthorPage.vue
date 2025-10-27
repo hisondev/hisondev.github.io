@@ -32,6 +32,7 @@ const imgFile: AttachedFileItem = {
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1110 }}</HParagraph>
         <HGap/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1200 }}</HParagraph>
+        <HGap/>
         <HGap :line="'horizontal'"/>
 
         <HCaption  class="hison-col-12" :level="5" :key="getKey()">{{ contents.subhead2 }}</HCaption>
@@ -54,11 +55,21 @@ const imgFile: AttachedFileItem = {
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t2030 }}</HParagraph>
         <HLabel :key="getKey()" class="hison-col-12" :font-bold="true">{{ contents.t2033 }}</HLabel>
         <HLabel :key="getKey()" class="hison-col-12">{{ contents.t2037 }}</HLabel>
+        <HGap/>
+        <HLabel :key="getKey()" class="hison-col-12" :font-bold="true">{{ contents.t2040 }}</HLabel>
+        <HLabel :key="getKey()" class="hison-col-12" :font-bold="true">{{ contents.t2050 }}</HLabel>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t2055 }}</HParagraph>
+        <HLabel :key="getKey()" class="hison-col-12" :font-bold="true">{{ contents.t2060 }}</HLabel>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t2065 }}</HParagraph>
+        <HLabel :key="getKey()" class="hison-col-12" :font-bold="true">{{ contents.t2070 }}</HLabel>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t2075 }}</HParagraph>
+        <HGap/>
         <HGap :line="'horizontal'"/>
 
         <HCaption  class="hison-col-12" :level="5" :key="getKey()">{{ contents.subhead3 }}</HCaption>
         <HGap/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3000 }}</HParagraph>
+        <HGap/>
         <HGap :line="'horizontal'"/>
 
         <HCaption  class="hison-col-12" :level="5" :key="getKey()">{{ contents.subhead4 }}</HCaption>
@@ -94,6 +105,7 @@ const imgFile: AttachedFileItem = {
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4430 }}</HParagraph>
             </HLayout>
         </HList>
+        <HGap/>
         <HGap :line="'horizontal'"/>
 
         <HCaption  class="hison-col-12" :level="5" :key="getKey()">{{ contents.subhead5 }}</HCaption>
@@ -119,6 +131,7 @@ const imgFile: AttachedFileItem = {
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t5320 }}</HParagraph>
             </HLayout>
         </HList>
+        <HGap/>
         <HGap :line="'horizontal'"/>
 
         <HCaption  class="hison-col-12" :level="5" :key="getKey()">{{ contents.subhead6 }}</HCaption>
