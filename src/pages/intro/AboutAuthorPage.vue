@@ -79,30 +79,35 @@ const imgFile: AttachedFileItem = {
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4000 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4010 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4020 }}</HParagraph>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4025 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4030 }}</HParagraph>
             </HLayout>
             <HLayout>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4100 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4110 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4120 }}</HParagraph>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4125 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4130 }}</HParagraph>
             </HLayout>
             <HLayout>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4200 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4210 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4220 }}</HParagraph>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4225 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4230 }}</HParagraph>
             </HLayout>
             <HLayout>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4300 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4310 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4320 }}</HParagraph>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4325 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4330 }}</HParagraph>
             </HLayout>
             <HLayout>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4400 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4410 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4420 }}</HParagraph>
+                <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4425 }}</HParagraph>
                 <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t4430 }}</HParagraph>
             </HLayout>
         </HList>

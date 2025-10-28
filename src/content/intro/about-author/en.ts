@@ -213,11 +213,13 @@ I try to maintain consistent quality and take responsibility for the entire life
   subhead4:
 `Detailed work history`,
   t4000:
-`Period: Nov 2020 ~ Jan 2022`,
+`Period: Nov 2020 ~ Dec 2021`,
   t4010:
 `Company: NextICT Co., Ltd.`,
   t4020:
 `Team / Title: IT Development Team / Staff Developer`,
+  t4025:
+`Employment Type: Full-time`,
   t4030:
 `Contributed to an ERP modernization project for a major financial institution.
 Adapted Samsung SDI’s HR management logic into the client's ERP.
@@ -229,6 +231,8 @@ Operated and maintained logic for HR management, retiree management, payroll, an
 `Company: Korea Softlab`,
   t4120:
 `Team / Title: IT / Staff Developer`,
+  t4125:
+`Employment Type: Freelance`,
   t4130:
 `Supported the finance, accounting, and HR systems at Samoo Architects & Engineers and participated in ERP modernization.
 Developed internal financial reports: balance sheet, income statement, P&L per department, project cost/performance dashboards tailored to the company’s internal structure.
@@ -242,6 +246,8 @@ Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
 `Company: Korea Softlab`,
   t4220:
 `Team / Title: IT / Staff Developer`,
+  t4225:
+`Employment Type: Freelance`,
   t4230:
 `Operated finance/accounting and subcontractor management systems, plus the external vendor portal, for Samoo Architects & Engineers.
 Supported ERP systems used by ~1,000 internal users, as well as external partner access.
@@ -255,6 +261,8 @@ Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
 `Company: Korea Softlab`,
   t4320:
 `Team / Title: IT / Assistant Manager`,
+  t4325:
+`Employment Type: Freelance`,
   t4330:
 `Continued operations for finance/accounting and subcontractor management systems, including the external partner portal, at Samoo Architects & Engineers.
 Maintained and improved shared/common source code. Enhanced batch processes, such as automated domestic address registration, and built reusable internal components.
@@ -268,6 +276,8 @@ Tech stack: Spring, JSP, Oracle, SVN, Jenkins.`,
 `Company: Korea Softlab`,
   t4420:
 `Team / Title: IT / Assistant Manager`,
+  t4425:
+`Employment Type: Freelance`,
   t4430:
 `Ongoing operation of finance/accounting and subcontractor systems, plus the external vendor portal, for Samoo Architects & Engineers.
 Tuned queries and improved performance for profit-and-loss views, performance/status dashboards, balance sheet / closing logic, and receivables management screens based on real user requirements.
