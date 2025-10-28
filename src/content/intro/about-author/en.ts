@@ -64,6 +64,10 @@ It's released under the MIT license, so you're free to use it, extend it, and ha
 `To explain my life as a developer, I actually have to go back to my childhood.`,
   t2000:
 `As a kid, I completely fell in love with a game called “RPG Maker 95”`,
+  t2005:
+`Image source: Alchetron – RPG Maker 95`,
+  h2005:
+`https://alchetron.com/RPG-Maker-95`,
   t2010:
 `The single CD my father bought me pulled me into this world where you could make something from nothing.
 At first I was just making really simple little games. But then I started planning storylines and gameplay concepts on my own,

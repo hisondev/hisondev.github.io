@@ -46,6 +46,7 @@ const imgFile: AttachedFileItem = {
                 :edit-mode="'readonly'"
                 style="max-width: 500px;"
             />
+            <HLabel :key="getKey()" class="hison-col-12 hison-size-s" :text-align="'center'" :font-italic="true" :href="contents.h2005">{{ contents.t2005 }}</HLabel>
         </HLayout>
         <HGap/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t2010 }}</HParagraph>
