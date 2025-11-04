@@ -20,6 +20,7 @@ const props = withDefaults(
         :border="true"
         :copy-enabled="true"
         :show-copy-button="true"
+        :translate="false"
         style="font-family: 'Courier New', Courier, monospace; margin-bottom: 10px;"
     >
         {{ props.code }}
