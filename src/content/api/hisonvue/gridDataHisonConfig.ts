@@ -121,42 +121,42 @@ export const shieldConfigGridDataKo = [
         type: "string",
         default: '""',
         explain:
-        "접근 제한을 적용할 URL입니다.\n이 값이 설정되면 시스템은 현재 위치가 지정된 URL과 일치하는지 확인하며, 일치하지 않으면 접근이 차단될 수 있습니다.\n`shield.excute(hison: Hison)`에서 URL 검증 시 사용됩니다.",
+        "접근 제한을 적용할 URL입니다.\n이 값이 설정되면 시스템은 현재 위치가 지정된 URL과 일치하는지 확인하며, 일치하지 않으면 접근이 차단될 수 있습니다.\n`shield.execute(hison: Hison)`에서 URL 검증 시 사용됩니다.",
     },
     {
         prop: "exposeIpList",
         type: "string[]",
         default: '["0:0:0:0:0:0:0:1"]',
         explain:
-        "보안 제한을 우회할 수 있는 허용된 IP 주소 목록입니다.\nShield 기능이 활성화되면 해당 IP만 접근이 허용됩니다.\n`shield.excute(hison: Hison)`에서 접근 권한 검증 시 사용됩니다.",
+        "보안 제한을 우회할 수 있는 허용된 IP 주소 목록입니다.\nShield 기능이 활성화되면 해당 IP만 접근이 허용됩니다.\n`shield.execute(hison: Hison)`에서 접근 권한 검증 시 사용됩니다.",
     },
     {
         prop: "isFreeze",
         type: "boolean",
         default: "true",
         explain:
-        "`Hison` 인스턴스를 수정 불가능하도록 고정(freeze)할지 여부를 결정합니다.\n`true`인 경우, `Object.freeze()`를 통해 `Hison` 객체와 속성이 깊은 복사 형태로 동결되어 더 이상 변경할 수 없습니다.\n`shield.excute(hison: Hison)` 내부에서 `deepFreeze(hison)`이 적용됩니다.",
+        "`Hison` 인스턴스를 수정 불가능하도록 고정(freeze)할지 여부를 결정합니다.\n`true`인 경우, `Object.freeze()`를 통해 `Hison` 객체와 속성이 깊은 복사 형태로 동결되어 더 이상 변경할 수 없습니다.\n`shield.execute(hison: Hison)` 내부에서 `deepFreeze(hison)`이 적용됩니다.",
     },
     {
         prop: "isPossibleGoBack",
         type: "boolean",
         default: "false",
         explain:
-        "브라우저의 뒤로가기 기능 허용 여부를 결정합니다.\n`false`인 경우, `history.pushState()`를 활용하여 사용자의 뒤로가기를 방지합니다.\n`shield.excute(hison: Hison)`에서 사용됩니다.",
+        "브라우저의 뒤로가기 기능 허용 여부를 결정합니다.\n`false`인 경우, `history.pushState()`를 활용하여 사용자의 뒤로가기를 방지합니다.\n`shield.execute(hison: Hison)`에서 사용됩니다.",
     },
     {
         prop: "isPossibleOpenDevTool",
         type: "boolean",
         default: "false",
         explain:
-        "개발자 도구(DevTool) 열기 허용 여부를 결정합니다.\n`false`인 경우, F12 키나 브라우저 크기 조정 등 개발자 도구 접근 시도를 감지하고 사용자에게 경고할 수 있습니다.\n`shield.excute(hison: Hison)`에서 `shieldFuncCreateBlockDevMode()`가 호출됩니다.",
+        "개발자 도구(DevTool) 열기 허용 여부를 결정합니다.\n`false`인 경우, F12 키나 브라우저 크기 조정 등 개발자 도구 접근 시도를 감지하고 사용자에게 경고할 수 있습니다.\n`shield.execute(hison: Hison)`에서 `shieldFuncCreateBlockDevMode()`가 호출됩니다.",
     },
     {
         prop: "doDetectDevTool",
         type: "() => void",
         default: "() => {}",
         explain:
-        "개발자 도구 접근이 감지될 때 실행되는 사용자 정의 함수입니다.\n개발자가 직접 동작을 정의할 수 있으며, 예를 들어 `debugger;` 삽입이나 경고 표시, 실행 중단 등을 수행할 수 있습니다.\n`shield.excute(hison: Hison)`에서 DevTool 활동이 의심될 때 호출됩니다.\n`hison.setDoDetectDevTool(func)`으로 설정할 수 있습니다.",
+        "개발자 도구 접근이 감지될 때 실행되는 사용자 정의 함수입니다.\n개발자가 직접 동작을 정의할 수 있으며, 예를 들어 `debugger;` 삽입이나 경고 표시, 실행 중단 등을 수행할 수 있습니다.\n`shield.execute(hison: Hison)`에서 DevTool 활동이 의심될 때 호출됩니다.\n`hison.setDoDetectDevTool(func)`으로 설정할 수 있습니다.",
     },
 ]
 
@@ -943,42 +943,42 @@ export const shieldConfigGridDataEn = [
         type: "string",
         default: '""',
         explain:
-        "The URL used to enforce access restrictions.\nIf this value is set, the system verifies whether the current location matches the specified URL. If not, access may be blocked.\nUsed in `shield.excute(hison: Hison)` to validate the URL.",
+        "The URL used to enforce access restrictions.\nIf this value is set, the system verifies whether the current location matches the specified URL. If not, access may be blocked.\nUsed in `shield.execute(hison: Hison)` to validate the URL.",
     },
     {
         prop: "exposeIpList",
         type: "string[]",
         default: '["0:0:0:0:0:0:0:1"]',
         explain:
-        "A list of IP addresses that are allowed to bypass security restrictions.\nWhen the shield mechanism is activated, only these IPs are granted access.\nUsed in `shield.excute(hison: Hison)` to verify access permissions.",
+        "A list of IP addresses that are allowed to bypass security restrictions.\nWhen the shield mechanism is activated, only these IPs are granted access.\nUsed in `shield.execute(hison: Hison)` to verify access permissions.",
     },
     {
         prop: "isFreeze",
         type: "boolean",
         default: "true",
         explain:
-        "Determines whether the `Hison` instance should be frozen to prevent modifications.\nIf `true`, the `Hison` object and its properties are deeply frozen using `Object.freeze()` to ensure immutability.\nUsed in `shield.excute(hison: Hison)`, where `deepFreeze(hison)` is applied.",
+        "Determines whether the `Hison` instance should be frozen to prevent modifications.\nIf `true`, the `Hison` object and its properties are deeply frozen using `Object.freeze()` to ensure immutability.\nUsed in `shield.execute(hison: Hison)`, where `deepFreeze(hison)` is applied.",
     },
     {
         prop: "isPossibleGoBack",
         type: "boolean",
         default: "false",
         explain:
-        "Determines whether browser back navigation is allowed.\nIf `false`, a mechanism prevents the user from navigating back using `history.pushState()`.\nUsed in `shield.excute(hison: Hison)`.",
+        "Determines whether browser back navigation is allowed.\nIf `false`, a mechanism prevents the user from navigating back using `history.pushState()`.\nUsed in `shield.execute(hison: Hison)`.",
     },
     {
         prop: "isPossibleOpenDevTool",
         type: "boolean",
         default: "false",
         explain:
-        "Determines whether developer tools can be opened.\nIf `false`, an event listener detects devtool access (F12, resize, or debugging) and may alert the user.\nUsed in `shield.excute(hison: Hison)` with `shieldFuncCreateBlockDevMode()`.",
+        "Determines whether developer tools can be opened.\nIf `false`, an event listener detects devtool access (F12, resize, or debugging) and may alert the user.\nUsed in `shield.execute(hison: Hison)` with `shieldFuncCreateBlockDevMode()`.",
     },
     {
         prop: "doDetectDevTool",
         type: "() => void",
         default: "() => {}",
         explain:
-        "A custom function executed when developer tools are detected.\nAllows developers to define custom behavior, such as pausing execution or alerting the user.\nTriggered in `shield.excute(hison: Hison)` when devtool activity is suspected.\nCan be set using `hison.setDoDetectDevTool(func)`.\nCommon actions include inserting a `debugger;` statement or halting program flow.",
+        "A custom function executed when developer tools are detected.\nAllows developers to define custom behavior, such as pausing execution or alerting the user.\nTriggered in `shield.execute(hison: Hison)` when devtool activity is suspected.\nCan be set using `hison.setDoDetectDevTool(func)`.\nCommon actions include inserting a `debugger;` statement or halting program flow.",
     },
 ]
 

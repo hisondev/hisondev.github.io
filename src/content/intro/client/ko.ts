@@ -33,7 +33,7 @@ HButton, HLayout, HInput, HGrid 등 다양한 컴포넌트를 포함하고 있�
   t2080:
 `동적 설정(Dynamic Configuration): 간단한 hison.setXXX() 메서드들로 전역 동작을 유연하게 제어할 수 있습니다.`,
   t2090:
-`보안 모듈(Security Module): hison.shield.excute()로 무단 개발자 도구 사용 차단, URL/IP 접근 제한, 객체 불변(immutability) 확보 등 앱을 보호합니다.`,
+`보안 모듈(Security Module): hison.shield.execute()로 무단 개발자 도구 사용 차단, URL/IP 접근 제한, 객체 불변(immutability) 확보 등 앱을 보호합니다.`,
   t2100:
 `데이터 모델링(Data Modeling): 프런트엔드에서도 DataModel·DataWrapper를 사용하여, 백엔드(hisonjv의 data-model)와 동일한 개념으로 데이터 구조화/검증을 수행합니다.`,
   t2110:

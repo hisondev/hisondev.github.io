@@ -17,7 +17,7 @@ hisonjv (data-model, api-link)`,
   t1030:
 `Dynamic Configuration: Flexibly control global behavior with simple hison.setXXX() methods.`,
   t1040:
-`Security Module: Protect your app by blocking unauthorized use of developer tools, restricting URL/IP access, and enforcing immutability via hison.shield.excute().`,
+`Security Module: Protect your app by blocking unauthorized use of developer tools, restricting URL/IP access, and enforcing immutability via hison.shield.execute().`,
   t1050:
 `Data Modeling: Use DataModel and DataWrapper on the frontend with the same concepts as the backend (hisonjv’s data-model) for structured data and validation.`,
   t1060:
@@ -39,7 +39,7 @@ hison.setExposeIpList(["192.168.1.1", "10.0.0.2"]);`,
   t1110:
 `Apply Security`,
   c1110:
-`hison.shield.excute(hison);`,
+`hison.shield.execute(hison);`,
   t1120:
 `Security applied via shield supports features such as blocking specific IPs and preventing opening of developer tools.`,
   t1130:
@@ -92,7 +92,7 @@ hison.setProtocol("https://");
 hison.setDatetimeFormat("yyyy-MM-dd HH:mm:ss");
 
 // Enforce security
-hison.shield.excute(hison);
+hison.shield.execute(hison);
 
 // Use utilities
 console.log(hison.utils.getSysDate());

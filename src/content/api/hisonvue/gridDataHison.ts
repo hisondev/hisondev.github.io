@@ -42,6 +42,8 @@ export const hisonStyleGridDataKo: methodGridRow[] = [
   { method: 'setWarningColor', param: 'warningColor: string', return: '-', explain: '경고(Warning) 상태 색상을 설정합니다.' },
   { method: 'setInvertColor', param: 'invert: boolean', return: '-', explain: '색상 반전을 활성/비활성화합니다. 활성화 시 배경/전경 대비를 보존하도록 파생 색상이 갱신됩니다.' },
 
+  { method: 'getDeviceType', param: '-', return: '"mb" | "tb" | "pc" | "wd"', explain: '클라이언트 뷰포트 너비에 따라 현재 장치 유형을 반환합니다. - SSR-safe: 서버에서 실행하면(window없을 시) 기본적으로 "pc"를 반환합니다.' },
+
   { method: 'getFilledColor', param: '-', return: 'string', explain: '기본 “채워진” 표면 색상을 반환합니다.' },
   { method: 'getEmptyColor', param: '-', return: 'string', explain: '기본 “빈/아웃라인” 표면 색상을 반환합니다.' },
   { method: 'getFilledTextColor', param: '-', return: 'string', explain: '채워진 표면에서의 텍스트 색상을 반환합니다.' },
@@ -332,6 +334,8 @@ export const hisonStyleGridDataEn: methodGridRow[] = [
   { method: 'setDangerColor', param: 'dangerColor: string', return: '-', explain: 'Sets the danger (status) color.' },
   { method: 'setWarningColor', param: 'warningColor: string', return: '-', explain: 'Sets the warning (status) color.' },
   { method: 'setInvertColor', param: 'invert: boolean', return: '-', explain: 'Enables/disables color inversion (dark/light intent); derived tokens flip to preserve contrast.' },
+
+  { method: 'getDeviceType', param: '-', return: '"mb" | "tb" | "pc" | "wd"', explain: 'Returns the current device type based on the client viewport width. - SSR-safe: returns "pc" by default when executed on the server.' },
 
   { method: 'getFilledColor', param: '-', return: 'string', explain: 'Returns the base filled surface color.' },
   { method: 'getEmptyColor', param: '-', return: 'string', explain: 'Returns the base empty/outline surface color.' },
