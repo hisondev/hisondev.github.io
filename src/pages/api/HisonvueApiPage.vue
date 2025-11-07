@@ -392,7 +392,8 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
             <HGap/>
             <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3200 }}</HParagraph>
             <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3300 }}</HCaption>
-            <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3310 }}</HParagraph>
+            <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3320 }}</HParagraph>
+            <CodeParagraph :key="getKey()" :code="contents.c3320"/>
             <HLayout>
                 <HLabel
                     :key="getKey()"

@@ -49,6 +49,45 @@ const en = {
     `Defines horizontal width using a 12-column grid system. ` +
     `You can use responsive forms like hison-col-6-pc or hison-col-12-mb. ` +
     `(When the screen width is 1200px or greater, width is 50%; below that, 100%.)`,
+  t3320:
+    `Also, CSS is declared to support widths for 5% spacing, 3-split, and 7-split (with device suffix available).`,
+  c3320:
+`.hison-col-0   { width: 0; box-sizing: border-box; }
+
+/* ───── 5% intervals ───── */
+.hison-col-5p { width: 5%; box-sizing: border-box; }
+.hison-col-10p { width: 10%; box-sizing: border-box; }
+.hison-col-15p { width: 15%; box-sizing: border-box; }
+.hison-col-20p { width: 20%; box-sizing: border-box; }
+.hison-col-25p { width: 25%; box-sizing: border-box; }
+.hison-col-30p { width: 30%; box-sizing: border-box; }
+.hison-col-35p { width: 35%; box-sizing: border-box; }
+.hison-col-40p { width: 40%; box-sizing: border-box; }
+.hison-col-45p { width: 45%; box-sizing: border-box; }
+.hison-col-50p { width: 50%; box-sizing: border-box; }
+.hison-col-55p { width: 55%; box-sizing: border-box; }
+.hison-col-60p { width: 60%; box-sizing: border-box; }
+.hison-col-65p { width: 65%; box-sizing: border-box; }
+.hison-col-70p { width: 70%; box-sizing: border-box; }
+.hison-col-75p { width: 75%; box-sizing: border-box; }
+.hison-col-80p { width: 80%; box-sizing: border-box; }
+.hison-col-85p { width: 85%; box-sizing: border-box; }
+.hison-col-90p { width: 90%; box-sizing: border-box; }
+.hison-col-95p { width: 95%; box-sizing: border-box; }
+.hison-col-100p { width: 100%; box-sizing: border-box; }
+
+/* ───── special fractional ratios ───── */
+/* 3-part (1/3, 2/3) */
+.hison-col-33p3 { width: 33.3333%; box-sizing: border-box; }
+.hison-col-66p3 { width: 66.6667%; box-sizing: border-box; }
+
+/* 7-part (1/7, 2/7, 3/7, ... 6/7) */
+.hison-col-14p7 { width: 14.2857%; box-sizing: border-box; }
+.hison-col-28p7 { width: 28.5714%; box-sizing: border-box; }
+.hison-col-42p7 { width: 42.8571%; box-sizing: border-box; }
+.hison-col-57p7 { width: 57.1429%; box-sizing: border-box; }
+.hison-col-71p7 { width: 71.4286%; box-sizing: border-box; }
+.hison-col-85p7 { width: 85.7143%; box-sizing: border-box; }`,
 
   t3400: `hison-size-*`,
   t3410:
