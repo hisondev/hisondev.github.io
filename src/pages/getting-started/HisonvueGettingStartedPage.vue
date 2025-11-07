@@ -35,6 +35,8 @@ const getKey = () => store.state.lang + getUUID()
         <CodeParagraph :key="getKey()" :code="contents.c1050"/><HGap style="height: 1px;"/>
         <CodeParagraph :key="getKey()" :code="contents.c1060"/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1070 }}</HParagraph>
+        <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1075 }}</HParagraph>
+        <CodeParagraph :key="getKey()" :code="contents.c1075"/><HGap style="height: 1px;"/>
         <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t1080 }}</HParagraph>
         <CodeParagraph :key="getKey()" :code="contents.c1080"/><HGap style="height: 1px;"/>
         <CodeParagraph :key="getKey()" :code="contents.c1090"/>

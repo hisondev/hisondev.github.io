@@ -65,6 +65,13 @@ export default defineNuxtPlugin((nuxtApp) => {
 })`,
   t1070:
 `SSR 환경에서도 하이드레이션 오류 없이 컴포넌트를 전역으로 사용할 수 있습니다.`,
+  t1075:
+`nuxt.config.ts에 모듈을 추가합니다.`,
+  c1075:
+`export default defineNuxtConfig({
+  modules: [
+    'hisonvue/nuxt', // hisonvue 등록(SSR-safe)
+  ],`,
   t1080:
 `hison.component로 런타임 제어
 

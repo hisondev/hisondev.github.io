@@ -66,6 +66,13 @@ export default defineNuxtPlugin((nuxtApp) => {
 })`,
   t1070:
 `Even in SSR environments, components can be used globally without hydration errors.`,
+  t1075:
+`Add the module in your nuxt.config.ts`,
+  c1075:
+`export default defineNuxtConfig({
+  modules: [
+    'hisonvue/nuxt', // Registers hisonvue (SSR-safe)
+  ],`,
   t1080:
 `Runtime Control with hison.component
 
