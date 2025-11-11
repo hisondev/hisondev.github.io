@@ -121,6 +121,27 @@ hison-size-m-pc, hison-size-xl-mb(화면의 너비가 1200이상이면 요소 'm
 `hison-color-*`,
   t3510:
 `color의 종류는 아래와 같습니다. 기본 설정을 별도로 hisonConfig.componentStyle등을 통해 사용자 커스텀 가능합니다. 커스텀시 메인 색상만 지정하면 그림자, 텍스트 색상 등은 시스템 내부에서 자동으로 조정합니다.`,
+  t3520:
+`또 색상 custom1 ~ custom5의 다섯가지 사용자 별도 지정 색상을 활용할 수 있습니다.(음영 등 처리는 시스템에서 자동으로 적용합니다.)`,
+  c3520:
+`//vue-cli에서 main.ts
+import { createApp } from 'vue'
+import 'hisonvue/style.css'
+import App from './App.vue'
+import { getDefaultHisonConfig, hisonvue, type HisonConfig } from 'hisonvue'
+
+const hisonConfig: HisonConfig = getDefaultHisonConfig()
+hisonConfig.componentStyle.custom1Color = '#F9F7F7'
+hisonConfig.componentStyle.custom2Color = '#DBE2EF'
+hisonConfig.componentStyle.custom3Color = '#3F72AF'
+hisonConfig.componentStyle.custom4Color = '#112D4E'
+hisonConfig.componentStyle.custom5Color = '#000820'
+createApp(App)
+    .use(hisonvue, hisonConfig)
+    .mount('#app')
+    
+//컴포넌트에서 사용은 기존 방식과 동일하게.
+<HButton class="hison-col-20p hison-color-custom1">custom1</HButton>`,
 
   t3600:
 `hison-pos-*`,

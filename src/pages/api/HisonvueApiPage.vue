@@ -497,6 +497,16 @@ const mountCssEventConfigGrid = async (grid: HGridMethods) => {
             <HButton class="hison-col-2-pc hison-col-4-mb hison-color-danger">default danger</HButton>
             <HButton class="hison-col-2-pc hison-col-4-mb hison-color-warning">default warning</HButton>
             <HGap/>
+            <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3520 }}</HParagraph>
+            <CodeParagraph :key="getKey()" :code="contents.c3520"/>
+            <HLayout>
+                <HButton class="hison-col-20p hison-color-custom1">custom1</HButton>
+                <HButton class="hison-col-20p hison-color-custom2">custom2</HButton>
+                <HButton class="hison-col-20p hison-color-custom3">custom3</HButton>
+                <HButton class="hison-col-20p hison-color-custom4">custom4</HButton>
+                <HButton class="hison-col-20p hison-color-custom5">custom5</HButton>
+            </HLayout>
+            <HGap/>
             <HCaption :level="6" :key="getKey()" class="hison-col-12">{{ contents.t3600 }}</HCaption>
             <HParagraph :key="getKey()" class="hison-col-12">{{ contents.t3610 }}</HParagraph>
             <CodeParagraph :key="getKey()" :code="contents.c3610"/>

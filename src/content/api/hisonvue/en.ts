@@ -98,6 +98,27 @@ const en = {
   t3510:
     `The available color types are listed below. These can be customized via hisonConfig.componentStyle. ` +
     `When customizing, defining only the main color is enough — related shades, text, and shadow colors are automatically adjusted internally.`,
+  t3520:
+`You can also use five user-defined colors, custom1 to custom5.(Shading and other processing are automatically applied by the system.)`,
+  c3520:
+`//main.ts(vue-cli)
+import { createApp } from 'vue'
+import 'hisonvue/style.css'
+import App from './App.vue'
+import { getDefaultHisonConfig, hisonvue, type HisonConfig } from 'hisonvue'
+
+const hisonConfig: HisonConfig = getDefaultHisonConfig()
+hisonConfig.componentStyle.custom1Color = '#F9F7F7'
+hisonConfig.componentStyle.custom2Color = '#DBE2EF'
+hisonConfig.componentStyle.custom3Color = '#3F72AF'
+hisonConfig.componentStyle.custom4Color = '#112D4E'
+hisonConfig.componentStyle.custom5Color = '#000820'
+createApp(App)
+    .use(hisonvue, hisonConfig)
+    .mount('#app')
+    
+//Usage in components is the same as before.
+<HButton class="hison-col-20p hison-color-custom1">custom1</HButton>`,
 
   t3600: `hison-pos-*`,
   t3610:
